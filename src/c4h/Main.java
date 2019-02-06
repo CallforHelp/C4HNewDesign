@@ -56,7 +56,7 @@ public class Main extends Application {
 
 
             // Set the application icon.
-            this.primaryStage.getIcons().add(new Image("images/ico.jpg"));
+          //  this.primaryStage.getIcons().add(new Image("images/ico.jpg"));
             
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
