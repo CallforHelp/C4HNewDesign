@@ -26,8 +26,14 @@ public class Main extends Application {
 		this.primaryStage = primaryStage;
 		
 		 initC4HRootLayout();
+		 createMenuLaout();
 	}
 	
+	public void createMenuLaout() {
+		// TODO Auto-generated method stub
+		
+	}
+
 	public void initC4HRootLayout() {
 		
 	    try {
