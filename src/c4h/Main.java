@@ -7,15 +7,33 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import javafx.scene.input.MouseEvent;
-import javafx.event.EventHandler;
 
 
 
 public class Main extends Application {
+		
+		@Override
+		public void start(Stage primaryStage) {
+			primaryStage.setTitle("Event Handling");
+			
+			try {
+				FXMLLoader loader = new FXMLLoader(Main.class.getResource("EventHandling.fxml"));
+				AnchorPane page = (AnchorPane) loader.load();
+				Scene scene = new Scene(page);
+				primaryStage.setScene(scene);
+				primaryStage.show();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public static void main(String[] args) {
+			launch(args);
+		}
 	
+
+/*	
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
     private double xOffset = 0;
@@ -71,8 +89,13 @@ public class Main extends Application {
             e.printStackTrace();
         }
 	}
+	@FXML
+	private void handleButtonAction(ActionEvent event) {
+	    // Button was clicked, do something…
+	  System.out.println("Button Action\n");
+	}
 
 	public static void main(String[] args) {
 		launch(args);
-	}
+	}*/
 }
