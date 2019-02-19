@@ -14,7 +14,9 @@ import javafx.stage.Stage;
 public class Main extends Application {
 		
 		@Override
-		public void start(Stage primaryStage) {
+		public void start(Stage primaryStage) 
+		
+		{
 			
 			try {
 				FXMLLoader loader = new FXMLLoader(Main.class.getResource("initC4HRootLayout.fxml"));
