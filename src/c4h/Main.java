@@ -3,25 +3,49 @@ package c4h;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 
 
 public class Main extends Application {
-		
+	private double xOffset = 0;
+	private double yOffset = 0;
 		@Override
 		public void start(Stage primaryStage) 
-		
 		{
-			
+			primaryStage.initStyle(StageStyle.UNDECORATED);
 			try {
+				
 				FXMLLoader loader = new FXMLLoader(Main.class.getResource("initC4HRootLayout.fxml"));
 				AnchorPane page = (AnchorPane) loader.load();
+				
+				//Move Stage 
+	            page.setOnMousePressed(new EventHandler<MouseEvent>() {
+	                
+
+					@Override
+	                public void handle(MouseEvent event) {
+	                    xOffset = event.getSceneX();
+	                    yOffset = event.getSceneY();
+	                }
+	            });
+	            page.setOnMouseDragged(new EventHandler<MouseEvent>() {
+	                @Override
+	                public void handle(MouseEvent event) {
+	                    primaryStage.setX(event.getScreenX() - xOffset);
+	                    primaryStage.setY(event.getScreenY() - yOffset);
+	                }
+	            });
+				
 				Scene scene = new Scene(page);
+				
 				primaryStage.setScene(scene);
 				primaryStage.show();
 			} catch (IOException e) {
@@ -37,8 +61,7 @@ public class Main extends Application {
 /*	
 	private Stage primaryStage;
 	private AnchorPane rootLayout;
-    private double xOffset = 0;
-    private double yOffset = 0;
+
 	@Override
 	public void start(Stage primaryStage) {
 		this.primaryStage = primaryStage;
@@ -47,10 +70,6 @@ public class Main extends Application {
 		 createMenuLaout();
 	}
 	
-	public void createMenuLaout() {
-		// TODO Auto-generated method stub
-		
-	}
 
 	public void initC4HRootLayout() {
 		
@@ -62,21 +81,7 @@ public class Main extends Application {
             loader.setLocation(Main.class.getResource("initC4HRootLayout.fxml"));
             rootLayout = (AnchorPane) loader.load();
             
-            //Move Stage 
-            rootLayout.setOnMousePressed(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    xOffset = event.getSceneX();
-                    yOffset = event.getSceneY();
-                }
-            });
-            rootLayout.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                @Override
-                public void handle(MouseEvent event) {
-                    primaryStage.setX(event.getScreenX() - xOffset);
-                    primaryStage.setY(event.getScreenY() - yOffset);
-                }
-            });
+            
 
 
             // Set the application icon.
