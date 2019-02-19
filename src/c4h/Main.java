@@ -18,7 +18,7 @@ public class Main extends Application {
 			primaryStage.setTitle("Event Handling");
 			
 			try {
-				FXMLLoader loader = new FXMLLoader(Main.class.getResource("EventHandling.fxml"));
+				FXMLLoader loader = new FXMLLoader(Main.class.getResource("initC4HRootLayout.fxml"));
 				AnchorPane page = (AnchorPane) loader.load();
 				Scene scene = new Scene(page);
 				primaryStage.setScene(scene);
