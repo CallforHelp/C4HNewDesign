@@ -15,7 +15,7 @@ public class C4hController {
 	
 	@FXML
 	private void initialize() {
-		myExitButton.setGraphic(new ImageView(imageDecline));
+	//	myExitButton.setGraphic(new ImageView(imageDecline));
 		myExitButton.setOnAction((event) -> {
 			System.out.println("Button Action\n");
 			System.exit(0);
