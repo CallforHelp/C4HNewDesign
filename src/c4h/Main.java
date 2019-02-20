@@ -18,37 +18,32 @@ public class Main extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
 		@Override
-		public void start(Stage primaryStage) 
-		{
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			try {
+	public void start(Stage primaryStage){
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		try {
+			AnchorPane page = (AnchorPane)FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
 				
-				FXMLLoader loader = new FXMLLoader(Main.class.getResource("initC4HRootLayout.fxml"));
-				AnchorPane page = (AnchorPane) loader.load();
-				
-				//Move Stage 
-	            page.setOnMousePressed(new EventHandler<MouseEvent>() {
-	                
-
-					@Override
-	                public void handle(MouseEvent event) {
-	                    xOffset = event.getSceneX();
-	                    yOffset = event.getSceneY();
-	                }
-	            });
-	            page.setOnMouseDragged(new EventHandler<MouseEvent>() {
-	                @Override
-	                public void handle(MouseEvent event) {
-	                    primaryStage.setX(event.getScreenX() - xOffset);
-	                    primaryStage.setY(event.getScreenY() - yOffset);
-	                }
-	            });
-				
-				Scene scene = new Scene(page);
-				
-				primaryStage.setScene(scene);
-				primaryStage.show();
-			} catch (IOException e) {
+			//Move Stage 
+	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
+			@Override
+	        	public void handle(MouseEvent event) {
+					xOffset = event.getSceneX();
+					yOffset = event.getSceneY();
+	            }
+	        });
+	        page.setOnMouseDragged(new EventHandler<MouseEvent>() {
+	            @Override
+	            public void handle(MouseEvent event) {
+	                primaryStage.setX(event.getScreenX() - xOffset);
+	                primaryStage.setY(event.getScreenY() - yOffset);
+	            }
+	         });
+	        
+			Scene scene = new Scene(page);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			
+		} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}

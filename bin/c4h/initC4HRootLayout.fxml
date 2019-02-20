@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="745.0" prefWidth="995.0" styleClass="anchor" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" 
-			xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.C4hController">
+<AnchorPane prefHeight="745.0" prefWidth="995.0" styleClass="anchor" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.C4hController">
    <children>
       <Button fx:id="myExitButton" layoutX="969.0" layoutY="2.0" mnemonicParsing="false" onAction="#initialize" styleClass="myExitButton" text="X" />
+      <Button fx:id="openScene1" layoutX="483.0" layoutY="352.0" mnemonicParsing="false" onAction="#openStage2" prefHeight="42.0" prefWidth="112.0" styleClass="myExitButton" text="Scene1" />
    </children>
 </AnchorPane>
