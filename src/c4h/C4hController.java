@@ -23,6 +23,8 @@ public class C4hController {
     private Button openScene1;
     @FXML
     private Button openLogin;
+    @FXML
+    private Button openScene2;
 
 	
 	
@@ -33,8 +35,9 @@ public class C4hController {
 		RotateTransition rotation = new RotateTransition(Duration.seconds(0.5), myExitButton);
 		rotation.setCycleCount(Animation.INDEFINITE);
 		rotation.setByAngle(360);
+		
 		myExitButton.setOnMouseEntered(e -> rotation.play());
-		myExitButton.setOnMouseExited(e -> rotation.pause());
+		myExitButton.setOnMouseClicked(e -> rotation.stop());
 		
 		myExitButton.setOnAction((event) -> {
 			System.out.println("Button Action\n");
@@ -42,9 +45,20 @@ public class C4hController {
 		});
 
     }
-    
+    @FXML
+    private void openScene3() throws IOException {
+    	   stage = (Stage) openScene2.getScene().getWindow();
+	        AnchorPane root;
+	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+	        Scene scene = new Scene(root);
+	        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+	        stage.setScene(scene);
+
+	        System.out.println("Login.fxml opened");
+    	
+    }
 	@FXML
-	private void openStage2() throws IOException {
+	private void openScene1() throws IOException {
 		stage = (Stage) openScene1.getScene().getWindow();
 	        AnchorPane root;
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
