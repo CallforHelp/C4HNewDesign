@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -19,11 +20,12 @@ public class Main extends Application {
 	private double yOffset = 0;
 		@Override
 	public void start(Stage primaryStage){
-		primaryStage.initStyle(StageStyle.UNDECORATED);
-		try {
-			AnchorPane page = (AnchorPane)FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
+			primaryStage.initStyle(StageStyle.UNDECORATED);
+			primaryStage.getIcons().add(new Image("/images/decline-button.png"));
+			try {
+				AnchorPane page = (AnchorPane)FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
 				
-			//Move Stage 
+				//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 	        	public void handle(MouseEvent event) {
