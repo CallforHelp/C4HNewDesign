@@ -40,13 +40,13 @@ public class C4hController {
 		myExitButton.setOnMouseClicked(e -> rotation.stop());
 		
 		myExitButton.setOnAction((event) -> {
-			System.out.println("Button Action\n");
+			System.out.println("Button Exit (X)\n");
 			System.exit(0);
 		});
 
     }
     @FXML
-    private void openScene3() throws IOException {
+    private void openScene2() throws IOException {
     	   stage = (Stage) openScene2.getScene().getWindow();
 	        AnchorPane root;
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene2.fxml"));
@@ -79,4 +79,14 @@ public class C4hController {
 
 	        System.out.println("Login.fxml opened");
 	    }
+		@FXML
+		private void openScene3() throws IOException {
+			stage = (Stage) openScene1.getScene().getWindow();
+		        AnchorPane root;
+		        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+		        Scene scene = new Scene(root);
+		        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		        stage.setScene(scene);
+		        System.out.println("Scene.fxml opened");
+		}
 }

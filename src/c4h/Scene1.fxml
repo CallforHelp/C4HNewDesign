@@ -10,8 +10,8 @@
 
 <AnchorPane prefHeight="745.0" prefWidth="995.0" styleClass="anchor2" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.C4hController">
    <children>
-       <Button fx:id="myExitButton" layoutX="969.0" layoutY="2.0" mnemonicParsing="false" onAction="#initialize" styleClass="myExitButton" text="X" />
-      <Button fx:id="openLogin" layoutX="483.0" layoutY="352.0" mnemonicParsing="false" onAction="#openLogin" prefHeight="42.0" prefWidth="112.0" styleClass="myExitButton" text="openLogin" />
-      <PointLight color="CHARTREUSE" layoutX="493.0" layoutY="373.0" lightOn="true" />
+       <Button fx:id="myExitButton" layoutX="484.0" layoutY="242.0" mnemonicParsing="false" onAction="#initialize" styleClass="myExitButton" text="X" />
+      <Button fx:id="openLogin" layoutX="448.0" layoutY="464.0" mnemonicParsing="false" onAction="#openLogin" prefHeight="42.0" prefWidth="112.0" styleClass="myExitButton" text="Login" />
+      <Button fx:id="openScene2" layoutX="448.0" layoutY="352.0" mnemonicParsing="false" onAction="#openScene2" prefHeight="42.0" prefWidth="112.0" styleClass="myExitButton" text="Scene2" />
    </children>
 </AnchorPane>
