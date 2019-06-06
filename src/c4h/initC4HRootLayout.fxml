@@ -17,6 +17,12 @@
       </Pane>
       <Button fx:id="openLogin" layoutX="913.0" layoutY="700.0" mnemonicParsing="false" onAction="#openScene1" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="Scene 1" />
       <ImageView fitHeight="191.0" fitWidth="222.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="15.0" />
+      <ProgressIndicator fx:id="indictor" layoutX="89.0" layoutY="581.0" prefHeight="150.0" prefWidth="158.0" progress="0.0" />
+      <ProgressIndicator fx:id="indictor2" layoutX="419.0" layoutY="581.0" prefHeight="150.0" prefWidth="158.0" progress="0.0" />
+      <ProgressIndicator layoutX="711.0" layoutY="581.0" prefHeight="150.0" prefWidth="158.0" progress="0.0" />
+      <Label alignment="TOP_CENTER" layoutX="117.0" layoutY="514.0" prefHeight="16.0" prefWidth="102.0" text="CPU" textAlignment="CENTER" />
+      <Label alignment="TOP_CENTER" layoutX="447.0" layoutY="514.0" prefHeight="16.0" prefWidth="102.0" text="Arbeitsspeicher" textAlignment="CENTER" />
+      <Label alignment="TOP_CENTER" layoutX="739.0" layoutY="514.0" prefHeight="16.0" prefWidth="102.0" text="Netzwerk" textAlignment="CENTER" />
    </children>
    <stylesheets>
       <URL value="@application.css" />

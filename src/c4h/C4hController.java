@@ -16,9 +16,15 @@ import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import com.sun.management.OperatingSystemMXBean;
@@ -29,18 +35,24 @@ public class C4hController {
 	String imageDecline = "/C4HNewDesign/src/images/decline-button.png";
 	@FXML
 	private Stage stage;
-    @FXML
-    private Button openScene1;
-    @FXML
-    private Button openLogin;
-    @FXML
+	@FXML
+	private Button openScene1;
+	@FXML
+	private Button openLogin;
+	@FXML
 	ListView<String> list = new ListView<String>();
-    @FXML
+	@FXML
 	ObservableList<String> items =FXCollections.observableArrayList ("Single", "Double", "Suite", "Family App");
-    @FXML
-    private Label label;
-    @FXML
-    private ProgressIndicator indictor = new ProgressIndicator(0);
+	@FXML
+	private Label label;
+	@FXML
+	private ProgressIndicator indictor = new ProgressIndicator(0);
+	@FXML
+	private ProgressIndicator indictor2 = new ProgressIndicator(0);
+	@FXML
+	private WebView browser = new WebView();
+	@FXML
+	private WebEngine webkit  = browser.getEngine();
 
 
 	//Constructor
@@ -60,7 +72,8 @@ public class C4hController {
 		});
 
 		list.setItems(items);
-	      setIndikator();
+		setIndikator();
+		setIndikator2();
 
     }
     
@@ -76,8 +89,8 @@ public class C4hController {
 	    System.out.println("Scene.fxml opened");
 	}
 	
-	 @FXML
-	    private void openLogin() throws IOException{
+	@FXML
+	private void openLogin() throws IOException{
 	        stage = (Stage) openLogin.getScene().getWindow();
 	        AnchorPane root;
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
@@ -86,33 +99,59 @@ public class C4hController {
 	        stage.setScene(scene);
 	        System.out.println("Login.fxml opened");
 	    }
-	 @FXML
-	    private void openScene1() throws IOException{
-	        stage = (Stage) openLogin.getScene().getWindow();
-	        AnchorPane root;
+	@FXML
+	private void openScene1() throws IOException{
+	    
+	    AnchorPane root;
+	    stage = (Stage) openLogin.getScene().getWindow();
+	    root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+	 
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
+            stage.setScene(scene);  
+             
+            // Set up the embedded browser:
+            browser = new WebView();
+            webkit = browser.getEngine();
+            webkit.load("http://www.google.de");
+            browser.setFontScale(1);
+
+            ObservableList<Node> children = root.getChildren();
+            children.add(browser);             
+            
+	   /* stage = (Stage) openLogin.getScene().getWindow();
+	    AnchorPane root;
+	
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
 	        Scene scene = new Scene(root);
 	        scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
-	        stage.setScene(scene);	        
-	        System.out.println("Login.fxml opened");
-	        
+	        stage.setScene(scene);
+/*	        webkit.load("http://www.google.de");
+	        root.getChildren().add(browser);*/
+	        stage.show();
+	        System.out.println("scene1 opened");
+
 	    }
+
 	 @SuppressWarnings("restriction")
 	@FXML
-	  private void setIndikator() throws IOException{
-		  OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+	private void setIndikator() throws IOException{
+	     
+	     OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+	     Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
+		     ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
+	timeline.setCycleCount(Animation.INDEFINITE);
+	timeline.play();
+	}
+	 
+	 @SuppressWarnings("restriction")
+	private void setIndikator2() throws IOException{
+	    OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+		     Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
+			     ae ->  indictor2.setProgress(bean.getProcessCpuTime())));
+		     System.out.println(bean.getVersion());
+		timeline.setCycleCount(Animation.INDEFINITE);
+		timeline.play();
+	}
 
-		    System.out.println(bean.getProcessCpuLoad());
-		    System.out.println(bean.getSystemCpuLoad());
-		    System.out.println(bean.getCommittedVirtualMemorySize());
-
-         
-          
-          Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
-        	        ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
-        	timeline.setCycleCount(Animation.INDEFINITE);
-        	timeline.play();
-        	
-
-	 }
 }
