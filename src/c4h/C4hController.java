@@ -3,32 +3,31 @@ package c4h;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 
-import javax.sound.sampled.LineListener;
+import com.sun.management.OperatingSystemMXBean;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
+import javafx.animation.RotateTransition;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.animation.RotateTransition;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Group;
-import javafx.scene.Node;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import com.sun.management.OperatingSystemMXBean;
 
+@SuppressWarnings("restriction")
 public class C4hController {
 	@FXML
 	private Button myExitButton;
@@ -50,10 +49,11 @@ public class C4hController {
 	@FXML
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
 	@FXML
-	private WebView browser = new WebView();
+	private VBox vBox = new VBox();
 	@FXML
-	private WebEngine webkit  = browser.getEngine();
-
+	private WebEngine webEngine;
+	@FXML
+	WebView browser; 
 
 	//Constructor
 	
@@ -95,6 +95,7 @@ public class C4hController {
 	        AnchorPane root;
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
 	        Scene scene = new Scene(root);
+	        
 	        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	        stage.setScene(scene);
 	        System.out.println("Login.fxml opened");
@@ -102,38 +103,31 @@ public class C4hController {
 	@FXML
 	private void openScene1() throws IOException{
 	    
-	    AnchorPane root;
-	    stage = (Stage) openLogin.getScene().getWindow();
-	    root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-	 
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
-            stage.setScene(scene);  
-             
-            // Set up the embedded browser:
-            browser = new WebView();
-            webkit = browser.getEngine();
-            webkit.load("http://www.google.de");
-            browser.setFontScale(1);
-
-            ObservableList<Node> children = root.getChildren();
-            children.add(browser);             
-            
-	   /* stage = (Stage) openLogin.getScene().getWindow();
-	    AnchorPane root;
-	
-	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-	        Scene scene = new Scene(root);
-	        scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
-	        stage.setScene(scene);
-/*	        webkit.load("http://www.google.de");
-	        root.getChildren().add(browser);*/
-	        stage.show();
-	        System.out.println("scene1 opened");
+        stage = (Stage) openLogin.getScene().getWindow();
+        AnchorPane root;
+        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+	    Scene scene = new Scene(root);
+	    scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
+	    stage.setScene(scene);	        
+	    stage.show();
+	    
+	    System.out.println("scene1 opened");
 
 	    }
 
-	 @SuppressWarnings("restriction")
+	private void webview()throws IOException {
+		stage = (Stage) openLogin.getScene().getWindow();
+		 AnchorPane root;
+		 root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+		browser = new WebView();
+	    webEngine = browser.getEngine();
+	    webEngine.load("http://eclipse.com");    
+	    //vBox.getChildren().addAll(browser);
+	      //  Scene scene = new Scene(vBox);
+	    stage.setTitle("JavaFX WebView");
+	     //  stage.setScene(scene);
+	}
+
 	@FXML
 	private void setIndikator() throws IOException{
 	     
@@ -144,8 +138,7 @@ public class C4hController {
 	timeline.play();
 	}
 	 
-	 @SuppressWarnings("restriction")
-	private void setIndikator2() throws IOException{
+	 private void setIndikator2() throws IOException{
 	    OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 		     Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
 			     ae ->  indictor2.setProgress(bean.getProcessCpuTime())));
