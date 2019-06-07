@@ -17,10 +17,18 @@
          </children>
       </Pane>
       <ImageView fitHeight="191.0" fitWidth="222.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="15.0" />
-      <ProgressIndicator fx:id="indictor" layoutX="120.0" layoutY="666.0" prefHeight="44.0" prefWidth="27.0" progress="0.0" styleClass="shiny" />
-      <Label alignment="TOP_CENTER" layoutX="89.0" layoutY="620.0" prefHeight="16.0" prefWidth="102.0" text="CPU" textAlignment="CENTER" />
-      <Label alignment="TOP_CENTER" layoutX="282.0" layoutY="620.0" prefHeight="16.0" prefWidth="102.0" text="Arbeitsspeicher" textAlignment="CENTER" />
-      <ProgressIndicator fx:id="indictor2" layoutX="313.0" layoutY="666.0" prefHeight="44.0" prefWidth="27.0" progress="0.0" styleClass="shiny" />
+      <Pane layoutX="697.0" layoutY="178.0" prefHeight="559.0" prefWidth="284.0" styleClass="ListView">
+         <children>
+            <VBox layoutX="78.0" layoutY="112.0" prefHeight="363.0" prefWidth="128.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="6.0" prefWidth="231.0" styleClass="sale" text="Arbeitsspeicher" textAlignment="CENTER" />
+                  <ProgressIndicator fx:id="indictor2" prefHeight="143.0" prefWidth="231.0" progress="0.0" styleClass="sale" />
+                  <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="CPU" textAlignment="CENTER" />
+                  <ProgressIndicator fx:id="indictor" prefHeight="134.0" prefWidth="231.0" progress="0.0" styleClass="sale" />
+               </children>
+            </VBox>
+         </children>
+      </Pane>
    </children>
    <stylesheets>
       <URL value="@application.css" />
