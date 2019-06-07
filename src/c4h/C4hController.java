@@ -15,12 +15,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -51,9 +53,11 @@ public class C4hController {
 	@FXML
 	private VBox vBox = new VBox();
 	@FXML
+	private Pane pane = new Pane();
+	@FXML
 	private WebEngine webEngine;
 	@FXML
-	WebView browser; 
+	WebView browser = new WebView(); 
 
 	//Constructor
 	
@@ -70,11 +74,10 @@ public class C4hController {
 			System.out.println("Button Action\n");
 			System.exit(0);
 		});
-
+		webview();
 		list.setItems(items);
 		setIndikator();
 		setIndikator2();
-
     }
     
 	@FXML
@@ -104,28 +107,24 @@ public class C4hController {
 	private void openScene1() throws IOException{
 	    
         stage = (Stage) openLogin.getScene().getWindow();
-        AnchorPane root;
-        root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-	    Scene scene = new Scene(root);
+        
+        AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+
+     //   root.getChildren().add(browser);
+	    Scene scene = new Scene(new Group());
+	    
 	    scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
+	    scene.setRoot(root);
 	    stage.setScene(scene);	        
 	    stage.show();
 	    
 	    System.out.println("scene1 opened");
 
 	    }
-
+	@FXML
 	private void webview()throws IOException {
-		stage = (Stage) openLogin.getScene().getWindow();
-		 AnchorPane root;
-		 root = (AnchorPane) FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-		browser = new WebView();
-	    webEngine = browser.getEngine();
-	    webEngine.load("http://eclipse.com");    
-	    //vBox.getChildren().addAll(browser);
-	      //  Scene scene = new Scene(vBox);
-	    stage.setTitle("JavaFX WebView");
-	     //  stage.setScene(scene);
+		  webEngine = browser.getEngine();
+		  webEngine.load("https://fehlermeldung.3s-hamburg.de/index-login.php"); 
 	}
 
 	@FXML
