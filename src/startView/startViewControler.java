@@ -1,4 +1,4 @@
-package c4h;
+package startView;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
@@ -21,7 +21,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 @SuppressWarnings("restriction")
@@ -59,6 +58,7 @@ public class startViewControler implements Initializable {
 	        timeline.getKeyFrames().add(kf);
 	        timeline.setOnFinished(t -> {
 	            parentContainer.getChildren().remove(anchorRoot);
+	            parentContainer.getChildren().remove(parentContainer);
 	        });
 	        timeline.play();
 	    }

@@ -26,26 +26,31 @@ public class InitC4HRootLayoutContainer implements Initializable {
     @FXML
     private AnchorPane anchorRoot;
     @FXML
-    private StackPane parentContainer;
+    private AnchorPane Container;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
 
     @FXML
-    private void loadSecond(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/javafx/scene/transition/scene2/scene2.fxml"));
+    private void loadRoot(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml"));
         Scene scene = button.getScene();
         root.translateYProperty().set(scene.getHeight());
 
+        AnchorPane parentContainer = (AnchorPane) button.getScene().getRoot();
+
         parentContainer.getChildren().add(root);
+
 
         Timeline timeline = new Timeline();
         KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
+            parentContainer.getChildren().remove(Container);
             parentContainer.getChildren().remove(anchorRoot);
+            parentContainer.getChildren().remove(root);
         });
         timeline.play();
     }
