@@ -1,4 +1,4 @@
-package startView;
+package c4h.startView;
 
 import java.io.IOException;
 import java.lang.management.ManagementFactory;

@@ -1,4 +1,4 @@
-package initRootDesign;
+package c4h.initRootDesign;
 
 import java.io.IOException;
 import java.net.URL;
