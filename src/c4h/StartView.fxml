@@ -37,8 +37,8 @@
       <Button layoutX="59.0" layoutY="143.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zeigen" />
       <Button layoutX="385.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zum chat" />
       <Button layoutX="706.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
-      <Button fx:id="myExitButton" layoutX="972.0" mnemonicParsing="false" onAction="#initialize" styleClass="but" text="X" AnchorPane.bottomAnchor="726.0" AnchorPane.leftAnchor="972.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="openLogin" layoutX="853.0" mnemonicParsing="false" onAction="#openLogin" prefHeight="23.0" prefWidth="110.0" styleClass="but" text="OpenRoot" AnchorPane.bottomAnchor="726.0" AnchorPane.leftAnchor="853.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="button" layoutX="691.0" layoutY="2.0" mnemonicParsing="false" onAction="#loadSecond" text="start" />
+    
    </children>
    <stylesheets>
       <URL value="@application.css" />
