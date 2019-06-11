@@ -44,7 +44,7 @@ public class startViewControler implements Initializable {
 
 	    @FXML
 	    private void loadSecond(ActionEvent event) throws IOException {
-	        Parent root = FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
+	        Parent root = FXMLLoader.load(getClass().getResource("/initRootDesign/initC4HRootLayout.fxml"));
 	        Scene scene = button.getScene();
 	        root.translateYProperty().set(scene.getHeight());
 
