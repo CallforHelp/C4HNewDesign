@@ -27,19 +27,17 @@ import javafx.util.Duration;
 
 public class startViewControler implements Initializable {
 	
-	
 	@FXML
 	private ProgressIndicator indictor = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
 
-	    @FXML
-	    private Button button;
-	    @FXML
-	    private AnchorPane anchorRoot;
-	    @FXML
-	    private AnchorPane parentContainer;
-
+	@FXML
+	private Button button;
+	@FXML
+	private AnchorPane anchorRoot;
+	@FXML
+	private AnchorPane parentContainer;
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
 	    }
