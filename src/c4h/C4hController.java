@@ -138,15 +138,6 @@ public class C4hController {
 	}
 	 
 	 private void setIndikator2() throws IOException{
-		/* Runtime rt = Runtime.getRuntime();
-		 long usedKB = (rt.totalMemory() - rt.freeMemory()) / 1024;
-		 
-	    OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-		     Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
-			     ae ->  indictor2.setProgress(usedKB)));
-		timeline.setCycleCount(Animation.INDEFINITE);
-		timeline.play();*/
-		
 		Thread rammonitor = new Thread() { 
 			int RAM =100000	;
 			@Override 
