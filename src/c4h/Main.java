@@ -20,7 +20,7 @@ public class Main extends Application {
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.getIcons().add(new Image("/c4h/images/decline-button.png"));
 			try {
-				Parent page = FXMLLoader.load(getClass().getResource("StartView.fxml"));
+				Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
 				
 				//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {

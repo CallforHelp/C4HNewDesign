@@ -34,7 +34,7 @@ public class InitC4HRootLayoutContainer implements Initializable {
 
     @FXML
     private void loadRoot(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("StartView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/c4h/initRootDesign/initC4HRootLayout.fxml"));
         Scene scene = button.getScene();
         root.translateYProperty().set(scene.getHeight());
 
