@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.startViewControler">
+<AnchorPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="995.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.startViewControler">
    <children>
       <Pane layoutX="14.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="667.0" AnchorPane.topAnchor="396.0">
          <children>
@@ -37,7 +37,7 @@
       <Button layoutX="59.0" layoutY="143.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zeigen" />
       <Button layoutX="385.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zum chat" />
       <Button layoutX="706.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
-      <Button fx:id="button" layoutX="691.0" layoutY="2.0" mnemonicParsing="false" onAction="#loadSecond" text="start" />
+      <Button fx:id="button" layoutX="945.0" layoutY="2.0" mnemonicParsing="false" onAction="#loadSecond" text="start" />
     
    </children>
    <stylesheets>

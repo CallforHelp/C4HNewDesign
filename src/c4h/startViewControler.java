@@ -39,7 +39,7 @@ public class startViewControler implements Initializable {
 	    @FXML
 	    private AnchorPane anchorRoot;
 	    @FXML
-	    private StackPane parentContainer;
+	    private AnchorPane parentContainer;
 
 	    @Override
 	    public void initialize(URL url, ResourceBundle rb) {
@@ -47,7 +47,7 @@ public class startViewControler implements Initializable {
 
 	    @FXML
 	    private void loadSecond(ActionEvent event) throws IOException {
-	        Parent root = (AnchorPane)FXMLLoader.load(getClass().getResource("/C4HNewDesign/src/c4h/IntitialRoot2.fxml"));
+	        Parent root = FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
 	        Scene scene = button.getScene();
 	        root.translateYProperty().set(scene.getHeight());
 

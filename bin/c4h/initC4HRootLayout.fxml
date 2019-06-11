@@ -7,14 +7,16 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.C4hController">
+<AnchorPane fx:id="container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.InitC4HRootLayoutContainer">
    <children>
       <Pane layoutX="257.0" prefHeight="50.0" prefWidth="742.0" styleClass="ListView" AnchorPane.bottomAnchor="699.0" AnchorPane.leftAnchor="257.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="myExitButton" layoutX="695.0" layoutY="2.0" mnemonicParsing="false" onAction="#initialize" prefHeight="39.0" prefWidth="38.0" styleClass="sale" text="X" />
-            <Button fx:id="openLogin" layoutX="602.0" layoutY="4.0" mnemonicParsing="false" onAction="#openScene1" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="Scene 1" />
-            <Button fx:id="openStartScene" layoutX="505.0" layoutY="4.0" mnemonicParsing="false" onAction="#openSartView" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="startVew" />
          </children>
       </Pane>
       <ImageView fitHeight="191.0" fitWidth="222.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="15.0" />
@@ -23,9 +25,7 @@
             <VBox layoutX="78.0" layoutY="112.0" prefHeight="363.0" prefWidth="128.0">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="6.0" prefWidth="231.0" styleClass="sale" text="Arbeitsspeicher" textAlignment="CENTER" />
-                  <ProgressIndicator fx:id="indictor2" prefHeight="143.0" prefWidth="231.0" progress="0.0" styleClass="sale" />
                   <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="CPU" textAlignment="CENTER" />
-                  <ProgressIndicator fx:id="indictor" prefHeight="134.0" prefWidth="231.0" progress="0.0" styleClass="sale" />
                </children>
             </VBox>
          </children>

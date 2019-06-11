@@ -9,7 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -24,7 +23,7 @@ public class Main extends Application {
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.getIcons().add(new Image("/images/decline-button.png"));
 			try {
-				Parent page = (AnchorPane)FXMLLoader.load(getClass().getResource("StartView.fxml"));
+				Parent page = FXMLLoader.load(getClass().getResource("StartView.fxml"));
 				
 				//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
