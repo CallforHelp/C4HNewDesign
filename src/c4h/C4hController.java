@@ -6,6 +6,7 @@ import java.lang.management.ManagementFactory;
 import com.sun.management.OperatingSystemMXBean;
 
 import javafx.animation.Animation;
+import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.RotateTransition;
 import javafx.animation.Timeline;
@@ -23,11 +24,14 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.animation.KeyValue;
+import javafx.scene.Parent;
 
 @SuppressWarnings("restriction")
 public class C4hController {
@@ -41,6 +45,7 @@ public class C4hController {
 	@FXML
 	private Button openLogin;
 	@FXML
+	private Button openStartScene;
 	ListView<String> list = new ListView<String>();
 	@FXML
 	ObservableList<String> items =FXCollections.observableArrayList ("Single", "Double", "Suite", "Family App");
@@ -58,17 +63,19 @@ public class C4hController {
 	private WebEngine webEngine;
 	@FXML
 	WebView browser = new WebView(); 
+	@FXML
+	
 
 	//Constructor
 	
     public void initialize() throws IOException {
 
-    	RotateTransition rotation = new RotateTransition(Duration.seconds(0.5), myExitButton);
+    	/*RotateTransition rotation = new RotateTransition(Duration.seconds(0.1), myExitButton);
 		rotation.setCycleCount(Animation.INDEFINITE);
 		rotation.setByAngle(360);
 		
 		myExitButton.setOnMouseEntered(e -> rotation.play());
-		myExitButton.setOnMouseExited(e -> rotation.pause());
+		myExitButton.setOnMouseExited(e -> rotation.pause());*/
 		
 		myExitButton.setOnAction((event) -> {
 			System.out.println("Button Action\n");
@@ -79,6 +86,18 @@ public class C4hController {
 		setIndikator();
 		setIndikator2();
     }
+    @FXML
+	private void openSartView() throws IOException {
+		
+		stage = (Stage) openStartScene.getScene().getWindow();
+		AnchorPane root;
+	    root = (AnchorPane) FXMLLoader.load(getClass().getResource("StartView.fxml"));
+	    
+	    Scene scene = new Scene(root);
+	    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		stage.setScene(scene);	    
+	    System.out.println("Scene.fxml opened");
+	}
     
 	@FXML
 	private void openStage2() throws IOException {
@@ -94,7 +113,7 @@ public class C4hController {
 	
 	@FXML
 	private void openLogin() throws IOException{
-	        stage = (Stage) openLogin.getScene().getWindow();
+	       stage = (Stage) openLogin.getScene().getWindow();
 	        AnchorPane root;
 	        root = (AnchorPane) FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
 	        Scene scene = new Scene(root);

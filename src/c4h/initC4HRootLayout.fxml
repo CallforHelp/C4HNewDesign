@@ -14,6 +14,7 @@
          <children>
             <Button fx:id="myExitButton" layoutX="695.0" layoutY="2.0" mnemonicParsing="false" onAction="#initialize" prefHeight="39.0" prefWidth="38.0" styleClass="sale" text="X" />
             <Button fx:id="openLogin" layoutX="602.0" layoutY="4.0" mnemonicParsing="false" onAction="#openScene1" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="Scene 1" />
+            <Button fx:id="openStartScene" layoutX="505.0" layoutY="4.0" mnemonicParsing="false" onAction="#openSartView" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="startVew" />
          </children>
       </Pane>
       <ImageView fitHeight="191.0" fitWidth="222.0" layoutX="16.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="539.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="758.0" AnchorPane.topAnchor="15.0" />

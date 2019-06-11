@@ -5,6 +5,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -23,7 +24,7 @@ public class Main extends Application {
 			primaryStage.initStyle(StageStyle.UNDECORATED);
 			primaryStage.getIcons().add(new Image("/images/decline-button.png"));
 			try {
-				AnchorPane page = (AnchorPane)FXMLLoader.load(getClass().getResource("initC4HRootLayout.fxml"));
+				Parent page = (AnchorPane)FXMLLoader.load(getClass().getResource("StartView.fxml"));
 				
 				//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
