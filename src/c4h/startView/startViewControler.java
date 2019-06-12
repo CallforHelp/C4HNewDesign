@@ -42,6 +42,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonWeb;
 	@FXML
+	private Button buttonExit;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
@@ -133,7 +135,10 @@ public class startViewControler implements Initializable {
 	    timeline.play();	
 		
 	}
-	
+	@FXML
+	private void exit(ActionEvent event)throws IOException{
+		System.exit(0);
+	}
 	
 	@FXML
 	private void loadCpuUsage() throws IOException{
@@ -143,26 +148,42 @@ public class startViewControler implements Initializable {
 			     ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
+		System.out.println(bean.getSystemCpuLoad());
 	}
 
 	@FXML
 	private void loadRamUsage() throws IOException{
+		
+		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+		double usedKB= ((bean.getFreePhysicalMemorySize())/1e+10);
+		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
+			     ae ->  indictor2.setProgress(bean.getFreePhysicalMemorySize()/1e+10)));
+		timeline.setCycleCount(Animation.INDEFINITE);
+		timeline.play();
+		System.out.println(usedKB);
+		
+		
+		/*
 		Thread rammonitor = new Thread() { 
 		@Override 
 				
 		public void run() { 
-			/*
+			
 			Runtime rt = Runtime.getRuntime(); 
 			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
 			Double progress = (usedKB/100000);
 			System.out.println(progress);
 			indictor2.setProgress(progress);
-			*/
+			
 			OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 			
 			double usedKB= ((bean.getFreePhysicalMemorySize())/1e+10);
 			System.out.println(usedKB);
-			indictor2.setProgress(usedKB);
+			
+			Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
+				     ae ->  indictor2.setProgress(usedKB)));
+			timeline.setCycleCount(Animation.INDEFINITE);
+			timeline.play();
 		   	
 		    try {
 		    	Thread.sleep(500); 
@@ -172,6 +193,6 @@ public class startViewControler implements Initializable {
 		    run(); 
 		    } 
 		}; 
-			rammonitor.start(); 
+			rammonitor.start();*/ 
 		}
 }

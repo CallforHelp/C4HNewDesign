@@ -29,6 +29,7 @@ public class ChatControler  implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+    	System.out.println("ChatControler");
     }
 
     @FXML

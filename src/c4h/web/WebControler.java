@@ -32,6 +32,7 @@ public class WebControler  implements Initializable{
 	private WebEngine webkit;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		System.out.println("Hilfe");
 		loadBrowser();
 	}
 	@FXML
@@ -56,11 +57,10 @@ public class WebControler  implements Initializable{
     }
 	@FXML
 	private void loadBrowser() {
-		System.out.println("browserstart");
+	
 		
          webkit = browser.getEngine();
          webkit.load("https://fehlermeldung.3s-hamburg.de/hilfe/");
-         browser.setFontScale(1);
          
     }
      

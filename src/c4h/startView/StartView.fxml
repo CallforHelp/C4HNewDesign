@@ -48,7 +48,8 @@
       <Separator layoutX="332.0" layoutY="32.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
       <Separator layoutX="660.0" layoutY="33.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
       <Separator layoutX="332.0" layoutY="405.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
-      <Separator layoutX="659.0" layoutY="406.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />  
+      <Separator layoutX="659.0" layoutY="406.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
+      <Button fx:id="buttonExit" layoutX="971.0" mnemonicParsing="false" onAction="#exit" styleClass="but" text="X" />  
    </children>
    <stylesheets>
       <URL value="@../css_Design/ButtonRounded.css" />
