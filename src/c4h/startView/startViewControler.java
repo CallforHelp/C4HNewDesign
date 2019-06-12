@@ -92,6 +92,25 @@ public class startViewControler implements Initializable {
 	    }
 	    
 	@FXML
+	private void loadChat(ActionEvent event)throws IOException{
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/chat/ChatDesign.fxml"));
+	    Scene scene = buttonBrowser.getScene();
+	    
+	    root.translateYProperty().set(scene.getWidth());
+
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);
+	    timeline.getKeyFrames().add(kf);
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(anchorRoot);
+	    });
+	    timeline.play();
+		
+	}
+	@FXML
 	private void loadCpuUsage() throws IOException{
 		
 		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
