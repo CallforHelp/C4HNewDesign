@@ -59,7 +59,7 @@ public class WebControler  implements Initializable{
 		System.out.println("browserstart");
 		
          webkit = browser.getEngine();
-         webkit.load("https://fehlermeldung.3s-hamburg.de");
+         webkit.load("https://fehlermeldung.3s-hamburg.de/hilfe/");
          browser.setFontScale(1);
          
     }
