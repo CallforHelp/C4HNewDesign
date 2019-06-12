@@ -24,8 +24,11 @@ public class BrowserControler implements Initializable{
 
     @FXML
     private Button button;
+    @FXML
     private AnchorPane Container;
-	private WebView browser;
+	@FXML
+    private WebView browser;
+	@FXML
 	private WebEngine webkit;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
