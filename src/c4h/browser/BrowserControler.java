@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 public class BrowserControler implements Initializable{
@@ -23,9 +25,11 @@ public class BrowserControler implements Initializable{
     @FXML
     private Button button;
     private AnchorPane Container;
+	private WebView browser;
+	private WebEngine webkit;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		
+		loadBrowser();
 	}
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
@@ -47,5 +51,12 @@ public class BrowserControler implements Initializable{
         });
         timeline.play();
     }
+	@FXML
+	private void loadBrowser() {
+		 browser = new WebView();
+         webkit = browser.getEngine();
+         webkit.load("http://www.google.de");
+         browser.setFontScale(1);
+	}
 
 }
