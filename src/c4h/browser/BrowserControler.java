@@ -1,4 +1,4 @@
-package c4h.initRootDesign;
+package c4h.browser;
 
 import java.io.IOException;
 import java.net.URL;
@@ -18,21 +18,16 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
-
-public class InitC4HRootLayoutContainer implements Initializable {
+public class BrowserControler implements Initializable{
 
     @FXML
     private Button button;
-    @FXML
-    private AnchorPane anchorRoot;
-    @FXML
     private AnchorPane Container;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    }
-
-    @FXML
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+	}
+	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
         Scene scene = button.getScene();

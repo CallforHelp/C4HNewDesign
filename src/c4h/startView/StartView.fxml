@@ -13,7 +13,7 @@
    <children>
       <Pane layoutX="14.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="667.0" AnchorPane.topAnchor="396.0">
          <children>
-            <Button layoutX="42.0" layoutY="68.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="zum Borwser" />
+            <Button fx:id="button" layoutX="42.0" layoutY="68.0" mnemonicParsing="false" onAction="#loadSecond" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="zum Borwser" />
          </children></Pane>
       <Pane layoutX="341.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="396.0" />
       <Pane layoutX="669.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="669.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="396.0" />
@@ -27,16 +27,15 @@
       <Separator layoutX="184.0" layoutY="547.0" prefHeight="4.0" prefWidth="303.0" rotate="90.0" AnchorPane.bottomAnchor="195.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="547.0" />
       <Separator layoutX="512.0" layoutY="545.0" prefHeight="4.0" prefWidth="303.0" rotate="90.0" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="512.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="545.0" />
       <Label alignment="CENTER" layoutX="382.0" layoutY="69.0" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="CPU" textAlignment="CENTER" />
-      <ProgressIndicator fx:id="indictor2" layoutX="711.0" layoutY="143.0" onDragDetected="#loadRamUsage" prefHeight="207.0" prefWidth="222.0" progress="0.0" styleClass="sale" />
-      <ProgressIndicator fx:id="indictor" layoutX="387.0" layoutY="143.0" onDragDetected="#loadCpuUsage" prefHeight="207.0" prefWidth="222.0" progress="0.0" styleClass="sale" />
+      <ProgressIndicator fx:id="indictor2" layoutX="711.0" layoutY="143.0" prefHeight="207.0" prefWidth="222.0" progress="0.0" rotate="-0.0" styleClass="sale" />
+      <ProgressIndicator fx:id="indictor" layoutX="387.0" layoutY="143.0" prefHeight="207.0" prefWidth="222.0" progress="0.0" styleClass="sale" />
       <Label alignment="CENTER" layoutX="59.0" layoutY="69.0" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="PC Information" textAlignment="CENTER" />
-      <Label alignment="CENTER" layoutX="59.0" layoutY="405.0" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="Fehler Melden " textAlignment="CENTER" />
+      <Label alignment="CENTER" layoutX="59.0" layoutY="405.0" prefHeight="43.0" prefWidth="231.0" styleClass="but" stylesheets="@../css_Design/ButtonRounded.css" text="Fehler Melden " textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="382.0" layoutY="405.0" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="Chat" textAlignment="CENTER" />
       <Label alignment="CENTER" layoutX="707.0" layoutY="405.0" prefHeight="43.0" prefWidth="231.0" styleClass="sale" text="Kontakt" textAlignment="CENTER" />
       <Button layoutX="59.0" layoutY="143.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zeigen" />
       <Button layoutX="385.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zum chat" />
       <Button layoutX="706.0" layoutY="470.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
-      <Button fx:id="button" layoutX="699.0" layoutY="2.0" mnemonicParsing="false" onAction="#loadSecond" prefHeight="23.0" prefWidth="284.0" styleClass="but" text="start" />
       <Separator layoutX="494.0" layoutY="196.0" prefHeight="5.0" prefWidth="336.0" rotate="90.0" AnchorPane.bottomAnchor="547.0" AnchorPane.leftAnchor="494.0" AnchorPane.rightAnchor="164.0" AnchorPane.topAnchor="196.0" />  
    </children>
    <stylesheets>

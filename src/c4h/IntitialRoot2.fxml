@@ -34,7 +34,7 @@
       <Button fx:id="openLogin" layoutX="913.0" layoutY="700.0" mnemonicParsing="false" onAction="#openScene1" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="InitRoot" />
    </children>
    <stylesheets>
-      <URL value="@application.css" />
-      <URL value="@ButtonRounded.css" />
+      <URL value="@../css_Design/application.css" />
+      <URL value="@../css_Design/ButtonRounded.css" />
    </stylesheets>
 </AnchorPane>

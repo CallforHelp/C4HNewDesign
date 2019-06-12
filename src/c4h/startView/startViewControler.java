@@ -40,23 +40,30 @@ public class startViewControler implements Initializable {
 	private AnchorPane parentContainer;
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		try {
+			loadRamUsage();
+			loadCpuUsage();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@FXML
 	private void loadSecond(ActionEvent event) throws IOException {
+		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/initRootDesign/initC4HRootLayout.fxml"));
 	    Scene scene = button.getScene();
-	    root.translateYProperty().set(scene.getHeight());
+	    
+	    root.translateYProperty().set(scene.getWidth());
 
 	    parentContainer.getChildren().add(root);
 
 	    Timeline timeline = new Timeline();
 	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);
 	    timeline.getKeyFrames().add(kf);
 	    timeline.setOnFinished(t -> {
 	    	parentContainer.getChildren().remove(anchorRoot);
-	        parentContainer.getChildren().remove(parentContainer);
 	    });
 	    timeline.play();
 	    }
@@ -82,8 +89,6 @@ public class startViewControler implements Initializable {
 			Runtime rt = Runtime.getRuntime(); 
 			
 			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024); 
-		   	System.out.println("Ram usage: " + usedKB/RAM); 
-		   	
 		   	indictor2.setProgress(usedKB/RAM);
 		    try {
 		    	Thread.sleep(500); 
