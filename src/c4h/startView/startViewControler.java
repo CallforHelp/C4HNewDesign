@@ -33,7 +33,9 @@ public class startViewControler implements Initializable {
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
 
 	@FXML
-	private Button button;
+	private Button buttonBrowser;
+	@FXML
+	private Button buttonPcInfo;
 	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
@@ -49,10 +51,30 @@ public class startViewControler implements Initializable {
 	}
 
 	@FXML
-	private void loadSecond(ActionEvent event) throws IOException {
+	private void pcInformation(ActionEvent event) throws IOException {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/initRootDesign/initC4HRootLayout.fxml"));
-	    Scene scene = button.getScene();
+	    Scene scene = buttonPcInfo.getScene();
+	    
+	    root.translateYProperty().set(scene.getWidth());
+
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);
+	    timeline.getKeyFrames().add(kf);
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(anchorRoot);
+	    });
+	    timeline.play();
+	    }
+	
+	@FXML
+	private void loadBrowser(ActionEvent event) throws IOException {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/browser/Browser.fxml"));
+	    Scene scene = buttonBrowser.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -72,7 +94,7 @@ public class startViewControler implements Initializable {
 	private void loadCpuUsage() throws IOException{
 		
 		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2500),
+		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
 			     ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
@@ -88,7 +110,10 @@ public class startViewControler implements Initializable {
 		public void run() { 
 			Runtime rt = Runtime.getRuntime(); 
 			
-			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024); 
+			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
+			if(usedKB==1024)
+				usedKB=0.0;
+				
 		   	indictor2.setProgress(usedKB/RAM);
 		    try {
 		    	Thread.sleep(500); 

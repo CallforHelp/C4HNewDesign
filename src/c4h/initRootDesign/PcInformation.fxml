@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.initRootDesign.InitC4HRootLayoutContainer">
+<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.initRootDesign.PcInformationControler">
    <children>
       <Button fx:id="button" layoutX="472.0" layoutY="360.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="Button">
          <stylesheets>

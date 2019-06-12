@@ -19,7 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
 
-public class InitC4HRootLayoutContainer implements Initializable {
+public class PcInformationControler implements Initializable {
 
     @FXML
     private Button button;

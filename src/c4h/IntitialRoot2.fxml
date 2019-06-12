@@ -18,7 +18,7 @@
       <Button layoutX="57.0" layoutY="185.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="224.0" styleClass="but" text="but" />
       <Button layoutX="57.0" layoutY="255.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="glass" text="glass" />
       <Button layoutX="61.0" layoutY="324.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="yellow" text="yellow" />
-      <Button layoutX="73.0" layoutY="424.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="rnd" text="md" />
+      <Button layoutX="73.0" layoutY="424.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="green" stylesheets="@css_Design/ButtonRounded.css" text="md" />
       <Button layoutX="73.0" layoutY="524.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="windows" text="windows" />
       <Button layoutX="85.0" layoutY="598.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="lion" text="Lion" />
       <Button layoutX="317.0" layoutY="119.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="bevel" text="bevel" />
@@ -32,9 +32,18 @@
       <Button layoutX="661.0" layoutY="208.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="shiny" text="shiny" />
       <Button layoutX="668.0" layoutY="306.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="ipad" text="shiny" />
       <Button fx:id="openLogin" layoutX="913.0" layoutY="700.0" mnemonicParsing="false" onAction="#openScene1" prefHeight="39.0" prefWidth="81.0" styleClass="sale" text="InitRoot" />
+      
+      <Button layoutX="793.0" layoutY="468.0" mnemonicParsing="false" prefHeight="187.0" prefWidth="144.0" styleClass="Image" text="Image" />
+      <ImageView fitHeight="159.0" fitWidth="126.0" layoutX="803.0" layoutY="484.0" styleClass="Image">
+        <image>
+    	  <Image url="/c4h/images/decline-button.png" />
+ 	    </image>
+	 </ImageView> 
+      
+   
    </children>
    <stylesheets>
-      <URL value="@../css_Design/application.css" />
-      <URL value="@../css_Design/ButtonRounded.css" />
+      <URL value="@css_Design/application.css" />
+      <URL value="@css_Design/ButtonRounded.css" />
    </stylesheets>
 </AnchorPane>

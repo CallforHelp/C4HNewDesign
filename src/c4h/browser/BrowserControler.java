@@ -27,7 +27,7 @@ public class BrowserControler implements Initializable{
     @FXML
     private AnchorPane Container;
 	@FXML
-    private WebView browser;
+    private WebView  browser = new WebView();
 	@FXML
 	private WebEngine webkit;
 	@Override
@@ -56,10 +56,14 @@ public class BrowserControler implements Initializable{
     }
 	@FXML
 	private void loadBrowser() {
-		 browser = new WebView();
+		System.out.println("browserstart");
+		
          webkit = browser.getEngine();
-         webkit.load("http://www.google.de");
+         webkit.load("https://fehlermeldung.3s-hamburg.de");
          browser.setFontScale(1);
-	}
+         
+    }
+     
+	
 
 }
