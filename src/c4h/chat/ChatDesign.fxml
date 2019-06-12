@@ -20,10 +20,10 @@
             <URL value="@../css_Design/ButtonRounded.css" />
             <URL value="@../css_Design/application.css" />
          </stylesheets></Button>
-      <SplitPane dividerPositions="0.498" layoutX="6.0" layoutY="44.0" prefHeight="696.0" prefWidth="979.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0">
+      <SplitPane dividerPositions="0.8958630527817404" layoutX="14.0" layoutY="37.0" orientation="VERTICAL" prefHeight="698.0" prefWidth="973.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="but" />
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="694.0" prefWidth="466.0" styleClass="green" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="green" />
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="245.0" prefWidth="981.0" styleClass="windows" />
         </items>
       </SplitPane>
    </children>
