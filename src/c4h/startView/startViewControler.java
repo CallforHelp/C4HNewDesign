@@ -38,6 +38,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
+	private Button buttonChat;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
@@ -94,7 +96,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private void loadChat(ActionEvent event)throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/chat/ChatDesign.fxml"));
-	    Scene scene = buttonBrowser.getScene();
+	    Scene scene = buttonChat.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
