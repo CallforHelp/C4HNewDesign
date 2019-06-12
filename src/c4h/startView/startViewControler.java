@@ -6,6 +6,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.sun.management.OperatingSystemMXBean;
+                          
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -102,19 +103,23 @@ public class startViewControler implements Initializable {
 		 
 	@FXML
 	private void loadRamUsage() throws IOException{
-		
 		Thread rammonitor = new Thread() { 
-		int RAM =100000	;
 		@Override 
 				
 		public void run() { 
+			/*
 			Runtime rt = Runtime.getRuntime(); 
-			
 			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
-			if(usedKB==1024)
-				usedKB=0.0;
-				
-		   	indictor2.setProgress(usedKB/RAM);
+			Double progress = (usedKB/100000);
+			System.out.println(progress);
+			indictor2.setProgress(progress);
+			*/
+			OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+			
+			double usedKB= ((bean.getFreePhysicalMemorySize())/1e+10);
+			System.out.println(usedKB);
+			indictor2.setProgress(usedKB);
+		   	
 		    try {
 		    	Thread.sleep(500); 
 		    }catch (InterruptedException e) { 
@@ -125,4 +130,4 @@ public class startViewControler implements Initializable {
 		}; 
 			rammonitor.start(); 
 		}
-	}
+}
