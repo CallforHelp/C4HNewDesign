@@ -23,7 +23,7 @@
          </children></Pane>
       <Pane layoutX="669.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="669.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="396.0">
          <children>
-            <Button layoutX="41.0" layoutY="73.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
+            <Button fx:id="buttonWeb" layoutX="41.0" layoutY="73.0" mnemonicParsing="false" onAction="#loadwebView" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
             <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" text="Kontakt" textAlignment="CENTER" />
          </children></Pane>
       <Pane layoutX="669.0" layoutY="29.0" prefHeight="341.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="377.0" AnchorPane.leftAnchor="669.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="29.0">
