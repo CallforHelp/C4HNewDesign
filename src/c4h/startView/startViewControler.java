@@ -44,6 +44,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonExit;
 	@FXML
+	private Button buttonHilfe;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
