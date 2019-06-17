@@ -6,7 +6,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.sun.management.OperatingSystemMXBean;
-                          
 
 import javafx.animation.Animation;
 import javafx.animation.Interpolator;
@@ -32,7 +31,8 @@ public class startViewControler implements Initializable {
 	private ProgressIndicator indictor = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
-
+	@FXML
+	private ProgressIndicator indictor3 = new ProgressIndicator(0);
 	@FXML
 	private Button buttonBrowser;
 	@FXML
@@ -52,10 +52,13 @@ public class startViewControler implements Initializable {
 		try {
 			loadRamUsage();
 			loadCpuUsage();
+			loadNetzwekUsage();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
+
+	
 
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
@@ -195,4 +198,16 @@ public class startViewControler implements Initializable {
 		}; 
 			rammonitor.start();*/ 
 		}
+	private void loadNetzwekUsage() throws IOException{
+		
+		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+		double NetweorkUsed= bean.getProcessCpuLoad();
+		
+		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
+			     ae ->  indictor3.setProgress(NetweorkUsed)));
+		timeline.setCycleCount(Animation.INDEFINITE);
+		timeline.play();
+		System.out.println(NetweorkUsed);
+		
+	}
 }
