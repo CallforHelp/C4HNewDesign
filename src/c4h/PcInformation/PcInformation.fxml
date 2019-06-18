@@ -118,7 +118,19 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text fx:id="hostName" layoutX="250.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.673828125" />
+            <Text fx:id="hostName" layoutX="250.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
    </children>
