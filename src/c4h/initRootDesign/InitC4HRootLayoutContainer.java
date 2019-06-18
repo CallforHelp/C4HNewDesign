@@ -1,9 +1,8 @@
-package c4h.web;
+package c4h.initRootDesign;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -16,30 +15,28 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
+import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
-public class WebControler  implements Initializable{
+
+public class InitC4HRootLayoutContainer implements Initializable {
 
     @FXML
     private Button button;
     @FXML
+    private AnchorPane anchorRoot;
+    @FXML
     private AnchorPane Container;
-	@FXML
-    private WebView  browser = new WebView();
-	@FXML
-	private WebEngine webkit;
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("Hilfe");
-		loadBrowser();
-	}
-	@FXML
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+    }
+
+    @FXML
     private void loadRoot(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/c4h/initRootDesign/initC4HRootLayout.fxml"));
         Scene scene = button.getScene();
-        root.translateYProperty().set(scene.getWidth());
+        root.translateYProperty().set(scene.getHeight());
 
         AnchorPane parentContainer = (AnchorPane) button.getScene().getRoot();
 
@@ -52,17 +49,10 @@ public class WebControler  implements Initializable{
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
             parentContainer.getChildren().remove(Container);
+            parentContainer.getChildren().remove(anchorRoot);
+            parentContainer.getChildren().remove(root);
         });
         timeline.play();
     }
-	@FXML
-	private void loadBrowser() {
-	
-         webkit = browser.getEngine();
-         webkit.load("https://fehlermeldung.3s-hamburg.de/hilfe/");
-         
-    }
-     
-	
 
 }

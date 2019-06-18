@@ -46,10 +46,15 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonHilfe;
 	@FXML
+	private Button buttonWebSeite;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
 	@Override
+	
+	
+	
 	public void initialize(URL url, ResourceBundle rb) {
 		try {
 			loadRamUsage();
@@ -59,9 +64,27 @@ public class startViewControler implements Initializable {
 			e.printStackTrace();
 		}
 	}
+    
 
-	
+	@FXML
+	private void LoadWebSeite(ActionEvent event) throws IOException{
+		System.out.println("Webseite von 3s : https://www.3s-hamburg.de");
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/"));
+	    Scene scene = buttonWeb.getScene();
+	    
+	    root.translateYProperty().set(scene.getWidth());
 
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    timeline.getKeyFrames().add(kf);
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(anchorRoot);
+	    });
+	    timeline.play();
+	}
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
 		
@@ -212,4 +235,5 @@ public class startViewControler implements Initializable {
 		System.out.println(NetweorkUsed);
 		
 	}
+
 }

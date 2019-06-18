@@ -1,4 +1,4 @@
-package c4h.web;
+package c4h.webPageVon3S;
 
 import java.io.IOException;
 import java.net.URL;
@@ -20,7 +20,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
-public class WebControler  implements Initializable{
+public class WebPageControler  implements Initializable{
 
     @FXML
     private Button button;

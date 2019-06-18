@@ -35,6 +35,7 @@ public class BrowserControler implements Initializable{
 		System.out.println("FehlerMeldung");
 		loadBrowser();
 	}
+	
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
