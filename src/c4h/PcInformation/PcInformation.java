@@ -560,7 +560,15 @@ public class PcInformation {
 		}
 		return true;
 	}
-	
-
+	public void getPcInfo() throws Throwable{
+		ArrayList<String> listPcInfo = new ArrayList<>();
+		listPcInfo.add(getLocalHost());
+		getUserName();
+		getSchulNummer();
+		getOSversion();
+		getOSArchitecture();
+		getMusterImages();
+		getRechnertypen();
+	}
 		
 }

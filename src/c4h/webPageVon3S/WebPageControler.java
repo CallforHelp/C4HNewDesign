@@ -32,7 +32,7 @@ public class WebPageControler  implements Initializable{
 	private WebEngine webkit;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("Hilfe");
+		System.out.println("WebPage3S");
 		loadBrowser();
 	}
 	@FXML
