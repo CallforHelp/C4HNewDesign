@@ -59,7 +59,7 @@ public class WebPageControler  implements Initializable{
 	private void loadBrowser() {
 	
          webkit = browser.getEngine();
-         webkit.load("https://fehlermeldung.3s-hamburg.de/hilfe/");
+         webkit.load("https://www.3s-hamburg.de");
          
     }
      
