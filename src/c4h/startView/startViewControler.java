@@ -70,7 +70,7 @@ public class startViewControler implements Initializable {
 	private void LoadWebSeite(ActionEvent event) throws IOException{
 		System.out.println("Webseite von 3s : https://www.3s-hamburg.de");
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/webPageVon3S/WebPagePanelDesign.fxml"));
-	    Scene scene = buttonWeb.getScene();
+	    Scene scene = buttonWebSeite.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
