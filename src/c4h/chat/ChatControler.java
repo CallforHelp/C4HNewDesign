@@ -16,6 +16,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
 public class ChatControler  implements Initializable {
@@ -23,14 +25,16 @@ public class ChatControler  implements Initializable {
     @FXML
     private Button button;
     @FXML
-    private AnchorPane anchorRoot;
-    @FXML
     private AnchorPane Container;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    	System.out.println("ChatControler");
-    }
+	@FXML
+    private WebView  browser = new WebView();
+	@FXML
+	private WebEngine webkit;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		System.out.println("CHAT");
+		loadBrowser();
+	}
 
     @FXML
     private void loadRoot(ActionEvent event) throws IOException {
@@ -51,6 +55,16 @@ public class ChatControler  implements Initializable {
             parentContainer.getChildren().remove(Container);
         });
         timeline.play();
+    }
+
+	@FXML
+	private void loadBrowser() {
+
+		
+         webkit = browser.getEngine();
+         webkit.load("https://fehlermeldung.3s-hamburg.de/chat");
+         browser.setFontScale(1);
+         
     }
 
 }

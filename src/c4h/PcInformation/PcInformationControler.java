@@ -37,8 +37,37 @@ public class PcInformationControler implements Initializable {
     private Pane PaneNetzwerk = new Pane();
     @FXML
     private Pane PanePcInformation = new Pane();
+    
+    //PC Info
     @FXML
     private Text hostName = new Text();
+    @FXML
+    private Text UserName = new Text();
+    @FXML
+    private Text SchulNummer = new Text();
+    @FXML
+    private Text OSVersion = new Text();
+    @FXML
+    private Text OsArchitekture = new Text();
+    @FXML
+    private Text MusterImage = new Text();
+    
+    //NetzwerkInfo
+    @FXML
+    private Text iPAdresse = new Text();
+    @FXML
+    private Text subnetzmaske = new Text();
+    @FXML
+    private Text macAdresse = new Text();
+    @FXML
+    private Text domain = new Text();
+    @FXML
+    private Text gateway= new Text();
+    @FXML
+    private Text dhcp = new Text();
+    @FXML
+    private Text dns = new Text();
+    
     
     PcInformation info = new PcInformation();
 
@@ -79,12 +108,37 @@ public class PcInformationControler implements Initializable {
     	
     	PaneNetzwerk.setVisible(true);
     	hostName.setText(info.getLocalHost());
+    	UserName.setText(info.getUserName());
+    	try {
+			SchulNummer.setText(info.getSchulNummer());
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	OsArchitekture.setText(info.getOSArchitecture());
+    	OSVersion.setText(info.getOSversion());
+    	try {
+			MusterImage.setText(info.getMusterImages());
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     }
     @FXML
     private void loadNetzwerkInformation(ActionEvent event) throws IOException {
+    	
     	System.out.println("Load NetzwerkInformation");
  
     	PaneNetzwerk.setVisible(false);
+    	iPAdresse.setText(info.getLocalAdresse());
+    	subnetzmaske.setText(info.getSubnetMask());
+    	macAdresse.setText(info.getMacAddress());
+    	domain.setText(info.getMachindomain());
+    	gateway.setText(info.getDefaultgateway());
+    	dhcp.setText(info.getDHCPServer());
+    	dns.setText(info.getDNSServer());
+    	
     	
     }
 

@@ -24,23 +24,199 @@
          </stylesheets></Button>
       <Pane layoutX="7.0" layoutY="32.0" prefHeight="708.0" prefWidth="333.0" styleClass="but" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="6.0" AnchorPane.topAnchor="31.0">
          <children>
-            <Button fx:id="buttonPcInfo" layoutX="54.0" layoutY="190.0" mnemonicParsing="false" onAction="#loadPcInformation" prefHeight="71.0" prefWidth="183.0" text="Pc Information " />
-            <Button fx:id="buttonNetzwerkInfo" layoutX="54.0" layoutY="372.0" mnemonicParsing="false" onAction="#loadNetzwerkInformation" prefHeight="71.0" prefWidth="183.0" text="Netzwerkinformation" />
+            <Button fx:id="buttonPcInfo" layoutX="54.0" layoutY="190.0" mnemonicParsing="false" onAction="#loadPcInformation" prefHeight="71.0" prefWidth="183.0" text="Pc Information ">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#4e9e1c" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
+            <Button fx:id="buttonNetzwerkInfo" layoutX="54.0" layoutY="372.0" mnemonicParsing="false" onAction="#loadNetzwerkInformation" prefHeight="71.0" prefWidth="183.0" text="Netzwerkinformation">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#61bc01" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
          </children>
       </Pane>
       <Pane fx:id="PanePcInformation" layoutX="341.0" layoutY="31.0" prefHeight="708.0" prefWidth="639.0" styleClass="dark" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="31.0">
          <children>
-            <TextField alignment="CENTER" layoutX="41.0" layoutY="47.0" prefHeight="62.0" prefWidth="212.0" text="NetzwerkInformation" />
+            <Text fill="#c3cf17" layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Netzwerk Information" wrappingWidth="465.673828125">
+               <font>
+                  <Font name="Arial" size="48.0" />
+               </font>
+            </Text>
+            <Text fx:id="dns" layoutX="289.0" layoutY="445.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="DNS">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="dhcp" layoutX="289.0" layoutY="385.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="DHCP">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="subnetzmaske" layoutX="289.0" layoutY="205.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="subnetzmaske">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="macAdresse" layoutX="289.0" layoutY="265.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="MacAdresse">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="gateway" layoutX="289.0" layoutY="325.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="GateWay">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="iPAdresse" layoutX="289.0" layoutY="145.0" onDragDetected="#loadNetzwerkInformation" strokeType="OUTSIDE" strokeWidth="0.0" text="Ip-Adresse">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNS-Server">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DHCP-Server">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GateWay">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MACAdresse">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subnetzmaske">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text layoutX="82.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IP-Adresse">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
       <Pane fx:id="PaneNetzwerk" prefHeight="708.0" prefWidth="639.0" styleClass="dark" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="31.0">
          <children>
-            <Text fill="#c3cf17" layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PC" wrappingWidth="104.673828125">
+            <Text fill="#c3cf17" layoutX="14.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PC Information" wrappingWidth="465.673828125">
                <font>
-                  <Font name="Arial" size="64.0" />
+                  <Font name="Arial" size="48.0" />
                </font>
             </Text>
-            <Text layoutX="82.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname">
+            <Text layoutX="82.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname  ">
                <font>
                   <Font size="24.0" />
                </font>
@@ -79,7 +255,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="82.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS-Version">
+            <Text layoutX="82.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS-Version">
                <fill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -92,7 +268,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="82.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS-Architektur">
+            <Text layoutX="82.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS-Architektur">
                <fill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -105,7 +281,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text layoutX="82.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MusterImage">
+            <Text layoutX="82.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MusterImage">
                <fill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>
@@ -118,7 +294,72 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Text fx:id="hostName" layoutX="250.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0">
+            <Text fx:id="hostName" layoutX="289.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hostname">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="OSVersion" layoutX="289.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Os-Version">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="SchulNummer" layoutX="289.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SchulNummer">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="UserName" layoutX="289.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UserName">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="OsArchitekture" layoutX="289.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OS Architekture">
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#aba330" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="MusterImage" layoutX="289.0" layoutY="445.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Muster Image">
                <fill>
                   <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
                      <stops>

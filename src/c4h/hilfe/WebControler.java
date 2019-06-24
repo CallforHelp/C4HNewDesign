@@ -1,4 +1,4 @@
-package c4h.web;
+package c4h.hilfe;
 
 import java.io.IOException;
 import java.net.URL;
