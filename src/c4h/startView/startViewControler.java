@@ -147,7 +147,7 @@ public class startViewControler implements Initializable {
 	}
 	@FXML
 	private void loadwebView(ActionEvent event)throws IOException{
-		Parent root = FXMLLoader.load(getClass().getResource("/c4h/web/WebDesign.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/hilfe/WebDesign.fxml"));
 	    Scene scene = buttonWeb.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
