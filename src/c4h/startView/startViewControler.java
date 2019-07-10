@@ -28,28 +28,13 @@ import javafx.util.Duration;
 public class startViewControler implements Initializable {
 	
 	@FXML
-	private ProgressIndicator indictor = new ProgressIndicator(0);
+	private ProgressIndicator cpuIindictor = new ProgressIndicator(0);
 	@FXML
-	private ProgressIndicator indictor2 = new ProgressIndicator(0);
+	private ProgressIndicator ramIndiktor = new ProgressIndicator(0);
 	@FXML
-	private ProgressIndicator indictor3 = new ProgressIndicator(0);
+	private ProgressIndicator netzIndiktor = new ProgressIndicator(0);
 	@FXML
-	private Button buttonBrowser;
-	@FXML
-	private Button buttonPcInfo;
-	@FXML
-	private Button buttonChat;
-	@FXML
-	private Button buttonWeb;
-	@FXML
-	private Button buttonExit;
-	@FXML
-	private Button buttonHilfe;
-	@FXML
-	private Button buttonWebSeite;
-	@FXML
-	private Button faq;
-	@FXML
+	private Button ButtonStartView;
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
@@ -71,7 +56,7 @@ public class startViewControler implements Initializable {
 	private void Loadfaq(ActionEvent event) throws IOException{
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/faq/faqBrowser.fxml"));
-	    Scene scene = faq.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -91,7 +76,7 @@ public class startViewControler implements Initializable {
 		System.out.println("Webseite von 3s : https://www.3s-hamburg.de");
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/webPageVon3S/WebPagePanelDesign.fxml"));
-	    Scene scene = buttonWebSeite.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -110,7 +95,7 @@ public class startViewControler implements Initializable {
 	private void pcInformation(ActionEvent event) throws IOException {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
-	    Scene scene = buttonPcInfo.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -130,7 +115,7 @@ public class startViewControler implements Initializable {
 	private void loadBrowser(ActionEvent event) throws IOException {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/browser/Browser.fxml"));
-	    Scene scene = buttonBrowser.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -150,7 +135,7 @@ public class startViewControler implements Initializable {
 	private void loadChat(ActionEvent event)throws IOException{
 
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/chat/ChatDesign.fxml"));
-	    Scene scene = buttonChat.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -168,7 +153,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private void loadhilfe(ActionEvent event)throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/hilfe/WebDesign.fxml"));
-	    Scene scene = buttonWeb.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -187,7 +172,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private void loadDownloads(ActionEvent event)throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/downloads/WebDesign.fxml"));
-	    Scene scene = buttonWeb.getScene();
+	    Scene scene = ButtonStartView.getScene();
 	    
 	    root.translateYProperty().set(scene.getWidth());
 
@@ -213,7 +198,7 @@ public class startViewControler implements Initializable {
 		
 		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
+			     ae ->  cpuIindictor.setProgress(bean.getSystemCpuLoad())));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
 		System.out.println(bean.getSystemCpuLoad());
@@ -225,7 +210,7 @@ public class startViewControler implements Initializable {
 		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 		double usedKB= ((bean.getFreePhysicalMemorySize())/1e+10);
 		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor2.setProgress(bean.getFreePhysicalMemorySize()/1e+10)));
+			     ae ->  ramIndiktor.setProgress(bean.getFreePhysicalMemorySize()/1e+10)));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
 		System.out.println(usedKB);
@@ -269,7 +254,7 @@ public class startViewControler implements Initializable {
 		double NetweorkUsed= bean.getProcessCpuLoad();
 		
 		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor3.setProgress(NetweorkUsed)));
+			     ae ->  netzIndiktor.setProgress(NetweorkUsed)));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
 		System.out.println(NetweorkUsed);
