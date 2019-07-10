@@ -21,7 +21,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
-public class BrowserControler implements Initializable{
+public class faqBrowserControler implements Initializable{
 
     @FXML
     private Button button;
