@@ -1,9 +1,10 @@
-package c4h.initRootDesign;
+package c4h.faq;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import c4h.PcInformation.PcInformation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -16,27 +17,32 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
-
-public class InitC4HRootLayoutContainer implements Initializable {
+public class BrowserControler implements Initializable{
 
     @FXML
     private Button button;
     @FXML
-    private AnchorPane anchorRoot;
-    @FXML
     private AnchorPane Container;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    }
-
-    @FXML
+	@FXML
+    private WebView  browser = new WebView();
+	@FXML
+	private WebEngine webkit;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		System.out.println("FehlerMeldung");
+			loadBrowser();
+	
+	}
+	
+	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/c4h/initRootDesign/initC4HRootLayout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
         Scene scene = button.getScene();
-        root.translateYProperty().set(scene.getHeight());
+        root.translateYProperty().set(scene.getWidth());
 
         AnchorPane parentContainer = (AnchorPane) button.getScene().getRoot();
 
@@ -49,10 +55,27 @@ public class InitC4HRootLayoutContainer implements Initializable {
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
             parentContainer.getChildren().remove(Container);
-            parentContainer.getChildren().remove(anchorRoot);
-            parentContainer.getChildren().remove(root);
         });
         timeline.play();
     }
+	@FXML
+	private void loadBrowser() {
+
+		PcInformation bg = new PcInformation();
+		
+         webkit = browser.getEngine();
+         String URL = "https://fehlermeldung.3s-hamburg.de";
+		try {
+			webkit.load(URL+"?schulnummer="+bg.getSchulNummer()+"&pcname="+bg.getLocalHost()
+			+"&ipadress="+bg.getLocalAdresse()+"&MusterImage="+bg.getMusterImageAusRegistry().replaceAll(" ", ""));
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+         browser.setFontScale(1);
+         
+    }
+     
+	
 
 }

@@ -112,7 +112,7 @@ public class PcInformation {
 	 */
 	public String getSchulNummer() throws Throwable {
 		
-		return schulNummer;
+		return "5678";
 	}
 	
 	/**

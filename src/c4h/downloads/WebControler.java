@@ -2,16 +2,11 @@ package c4h.downloads;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 import java.util.ResourceBundle;
 
 import javafx.animation.Interpolator;
@@ -27,21 +22,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Dialog;
-import javafx.scene.control.DialogEvent;
-import javafx.scene.control.DialogPane;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.web.PopupFeatures;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.FileChooser;
-import javafx.stage.Window;
-import javafx.util.Callback;
 import javafx.util.Duration;
-
-
-
-import javax.swing.JOptionPane;
 
 public class WebControler  implements Initializable{
 
@@ -90,7 +75,9 @@ public class WebControler  implements Initializable{
 	@SuppressWarnings("unused")
 	@FXML
 	private void download() {
-		  browser.getEngine().locationProperty().addListener(new ChangeListener<String>() {
+		  
+		
+		browser.getEngine().locationProperty().addListener(new ChangeListener<String>() {
 
 			
 				int readBytes;
