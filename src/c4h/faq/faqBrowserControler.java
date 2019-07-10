@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import c4h.PcInformation.PcInformation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -33,7 +32,7 @@ public class faqBrowserControler implements Initializable{
 	private WebEngine webkit;
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		System.out.println("FehlerMeldung");
+		System.out.println("FAQ");
 			loadBrowser();
 	
 	}
@@ -61,13 +60,11 @@ public class faqBrowserControler implements Initializable{
 	@FXML
 	private void loadBrowser() {
 
-		PcInformation bg = new PcInformation();
 		
          webkit = browser.getEngine();
-         String URL = "https://fehlermeldung.3s-hamburg.de";
+         String URL = "https://fehlermeldung.3s-hamburg.de/faq/";
 		try {
-			webkit.load(URL+"?schulnummer="+bg.getSchulNummer()+"&pcname="+bg.getLocalHost()
-			+"&ipadress="+bg.getLocalAdresse()+"&MusterImage="+bg.getMusterImageAusRegistry().replaceAll(" ", ""));
+			webkit.load(URL);
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
