@@ -49,7 +49,7 @@
       <Button fx:id="buttonWeb" layoutX="711.0" layoutY="278.0" mnemonicParsing="false" onAction="#loadwebView" prefHeight="43.0" prefWidth="231.0" text="Hilfe" />
       <Button fx:id="buttonHilfe1" layoutX="711.0" layoutY="332.0" mnemonicParsing="false" onAction="#loadDownloads" prefHeight="43.0" prefWidth="231.0" text="downloads" />
       <Button fx:id="buttonChat" layoutX="711.0" layoutY="158.0" mnemonicParsing="false" onAction="#loadChat" prefHeight="43.0" prefWidth="231.0" text="Chat" />
-      <Button fx:id="buttonChat1" layoutX="711.0" layoutY="109.0" mnemonicParsing="false" onAction="#loadChat" prefHeight="43.0" prefWidth="231.0" text="FAQ" />
+      <Button fx:id="faq" layoutX="711.0" layoutY="109.0" mnemonicParsing="false" onAction="#Loadfaq" prefHeight="43.0" prefWidth="231.0" text="FAQ" />
       </children>
    <stylesheets>
       <URL value="@../css_Design/ButtonRounded.css" />

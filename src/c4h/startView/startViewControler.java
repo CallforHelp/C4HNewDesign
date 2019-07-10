@@ -48,6 +48,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonWebSeite;
 	@FXML
+	private Button faq;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
@@ -65,7 +67,25 @@ public class startViewControler implements Initializable {
 		}
 	}
     
+	@FXML
+	private void Loadfaq(ActionEvent event) throws IOException{
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/faq/faqBrowser.fxml"));
+	    Scene scene = faq.getScene();
+	    
+	    root.translateYProperty().set(scene.getWidth());
 
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    timeline.getKeyFrames().add(kf);
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(anchorRoot);
+	    });
+	    timeline.play();
+	}
 	@FXML
 	private void LoadWebSeite(ActionEvent event) throws IOException{
 		System.out.println("Webseite von 3s : https://www.3s-hamburg.de");
@@ -146,7 +166,7 @@ public class startViewControler implements Initializable {
 	    timeline.play();		
 	}
 	@FXML
-	private void loadwebView(ActionEvent event)throws IOException{
+	private void loadhilfe(ActionEvent event)throws IOException{
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/hilfe/WebDesign.fxml"));
 	    Scene scene = buttonWeb.getScene();
 	    
