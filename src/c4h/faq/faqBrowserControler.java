@@ -34,7 +34,6 @@ public class faqBrowserControler implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		System.out.println("FAQ");
 			loadBrowser();
-	
 	}
 	
 	@FXML
