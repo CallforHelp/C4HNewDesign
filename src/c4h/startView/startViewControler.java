@@ -35,6 +35,7 @@ public class startViewControler implements Initializable {
 	private ProgressIndicator netzIndiktor = new ProgressIndicator(0);
 	@FXML
 	private Button ButtonStartView;
+	@FXML
 	private AnchorPane anchorRoot;
 	@FXML
 	private AnchorPane parentContainer;
