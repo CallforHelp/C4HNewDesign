@@ -36,6 +36,7 @@
          <effect>
             <DropShadow blurType="TWO_PASS_BOX" />
          </effect></ImageView>
+      <Button fx:id="ButtonStartView" layoutX="364.0" layoutY="376.0" mnemonicParsing="false" onAction="#interessen" prefHeight="207.0" prefWidth="231.0" text="Hier kommt Was interessantes " />
       </children>
    <stylesheets>
       <URL value="@../css_Design/ButtonRounded.css" />
