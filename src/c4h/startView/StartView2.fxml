@@ -33,6 +33,7 @@
       <Button fx:id="buttonChat211" layoutX="682.0" layoutY="115.0" mnemonicParsing="false" onAction="#loadChat" prefHeight="129.0" prefWidth="120.0" text="Zum chat" />
       <Button fx:id="buttonChat1111" layoutX="682.0" layoutY="264.0" mnemonicParsing="false" onAction="#loadChat" prefHeight="129.0" prefWidth="120.0" text="FAQ" />
       <Button fx:id="buttonExit" layoutX="955.0" layoutY="1.0" mnemonicParsing="false" onAction="#exit" prefHeight="33.0" prefWidth="39.0" text="X" />
+      <Label alignment="CENTER" layoutX="559.0" layoutY="515.0" prefHeight="221.0" prefWidth="264.0" text="LOGO" textAlignment="CENTER" />
       </children>
    <stylesheets>
       <URL value="@../css_Design/ButtonRounded.css" />
