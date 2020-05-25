@@ -1,8 +1,19 @@
 package c4h.PcInformation;
 
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
+
+import javax.imageio.ImageIO;
 
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -81,7 +92,33 @@ public class PcInformationControler implements Initializable {
 			e.printStackTrace();
 		}
     }
-
+    @FXML
+    private void screenDump(ActionEvent event) throws IOException {
+    	System.out.println("Bildschirm Foto");
+    	try {
+			TimeUnit.MILLISECONDS.sleep(500);
+		} catch (InterruptedException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd hh mm ss a");
+		Calendar now = Calendar.getInstance();
+	    Robot robot = null;
+		try {
+				robot = new Robot();
+			} catch (AWTException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	        BufferedImage screenShot = robot.createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+	        try {
+				ImageIO.write(screenShot, "JPG", new File("d:\\"+formatter.format(now.getTime())+" screenshot"+".jpg"));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+	        System.out.println(formatter.format(now.getTime()));
+    }
     @FXML
     private void loadRoot(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));

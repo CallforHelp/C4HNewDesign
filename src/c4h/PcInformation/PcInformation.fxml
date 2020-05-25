@@ -17,7 +17,7 @@
 
 <AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" stylesheets="@../css_Design/ButtonRounded.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.PcInformation.PcInformationControler">
    <children>
-      <Button fx:id="button" layoutX="7.0" layoutY="6.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="StartView" AnchorPane.topAnchor="0.0">
+      <Button fx:id="button" layoutX="7.0" layoutY="3.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="StartView" AnchorPane.topAnchor="3.0">
          <stylesheets>
             <URL value="@../css_Design/ButtonRounded.css" />
             <URL value="@../css_Design/application.css" />
@@ -374,5 +374,11 @@
             </Text>
          </children>
       </Pane>
+      <Button fx:id="button" layoutX="143.0" layoutY="4.0" mnemonicParsing="false" onAction="#screenDump" styleClass="but" text="Bildschirm Foto">
+         <stylesheets>
+            <URL value="@../css_Design/ButtonRounded.css" />
+            <URL value="@../css_Design/application.css" />
+         </stylesheets>
+      </Button>
    </children>
 </AnchorPane>
