@@ -19,7 +19,7 @@
       <Button layoutX="57.0" layoutY="185.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="224.0" styleClass="but" text="but" />
       <Button layoutX="57.0" layoutY="255.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="glass" text="glass" />
       <Button layoutX="61.0" layoutY="324.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="yellow" text="yellow" />
-      <Button layoutX="73.0" layoutY="424.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="green" stylesheets="@css_Design/ButtonRounded.css" text="md" />
+      <Button layoutX="73.0" layoutY="424.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="green" stylesheets="ButtonRounded.css" text="md" />
       <Button layoutX="73.0" layoutY="524.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="windows" text="windows" />
       <Button layoutX="85.0" layoutY="598.0" mnemonicParsing="false" prefHeight="14.0" prefWidth="232.0" styleClass="lion" text="Lion" />
       <Button layoutX="317.0" layoutY="119.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="232.0" styleClass="bevel" text="bevel" />
@@ -43,8 +43,8 @@
       
    
    </children>
-   <stylesheets>
-      <URL value="css_Design/application.css" />
-      <URL value="css_Design/ButtonRounded.css" />
-   </stylesheets>
+<!--   <stylesheets>
+      <URL value="application.css" /> 
+      <URL value="ButtonRounded.css" />
+   </stylesheets>-->
 </AnchorPane>
