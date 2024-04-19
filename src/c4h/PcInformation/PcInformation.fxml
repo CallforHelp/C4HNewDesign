@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
 
-<?import java.net.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.PcInformation.PcInformationControler">
-   <children>
-      <Button fx:id="button" layoutX="472.0" layoutY="360.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="Button">
-         <stylesheets>
-            <URL value="@../css_Design/ButtonRounded.css" />
-            <URL value="@../css_Design/application.css" />
-         </stylesheets></Button>
-   </children>
+<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
+  <children>
+    <Button fx:id="button" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="Zurück">
+      <stylesheets>
+        <URL value="@../css_Design/ButtonRounded.css" />
+        <URL value="@../css_Design/application.css" />
+      </stylesheets>
+    </Button>
+    <Pane prefHeight="701.0" prefWidth="995.0" styleClass="windows" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+  </children>
 </AnchorPane>
