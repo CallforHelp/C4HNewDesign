@@ -14,7 +14,7 @@
       <Pane layoutX="14.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="667.0" AnchorPane.topAnchor="396.0">
          <children>
             <Button fx:id="buttonBrowser" layoutX="41.0" layoutY="80.0" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="zum Borwser" />
-            <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" stylesheets="@../css_Design/ButtonRounded.css" text="Fehler Melden " textAlignment="CENTER" />
+            <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" stylesheets="@../ButtonRounded.css" text="Fehler Melden " textAlignment="CENTER" />
          </children></Pane>
       <Pane layoutX="341.0" layoutY="396.0" prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="396.0">
          <children>
@@ -51,7 +51,7 @@
       <Separator layoutX="659.0" layoutY="406.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />  
    </children>
    <stylesheets>
-      <URL value="@../css_Design/ButtonRounded.css" />
-      <URL value="@../css_Design/application.css" />
+      <URL value="@../ButtonRounded.css" />
+      <URL value="@../application.css" />
    </stylesheets>
 </AnchorPane>
