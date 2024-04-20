@@ -49,7 +49,7 @@ public class Main extends Application {
 	            SystemTray tray = SystemTray.getSystemTray();
 	            try {
 	                // Add a TrayIcon that opens/closes the primaryStage when clicked
-	                TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage("3S_logo_blau.png"));
+	                TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage("images/bulb.png"));
 	                trayIcon.addActionListener(e -> {
 	                    Platform.runLater(() -> {
 	                        if (primaryStage.isShowing()) {
