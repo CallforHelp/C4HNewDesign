@@ -26,7 +26,6 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-@SuppressWarnings("restriction")
 public class C4hController {
 	@FXML
 	private Button myExitButton;

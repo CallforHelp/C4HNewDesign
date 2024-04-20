@@ -1,8 +1,13 @@
 package c4h;
 	
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -38,12 +43,45 @@ public class Main extends Application {
 	        
 			Scene scene = new Scene(page);
 			primaryStage.setScene(scene);
-			primaryStage.show();
+			
+			// Set up TrayIcon
+	        if (SystemTray.isSupported()) {
+	            SystemTray tray = SystemTray.getSystemTray();
+	            try {
+	                // Add a TrayIcon that opens/closes the primaryStage when clicked
+	                TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage("3S_logo_blau.png"));
+	                trayIcon.addActionListener(e -> {
+	                    Platform.runLater(() -> {
+	                        if (primaryStage.isShowing()) {
+	                            primaryStage.hide();
+	                        } else {
+	                            primaryStage.show();
+	                            primaryStage.toFront();
+	                        }
+	                    });
+	                });
+	                tray.add(trayIcon);
+
+	                // Minimize primaryStage to TrayIcon when the application is minimized
+	                primaryStage.setOnCloseRequest(event -> {
+	                    event.consume();
+	                    primaryStage.hide();
+	                });
+
+	            } catch (AWTException e) {
+	                System.out.println("TrayIcon could not be added.");
+	            }
+	        } else {
+	            System.out.println("SystemTray is not supported.");
+	        }
+			
+			//primaryStage.show();
 			
 		} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
+		
 		
 		public static void main(String[] args) {
 			launch(args);

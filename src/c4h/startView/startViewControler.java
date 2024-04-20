@@ -23,8 +23,6 @@ import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
-@SuppressWarnings("restriction")
-
 public class startViewControler implements Initializable {
 	
 	@FXML
