@@ -50,6 +50,7 @@ public class Main extends Application {
 	            try {
 	                // Add a TrayIcon that opens/closes the primaryStage when clicked
 	                TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage("images/bulb.png"));
+	                trayIcon.setToolTip("Schul-Support-Service - Call for Help");
 	                trayIcon.addActionListener(e -> {
 	                    Platform.runLater(() -> {
 	                        if (primaryStage.isShowing()) {
