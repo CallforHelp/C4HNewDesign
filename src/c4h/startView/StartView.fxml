@@ -12,66 +12,78 @@
       <URL value="@../application.css" />
    </stylesheets> -->
   <children>
-    <Pane prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="667.0" AnchorPane.topAnchor="396.0">
+    <Pane prefHeight="701.0" prefWidth="994.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
       <children>
-        <Button fx:id="buttonBrowser" layoutX="41.0" layoutY="80.0" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Support" />
-        <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" stylesheets="@../ButtonRounded.css" text="Fehler Melden " textAlignment="CENTER" />
-      </children>
-    </Pane>
-    <Pane prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="341.0" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="396.0">
-      <children>
-        <Button layoutX="41.0" layoutY="77.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zum chat" />
-        <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" text="Chat" textAlignment="CENTER" />
-      </children>
-    </Pane>
-    <Pane prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="669.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="396.0">
-      <children>
-        <Button layoutX="41.0" layoutY="73.0" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zur Web" />
-        <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" text="Kontakt" textAlignment="CENTER" />
-      </children>
-    </Pane>
-    <Pane prefHeight="341.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="377.0" AnchorPane.leftAnchor="668.5" AnchorPane.rightAnchor="12.5" AnchorPane.topAnchor="29.0" />
-    <Pane prefHeight="343.0" prefWidth="314.0" styleClass="windows7" AnchorPane.bottomAnchor="377.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="667.0" AnchorPane.topAnchor="29.0">
-      <children>
-        <Label alignment="CENTER" layoutX="41.0" layoutY="14.0" prefHeight="43.0" prefWidth="231.0" text="PC Information" textAlignment="CENTER" />
-        <Button fx:id="buttonPcInfo" layoutX="41.0" layoutY="89.0" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" styleClass="sale" text="Zeigen" />
-      </children>
-    </Pane>
-    <Pane layoutX="342.0" layoutY="31.0" prefHeight="341.0" prefWidth="312.0" styleClass="windows7">
-      <children>
-        <HBox layoutX="35.0" layoutY="246.0" prefHeight="80.99990000000253" prefWidth="241.0001220703125" spacing="50.0">
+        <VBox alignment="CENTER" layoutX="151.0" layoutY="32.0" prefHeight="580.0" prefWidth="640.0" spacing="10.0">
           <children>
-            <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
               <children>
-                <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" text="CPU" textAlignment="CENTER" />
-                <ProgressIndicator fx:id="indictor" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
+                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+                  <children>
+                    <Button mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Zum chat" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+                  <children>
+                    <Button mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" text="Zur Web" />
+                  </children>
+                </VBox>
               </children>
-              <padding>
-                <Insets top="5.0" fx:id="x1" />
-              </padding>
-            </VBox>
-            <VBox padding="$x1" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
               <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="231.0" text="RAM" textAlignment="CENTER" />
-                <ProgressIndicator fx:id="indictor2" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
+                <VBox alignment="CENTER" prefHeight="281.0" prefWidth="318.0" spacing="10.0">
+                  <children>
+                    <Button fx:id="buttonPcInfo" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" text="PC Information" />
+                  </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+                  <children>
+                    <Button fx:id="buttonBrowser" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" text="Support" />
+                  </children>
+                </VBox>
               </children>
-            </VBox>
+            </HBox>
+          </children>
+        </VBox>
+        <VBox layoutX="832.0" layoutY="487.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
+          <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="231.0" text="RAM" textAlignment="CENTER" />
+            <ProgressIndicator fx:id="indictor2" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
           </children>
           <padding>
-            <Insets left="20.0" right="20.0" />
+            <Insets top="5.0" fx:id="x1" />
           </padding>
-        </HBox>
+        </VBox>
+        <VBox layoutX="840.0" layoutY="229.0" padding="$x1" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+          <children>
+            <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" text="CPU" textAlignment="CENTER" />
+            <ProgressIndicator fx:id="indictor" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
+          </children>
+        </VBox>
       </children>
     </Pane>
-    <Separator prefHeight="5.0" prefWidth="291.0" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="679.0" AnchorPane.topAnchor="385.0" />
-    <Separator layoutX="352.0" layoutY="381.0" prefHeight="5.0" prefWidth="291.0" />
-    <Separator layoutX="681.0" layoutY="382.0" prefHeight="5.0" prefWidth="291.0" />
-    <Separator layoutX="332.0" layoutY="32.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
-    <Separator layoutX="660.0" layoutY="33.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
-    <Separator layoutX="332.0" layoutY="405.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
-    <Separator layoutX="659.0" layoutY="406.0" orientation="VERTICAL" prefHeight="331.0" prefWidth="0.0" styleClass="windows" />
+    <HBox prefHeight="36.0" prefWidth="140.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Button id="button" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" styleClass="but" text="Start Seite">
+          <stylesheets>
+            <URL value="@../ButtonRounded.css" />
+            <URL value="@../application.css" />
+          </stylesheets>
+        </Button>
+        <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="31.0" prefWidth="70.0" styleClass="but" text="X" textAlignment="LEFT" textOverrun="CLIP" underline="false" wrapText="false">
+          <stylesheets>
+            <URL value="@../application.css" />
+          </stylesheets>
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </Button>
+      </children>
+    </HBox>
   </children>
   <stylesheets>
     <URL value="@../ButtonRounded.css" />
+    <URL value="@../application.css" />
   </stylesheets>
 </AnchorPane>

@@ -1,14 +1,15 @@
 package c4h;
 	
-import java.awt.AWTException;
-import java.awt.SystemTray;
-import java.awt.Toolkit;
-import java.awt.TrayIcon;
+import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
+
+import javax.swing.ImageIcon;
+
 
 import javafx.application.Application;
-import javafx.application.Platform;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,16 +17,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+
 public class Main extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
-		@Override
-	public void start(Stage primaryStage){
-			primaryStage.initStyle(StageStyle.UNDECORATED);
-			try {
-				Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-				
-				//Move Stage 
+	@FXML
+	private Button ExitButton;
+	static TrayIcon trayIcon    = new TrayIcon(createImage("images/bulb.png", "trayIcon"));
+	final SystemTray         tray        = SystemTray.getSystemTray();
+	
+	@Override
+	public void start(Stage primaryStage) throws AWTException{
+		primaryStage.initStyle(StageStyle.UNDECORATED);
+		try {
+			Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));	
+			
+			//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
 	        	public void handle(MouseEvent event) {
@@ -44,47 +51,57 @@ public class Main extends Application {
 			Scene scene = new Scene(page);
 			primaryStage.setScene(scene);
 			
-			// Set up TrayIcon
-	        if (SystemTray.isSupported()) {
-	            SystemTray tray = SystemTray.getSystemTray();
-	            try {
-	                // Add a TrayIcon that opens/closes the primaryStage when clicked
-	                TrayIcon trayIcon = new TrayIcon(Toolkit.getDefaultToolkit().createImage("images/bulb.png"));
-	                trayIcon.setToolTip("Schul-Support-Service - Call for Help");
-	                trayIcon.addActionListener(e -> {
-	                    Platform.runLater(() -> {
-	                        if (primaryStage.isShowing()) {
-	                            primaryStage.hide();
-	                        } else {
-	                            primaryStage.show();
-	                            primaryStage.toFront();
-	                        }
-	                    });
-	                });
-	                tray.add(trayIcon);
-
-	                // Minimize primaryStage to TrayIcon when the application is minimized
-	                primaryStage.setOnCloseRequest(event -> {
-	                    event.consume();
-	                    primaryStage.hide();
-	                });
-
-	            } catch (AWTException e) {
-	                System.out.println("TrayIcon could not be added.");
-	            }
-	        } else {
-	            System.out.println("SystemTray is not supported.");
-	        }
-			
-			//primaryStage.show();
+			primaryStage.show();
 			
 		} catch (IOException e) {
 				e.printStackTrace();
 			}
-		}
+		
+		
+		 // Set up TrayIcon
+			if (!SystemTray.isSupported()) {
+				System.out.println("SystemTray is not supported");
+				return;
+			}
+			trayIcon.setToolTip("Schul-Support-Service - Call for Help");
+		    
+			try {
+     			tray.add(trayIcon);
+     		}catch(Throwable e2) {
+         		System.out.println("TrayIcon could not be added."+e2.getMessage());
+         		return;
+         	}
+
+        
+			/*
+			 * if (SystemTray.isSupported()) { // Add a TrayIcon that opens/closes the
+			 * primaryStage when clicked trayIcon.addActionListener(e -> {
+			 * Platform.runLater(() -> { primaryStage.show();
+			 * 
+			 * }); }); } else { System.out.println("SystemTray is not supported."); }
+			 */
+       
+			trayIcon.addMouseListener(null);
+
+        //primaryStage.show();
+    }
+
+		
 		
 		
 		public static void main(String[] args) {
 			launch(args);
+		}
+		
+		
+		
+		protected static Image createImage(String path, String description) {
+			URL imageURL = Main.class.getResource(path);
+			if (imageURL == null) {
+				System.err.println("Resource not found: " + path);
+				return null;
+			} else {
+				return (new ImageIcon(imageURL, description)).getImage();
+			}
 		}
 }

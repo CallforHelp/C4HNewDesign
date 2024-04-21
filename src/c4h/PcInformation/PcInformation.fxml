@@ -16,7 +16,6 @@
     <Pane prefHeight="701.0" prefWidth="995.0" styleClass="windows" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
   </children>
   <stylesheets>
-    <URL value="@../application.css" />
     <URL value="@../ButtonRounded.css" />
   </stylesheets>
 </AnchorPane>

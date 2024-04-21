@@ -29,9 +29,10 @@ public class startViewControler implements Initializable {
 	private ProgressIndicator indictor = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
-
 	@FXML
 	private Button buttonBrowser;
+	@FXML
+	private Button ExitButton;
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
@@ -39,6 +40,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private AnchorPane parentContainer;
 	@Override
+	
 	public void initialize(URL url, ResourceBundle rb) {
 		try {
 			loadRamUsage();
@@ -46,6 +48,12 @@ public class startViewControler implements Initializable {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	@FXML
+	private void exitButton(ActionEvent event) throws IOException {
+		
+		
+		
 	}
 
 	@FXML

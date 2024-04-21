@@ -20,6 +20,20 @@
     -fx-font-weight: bold;
     -fx-font-size: 1.1em;
 }
+.button-with-logo {
+    -fx-background-color: #3498db; /* Hintergrundfarbe des Buttons */
+    -fx-text-fill: white; /* Textfarbe des Buttons */
+    -fx-font-size: 14px; /* Schriftgröße */
+    -fx-padding: 10px 20px; /* Innenabstand */
+    -fx-background-radius: 5px; /* Radius für abgerundete Ecken */
+
+    /* Hintergrundbild für das Logo */
+    -fx-graphic: url('logo.png');
+    -fx-background-position: top left; /* Position des Logos (oben links) */
+    -fx-background-repeat: no-repeat; /* Wiederholung des Hintergrundbilds verhindern */
+    -fx-background-size: 20px 20px; /* Größe des Logos */
+}
+
 .label{
 	-fx-background-color: 
         linear-gradient(#f2f2f2, #d6d6d6),
