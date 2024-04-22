@@ -1,88 +1,73 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
-
-.pane {
+.windows{
     -fx-text-fill: white;
     -fx-font-family: "Arial Narrow";
     -fx-font-weight: bold;
-    -fx-background-color: linear-gradient(#61a2b1, #2A5058);
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-border-color:#168BC1; 
+    -fx-background-color:#168BC1;
 }
-.myExitButton{
+
+.windows:hover{     
+  -fx-background-color:#0B729C; 
+  -fx-text-fill:white;
+  -fx-font-weight:bold; 
+  -fx-border-color:#168FC1; 
+}
+.button-leiste {
 	-fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;
+    -fx-background-insets: 0,0 0 5 0,0 0 6 0,0 0 7 0;
     -fx-background-radius: 8;
-    -fx-background-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
-    -fx-font-weight: bold;
-    -fx-font-size: 1.1em;
-}
-.button-with-logo {
     -fx-background-color: #3498db; /* Hintergrundfarbe des Buttons */
     -fx-text-fill: white; /* Textfarbe des Buttons */
     -fx-font-size: 14px; /* Schriftgröße */
-    -fx-padding: 10px 20px; /* Innenabstand */
-    -fx-background-radius: 5px; /* Radius für abgerundete Ecken */
-
-    /* Hintergrundbild für das Logo */
-    -fx-graphic: url('logo.png');
-    -fx-background-position: top left; /* Position des Logos (oben links) */
-    -fx-background-repeat: no-repeat; /* Wiederholung des Hintergrundbilds verhindern */
-    -fx-background-size: 20px 20px; /* Größe des Logos */
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
 }
-
-.label{
-	-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#dddddd 0%, #f6f6f6 50%);
-    -fx-background-radius: 8,7,6;
-    -fx-background-insets: 0,1,2;
-    -fx-text-fill: black;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+.button-leiste:hover{
+	    -fx-background-color:
+            #3c7fb1,
+            linear-gradient(#168BC1, #168BC1),
+            linear-gradient(#eaf6fd 0%, #168BC1 49%, #168BC1 50%, #a7d9f5 100%);
 }
-.ListView{
-		-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#dddddd 0%, #f6f6f6 50%);
-    -fx-background-radius: 8,7,6;
-    -fx-background-insets: 0,1,2;
-    -fx-text-fill: black;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-}
-.sale
-{
-    -fx-padding: 8 15 15 15;
-    -fx-background-insets: 0,0 0 5 0,0 0 6 0,0 0 7 0;
-    -fx-background-radius: 8;
-    -fx-background-color:
-            linear-gradient(from 0% 93% to 0% 100%,#a34313 0%,#903b12 100%),
-             #9d4024,
-             #d86e3a,
-            radial-gradient(center 50% 50%, radius 100%,#d96e3a,#c54e2c);
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
-    -fx-font-weight: bold;
-    -fx-font-size: 1.1em;
-    -fx-text-fill: white;
-}
-
-.sale:hover
-{
-
-    -fx-background-color:
-            linear-gradient(from 0% 93% to 0% 100%,#a34313 0%,#903b12 100),
-            #9d4024,
-            #d86e3a,
-            radial-gradient(center 50% 50%,radius 100%,#ea7f4b,#c54e2c);
-}
-
-.sale:pressed
+.button-leiste:pressed
 {
      -fx-padding: 10 15 13 15;
      -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 
 }
+.button-with-logo {
+	-fx-padding: 8 15 15 15;
+    -fx-background-insets: 0,0 0 5 0,0 0 6 0,0 0 7 0;
+    -fx-background-radius: 8;
+    -fx-background-color: #3498db; /* Hintergrundfarbe des Buttons */
+    -fx-text-fill: white; /* Textfarbe des Buttons */
+    -fx-font-size: 14px; /* Schriftgröße */
+	-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.75),4,0,0,1);
+    /* Hintergrundbild für das Logo */
+    -fx-graphic: url('logo.png');
+    -fx-graphic-text-gap: 10px;
+    -fx-background-position: center ; /* Position des Logos (oben links) */
+    -fx-background-repeat: no-repeat; /* Wiederholung des Hintergrundbilds verhindern */
+    -fx-background-size: 20px 20px; /* Größe des Logos */
+}
+.button-with-logo:hover {
+    -fx-background-color:
+            #3c7fb1,
+            linear-gradient(#168BC1, #168BC1),
+            linear-gradient(#eaf6fd 0%, #168BC1 49%, #168BC1 50%, #a7d9f5 100%);
+}
+.button-with-logo:pressed
+{
+     -fx-padding: 10 15 13 15;
+     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
+
+}
+/* CSS für das Wasserzeichen */
+.logo {
+    -fx-fit-to-height: 100px; /* Höhe des Logos */
+    -fx-fit-to-width:  200px; /* Breite des Logos */
+    -fx-opacity: 0.8; /* Deckkraft des Logos anpassen */
+    /*-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 10, 0, 0, 0); /* Schlagschatten hinzufügen */
+    /* Weitere Stile nach Bedarf hinzufügen */
+}
+
+

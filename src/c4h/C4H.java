@@ -18,12 +18,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 
-public class Main extends Application {
+public class C4H extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
 	@FXML
 	private Button ExitButton;
-	static TrayIcon trayIcon    = new TrayIcon(createImage("images/bulb.png", "trayIcon"));
+	public TrayIcon trayIcon    = new TrayIcon(createImage("images/bulb.png", "trayIcon"));
 	final SystemTray         tray        = SystemTray.getSystemTray();
 	
 	@Override
@@ -96,7 +96,7 @@ public class Main extends Application {
 		
 		
 		protected static Image createImage(String path, String description) {
-			URL imageURL = Main.class.getResource(path);
+			URL imageURL = C4H.class.getResource(path);
 			if (imageURL == null) {
 				System.err.println("Resource not found: " + path);
 				return null;

@@ -4,74 +4,90 @@
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="995.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.startView.startViewControler">
+<AnchorPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.startView.startViewControler">
   <!-- <stylesheets>
       <URL value="@../ButtonRounded.css" />
       <URL value="@../application.css" />
    </stylesheets> -->
   <children>
-    <Pane prefHeight="701.0" prefWidth="994.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0">
+    <VBox disable="true" layoutX="858.0" layoutY="400.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="false">
       <children>
-        <VBox alignment="CENTER" layoutX="151.0" layoutY="32.0" prefHeight="580.0" prefWidth="640.0" spacing="10.0">
-          <children>
-            <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
-              <children>
-                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
-                  <children>
-                    <Button mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Zum chat" />
-                  </children>
-                </VBox>
-                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
-                  <children>
-                    <Button mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" text="Zur Web" />
-                  </children>
-                </VBox>
-              </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
-              <children>
-                <VBox alignment="CENTER" prefHeight="281.0" prefWidth="318.0" spacing="10.0">
-                  <children>
-                    <Button fx:id="buttonPcInfo" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" text="PC Information" />
-                  </children>
-                </VBox>
-                <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
-                  <children>
-                    <Button fx:id="buttonBrowser" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" text="Support" />
-                  </children>
-                </VBox>
-              </children>
-            </HBox>
-          </children>
-        </VBox>
-        <VBox layoutX="832.0" layoutY="487.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0">
-          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="231.0" text="RAM" textAlignment="CENTER" />
-            <ProgressIndicator fx:id="indictor2" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
-          </children>
-          <padding>
-            <Insets top="5.0" fx:id="x1" />
-          </padding>
-        </VBox>
-        <VBox layoutX="840.0" layoutY="229.0" padding="$x1" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
-          <children>
-            <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" text="CPU" textAlignment="CENTER" />
-            <ProgressIndicator fx:id="indictor" prefHeight="150.0" prefWidth="100.0" progress="0.0" />
-          </children>
-        </VBox>
+        <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" text="CPU" textAlignment="CENTER" />
+        <ProgressIndicator fx:id="indictor" disable="false" prefHeight="150.0" prefWidth="100.0" progress="0.0" visible="true" />
       </children>
-    </Pane>
-    <HBox prefHeight="36.0" prefWidth="140.0" spacing="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+        <Insets top="5.0" fx:id="x1" />
+      </padding>
+      <stylesheets>
+        <URL value="@../application.css" />
+      </stylesheets>
+    </VBox>
+    <VBox alignment="CENTER" prefHeight="588.25" prefWidth="746.5" spacing="10.0" AnchorPane.bottomAnchor="96.5" AnchorPane.leftAnchor="91.5" AnchorPane.rightAnchor="162.0" AnchorPane.topAnchor="65.25">
       <children>
-        <Button id="button" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" styleClass="but" text="Start Seite">
-          <stylesheets>
-            <URL value="@../ButtonRounded.css" />
-            <URL value="@../application.css" />
-          </stylesheets>
-        </Button>
-        <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="31.0" prefWidth="70.0" styleClass="but" text="X" textAlignment="LEFT" textOverrun="CLIP" underline="false" wrapText="false">
+        <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
+          <children>
+            <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+              <children>
+                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="">
+                  <stylesheets>
+                    <URL value="@../application.css" />
+                  </stylesheets>
+                </Button>
+              </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+              <children>
+                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Software Kiosk">
+                  <stylesheets>
+                    <URL value="@../application.css" />
+                  </stylesheets>
+                </Button>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="329.0" prefWidth="499.0" spacing="20.0">
+          <children>
+            <VBox alignment="CENTER" prefHeight="281.0" prefWidth="318.0" spacing="10.0">
+              <children>
+                <Button fx:id="buttonPcInfo" alignment="CENTER" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="PC Information">
+                  <stylesheets>
+                    <URL value="@../application.css" />
+                  </stylesheets>
+                </Button>
+              </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
+              <children>
+                <Button fx:id="buttonBrowser" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Support">
+                  <stylesheets>
+                    <URL value="@../application.css" />
+                  </stylesheets>
+                </Button>
+              </children>
+            </VBox>
+          </children>
+        </HBox>
+      </children>
+      <stylesheets>
+        <URL value="@../application.css" />
+      </stylesheets>
+    </VBox>
+    <VBox disable="true" layoutX="600.0" layoutY="454.0" padding="$x1" prefHeight="262.0" prefWidth="127.0" spacing="15.0" styleClass="windows" visible="false">
+      <children>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="231.0" text="RAM" textAlignment="CENTER" />
+        <ProgressIndicator fx:id="indictor2" prefHeight="137.0" prefWidth="100.0" progress="0.0" />
+      </children>
+      <stylesheets>
+        <URL value="@../application.css" />
+      </stylesheets>
+    </VBox>
+    <HBox alignment="BASELINE_RIGHT" prefHeight="40.0" prefWidth="1000.0" spacing="20.0" styleClass="windows" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Button fx:id="ExitButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="42.0" prefWidth="43.0" styleClass="button-leiste" text="X" textAlignment="LEFT" textOverrun="CLIP" underline="false" wrapText="false">
           <stylesheets>
             <URL value="@../application.css" />
           </stylesheets>
@@ -80,10 +96,24 @@
           </HBox.margin>
         </Button>
       </children>
+      <stylesheets>
+        <URL value="@../application.css" />
+      </stylesheets>
     </HBox>
+    <StackPane layoutX="838.0" layoutY="609.0" minHeight="89.0" minWidth="109.0" prefHeight="89.0" prefWidth="109.0" styleClass="logo">
+      <children>
+        <ImageView fitHeight="160.5" fitWidth="214.0" pickOnBounds="true" preserveRatio="true" styleClass="logo">
+          <image>
+            <Image url="@../images/3s_logo_c4h.png" />
+          </image>
+        </ImageView>
+      </children>
+      <stylesheets>
+        <URL value="@../application.css" />
+      </stylesheets>
+    </StackPane>
   </children>
   <stylesheets>
-    <URL value="@../ButtonRounded.css" />
     <URL value="@../application.css" />
   </stylesheets>
 </AnchorPane>
