@@ -1,6 +1,5 @@
 package c4h.PcInformation;
 
-import java.awt.AWTException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -574,7 +573,7 @@ public class pcInformation {
 	            String line;
 	            while ((line = reader.readLine()) != null) {
 	                if (line.contains("SSID")) {
-	                    SSID= line.split(":")[1].trim();
+	                    return SSID= line.split(":")[1].trim();
 	                }
 	            }
 	        } catch (IOException e) {
@@ -583,22 +582,40 @@ public class pcInformation {
 			return SSID;
 	    }
 	public String getWifiMacAdresse(){
-		String BSSID="";
+		
+		 StringBuilder wlanMAC = new StringBuilder();
 		try {
-	            Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
+	            Process process = Runtime.getRuntime().exec("cmd.exe /c netsh wlan show interfaces | findstr \"SSID\"");
 	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
 	            String line;
-	        	line = reader.readLine();        
-	        	String[] macAdre = line.split(",");
-	        	BSSID=macAdre[0].replace('"','\0').trim();
+	            String BSSID[] = null;
+	            while ((line = reader.readLine()) != null) {
+	                    if (line.contains("BSSID")) {
+	                    	 BSSID = line.split(":");
+	                    }
+	            }
+	        
+				int startPos=1;
+				if (startPos < 0 || startPos >= BSSID.length) {
+	                return ""; // Rückgabe eines leeren Strings, wenn die Startposition ungültig ist
+	            }
 
+	           
+
+	            for (int i = startPos; i < BSSID.length; i++) {
+	            	wlanMAC.append(BSSID[i]);
+	                if (i < BSSID.length - 1) {
+	                	wlanMAC.append(":"); // Fügen Sie ein Leerzeichen hinzu, außer für das letzte Element
+	                }
+	            }
 	            
 	            
+	            reader.close();
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }
-			return BSSID;
+			return wlanMAC.toString();
 	    }
 	
 	/************************************************************************************************************/
@@ -683,5 +700,14 @@ public class pcInformation {
 	}
 	
 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		pcInformation test = new pcInformation();
+		System.out.println(test.getWifiMacAdresse());
+		System.out.println(test.getConnectedWifiInfo());
+		
+
+	}
+			
 		
 }

@@ -15,10 +15,7 @@
 
 <AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.kiosk.KioskControler">
   <children>
-    <Button id="" fx:id="startSeiteButton" layoutX="8.0" layoutY="3.0" minHeight="33.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="37.0" styleClass="button-with-logo" text="Start Steite" />
-    <WebView fx:id="Kioskbrowser" onDragDetected="#loadBrowser" prefHeight="701.0" prefWidth="1000.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" />
+    <Button id="" fx:id="startSeiteButton" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" styleClass="button-with-logo" text="Startseite" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <WebView fx:id="Kioskbrowser" onDragDetected="#loadBrowser" prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
   </children>
-  <stylesheets>
-    <URL value="@../application.css" />
-  </stylesheets>
 </AnchorPane>

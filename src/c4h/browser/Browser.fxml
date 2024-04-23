@@ -13,15 +13,10 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.browser.BrowserControler">
+<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.browser.BrowserControler">
   <children>
-    <Button fx:id="button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="StartView">
-      <stylesheets>
-        <URL value="@../css_Design/ButtonRounded.css" />
-        <URL value="@../css_Design/application.css" />
-      </stylesheets>
-    </Button>
-    <WebView fx:id="browser" onDragDetected="#loadBrowser" prefHeight="705.0" prefWidth="980.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0" />
+    <Button fx:id="button" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Startseite" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <WebView fx:id="browser" onDragDetected="#loadBrowser" prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
   </children>
   <stylesheets>
     <URL value="@../application.css" />
