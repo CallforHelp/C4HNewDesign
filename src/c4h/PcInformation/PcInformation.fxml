@@ -2,19 +2,90 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
 <AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
   <children>
-    <Button fx:id="button" layoutX="6.0" layoutY="6.0" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="35.0" prefWidth="144.0" styleClass="button-with-logo" text="Zurück">
-      <stylesheets>
-        <URL value="@../application.css" />
-      </stylesheets>
-    </Button>
-    <Pane prefHeight="701.0" prefWidth="1000.0" styleClass="windows" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <HBox id="HBox" alignment="CENTER" layoutX="6.0" layoutY="6.0" spacing="5.0">
+      <children>
+        <Button id="" fx:id="button" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="29.0" prefWidth="106.0" text="Start Seite">
+          <stylesheets>
+            <URL value="@../application.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="29.0" prefWidth="106.0" text="Screenshot">
+          <stylesheets>
+            <URL value="@../application.css" />
+          </stylesheets>
+        </Button>
+        <Button id="" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="29.0" prefWidth="106.0" text="Fehlermelden">
+          <stylesheets>
+            <URL value="@../application.css" />
+          </stylesheets>
+        </Button>
+      </children>
+    </HBox>
+    <Pane prefHeight="701.0" prefWidth="1000.0" styleClass="windows" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+      <children>
+        <Group id="Group" layoutX="14.0" layoutY="77.0">
+          <children>
+            <StackPane layoutX="0.0" layoutY="0.0" prefHeight="150.0" prefWidth="158.0">
+              <children>
+                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../images/PcModell/HP09.png" />
+                  </image>
+                </ImageView>
+              </children>
+            </StackPane>
+            <VBox id="VBox" alignment="CENTER" layoutX="126.0" layoutY="15.0" spacing="5.0">
+              <children>
+                <VBox id="VBox" alignment="CENTER" spacing="5.0">
+                  <children>
+                    <Label alignment="TOP_LEFT" prefHeight="29.0" prefWidth="125.0" text="HP09" textFill="WHITE" />
+                    <Label alignment="TOP_LEFT" prefHeight="29.0" prefWidth="222.0" text="Support Ende : 12/2030" textFill="WHITE" />
+                  </children>
+                </VBox>
+              </children>
+            </VBox>
+          </children>
+        </Group>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="50.5390625" prefWidth="444.0" text="PC INFORMATION" textFill="WHITE" />
+        <StackPane layoutX="210.0" layoutY="604.0" prefHeight="83.0" prefWidth="568.0">
+          <children>
+            <ImageView fitHeight="70.29183812361224" fitWidth="430.99993896484375" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../images/3s_logo_tex2t.png" />
+              </image>
+            </ImageView>
+          </children>
+        </StackPane>
+        <Group id="Group" layoutX="494.0" layoutY="95.0">
+          <children>
+            <VBox id="VBox" alignment="CENTER" layoutX="47.0" layoutY="2.0" spacing="5.0">
+              <children>
+                <Label prefWidth="134.0" text="CA_1920" textFill="WHITE" />
+                <Label prefWidth="134.0" text="Verbunden" textFill="WHITE" />
+              </children>
+            </VBox>
+            <StackPane layoutX="0.0" layoutY="0.0" minHeight="36.0" minWidth="47.0" prefHeight="36.0" prefWidth="47.0">
+              <children>
+                <ImageView fitHeight="40.6875" fitWidth="40.6875" pickOnBounds="true" preserveRatio="true" styleClass="windows">
+                  <image>
+                    <Image url="@../images/icons8-wlan-96.png" />
+                  </image>
+                </ImageView>
+              </children>
+            </StackPane>
+          </children>
+        </Group>
+      </children>
+    </Pane>
   </children>
   <stylesheets>
-    <URL value="@../ButtonRounded.css" />
+    <URL value="@../application.css" />
   </stylesheets>
 </AnchorPane>

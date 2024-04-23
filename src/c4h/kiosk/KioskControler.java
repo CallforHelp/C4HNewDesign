@@ -19,6 +19,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
+import javafx.concurrent.Worker;
 
 public class KioskControler implements Initializable{
 
@@ -27,7 +28,7 @@ public class KioskControler implements Initializable{
     @FXML
     private AnchorPane Container;
 	@FXML
-    private WebView  browser = new WebView();
+    private WebView  Kioskbrowser = new WebView();
 	@FXML
 	private WebEngine webkit;
 	@Override
@@ -58,10 +59,18 @@ public class KioskControler implements Initializable{
 	private void loadBrowser() {
 		System.out.println("KioskSeite");
 		
-         webkit = browser.getEngine();
-         webkit.load("https://141.91.183.36/bwebserver/kiosk/login");
-         browser.setFontScale(1);
-         
+         webkit = Kioskbrowser.getEngine();
+         webkit.load("https://www.141.91.183.36/bwebserver/kiosk/login");
+        // webkit.load("https://www.google.de");
+        // webkit.loadContent("https://141.91.183.36/bwebserver/kiosk/login");
+         webkit.reload();
+       //  Kioskbrowser.setFontScale(1);
+         webkit.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+             if (newValue == Worker.State.SUCCEEDED) {
+                 // Hier können Sie auf den geladenen Inhalt zugreifen
+                 System.out.println("Seite geladen: " + webkit.getLocation());
+             }
+         });
     }
      
 	

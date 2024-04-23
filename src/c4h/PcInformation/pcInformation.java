@@ -1,5 +1,6 @@
 package c4h.PcInformation;
 
+import java.awt.AWTException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -564,6 +565,41 @@ public class pcInformation {
 			return musterImageName;
 		
 	}
+	public String getConnectedWifiInfo(){
+		String SSID="";
+		try {
+	            Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
+	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+	            String line;
+	            while ((line = reader.readLine()) != null) {
+	                if (line.contains("SSID")) {
+	                    SSID= line.split(":")[1].trim();
+	                }
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+			return SSID;
+	    }
+	public String getWifiMacAdresse(){
+		String BSSID="";
+		try {
+	            Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
+	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+	            String line;
+	        	line = reader.readLine();        
+	        	String[] macAdre = line.split(",");
+	        	BSSID=macAdre[0].replace('"','\0').trim();
+
+	            
+	            
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
+			return BSSID;
+	    }
 	
 	/************************************************************************************************************/
 	/************************************** PRINTING * @throws Throwable ****************************************/
@@ -589,6 +625,8 @@ public class pcInformation {
 		System.out.println("OS Architektur:"+ getOSArchitecture());
 		System.out.println("Muster Images :"+ getMusterImages());
 		System.out.println("Rechner Typen :"+ getRechnertypen());
+		System.out.println("WlanNetzwerkName :"+ getConnectedWifiInfo());
+		System.out.println("WlanMAC :"+ getWifiMacAdresse());
 		
 	
 		System.out.println("*********************************");

@@ -33,7 +33,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="343.0" prefWidth="318.0" spacing="10.0">
               <children>
-                <Button alignment="CENTER" mnemonicParsing="false" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Software Kiosk" />
+                <Button fx:id="kioskBrowser" alignment="CENTER" mnemonicParsing="false" onAction="#loadKioskBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Software Kiosk" />
               </children>
             </VBox>
           </children>

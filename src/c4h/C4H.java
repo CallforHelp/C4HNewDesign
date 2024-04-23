@@ -92,6 +92,7 @@ public class C4H extends Application {
                     }
                 }
             });
+			 primaryStage.show();
 			
     }
 
