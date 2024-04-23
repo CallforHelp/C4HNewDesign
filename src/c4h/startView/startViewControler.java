@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class startViewControler implements Initializable {
@@ -32,7 +33,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonBrowser;
 	@FXML
-	private Button ExitButton;
+	private Button exitButton;
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
@@ -51,8 +52,16 @@ public class startViewControler implements Initializable {
 	}
 	@FXML
 	private void exitButton(ActionEvent event) throws IOException {
-		
-		
+		System.out.println("du druckst Exit button");
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
+        Scene scene = exitButton.getScene();
+        root.translateYProperty().set(scene.getWidth());
+        if (scene != null) {
+            // Get the stage from the scene
+            Stage stage = (Stage) scene.getWindow();
+            // Hide the stage
+            stage.hide();
+        }
 		
 	}
 
@@ -61,6 +70,8 @@ public class startViewControler implements Initializable {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
 	    Scene scene = buttonPcInfo.getScene();
+	    
+	    
 	    
 	    root.translateYProperty().set(scene.getWidth());
 

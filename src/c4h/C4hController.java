@@ -124,7 +124,7 @@ public class C4hController {
      //   root.getChildren().add(browser);
 	    Scene scene = new Scene(new Group());
 	    
-	    scene.getStylesheets().add(getClass().getResource("ButtonRounded.css").toExternalForm());
+	    scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 	    scene.setRoot(root);
 	    stage.setScene(scene);	        
 	    stage.show();

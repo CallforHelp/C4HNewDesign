@@ -5,15 +5,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
+<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
   <children>
-    <Button fx:id="button" layoutX="6.0" layoutY="6.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="Zurück">
+    <Button fx:id="button" layoutX="6.0" layoutY="6.0" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="35.0" prefWidth="144.0" styleClass="button-with-logo" text="Zurück">
       <stylesheets>
-        <URL value="@../ButtonRounded.css" />
         <URL value="@../application.css" />
       </stylesheets>
     </Button>
-    <Pane prefHeight="701.0" prefWidth="995.0" styleClass="windows" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+    <Pane prefHeight="701.0" prefWidth="1000.0" styleClass="windows" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
   </children>
   <stylesheets>
     <URL value="@../ButtonRounded.css" />

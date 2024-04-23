@@ -1,13 +1,14 @@
 package c4h;
 	
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.io.IOException;
 import java.net.URL;
 
 import javax.swing.ImageIcon;
 
-
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,17 +22,21 @@ import javafx.stage.StageStyle;
 public class C4H extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
+	
+	
 	@FXML
 	private Button ExitButton;
 	public TrayIcon trayIcon    = new TrayIcon(createImage("images/bulb.png", "trayIcon"));
-	final SystemTray         tray        = SystemTray.getSystemTray();
+	SystemTray         tray        = SystemTray.getSystemTray();
+
 	
 	@Override
 	public void start(Stage primaryStage) throws AWTException{
+		
 		primaryStage.initStyle(StageStyle.UNDECORATED);
 		try {
 			Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));	
-			
+			 
 			//Move Stage 
 	        page.setOnMousePressed(new EventHandler<MouseEvent>() {
 			@Override
@@ -47,11 +52,10 @@ public class C4H extends Application {
 	                primaryStage.setY(event.getScreenY() - yOffset);
 	            }
 	         });
+	      
 	        
-			Scene scene = new Scene(page);
+	        Scene scene = new Scene(page);
 			primaryStage.setScene(scene);
-			
-			primaryStage.show();
 			
 		} catch (IOException e) {
 				e.printStackTrace();
@@ -71,19 +75,24 @@ public class C4H extends Application {
          		System.out.println("TrayIcon could not be added."+e2.getMessage());
          		return;
          	}
-
-        
-			/*
-			 * if (SystemTray.isSupported()) { // Add a TrayIcon that opens/closes the
-			 * primaryStage when clicked trayIcon.addActionListener(e -> {
-			 * Platform.runLater(() -> { primaryStage.show();
-			 * 
-			 * }); }); } else { System.out.println("SystemTray is not supported."); }
-			 */
-       
-			trayIcon.addMouseListener(null);
-
-        //primaryStage.show();
+			// Add a TrayIcon that opens/closes theimaryStage when clicked
+			trayIcon.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent e) {
+                    if (e.getButton() == java.awt.event.MouseEvent.BUTTON1) { // Left mouse button
+                        Platform.runLater(() -> {
+                            try {
+                                primaryStage.setResizable(true);
+                                primaryStage.show();
+                                primaryStage.toFront();
+                            } catch (Exception ex) {
+                                ex.printStackTrace();
+                            }
+                        });
+                    }
+                }
+            });
+			
     }
 
 		
@@ -104,4 +113,6 @@ public class C4H extends Application {
 				return (new ImageIcon(imageURL, description)).getImage();
 			}
 		}
+	   
 }
+

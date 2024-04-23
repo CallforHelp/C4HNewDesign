@@ -1,4 +1,4 @@
-package c4h.PcInformation;
+package c4h.kiosk;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,33 +16,31 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.util.Duration;
 
-
-public class PcInformationControler implements Initializable {
+public class KioskControler implements Initializable{
 
     @FXML
-    private Button button;
-    @FXML
-    private AnchorPane anchorRoot;
+    private Button startSeiteButton;
     @FXML
     private AnchorPane Container;
-
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-    	pcInfo();
-    }
-    
-    
-
-
-    @FXML
+	@FXML
+    private WebView  browser = new WebView();
+	@FXML
+	private WebEngine webkit;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		loadBrowser();
+	}
+	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
-        Scene scene = button.getScene();
+        Scene scene = startSeiteButton.getScene();
         root.translateYProperty().set(scene.getWidth());
 
-        AnchorPane parentContainer = (AnchorPane) button.getScene().getRoot();
+        AnchorPane parentContainer = (AnchorPane) startSeiteButton.getScene().getRoot();
 
         parentContainer.getChildren().add(root);
 
@@ -56,15 +54,16 @@ public class PcInformationControler implements Initializable {
         });
         timeline.play();
     }
-    @FXML
-    private void pcInfo() {
-    	pcInformation test = new pcInformation();
-    	try {
-			test.printBGinfo();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	@FXML
+	private void loadBrowser() {
+		System.out.println("KioskSeite");
+		
+         webkit = browser.getEngine();
+         webkit.load("https://141.91.183.36/bwebserver/kiosk/login");
+         browser.setFontScale(1);
+         
     }
+     
+	
 
 }
