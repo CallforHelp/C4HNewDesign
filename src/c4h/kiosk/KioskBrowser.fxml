@@ -15,7 +15,11 @@
 
 <AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.kiosk.KioskControler">
   <children>
-    <Button id="" fx:id="startSeiteButton" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" styleClass="button-with-logo" text="Startseite" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <HBox id="HBox" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="1000.0" spacing="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <children>
+        <Button id="" fx:id="startSeiteButton" contentDisplay="CENTER" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Startseite" />
+      </children>
+    </HBox>
     <WebView fx:id="Kioskbrowser" onDragDetected="#loadBrowser" prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
   </children>
 </AnchorPane>

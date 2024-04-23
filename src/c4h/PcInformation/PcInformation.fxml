@@ -2,6 +2,7 @@
 
 <?import java.lang.*?>
 <?import java.net.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
@@ -11,6 +12,31 @@
   <children>
     <Pane prefHeight="695.0" prefWidth="1000.0" styleClass="windows" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
       <children>
+        <Group id="Group" layoutX="633.0" layoutY="348.0" scaleX="1.0" scaleY="1.0">
+          <children>
+            <VBox disable="false" layoutX="165.0" layoutY="0.0" prefHeight="200.0" prefWidth="100.0" spacing="10.0" visible="true">
+              <children>
+                <Label alignment="CENTER" prefHeight="43.0" prefWidth="231.0" text="CPU" textAlignment="CENTER" />
+                <ProgressIndicator id="indictor" disable="false" prefHeight="150.0" prefWidth="100.0" progress="0.0" visible="true" />
+              </children>
+              <padding>
+                <Insets top="5.0" />
+              </padding>
+            </VBox>
+            <VBox disable="false" layoutX="0.0" layoutY="0.0" prefHeight="200.0" prefWidth="100.0" spacing="15.0" styleClass="windows" visible="true">
+              <children>
+                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="43.0" prefWidth="231.0" text="RAM" textAlignment="CENTER" />
+                <ProgressIndicator id="indictor2" prefHeight="137.0" prefWidth="127.0" progress="0.0" />
+              </children>
+              <padding>
+                <Insets top="5.0" />
+              </padding>
+              <stylesheets>
+                <URL value="@../application.css" />
+              </stylesheets>
+            </VBox>
+          </children>
+        </Group>
         <Group id="Group" layoutX="14.0" layoutY="77.0">
           <children>
             <StackPane layoutX="0.0" layoutY="0.0" prefHeight="150.0" prefWidth="158.0">
@@ -65,19 +91,19 @@
         </Group>
       </children>
     </Pane>
-    <HBox id="HBox" alignment="CENTER" layoutX="5.0" spacing="5.0" AnchorPane.topAnchor="5.0">
+    <HBox id="HBox" alignment="CENTER_RIGHT" spacing="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
       <children>
-        <Button id="" fx:id="button" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Startseite">
+        <Button id="" fx:id="button" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Startseite">
           <stylesheets>
             <URL value="@../application.css" />
           </stylesheets>
         </Button>
-        <Button id="" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Screenshot">
+        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Screenshot">
           <stylesheets>
             <URL value="@../application.css" />
           </stylesheets>
         </Button>
-        <Button id="" minHeight="29.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Fehlermelden">
+        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="70.0" text="Fehlermelden">
           <stylesheets>
             <URL value="@../application.css" />
           </stylesheets>
