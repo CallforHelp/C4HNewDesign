@@ -62,18 +62,6 @@ public class C4hController {
 	
     public void initialize() throws IOException {
 
-    	/*RotateTransition rotation = new RotateTransition(Duration.seconds(0.1), myExitButton);
-		rotation.setCycleCount(Animation.INDEFINITE);
-		rotation.setByAngle(360);
-		
-		myExitButton.setOnMouseEntered(e -> rotation.play());
-		myExitButton.setOnMouseExited(e -> rotation.pause());*/
-		
-		myExitButton.setOnAction((event) -> {
-			System.out.println("Button Action\n");
-			System.exit(0);
-		});
-		webview();
 		list.setItems(items);
 		setIndikator();
 		setIndikator2();
@@ -136,6 +124,7 @@ public class C4hController {
 	private void webview()throws IOException {
 		  webEngine = browser.getEngine();
 		  webEngine.load("https://fehlermeldung.3s-hamburg.de/index-login.php"); 
+		  webEngine.load("www.141.91.183.36/bwebserver/kiosk/login"); 
 	}
 
 	@FXML
