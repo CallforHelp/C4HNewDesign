@@ -1,0 +1,86 @@
+=Mini-PC's=
+{| class="wikitable"
+|-
+! width="10%" |'''Mini-PC'''
+! width="350" style="background:#E1FCD2" | Name
+! width="350" style="background:#E1FCD2" | Optische Merkmale
+! width="350" style="background:#E1FCD2" | Hardware
+! width="350" style="background:#E1FCD2" | Windows 10 64Bit Treiber
+! width="350" style="background:#E1FCD2" | Herstellungsjahr/Ausschreibung
+! width="350" style="background:#E1FCD2" | Dauer 3S Support
+! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
+|-
+|[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
+|style="background:#E1FCD2;" | HP Pro Mini 400 G9 DesktopMini (PD08)
+|style="background:#E1FCD2;" align="center" | Aufkleber mit Core i3 (Blau) | vorne "Pro Mini" aufschrift sieht aus wie Kylo-Ren
+|style="background:#E1FCD2;" align="center" | Intel Core I3-12100T (4 x 2,20GHz/4,10GHz) Anschlüsse: 2 x DP, HDMI, DVI
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#E1FCD2;" align="center" | verkauft ab 03/2023
+|style="background:#E1FCD2;" align="center" | im Support bis ca. 12/2028
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
+|style="background:#E1FCD2;" | HP ProDesk 400 G6 DesktopMini (PD07)
+|style="background:#E1FCD2;" align="center" | Aufkleber mit i3 10-Gen | vorne "PRODESK" aufschrift sieht aus wie Kylo-Ren
+|style="background:#E1FCD2;" align="center" | Intel Core I3-10100T (4 x 3.00GHz/4,80GHz) Anschlüsse: 2 x DP 
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#E1FCD2;" align="center" | verkauft bis 02/2021
+|style="background:#E1FCD2;" align="center" | im Support bis ca. 12/2026
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:HPProDesk400G5Desktop-Mini-PC.jpeg|100px|center]]
+|style="background:#E1FCD2;" | HP ProDesk 400 G5 DesktopMini (PD06)
+|style="background:#E1FCD2;" align="center" | Aufkleber mit i3 9-Gen | vorne "PRODESK" aufschrift
+|style="background:#E1FCD2;" align="center" | Intel Core I3-9100T (4 x 3,10GHz/3,70GHz) Anschlüsse: 2 x DP 
+|style="background:#E1FCD2;" align="center" | [FOLGT]
+|style="background:#E1FCD2;" align="center" | verkauft bis 06/2020
+|style="background:#E1FCD2;" align="center" | im Support bis ca. 12/2025
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:H800G3.png|100px|center]]
+|style="background:#E1FCD2;" | HP EliteDesk 800 G5 DesktopMini (ED05)
+|style="background:#E1FCD2;" align="center" | Aufkelber mit i3 9-Gen
+|style="background:#E1FCD2;" align="center" | Intel Core I3-9100 (4 x 3,60GHz) Anschlüsse: 2 x DP, 1 x HDMI 
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#E1FCD2;" align="center" | verkauft bis 11/2019
+|style="background:#E1FCD2;" align="center" | im Support bis ca. 12/2024
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:H800G3.png|100px|center]]
+|style="background:#FDCBC2;" | HP EliteDesk 800 G4 DesktopMini (ED04)
+|style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
+|style="background:#FDCBC2;" align="center" | Intel Core I3-8100 (4 x 3.1GHz) Anschlüsse: 2 x DP, 1 x HDMI 
+|style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#FDCBC2;" align="center" | verkauft bis 11/2018
+|style="background:#FDCBC2;" align="center" | im Support bis ca. 12/2023
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:H800G3.png|100px|center]]
+|style="background:#FDCBC2;" | HP EliteDesk 800 G3 DesktopMini (ED03)
+|style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
+|style="background:#FDCBC2;" align="center" | Intel Core I3-7100 (2x 3.9GHz) 3MB Cache
+|style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#FDCBC2;" align="center" | verkauft bis 09/2017
+|style="background:#FDCBC2;" align="center" | im Support bis ca. 12/2022
+|style="background:#FDCBC2;" align="center" | nein
+|-
+|[[Datei:H800G2.jpg|100px|center]]
+|style="background:#FDCBC2;" | Mini-PC HP EliteDesk 800 G2 DM 65W - Core-i3(ED02)
+|style="background:#FDCBC2;" align="center" |   
+|style="background:#FDCBC2;" align="center" |  
+|style="background:#FDCBC2;" align="center" |
+|style="background:#FDCBC2;" align="center" | verkauft bis 09/2017
+|style="background:#FDCBC2;" align="center" | im Support bis 12/2022
+|style="background:#FDCBC2;" align="center" | nein
+|-
+|[[Datei:H800.jpg|100px|center]]
+|style="background:#FDCBC2;" | Mini-PC HP EliteDesk 800 G1 USDT (H800)
+|style="background:#FDCBC2;" align="center" | Intel-i3-Aufkleber stimmt nicht mit Inhalt überein  
+|style="background:#FDCBC2;" align="center" | Intel Pentium G3420 (nicht wie lt. Aufkleber Intel Core i3-4130)
+|style="background:#FDCBC2;" align="center" |
+|style="background:#FDCBC2;" align="center" | verkauft bis 11/2015
+|style="background:#FDCBC2;" align="center" | im Support bis 12/2020
+|style="background:#FDCBC2;" align="center" | nein
+|-
+
+|}

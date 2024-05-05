@@ -1,25 +1,31 @@
 package c4h;
 
 	
-	import javafx.application.Platform;
+import java.awt.MenuItem;
+import java.awt.PopupMenu;
+import java.awt.SystemTray;
+import java.awt.TrayIcon;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.net.URL;
 
-	
-	import javafx.scene.Parent;
-	import java.awt.*;
-	import java.awt.event.ActionEvent;
-	import java.awt.event.ActionListener;
-	import java.net.URL;
+import javax.swing.ImageIcon;
 
-	import javax.swing.ImageIcon;
+import javafx.application.Platform;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 
 	public class TrayIconKlasse {
+		
 		private SystemTray         tray        = SystemTray.getSystemTray();
 		public TrayIcon trayIcon    = new TrayIcon(createImage("images/bulb.png", "trayIcon"));
 		 // Füge ein Popup-Menü zum Tray-Icon hinzu
         private PopupMenu popupMenu = new PopupMenu();
         private MenuItem exitItem = new MenuItem("Exit");
 
-	    public TrayIconKlasse(Parent parent) {
+	    public TrayIconKlasse(Parent parent, Stage stage) {
 	        
 	    	// Überprüfe, ob das System-Tray unterstützt wird
 	        if (!SystemTray.isSupported()) {
@@ -52,8 +58,8 @@ package c4h;
 	        popupMenu.add(exitItem);
 	        trayIcon.setPopupMenu(popupMenu);
 
-	       
-	        
+	    	
+        	
 
 
 	        // Füge Listener für Doppelklick auf Tray-Icon hinzu
@@ -63,7 +69,16 @@ package c4h;
 	                // Hier kannst du die Aktion ausführen, wenn das Tray-Icon angeklickt wird
 	                Platform.runLater(() -> {
 	                    // Hier kannst du mit dem Parent-Element interagieren, z.B. die Szene wechseln
-	                    // parent.getScene().setRoot(newRoot);
+	                	stage.show();
+	                	//	stage =   scene.getWindow();
+	                	if (!stage.isShowing()) {
+	                		System.out.println("stage is Hide");
+	                		Stage newStage= new Stage();
+	                		Scene newScene= new Scene(parent);
+	                		newStage.setScene(newScene);
+	                		newStage.show();
+	                	}
+	                		
 	                });
 	            }
 	        });

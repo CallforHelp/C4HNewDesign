@@ -7,28 +7,27 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="windows" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.startView.startViewControler">
+<AnchorPane fx:id="parentContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.startView.startViewControler">
   <!-- <stylesheets>
-      <URL value="@../ButtonRounded.css" />
       <URL value="@../application.css" />
    </stylesheets> -->
   <children>
-    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="1000.0" spacing="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="314.0" spacing="20.0" AnchorPane.leftAnchor="680.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
       <children>
-        <Button id="ExitButton" fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="40.0" prefWidth="70.0" text="X" textAlignment="LEFT" textOverrun="CLIP" underline="false" wrapText="false">
+        <Button id="ExitButton" fx:id="exitButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="X" textAlignment="LEFT" textOverrun="CLIP" underline="false" wrapText="false">
           <HBox.margin>
             <Insets />
           </HBox.margin>
         </Button>
       </children>
     </HBox>
-    <Pane prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+    <Pane prefHeight="695.0" prefWidth="1000.0" visible="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
       <children>
         <HBox alignment="CENTER" layoutX="168.0" layoutY="129.0" prefHeight="352.0" prefWidth="655.0" spacing="20.0">
           <children>
-            <Button fx:id="buttonPcInfo" alignment="CENTER" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="PC Information" />
-            <Button fx:id="buttonBrowser" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Support" />
-            <Button fx:id="kioskBrowser" alignment="CENTER" mnemonicParsing="false" onAction="#loadKioskBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="button-with-logo" text="Software Kiosk" />
+            <Button fx:id="buttonPcInfo" alignment="CENTER" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="PC INFORMATION" />
+            <Button id="" fx:id="buttonSupport" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="glass, HomeButton" text="SUPPORT" />
+            <Button id="" fx:id="buttonKiosk" alignment="CENTER" mnemonicParsing="false" onAction="#loadKioskBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="SOFTWARE KIOSK" />
           </children>
         </HBox>
         <StackPane layoutX="210.0" layoutY="604.0" minHeight="-1.0" minWidth="-1.0" prefHeight="83.0" prefWidth="568.0">
@@ -42,6 +41,7 @@
         </StackPane>
       </children>
     </Pane>
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="128.0" styleClass="labelStart" text="Call4Help" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
   </children>
   <stylesheets>
     <URL value="@../application.css" />

@@ -12,655 +12,723 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Eine Klasse zum Zeigen der wichtigsten informationen &uuml;ber den Client. 
+ * Eine Klasse zum Zeigen der wichtigsten informationen &uuml;ber den Client.
  * Netwerk und PC Information
- * @author  Helmi Bani 
+ * 
+ * @author Helmi Bani
  * @version 1.0
  * 
- * */
+ */
 public class pcInformation {
-	
+
 	private final int RechnerTypLaenge = 4;
-	//private C4H_LOG_FILE pcInfoLog = new C4H_LOG_FILE();
+	// private C4H_LOG_FILE pcInfoLog = new C4H_LOG_FILE();
 	public String toolTipFehlerHinweisText;
 	ArrayList<String> list = new ArrayList<>();
-	String schulNummer="";
-	
+	String schulNummer = "";
+
 	/**
-	 * Die Schulnummer muss erstellt werden damit f&uuml;r die Fehleranmeldung sofort mitgenommen wird.
-	 * SchulNummer erstellen 
+	 * Die Schulnummer muss erstellt werden damit f&uuml;r die Fehleranmeldung
+	 * sofort mitgenommen wird. SchulNummer erstellen
+	 * 
 	 * @throws Throwable Hostname
 	 */
-	public pcInformation() {}
-	
+	public pcInformation() {
+	}
+
 	public pcInformation(String s) {
-		
+
 		try {
 			settSchulNummer();
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	
+
 	}
-	
+
 	/**
-	 * Ueberschrift Name Des Tool. 
+	 * Ueberschrift Name Des Tool.
+	 * 
 	 * @return uebrschrift
 	 */
 	public String uberSchrift() {
-		
-		String ueberschrift ="C4H";	
-		
+
+		String ueberschrift = "C4H";
+
 		return ueberschrift;
 	}
-	
+
 	/**
 	 * Die Zeit wird vom Systemausgelesen.
+	 * 
 	 * @return Zeit(time)
 	 */
 	public String timetoBuild() {
-		
+
 		String time = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss").format(new Date());
-		
+
 		return time;
 	}
-	
+
 	/*****************************************************************************************/
-	/******************************************PC_INFO****************************************/
-	
+	/******************************************
+	 * PC_INFO
+	 ****************************************/
+
 	/**
-	 * System Property ist die Klasse zum Auslesen. 
-	 * von eingenschaften 
+	 * System Property ist die Klasse zum Auslesen. von eingenschaften
+	 * 
 	 * @return userName
 	 */
 	public String getUserName() {
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-		String userName = new Properties(System.getProperties()).getProperty("user.name");
-		if(userName==""||userName==null)
-			return "Fehler-UserName";
-		return userName;
-		}return "Mac-Rechner";
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			String userName = new Properties(System.getProperties()).getProperty("user.name");
+			if (userName == "" || userName == null)
+				return "Fehler-UserName";
+			return userName;
+		}
+		return "Mac-Rechner";
 	}
-	
+
 	/**
-	 * Hier wird anhand der HostName die SchuleNummer ausgelesen. 
+	 * Hier wird anhand der HostName die SchuleNummer ausgelesen.
+	 * 
 	 * @return Schulnummer
 	 * @throws Throwable Hostname
 	 */
 	public String settSchulNummer() throws Throwable {
-		/*if(getOSversion().contains("W")||getOSversion().contains("w")) {
-		Pattern p = Pattern.compile("[0-9]{4}");
-		Matcher m = p.matcher(InetAddress.getLocalHost().getHostName());
-		
-		// match
-		if (m.find())
-			schulNummer= m.group();
-		
-		
-		if(!pruefeSchulnr())
-			this.schulNummer="Fehler-Schulnummer";
-		return schulNummer;
-		
-		}else {
-			this.schulNummer= "Fehler-SchulNummer";
-			return schulNummer;
-		}*/
-		
-		String s =System.getenv("SNR");
-		if(s==null) 
+		/*
+		 * if(getOSversion().contains("W")||getOSversion().contains("w")) { Pattern p =
+		 * Pattern.compile("[0-9]{4}"); Matcher m =
+		 * p.matcher(InetAddress.getLocalHost().getHostName());
+		 * 
+		 * // match if (m.find()) schulNummer= m.group();
+		 * 
+		 * 
+		 * if(!pruefeSchulnr()) this.schulNummer="Fehler-Schulnummer"; return
+		 * schulNummer;
+		 * 
+		 * }else { this.schulNummer= "Fehler-SchulNummer"; return schulNummer; }
+		 */
+
+		String s = System.getenv("SNR");
+		if (s == null)
 			return "Bitte Variable eintagen";
 		else
 			return s;
 	}
+
 	/**
 	 * Gibt Einfach die Schulnummer zurueck.
+	 * 
 	 * @return schulNummer
 	 * @throws Throwable Hostname
 	 */
 	public String getSchulNummer() throws Throwable {
-		String schulNummer =System.getenv("SNR");
-		
-		if(schulNummer==null) 
+		String schulNummer = System.getenv("SNR");
+
+		if (schulNummer == null)
 			return "Fehler-SchulNummer";
 		else
 			return schulNummer;
 	}
-	
+
 	/**
-	 * System Properties 
-	 * Auslesen von OSName
+	 * System Properties Auslesen von OSName
+	 * 
 	 * @return OsVersion
 	 */
-	public String getOSversion(){
-		
-		String OsVersion= new Properties(System.getProperties()).getProperty("os.name");
-		if(OsVersion==""||OsVersion==null)
+	public String getOSversion() {
+
+		String OsVersion = new Properties(System.getProperties()).getProperty("os.name");
+		if (OsVersion == "" || OsVersion == null)
 			return "Fehler OS-Version";
 		return OsVersion;
 	}
+
 	/**
-	 * System Properties 
-	 * Auslesen von Hersteller
+	 * System Properties Auslesen von Hersteller
+	 * 
 	 * @return Hersteller
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public String getHersteller() throws IOException{
-		
+	public String getHersteller() throws IOException {
+
 		String line;
 		String systemHersteller = "";
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			
-			Process Herstteller= Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+
+			Process Herstteller = Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
 			InputStreamReader input = new InputStreamReader(Herstteller.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine()) != null)
+
+			while ((line = resultOutput.readLine()) != null)
 				if (line.contains("Manufacturer"))
-					systemHersteller=line.split(":")[1].trim();
+					systemHersteller = line.split(":")[1].trim();
 			return systemHersteller;
-			}
-		else 
+		} else
 			return "Mac-Rechner";
 	}
-	
+
 	/**
 	 * PC-Modell
+	 * 
 	 * @return PC-Modell
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public String getPcModell() throws IOException{
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			String line;
-			String systemModell = "";
-			Process Systemmodell= Runtime.getRuntime().exec("Systeminfo");	
-			InputStreamReader input = new InputStreamReader(Systemmodell.getInputStream());
-			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine()) != null){
-				
-				if(line.contains("Systemmodell"))
-					systemModell= line.split(":\\s")[1];
-				    systemModell=systemModell.replace(" ", "");
+	public String getPcModell() throws IOException {
+		try {
+			// Befehl ausführen und Ausgabe abrufen
+			Process process = Runtime.getRuntime().exec("wmic computersystem get model");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			String Modell;
+			int lineCount = 0;
+			while ((Modell = reader.readLine()) != null) {
+
+				// Erhöhe den Zähler für jede Zeile
+				lineCount++;
+
+				// Überprüfe, ob die dritte Zeile erreicht ist
+				if (lineCount == 3) {
+					// Gib die dritte Zeile aus
+					return Modell;
+				}
 			}
-			return systemModell;
-		}else 
-			return "Mac-Rechner";	
+			// Prozess schließen
+			process.destroy();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
+		return "";
+	}
+
 	/**
 	 * Betriebsystemarchitektur
+	 * 
 	 * @return OSArchitektur
 	 */
-	public String getOSArchitecture(){
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			String OsArch= new Properties(System.getProperties()).getProperty("os.arch");
+	public String getOSArchitecture() {
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			String OsArch = new Properties(System.getProperties()).getProperty("os.arch");
 			return OsArch;
-		}else return "Mac-Rechner";
+		} else
+			return "Mac-Rechner";
 	}
+
 	/**
-	 * Muster Image von 3s
-	 * die info bekommen wir aus dem Infobereich des Betriebsystems
+	 * Muster Image von 3s die info bekommen wir aus dem Infobereich des
+	 * Betriebsystems
+	 * 
 	 * @return musterImages
 	 * @throws IOException RegEintrag
 	 */
-	public String getMusterImages() throws Throwable{
-		
+	public String getMusterImages() throws Throwable {
+
 		String musterImages = "";
 		String line;
 		String location = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\OEMInformation";
 		String key = "Model";
-		Process process = null ;
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {	// Run reg query, then read output with StreamReader (internal class)
-			process = Runtime.getRuntime().exec("reg query " +location+" /v "+key);
+		Process process = null;
+		if (getOSversion().contains("W") || getOSversion().contains("w")) { // Run reg query, then read output with
+																			// StreamReader (internal class)
+			process = Runtime.getRuntime().exec("reg query " + location + " /v " + key);
 			Reader input = new InputStreamReader(process.getInputStream());
-			BufferedReader resultOutput = new BufferedReader(input);		
-			while((line=resultOutput.readLine()) != null) {
-				
-				if (line.contains("REG")){
-						musterImages=line.split("REG_SZ")[1].trim();
-				}				
+			BufferedReader resultOutput = new BufferedReader(input);
+			while ((line = resultOutput.readLine()) != null) {
+
+				if (line.contains("REG")) {
+					musterImages = line.split("REG_SZ")[1].trim();
+				}
 			}
-			
-	   }
-		if(musterImages==""|| musterImages==null)
-			return"Fehler-MusterImage";
-		
+
+		}
+		if (musterImages == "" || musterImages == null)
+			return "Fehler-MusterImage";
+
 		return musterImages;
 	}
+
 	/**
-	 * Seriennummer aus dem Rechner auslesen. 
+	 * Seriennummer aus dem Rechner auslesen.
+	 * 
 	 * @return Seriennummer
 	 * @throws Exception Seriennummer
 	 */
 	public String getSerienNummer() throws Exception {
 		String line;
-		String serienNummer="";
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			
-			Process SerienNummer= Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
+		String serienNummer = "";
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+
+			Process SerienNummer = Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
 			InputStreamReader input = new InputStreamReader(SerienNummer.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine()) != null)
+
+			while ((line = resultOutput.readLine()) != null)
 				if (line.contains("SerialNumber"))
-					serienNummer=line.split(":")[1].trim();
-		
-			return serienNummer; 
-		}else 
+					serienNummer = line.split(":")[1].trim();
+
+			return serienNummer;
+		} else
 			return "Mac-Rechner";
-		
-		
-		
+
 	}
+
 	/**
-	 * RechnerTyp aus dem Hostname auslesen. 
+	 * RechnerTyp aus dem Hostname auslesen.
+	 * 
 	 * @return RechnerTyp
 	 * @throws Exception Hostname
 	 */
 	public String getRechnertypen() throws Exception {
-		
-		String rechnerTyp="";
-		
-		
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
+
+		String rechnerTyp = "";
+
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
 			String hostname = InetAddress.getLocalHost().getHostName();
-			for (int i = RechnerTypLaenge; i < (RechnerTypLaenge*2); i++) {
-				rechnerTyp=rechnerTyp+(hostname.charAt(i));
+			for (int i = RechnerTypLaenge; i < (RechnerTypLaenge * 2); i++) {
+				rechnerTyp = rechnerTyp + (hostname.charAt(i));
 			}
-		}else {
+		} else {
 			return "Mac-Rechner";
 		}
-		
-		return rechnerTyp; 
+
+		return rechnerTyp;
 	}
-	
+
 	/*****************************************************************************************/
-	/****************************************** NETZWERK ****************************************/
-	
+	/******************************************
+	 * NETZWERK
+	 ****************************************/
+
 	/**
 	 * IpAdresse Auslesen.
+	 * 
 	 * @return result(IPAdress)
 	 * @throws UnknownHostException Hostadresse
 	 */
 	public String getLocalAdresse() throws UnknownHostException {
-		
-		String result ="";
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			result= InetAddress.getLocalHost().getHostAddress();
-			if(result=="")
+
+		String result = "";
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			result = InetAddress.getLocalHost().getHostAddress();
+			if (result == "")
 				return "Fehler-Netzwerk";
 			return result;
-		}else 
+		} else
 			return "Fehler-Netzwerk";
 	}
+
 	/**
-	 * MacAdresse auslesen. 
+	 * MacAdresse auslesen.
+	 * 
 	 * @return MacAdresse
-	 * @throws IOException Commandbefehl 
+	 * @throws IOException Commandbefehl
 	 */
-	public String getMacAddress() throws IOException{
-		String result = "";
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			Process p = Runtime.getRuntime().exec("getmac /fo csv /nh");
-			BufferedReader in = new java.io.BufferedReader(new InputStreamReader(p.getInputStream()));
+	public String getMacAddress() throws IOException {
+		String networkInterfaceName = "Ethernet";
+		try {
+			// Befehl ausführen und Ausgabe abrufen
+			Process process = Runtime.getRuntime().exec("getmac /fo csv /nh /v");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+			// Ausgabe Zeile für Zeile durchgehen
 			String line;
-			line = in.readLine();        
-			String[] macAdre = line.split(",");
-			result=macAdre[0].replace('"','\0').trim();
-			//for mac 
-			}else {
-				return "Mac Rechner ";
-				/*for( NetworkInterface ni : Collections.list( NetworkInterface.getNetworkInterfaces() ) ){
-					byte[] hardwareAddress = ni.getHardwareAddress();
-					if( hardwareAddress != null ){
-						for ( int i = 0; i < hardwareAddress.length; i++ )
-							result += String.format( (i==0?"":"-")+"%02X", hardwareAddress[i] );
-					*/
+			while ((line = reader.readLine()) != null) {
+				// Überprüfen, ob die Zeile die gesuchte Netzwerkkarte enthält
+				if (line.contains(networkInterfaceName)) {
+					// MAC-Adresse aus der Zeile extrahieren
+					String[] parts = line.split(",");
+					String macAddress = parts[2].replaceAll("\"", "").trim();
+					//System.out.println("MAC-Adresse von " + networkInterfaceName + ": " + macAddress);
+					return macAddress; // Schleife beenden, sobald die MAC-Adresse gefunden wurde
 				}
-			
-		return result;
+			}
+
+			// Prozess schließen
+			process.destroy();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		/*
+		 * String result = "";
+		 * if(getOSversion().contains("W")||getOSversion().contains("w")) { Process p =
+		 * Runtime.getRuntime().exec("getmac /fo csv /nh /v"); BufferedReader in = new
+		 * java.io.BufferedReader(new InputStreamReader(p.getInputStream())); String
+		 * line; line = in.readLine(); String[] macAdre = line.split(",");
+		 * result=macAdre[0].replace('"','\0').trim(); //for mac }else { return
+		 * "Mac Rechner "; for( NetworkInterface ni : Collections.list(
+		 * NetworkInterface.getNetworkInterfaces() ) ){ byte[] hardwareAddress =
+		 * ni.getHardwareAddress(); if( hardwareAddress != null ){ for ( int i = 0; i <
+		 * hardwareAddress.length; i++ ) result += String.format( (i==0?"":"-")+"%02X",
+		 * hardwareAddress[i] );
+		 * 
+		 * }
+		 */
+
+		return "";
 	}
-	
+
 	/**
 	 * Localhost auslesen.
+	 * 
 	 * @return Localhost
 	 * @throws UnknownHostException Hostname
 	 */
 	public String getLocalHost() throws UnknownHostException {
-		
-		String result ="";
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			result= InetAddress.getLocalHost().getHostName();
-			if(result=="")
+
+		String result = "";
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			result = InetAddress.getLocalHost().getHostName();
+			if (result == "")
 				return "Fehler-Netzwerk";
 			return result;
-		}else{
+		} else {
 			return "Mac-Rechner";
 		}
 	}
+
 	/**
 	 * angemeldete Domaine auslesen.
+	 * 
 	 * @return domain
 	 * @throws IOException commandbefehl
 	 */
 	public String getMachindomain() throws IOException {
-		
-		String domain="";
+
+		String domain = "";
 		String line;
 		Process ipfconfig = null;
 		Reader input = null;
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-			ipfconfig= Runtime.getRuntime().exec("ipconfig /all");
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			ipfconfig = Runtime.getRuntime().exec("ipconfig /all");
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			while((line=resultOutput.readLine()) != null){
-				if(line.contains("DNS-Suffixsuchliste")){
-					domain=line.split(":\\s")[1];
+			while ((line = resultOutput.readLine()) != null) {
+				if (line.contains("DNS-Suffixsuchliste")) {
+					domain = line.split(":\\s")[1];
 				}
 			}
-		}else {
+		} else {
 			ipfconfig = Runtime.getRuntime().exec("cat /etc/resolv.conf");
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine())!= null){
-				//System.out.println(line);
-				if(line.contains("domain")){
-					domain=line.split("\\s")[1];
+
+			while ((line = resultOutput.readLine()) != null) {
+				// System.out.println(line);
+				if (line.contains("domain")) {
+					domain = line.split("\\s")[1];
 				}
 			}
 		}
-		if(domain=="")
+		if (domain == "")
 			return "keine-Domain";
-		
+
 		return domain;
 	}
-	
+
 	/**
 	 * Subnetzmask berechnnen und darstellen.
+	 * 
 	 * @return submasl
 	 * @throws SocketException IpAdress
-	 * @throws IOException Localhost
+	 * @throws IOException     Localhost
 	 */
 	public String getSubnetMask() throws SocketException, IOException {
-		if(getOSversion().contains("W")||getOSversion().contains("w")) {
-		NetworkInterface networkInterface = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
-		short prflen= networkInterface.getInterfaceAddresses().get(0).getNetworkPrefixLength();
-		int shft = 0xffffffff<<(32-prflen);
-		int oct1 = ((byte) ((shft&0xff000000)>>24)) & 0xff;
-		int oct2 = ((byte) ((shft&0x00ff0000)>>16)) & 0xff;
-		int oct3 = ((byte) ((shft&0x0000ff00)>>8)) & 0xff;
-		int oct4 = ((byte) (shft&0x000000ff)) & 0xff;
-		String submask = oct1+"."+oct2+"."+oct3+"."+oct4+"/"+prflen;
-		
-		return submask;
-		}else 
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			NetworkInterface networkInterface = NetworkInterface.getByInetAddress(InetAddress.getLocalHost());
+			short prflen = networkInterface.getInterfaceAddresses().get(0).getNetworkPrefixLength();
+			int shft = 0xffffffff << (32 - prflen);
+			int oct1 = ((byte) ((shft & 0xff000000) >> 24)) & 0xff;
+			int oct2 = ((byte) ((shft & 0x00ff0000) >> 16)) & 0xff;
+			int oct3 = ((byte) ((shft & 0x0000ff00) >> 8)) & 0xff;
+			int oct4 = ((byte) (shft & 0x000000ff)) & 0xff;
+			String submask = oct1 + "." + oct2 + "." + oct3 + "." + oct4 + "/" + prflen;
+
+			return submask;
+		} else
 			return "Mac-Rechner";
-		
+
 	}
-	
+
 	/**
 	 * Gateway auslesen.
+	 * 
 	 * @return defaultgateway
 	 * @throws IOException commandbefehl
 	 */
 	public String getDefaultgateway() throws IOException {
-		
-		String defaultgateway="";
+
+		String defaultgateway = "";
 		String line;
-		Process ipfconfig=null;
+		Process ipfconfig = null;
 		Reader input = null;
-		if (getOSversion().contains("W")||getOSversion().contains("w") ) {
-			ipfconfig= Runtime.getRuntime().exec("netsh interface ip show config");
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			ipfconfig = Runtime.getRuntime().exec("netsh interface ip show config");
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			while( (line=resultOutput.readLine()) != null ) {
-				if(line.contains("Standardgateway")) {
-					defaultgateway=line.split(":\\s")[1].trim();
+			while ((line = resultOutput.readLine()) != null) {
+				if (line.contains("Standardgateway")) {
+					defaultgateway = line.split(":\\s")[1].trim();
 				}
 			}
-		}else {
+		} else {
 			ipfconfig = Runtime.getRuntime().exec("netstat -nr");
 			input = new InputStreamReader(ipfconfig.getInputStream());
-			
+
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine())!= null){
-				if(line.contains("default")){
+
+			while ((line = resultOutput.readLine()) != null) {
+				if (line.contains("default")) {
 					Pattern p = Pattern.compile("\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b");
 					Matcher m = p.matcher(line);
 					if (m.find())
-						defaultgateway= m.group();
+						defaultgateway = m.group();
 				}
 			}
 		}
-		if(defaultgateway=="")
+		if (defaultgateway == "")
 			return "Fehler-Netzwerk";
 		return defaultgateway;
 	}
-	
+
 	/**
 	 * DHCP serveradresse auslesen.
+	 * 
 	 * @return dhcpserver
 	 * @throws IOException commandbefehl
 	 */
 	public String getDHCPServer() throws IOException {
-		
-		String dhcpserver="";
+
+		String dhcpserver = "";
 		String line;
 		Reader input = null;
-		Process ipfconfig= null; 
-		
-		if(getOSversion().contains("W")||getOSversion().contains("w")){
-			ipfconfig= Runtime.getRuntime().exec("ipconfig /all");
+		Process ipfconfig = null;
+
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			ipfconfig = Runtime.getRuntime().exec("ipconfig /all");
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			while((line=resultOutput.readLine()) != null) {
-				if(line.contains("DHCP-")) {
-				dhcpserver=line.split(":\\s")[1];
+			while ((line = resultOutput.readLine()) != null) {
+				if (line.contains("DHCP-")) {
+					dhcpserver = line.split(":\\s")[1];
 				}
 			}
-		}else {
-			//netstat -nr | grep default | awk '{print $2}';
+		} else {
+			// netstat -nr | grep default | awk '{print $2}';
 			ipfconfig = Runtime.getRuntime().exec("cat /etc/resolv.conf");
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine())!= null){
-				//System.out.println(line);
-				if(line.contains("nameserver")){
-					dhcpserver=line.split("\\s")[1];
+
+			while ((line = resultOutput.readLine()) != null) {
+				// System.out.println(line);
+				if (line.contains("nameserver")) {
+					dhcpserver = line.split("\\s")[1];
 				}
 			}
 		}
-		if(dhcpserver=="")
+		if (dhcpserver == "")
 			return "Fehler-Netzwerk";
 		return dhcpserver;
 	}
-	
+
 	/**
 	 * DNS serveradresse auslesen.
+	 * 
 	 * @return dnsserver
 	 * @throws IOException commandbefehl
 	 */
-	public String getDNSServer() throws IOException{
-		
-		String dnsserver="";
+	public String getDNSServer() throws IOException {
+
+		String dnsserver = "";
 		String line;
-		Process ipfconfig= null;
+		Process ipfconfig = null;
 		Reader input = null;
-		
-		if(getOSversion().contains("W")||getOSversion().contains("w")){
+
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
 			ipfconfig = Runtime.getRuntime().exec("ipconfig /all");
-			
+
 			input = new InputStreamReader(ipfconfig.getInputStream());
 			BufferedReader resultOutput = new BufferedReader(input);
-			
-			while((line=resultOutput.readLine())!= null){
-				if(line.contains("DNS-Server")){
-					dnsserver=line.split(":\\s")[1];
+
+			while ((line = resultOutput.readLine()) != null) {
+				if (line.contains("DNS-Server")) {
+					dnsserver = line.split(":\\s")[1];
 				}
 			}
-		}else {
-				ipfconfig = Runtime.getRuntime().exec("cat /etc/resolv.conf");
-				input = new InputStreamReader(ipfconfig.getInputStream());
-				BufferedReader resultOutput = new BufferedReader(input);
-				
-				while((line=resultOutput.readLine())!= null){
-					//System.out.println(line);
-					if(line.contains("nameserver")){
-						dnsserver=line.split("\\s")[1];
-					}
+		} else {
+			ipfconfig = Runtime.getRuntime().exec("cat /etc/resolv.conf");
+			input = new InputStreamReader(ipfconfig.getInputStream());
+			BufferedReader resultOutput = new BufferedReader(input);
+
+			while ((line = resultOutput.readLine()) != null) {
+				// System.out.println(line);
+				if (line.contains("nameserver")) {
+					dnsserver = line.split("\\s")[1];
 				}
+			}
 		}
-		if(dnsserver=="")
+		if (dnsserver == "")
 			return "Fehler-Netzwerk";
 		return dnsserver;
 	}
+
 	/**
-	 * Schulnummer Pr&uuml;fen ob es korrekt eingetragen ist.
-	 * Ein Hinweis als info wird dargestellt
+	 * Schulnummer Pr&uuml;fen ob es korrekt eingetragen ist. Ein Hinweis als info
+	 * wird dargestellt
+	 * 
 	 * @return true/false
 	 * @throws Throwable HostName
 	 */
 	public boolean pruefeSchulnr() throws Throwable {
-		
-		if (getSchulNummer().length()==4){
+
+		if (getSchulNummer().length() == 4) {
 			if ((getSchulNummer().equals("")) || (getSchulNummer().contains("0000"))) {
 				return false;
-			}else 
+			} else
 				return true;
 		}
-		return  false;
+		return false;
 	}
+
 	/**
-	 * Es wird hier nochmal sicher gestellt dass die Version unser MusterImages 
-	 * erstellt.
-	 * Hinweis die Klasse tritt nur auf falls NULL beim Standard MUsterImage Ausgabe kommt
+	 * Es wird hier nochmal sicher gestellt dass die Version unser MusterImages
+	 * erstellt. Hinweis die Klasse tritt nur auf falls NULL beim Standard
+	 * MUsterImage Ausgabe kommt
 	 * 
 	 * @return MusterImage aus der REG
-	 * @throws IllegalArgumentException MusterImage
-	 * @throws IllegalAccessException Value vom REG
+	 * @throws IllegalArgumentException  MusterImage
+	 * @throws IllegalAccessException    Value vom REG
 	 * @throws InvocationTargetException Value vom REG
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	public String getMusterImageAusRegistry() throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, IOException {
+	public String getMusterImageAusRegistry()
+			throws IllegalArgumentException, IllegalAccessException, InvocationTargetException, IOException {
 		String PATH = "powershell.exe (Get-ItemProperty -Path 'HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\OEMInformation' -Name 'Model').Model";
-		
-		String musterImageName="";
-		Process modellAusRegistry= Runtime.getRuntime().exec(PATH);
+
+		String musterImageName = "";
+		Process modellAusRegistry = Runtime.getRuntime().exec(PATH);
 		InputStreamReader input = new InputStreamReader(modellAusRegistry.getInputStream());
 		BufferedReader resultOutput = new BufferedReader(input);
-		
-		if((musterImageName=resultOutput.readLine()) != null)
+
+		if ((musterImageName = resultOutput.readLine()) != null)
 			System.out.println(musterImageName);
-			
-		if(musterImageName==null)
+
+		if (musterImageName == null)
 			return "Fehler-MusterImage";
-		
-		if(musterImageName.equals(""))
+
+		if (musterImageName.equals(""))
 			return "Fehler-MusterImage";
-		else 
+		else
 			return musterImageName;
-		
+
 	}
-	public String getConnectedWifiInfo(){
-		String SSID="";
-		try {
-	            Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
-	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-	            String line;
-	            while ((line = reader.readLine()) != null) {
-	                if (line.contains("SSID")) {
-	                    return SSID= line.split(":")[1].trim();
-	                }
-	            }
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-			return SSID;
-	    }
-	public String getWifiMacAdresse(){
-		
-		 StringBuilder wlanMAC = new StringBuilder();
-		try {
-	            Process process = Runtime.getRuntime().exec("cmd.exe /c netsh wlan show interfaces | findstr \"SSID\"");
-	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-	            String line;
-	            String BSSID[] = null;
-	            while ((line = reader.readLine()) != null) {
-	                    if (line.contains("BSSID")) {
-	                    	 BSSID = line.split(":");
-	                    }
-	            }
-	        
-				int startPos=1;
-				if (startPos < 0 || startPos >= BSSID.length) {
-	                return ""; // Rückgabe eines leeren Strings, wenn die Startposition ungültig ist
-	            }
-
-	           
-
-	            for (int i = startPos; i < BSSID.length; i++) {
-	            	wlanMAC.append(BSSID[i]);
-	                if (i < BSSID.length - 1) {
-	                	wlanMAC.append(":"); // Fügen Sie ein Leerzeichen hinzu, außer für das letzte Element
-	                }
-	            }
-	            
-	            
-	            reader.close();
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-			return wlanMAC.toString();
-	    }
-	
-	/************************************************************************************************************/
-	/************************************** PRINTING * @throws Throwable ****************************************/
 	/**
-	 * Print Information in der Console 
+	 * Wlan Verbindung aus dem Konsole auslese
+	 * 
+	 * @return SSID Name
+	 */
+	public String getConnectedWifiInfo() {
+		String SSID = "";
+		try {
+			Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (line.contains("SSID")) {
+					return SSID = line.split(":")[1].trim();
+				}
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return SSID;
+	}
+
+	/**
+	 * MAcAdresse der Aktive Wlan Verbindun
+	 * 
+	 * @return MACAdresse
+	 */
+	public String getWifiMacAdresse() {
+
+		StringBuilder wlanMAC = new StringBuilder();
+		try {
+			Process process = Runtime.getRuntime().exec("cmd.exe /c netsh wlan show interfaces");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+			String line;
+			String BSSID[] = null;
+			while ((line = reader.readLine()) != null) {
+				if (line.contains("Physische")) {
+					BSSID = line.split(":");
+				}
+			}
+
+			int startPos = 1;
+			if (startPos < 0 || startPos >= BSSID.length) {
+				return ""; // Rückgabe eines leeren Strings, wenn die Startposition ungültig ist
+			}
+
+			for (int i = startPos; i < BSSID.length; i++) {
+				wlanMAC.append(BSSID[i]);
+				if (i < BSSID.length - 1) {
+					wlanMAC.append(":"); // Fügen Sie ein Leerzeichen hinzu, außer für das letzte Element
+				}
+			}
+
+			reader.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return wlanMAC.toString();
+	}
+
+	/************************************************************************************************************/
+	/**************************************
+	 * PRINTING * @throws Throwable
+	 ****************************************/
+	/**
+	 * Print Information in der Console
+	 * 
 	 * @throws Throwable Hostname Localhost
 	 */
-	public void printBGinfo() throws Throwable{
-	
+	public void printBGinfo() throws Throwable {
+
 		System.out.println("3S");
 		System.out.println("BG_Info");
-		System.out.println("time to build :"+ timetoBuild());
-		System.out.println("*********************************");	
+		System.out.println("time to build :" + timetoBuild());
+		System.out.println("*********************************");
 		System.out.println("Schul-Support-Services HiTEC e.V.");
-		
+
 		System.out.println("*********************************");
 		System.out.println("            PC Info              ");
 		System.out.println("*********************************");
-		System.out.println("Host Name     :"+ getLocalHost());
-		System.out.println("User Name     :"+ getUserName());
-		System.out.println("SchulNummer   :"+ getSchulNummer());
-		System.out.println("OS Version    :"+ getOSversion());
-		System.out.println("OS Architektur:"+ getOSArchitecture());
-		System.out.println("Muster Images :"+ getMusterImages());
-		System.out.println("Rechner Typen :"+ getRechnertypen());
-		System.out.println("WlanNetzwerkName :"+ getConnectedWifiInfo());
-		System.out.println("WlanMAC :"+ getWifiMacAdresse());
-		
-	
+		System.out.println("Host Name     :" + getLocalHost());
+		System.out.println("User Name     :" + getUserName());
+		System.out.println("SchulNummer   :" + getSchulNummer());
+		System.out.println("OS Version    :" + getOSversion());
+		System.out.println("OS Architektur:" + getOSArchitecture());
+		System.out.println("Muster Images :" + getMusterImages());
+		System.out.println("Rechner Typen :" + getRechnertypen());
+
 		System.out.println("*********************************");
 		System.out.println("            NETZWERK             ");
 		System.out.println("*********************************");
-	
-		System.out.println("Adresse local  :"+ getLocalAdresse());
-		System.out.println("Subnet Mask    :"+ getSubnetMask());
-		System.out.println("MAC Adresse    :"+ getMacAddress());
-		System.out.println("Machine Domain :"+ getMachindomain());
-		System.out.println("Default Gateway:"+ getDefaultgateway());
-		System.out.println("DHCP Server    :"+ getDHCPServer());
-		System.out.println("DNS Server     :"+ getDNSServer());
-		
-		
+
+		System.out.println("Adresse local  :" + getLocalAdresse());
+		System.out.println("Subnet Mask    :" + getSubnetMask());
+		System.out.println("MAC Adresse    :" + getMacAddress());
+		System.out.println("Machine Domain :" + getMachindomain());
+		System.out.println("Default Gateway:" + getDefaultgateway());
+		System.out.println("DHCP Server    :" + getDHCPServer());
+		System.out.println("DNS Server     :" + getDNSServer());
+
 		try {
-			System.out.println("Pruenfung der Schulnummer: "+getSchulNummer()+" is "+ pruefeSchulnr());
+			System.out.println("Pruenfung der Schulnummer: " + getSchulNummer() + " is " + pruefeSchulnr());
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
@@ -668,11 +736,11 @@ public class pcInformation {
 	}
 
 	public boolean getState() throws Throwable {
-		
-		//PC
+
+		// PC
 		if (!list.isEmpty())
 			list.removeAll(list);
-		
+
 		list.add(getLocalHost());
 		list.add(getUserName());
 		list.add(getSchulNummer());
@@ -680,7 +748,7 @@ public class pcInformation {
 		list.add(getOSArchitecture());
 		list.add(getMusterImageAusRegistry());
 		list.add(getRechnertypen());
-		//Netzwerk
+		// Netzwerk
 		list.add(getLocalAdresse());
 		list.add(getSubnetMask());
 		list.add(getMacAddress());
@@ -688,26 +756,36 @@ public class pcInformation {
 		list.add(getDefaultgateway());
 		list.add(getDHCPServer());
 		list.add(getDNSServer());
-		
+
 		for (int i = 0; i < list.size(); i++) {
-			if(list.get(i).equalsIgnoreCase("Fehler-Netzwerk")||(list.get(i).equalsIgnoreCase("Fehler-MusterImage")||(list.get(i).equalsIgnoreCase("Fehler-Schulnummer")))) {
-				toolTipFehlerHinweisText=list.get(i).replaceAll("Fehler-", "");
+			if (list.get(i).equalsIgnoreCase("Fehler-Netzwerk") || (list.get(i).equalsIgnoreCase("Fehler-MusterImage")
+					|| (list.get(i).equalsIgnoreCase("Fehler-Schulnummer")))) {
+				toolTipFehlerHinweisText = list.get(i).replaceAll("Fehler-", "");
 				System.out.println(toolTipFehlerHinweisText);
 				return false;
 			}
 		}
 		return true;
 	}
-	
+
+	public String getWifiIPAdresse() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		pcInformation test = new pcInformation();
-		System.out.println(test.getWifiMacAdresse());
-		System.out.println(test.getConnectedWifiInfo());
-		
 
+		try {
+			test.printBGinfo();
+			System.out.println(test.getPcModell());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-			
-		
+
 }

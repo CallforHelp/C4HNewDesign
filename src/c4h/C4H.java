@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 public class C4H extends Application {
 	private double xOffset = 0;
 	private double yOffset = 0;
+	TrayIconKlasse TrayIconC4H;
 	
 	@Override
 	public void start(Stage primaryStage) throws AWTException{
@@ -30,9 +31,13 @@ public class C4H extends Application {
 			
 			  page.setOnMousePressed(new EventHandler<MouseEvent>() {
 			  
-			  @Override public void handle(MouseEvent event) { xOffset = event.getSceneX();
-			  yOffset = event.getSceneY(); } }); page.setOnMouseDragged(new
-			  EventHandler<MouseEvent>() {
+			  @Override public void handle(MouseEvent event) {
+				  xOffset = event.getSceneX();
+				  yOffset = event.getSceneY(); } }); 
+			  
+
+			  
+			  page.setOnMouseDragged(new EventHandler<MouseEvent>() {
 			  
 			  @Override public void handle(MouseEvent event) {
 			  primaryStage.setX(event.getScreenX() - xOffset);
@@ -40,9 +45,14 @@ public class C4H extends Application {
 			 
 	        
 	        Scene scene = new Scene(page);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+
 			primaryStage.setScene(scene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
-			//primaryStage.show();
+	
+			TrayIconC4H= new TrayIconKlasse(page, primaryStage);
+			
+			primaryStage.show();
 			
 		} catch (IOException e) {
 				e.printStackTrace();
