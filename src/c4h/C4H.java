@@ -14,10 +14,14 @@ import javafx.stage.StageStyle;
 
 
 public class C4H extends Application {
+	
 	private double xOffset = 0;
-	String cssPath="/C4HNewDesign/src/c4h/ressource/application.css";
+	
+	
 	private double yOffset = 0;
-	TrayIconKlasse TrayIconC4H;
+	private TrayIconKlasse TrayIconC4H;
+	private String cssPath="application.css";
+	
 	
 	@Override
 	public void start(Stage primaryStage) throws AWTException{
@@ -49,7 +53,7 @@ public class C4H extends Application {
 			 
 	        
 	        Scene scene = new Scene(page);
-			scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+		//	scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 			primaryStage.setScene(scene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
@@ -59,7 +63,7 @@ public class C4H extends Application {
 			primaryStage.show();
 			
 		} catch (IOException e) {
-				e.printStackTrace();
+			e.getCause().printStackTrace();
 			}
 		
 	
