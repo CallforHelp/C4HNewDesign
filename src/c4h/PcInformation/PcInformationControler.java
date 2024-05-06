@@ -3,6 +3,7 @@ package c4h.PcInformation;
 
 
 
+import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.URL;
@@ -134,14 +135,31 @@ public class PcInformationControler implements Initializable {
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
     	
     	String srcPath = "/c4h/images/PcModell/"+pcModell;
+    	
+    	//Path Prüfen ob png oder jpeg
+    	boolean exists = checkFilePath(srcPath+".jpeg");	
+    	if(exists)
+    		srcPath = "/c4h/images/PcModell/"+pcModell+".png";
+    	else 
+    		srcPath = "/c4h/images/PcModell/"+pcModell+".jpeg";
+    	//src Path png oder jpeg
+    	
+    	if (pcModell=="")
+    		 srcPath = "/c4h/images/PcModell/noPic.png";
+
     	System.out.println(srcPath);
         // Bild aus dem Pfad laden
-        Image modellFoto = new Image(srcPath);
+        Image modellFoto = new Image(srcPath.trim());
         image.setImage(modellFoto);
     }
     
 
-    @SuppressWarnings("unused")
+    private boolean checkFilePath(String filePath) {
+            File file = new File(filePath.trim());
+            return file.exists();
+	}
+
+	@SuppressWarnings("unused")
 	private void mobileParent() {
     	
     	PcInfoContainer.setOnMousePressed(event -> {

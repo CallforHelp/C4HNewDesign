@@ -192,7 +192,7 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					return "HP Pro Mini 400 G9 DesktopMini";
+					return Modell;
 				}
 			}
 			// Prozess schließen
