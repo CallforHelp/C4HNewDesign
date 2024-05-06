@@ -102,6 +102,8 @@ public class PcInformationControler implements Initializable {
 	private Label Seriennummer;
 	@FXML
 	private Label kaufdatum;
+	@FXML
+	private Label win11komp;
 	
 	//IMGInfo
 	@FXML
@@ -129,9 +131,10 @@ public class PcInformationControler implements Initializable {
     @FXML
     private void modellImage() throws Throwable {
     	
-    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell())+"";
+    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
     	
-    	String srcPath = "/c4h/images/PcModell/HP09.png"+"/"+pcModell;
+    	String srcPath = "/c4h/images/PcModell/"+pcModell;
+    	System.out.println(srcPath);
         // Bild aus dem Pfad laden
         Image modellFoto = new Image(srcPath);
         image.setImage(modellFoto);

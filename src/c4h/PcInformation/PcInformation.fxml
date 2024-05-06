@@ -26,7 +26,7 @@
             <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" spacing="5.0" styleClass="labelText">
               <children>
                 <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="SystemInformation" textFill="BLACK" />
-                <GridPane id="grid" fx:id="gridSystemInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="200.0" prefWidth="300.0" styleClass="labelText" vgap="0.0" visible="true">
+                <GridPane id="grid" fx:id="gridSystemInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="245.0" prefWidth="300.0" styleClass="labelText" vgap="0.0" visible="true">
                   <children>
                     <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="Hostname :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="SchulNummer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
@@ -47,6 +47,7 @@
                     <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                     <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                     <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                    <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
                   </rowConstraints>
                 </GridPane>
               </children>
@@ -58,13 +59,14 @@
                   <children>
                     <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="RechnerTyp:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Dauer 3S Support:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="SupportEnde:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Kaufdatum/Ausschreibung:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Seriennummer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                     <Label fx:id="rechnerTyp" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <Label id="kaufdateum" fx:id="kaufdatum" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <Label fx:id="supportEnde" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label id="kaufdateum" fx:id="supportEnde" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label id="supportEnde" fx:id="kaufdatum" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                     <Label fx:id="Seriennummer" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Win 11 Kompatibilität:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <Label id="Seriennummer" fx:id="win11komp" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="123.0" />
@@ -115,7 +117,7 @@
             </GridPane>
           </children>
         </VBox>
-        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="435.0" layoutY="363.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
+        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="436.0" layoutY="392.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
           <children>
             <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
             <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="162.8046875" prefWidth="600.0" spacing="5.0">

@@ -1,11 +1,14 @@
 package c4h.PcInformation;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -30,13 +33,24 @@ public class ParsePcModelInMap {
 	final static  String filePathDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\Desktops.txt";
 	final static String filePathminiDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\miniDesktops.txt";
 	final static String filePathLaptops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\LapTops.txt";
-	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\.txt";
 	
-
+	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
+	
+	
+	public ParsePcModelInMap() {
+		// TODO Auto-generated constructor stub
+		parseText(filePathAuschreiubungPC);
+	}
 
 	public Map<String, ArrayList<String>> parseText(String filePath) {
+		try {
+            FileReader fileReader = new FileReader(filePath);
+            // Proceed with reading the file
+        } catch (FileNotFoundException e) {
+            System.out.println("The specified file does not exist or cannot be found.");
+            e.printStackTrace();
+        }
 		
-    
         String currentKey = null;
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
@@ -47,7 +61,7 @@ public class ParsePcModelInMap {
                 	   
                     // Setze den aktuellen Schlüssel zurück, wenn eine neue Sektion beginnt
                     currentKey = null;
-                    continue; // Springe zur nächsten Iteration
+                   // continue; // Springe zur nächsten Iteration
                 }
 
                 // Wenn "datei" gefunden wurde, bearbeite die Zeile und füge sie zur relevanten Liste hinzu
@@ -64,7 +78,8 @@ public class ParsePcModelInMap {
                 if (line.contains("(") && line.contains(")")) {
                     // Überprüfe, ob die Klammer von einem Zollzeichen begrenzt ist
                     //Pattern pattern = Pattern.compile("\\(.*?\\)");
-                    Pattern pattern = Pattern.compile("\\((.{4})\\)");
+                  //  Pattern pattern = Pattern.compile("\\((.{4})\\)");
+                	 Pattern pattern = Pattern.compile("\\((?=.*\\d)(?=.*[a-zA-Z]).{1,4}\\)");
                     Matcher matcher = pattern.matcher(line);
                     while (matcher.find()) {
                         String match = matcher.group();
@@ -79,6 +94,8 @@ public class ParsePcModelInMap {
                             // Wenn eine neue Klammer gefunden wird, erstelle eine neue Map
                             mapList.put(key, new ArrayList<>());
                             currentKey = key;
+                            mapList.get(currentKey).add(line);
+                            
                         }
                     }
                 }
@@ -94,11 +111,30 @@ public class ParsePcModelInMap {
 	}
 	
 	public String findePcModell(String PCModell) {
-		String pcModell="";
-		
-		return pcModell;
+		String valueToFind = PCModell;
+		 String keyPCModell = getKeyByExactValueInList(mapList, valueToFind);
+		 if (keyPCModell != null) {
+	            System.out.println("Der Schlüssel für den Wert '" + valueToFind + "' ist: " + keyPCModell);
+	            
+	            return keyPCModell;
+	        } else {
+	            System.out.println("Der Wert '" + valueToFind + "' wurde nicht in der Map gefunden.");
+	            return "";
+	        }
 	}
 	
+	public static <K> K getKeyByExactValueInList(Map<K, ArrayList<String>> map, String value) {
+        for (Map.Entry<K, ArrayList<String>> entry : map.entrySet()) {
+            ArrayList<String> list = entry.getValue();
+            for (String listItem : list) {
+                if (listItem.contains(value)) {
+                    return entry.getKey();
+                }
+            }
+        }
+        return null; // Wenn der Wert nicht gefunden wird
+    }
+
 	public void printMAP() {
         
 		//Print Maps
@@ -122,7 +158,8 @@ public class ParsePcModelInMap {
 		
 		
 		ParsePcModelInMap parse = new ParsePcModelInMap();
-		parse.parseText(filePathminiDesktops);
+		parse.printMAP();
+		
 
 
         

@@ -192,7 +192,7 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					return Modell;
+					return "HP Pro Mini 400 G9 DesktopMini";
 				}
 			}
 			// Prozess schließen
@@ -714,6 +714,7 @@ public class pcInformation {
 		System.out.println("OS Architektur:" + getOSArchitecture());
 		System.out.println("Muster Images :" + getMusterImages());
 		System.out.println("Rechner Typen :" + getRechnertypen());
+		System.out.println("Pc Modell     :" + getPcModell());
 
 		System.out.println("*********************************");
 		System.out.println("            NETZWERK             ");
