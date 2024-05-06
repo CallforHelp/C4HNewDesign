@@ -36,6 +36,8 @@ import javafx.util.Duration;
 public class PcInformationControler implements Initializable {
 
 	private pcInformation pcIno = new pcInformation();
+	
+	private ParsePcModelInMap parsePcModell= new ParsePcModelInMap();
 	private double xOffset = 0;
 	private double yOffset = 0;
 	
@@ -125,11 +127,13 @@ public class PcInformationControler implements Initializable {
     }
     
     @FXML
-    private void modellImage() {
+    private void modellImage() throws Throwable {
     	
-    	String imagePath = "/c4h/images/PcModell/miniDesktop/H800.jpg";
+    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell())+"";
+    	
+    	String srcPath = "/c4h/images/PcModell/HP09.png"+"/"+pcModell;
         // Bild aus dem Pfad laden
-        Image modellFoto = new Image(imagePath);
+        Image modellFoto = new Image(srcPath);
         image.setImage(modellFoto);
     }
     

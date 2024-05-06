@@ -85,13 +85,17 @@ public class ParsePcModelInMap {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
-        
-
+       
 		return mapList;
 
 
 		
+	}
+	
+	public String findePcModell(String PCModell) {
+		String pcModell="";
+		
+		return pcModell;
 	}
 	
 	public void printMAP() {
