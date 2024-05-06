@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane id="Container" fx:id="kioskContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.kiosk.KioskControler">
+<AnchorPane id="Container" fx:id="kioskContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.kiosk.KioskControler">
   <children>
     <HBox id="HBox" alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="218.0" spacing="0.0" AnchorPane.leftAnchor="776.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
       <children>

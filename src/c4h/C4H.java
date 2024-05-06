@@ -21,8 +21,6 @@ public class C4H extends Application {
 	@Override
 	public void start(Stage primaryStage) throws AWTException{
 		
-	
-		
 		
 		try {
 			Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));	

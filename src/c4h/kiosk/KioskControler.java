@@ -24,7 +24,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.util.Duration;
@@ -34,18 +33,19 @@ public class KioskControler implements Initializable{
     @FXML
     private Button StartViewbutton;
     @FXML
-    private Parent kioskContainer;
-    @FXML
-    private StackPane stackPane;
-	
+    private Parent kioskContainer;	
 	@FXML
     private WebView  Kioskbrowser = new WebView();
 	@FXML
 	private WebEngine webkit;
+	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		loadBrowser();
 	}
+	
+	
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
  	Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));

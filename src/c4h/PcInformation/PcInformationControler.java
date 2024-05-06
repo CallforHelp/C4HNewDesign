@@ -29,8 +29,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
 
@@ -39,6 +37,7 @@ public class PcInformationControler implements Initializable {
 	private pcInformation pcIno = new pcInformation();
 	
 	private ParsePcModelInMap parsePcModell= new ParsePcModelInMap();
+
 	private double xOffset = 0;
 	private double yOffset = 0;
 	
@@ -46,17 +45,13 @@ public class PcInformationControler implements Initializable {
 	// SystemInfoLabel Labels
     
 	@FXML  
-	GridPane gridSystemInformation ;
+	private GridPane gridSystemInformation ;
 	@FXML  
-	GridPane gridNetzwerkInformation ;
+	private GridPane gridNetzwerkInformation ;
 	@FXML  
-	GridPane gridSupportkInformation ;
-	@FXML  
-	Pane pane ;
+	private GridPane gridSupportkInformation ;
 	@FXML
-	private Parent PcInfoContainer;
-	
-	
+	private Parent PcInfoContainer;	
     @FXML
     private Button StartViewbutton;
 
@@ -133,11 +128,11 @@ public class PcInformationControler implements Initializable {
     private void modellImage() throws Throwable {
     	
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
-    	
     	String srcPath = "/c4h/images/PcModell/"+pcModell;
     	
     	//Path Prüfen ob png oder jpeg
     	boolean exists = checkFilePath(srcPath+".jpeg");	
+    	
     	if(exists)
     		srcPath = "/c4h/images/PcModell/"+pcModell+".png";
     	else 
@@ -153,26 +148,11 @@ public class PcInformationControler implements Initializable {
         image.setImage(modellFoto);
     }
     
-
     private boolean checkFilePath(String filePath) {
             File file = new File(filePath.trim());
             return file.exists();
 	}
 
-	@SuppressWarnings("unused")
-	private void mobileParent() {
-    	
-    	PcInfoContainer.setOnMousePressed(event -> {
-            xOffset = event.getSceneX() - PcInfoContainer.getTranslateX();
-            yOffset = event.getSceneY() - PcInfoContainer.getTranslateY();
-        });
-
-    	PcInfoContainer.setOnMouseDragged(event -> {
-    		PcInfoContainer.setTranslateX(event.getSceneX() - xOffset);
-    		PcInfoContainer.setTranslateY(event.getSceneY() - yOffset);
-        });
-    }
-    
     @FXML
 	public void systemInformation() throws Throwable {
 		
@@ -207,9 +187,7 @@ public class PcInformationControler implements Initializable {
 
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
-    	
-    	//PcInfoContainer = FXMLLoader.load(getClass().getResource("PcInformation.fxml"));
-        
+    	        
     	Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
         
     	Scene scene = StartViewbutton.getScene();
@@ -219,10 +197,10 @@ public class PcInformationControler implements Initializable {
 
         parentContainer.getChildren().add(root);
 
-
         Timeline timeline = new Timeline();
         KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+        
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
             parentContainer.getChildren().remove(PcInfoContainer);
@@ -276,6 +254,7 @@ public class PcInformationControler implements Initializable {
 		}; 
 			rammonitor.start(); 
 		}
+	
 	@FXML
 	private void loadGPUUsage() throws IOException{
 		indictor.setMinSize(100, 100);		

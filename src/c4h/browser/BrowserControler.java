@@ -30,10 +30,15 @@ public class BrowserControler implements Initializable{
     private WebView  browser = new WebView();
 	@FXML
 	private WebEngine webkit;
+	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		loadBrowser();
 	}
+	
+	
+	
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
         

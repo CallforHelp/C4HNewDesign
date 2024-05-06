@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import c4h.PcInformation.PcInformationControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -33,16 +32,17 @@ public class startViewControler implements Initializable {
 	private Button exitButton;
 	@FXML
 	private Button buttonPcInfo;
-	
 	@FXML
 	private AnchorPane parentContainer;
 	
 	
 	
 	@Override
-	
 	public void initialize(URL url, ResourceBundle rb) {
 	}
+	
+	
+	
 	@FXML
 	private void exitButton(ActionEvent event) throws IOException {
 		System.out.println("du druckst Exit button");
@@ -97,11 +97,13 @@ public class startViewControler implements Initializable {
 	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
 	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 	    timeline.getKeyFrames().add(kf);
+	    
 	    timeline.setOnFinished(t -> {
 	    	parentContainer.getChildren().remove(parentContainer);
 	    });
 	    timeline.play();
 	    }
+	
 	
 	@FXML
 	private void loadKioskBrowser(ActionEvent event) throws IOException {
