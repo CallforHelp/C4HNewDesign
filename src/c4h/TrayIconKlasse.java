@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 	public class TrayIconKlasse {
 		
 		private SystemTray         tray        = SystemTray.getSystemTray();
-		public TrayIcon trayIcon    = new TrayIcon(createImage("/C4HNewDesign/ressource/images/bulb.png", "trayIcon"));
+		public TrayIcon trayIcon    = new TrayIcon(createImage("/image/bulb.png", "trayIcon"));
 		 // Füge ein Popup-Menü zum Tray-Icon hinzu
         private PopupMenu popupMenu = new PopupMenu();
         private MenuItem exitItem = new MenuItem("Exit");

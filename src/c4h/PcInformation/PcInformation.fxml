@@ -16,7 +16,7 @@
           <children>
             <ImageView fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo">
               <image>
-                <Image url="@../images/3s_logo_tex2t.png" />
+                <Image url="@../../../ressource/image/3s_logo_tex2t.png" />
               </image>
             </ImageView>
           </children>
@@ -117,7 +117,7 @@
             </GridPane>
           </children>
         </VBox>
-        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="436.0" layoutY="392.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
+        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="436.0" layoutY="310.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
           <children>
             <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
             <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="162.8046875" prefWidth="600.0" spacing="5.0">
@@ -150,26 +150,14 @@
     </Pane>
     <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
       <children>
-        <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite">
-          <stylesheets>
-            <URL value="@../application.css" />
-          </stylesheets>
-        </Button>
-        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="glass, GuideButton" text="Screenshot">
-          <stylesheets>
-            <URL value="@../application.css" />
-          </stylesheets>
-        </Button>
-        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Support">
-          <stylesheets>
-            <URL value="@../application.css" />
-          </stylesheets>
-        </Button>
+        <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
+        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Screenshot" />
+        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Support" />
       </children>
     </HBox>
     <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutY="8.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="PC-Information" textFill="BLACK" AnchorPane.leftAnchor="5.0" />
   </children>
   <stylesheets>
-    <URL value="@../../ressource/application.css" />
+    <URL value="@../../../ressource/application.css" />
   </stylesheets>
 </AnchorPane>

@@ -134,13 +134,13 @@ public class PcInformationControler implements Initializable {
     	boolean exists = checkFilePath(srcPath+".jpeg");	
     	
     	if(exists)
-    		srcPath = "/c4h/images/PcModell/"+pcModell+".png";
+    		srcPath = "/images/PcModell/"+pcModell+".png";
     	else 
-    		srcPath = "/c4h/images/PcModell/"+pcModell+".jpeg";
+    		srcPath = "/images/PcModell/"+pcModell+".jpeg";
     	//src Path png oder jpeg
     	
     	if (pcModell=="")
-    		 srcPath = "/c4h/images/PcModell/noPic.png";
+    		 srcPath = "/image/PcModell/noPic.png";
 
     	System.out.println(srcPath);
         // Bild aus dem Pfad laden

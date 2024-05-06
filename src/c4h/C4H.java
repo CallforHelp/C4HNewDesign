@@ -20,7 +20,7 @@ public class C4H extends Application {
 	
 	private double yOffset = 0;
 	private TrayIconKlasse TrayIconC4H;
-	private String cssPath="application.css";
+	private String cssPath="/application.css";
 	
 	
 	@Override
@@ -53,7 +53,7 @@ public class C4H extends Application {
 			 
 	        
 	        Scene scene = new Scene(page);
-		//	scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+			scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 			primaryStage.setScene(scene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);

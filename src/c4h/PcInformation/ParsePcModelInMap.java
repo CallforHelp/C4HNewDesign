@@ -13,6 +13,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+
+
 /**
  * Erstelle eine MAP mit den PC Modell Inhalte 
  * Key[0]= (Name) PC Modell
@@ -36,7 +46,7 @@ public class ParsePcModelInMap {
 	
 	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
 	
-	final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\ressource\\ausschreibungsPC.txt";
+	final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
 	
 	public ParsePcModelInMap() {
 		// TODO Auto-generated constructor stub
