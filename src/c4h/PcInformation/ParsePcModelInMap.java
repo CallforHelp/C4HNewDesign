@@ -36,10 +36,11 @@ public class ParsePcModelInMap {
 	
 	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
 	
+	final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\ressource\\ausschreibungsPC.txt";
 	
 	public ParsePcModelInMap() {
 		// TODO Auto-generated constructor stub
-		parseText(filePathAuschreiubungPC);
+		parseText(filePathAuschreiubungPCPath);
 	}
 
 	public Map<String, ArrayList<String>> parseText(String filePath) {

@@ -167,9 +167,9 @@
         </Button>
       </children>
     </HBox>
-    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutX="12.0" layoutY="8.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="PC-Information" textFill="BLACK" />
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutY="8.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="PC-Information" textFill="BLACK" AnchorPane.leftAnchor="5.0" />
   </children>
   <stylesheets>
-    <URL value="@../application.css" />
+    <URL value="@../../ressource/application.css" />
   </stylesheets>
 </AnchorPane>

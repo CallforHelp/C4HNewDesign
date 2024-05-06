@@ -15,6 +15,7 @@ import javafx.stage.StageStyle;
 
 public class C4H extends Application {
 	private double xOffset = 0;
+	String cssPath="/C4HNewDesign/src/c4h/ressource/application.css";
 	private double yOffset = 0;
 	TrayIconKlasse TrayIconC4H;
 	
@@ -23,6 +24,11 @@ public class C4H extends Application {
 		
 		
 		try {
+			
+			
+			//System.out.println("classpath=" + System.getProperty("java.class.path"));
+			
+			
 			Parent page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));	
 			 
 			//Move Stage 
@@ -43,7 +49,7 @@ public class C4H extends Application {
 			 
 	        
 	        Scene scene = new Scene(page);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 			primaryStage.setScene(scene);
 			primaryStage.initStyle(StageStyle.UNDECORATED);
