@@ -30,6 +30,7 @@ public class ParsePcModelInMap {
 	final static  String filePathDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\Desktops.txt";
 	final static String filePathminiDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\miniDesktops.txt";
 	final static String filePathLaptops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\LapTops.txt";
+	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\.txt";
 	
 
 
