@@ -14,11 +14,7 @@
       <children>
         <StackPane layoutX="210.0" layoutY="604.0" prefHeight="83.0" prefWidth="568.0">
           <children>
-            <ImageView fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo">
-              <image>
-                <Image url="@../../../ressource/image/3s_logo_tex2t.png" />
-              </image>
-            </ImageView>
+            <ImageView fx:id="imageLogo" fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
           </children>
         </StackPane>
         <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="5.0" spacing="100.0">

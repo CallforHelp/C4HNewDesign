@@ -104,6 +104,8 @@ public class PcInformationControler implements Initializable {
 	//IMGInfo
 	@FXML
 	private ImageView image;
+	@FXML
+	private ImageView imageLogo;
 
 
     @Override
@@ -118,13 +120,21 @@ public class PcInformationControler implements Initializable {
 			netzwerkInformation();
 			supportkInformation();
 			modellImage();
+			LogoImage();
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}		
     }
     
-    @FXML
+    private void LogoImage() {
+		// TODO Auto-generated method stub
+        Image modellFoto = new Image("/image/3s_logo_tex2t.png");
+        imageLogo.setImage(modellFoto);
+		
+	}
+
+	@FXML
     private void modellImage() throws Throwable {
     	
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());

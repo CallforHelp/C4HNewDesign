@@ -32,11 +32,7 @@
         </HBox>
         <StackPane layoutX="210.0" layoutY="604.0" minHeight="-1.0" minWidth="-1.0" prefHeight="83.0" prefWidth="568.0">
           <children>
-            <ImageView fitHeight="78.81152733661175" fitWidth="483.2391052246094" pickOnBounds="true" preserveRatio="true" styleClass="logo">
-              <image>
-                <Image url="@../../../ressource/image/3s_logo_tex2t.png" />
-              </image>
-            </ImageView>
+            <ImageView fx:id="image" fitHeight="78.81152733661175" fitWidth="483.2391052246094" pickOnBounds="true" preserveRatio="true" smooth="true" styleClass="logo" />
           </children>
         </StackPane>
       </children>

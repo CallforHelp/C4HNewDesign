@@ -11,6 +11,7 @@ import java.net.URL;
 
 import javax.swing.ImageIcon;
 
+import c4h.startView.startViewControler;
 import javafx.application.Platform;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -77,6 +78,9 @@ import javafx.stage.Stage;
 	                		Scene newScene= new Scene(parent);
 	                		newStage.setScene(newScene);
 	                		newStage.show();
+	                		
+	                		startViewControler test = new startViewControler();
+	                		test.initialize(null, null);
 	                	}
 	                		
 	                });

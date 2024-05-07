@@ -15,15 +15,19 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import javafx.scene.image.Image;
 
 public class startViewControler implements Initializable {
 	
 	
 	
 	
+	@FXML
+	private ImageView image;
 	@FXML
 	private Button buttonSupport;
 	@FXML
@@ -39,10 +43,20 @@ public class startViewControler implements Initializable {
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		setImage();
 	}
 	
 	
 	
+	private void setImage() {
+		// TODO Auto-generated method stub
+		
+		Image logo = new Image("/image/3s_logo_tex2t.png");
+		image.setImage(logo);
+	}
+
+
+
 	@FXML
 	private void exitButton(ActionEvent event) throws IOException {
 		System.out.println("du druckst Exit button");
