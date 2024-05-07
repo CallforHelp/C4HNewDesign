@@ -192,7 +192,7 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					return "HP ProDesk 400 G5 DesktopMini";
+					return "HP Elite Tower 600 G9";
 				}
 			}
 			// Prozess schließen

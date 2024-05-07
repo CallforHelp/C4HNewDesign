@@ -26,19 +26,20 @@ import javafx.stage.StageStyle;
 /**
  * Erstelle eine MAP mit den PC Modell Inhalte 
  * Key[0]= (Name) PC Modell
- * Value[0]= Optische Merkmale / Sicherheitsupdates
- * Value[1]= Hardware
- * Value[2]= Windows 10 64Bit Treiber
- * Value[3]= Herstellungsjahr/Ausschreibung
- * Value[4]=  Dauer 3S Support
- * Value[5]=  Win11 Kompatibilität 
+ * Value[0]= Modell Name und Bennenung
+ * Value[1]= Optische Merkmale / Sicherheitsupdates
+ * Value[2]= Hardware
+ * Value[3]= Windows 10 64Bit Treiber
+ * Value[4]= Herstellungsjahr/Ausschreibung
+ * Value[5]=  Dauer 3S Support
+ * Value[6]=  Win11 Kompatibilität 
  * 
  */
 
 public class ParsePcModelInMap {
     
 	
-	private Map<String, ArrayList<String>> mapList = new HashMap<>();
+	private static Map<String, ArrayList<String>> mapList = new HashMap<>();
 
 	final static  String filePathDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\Desktops.txt";
 	final static String filePathminiDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\miniDesktops.txt";
@@ -47,11 +48,28 @@ public class ParsePcModelInMap {
 	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
 	
 	final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
+
+	private String keyPcModell;
 	
+	
+	public String getKeyPcModell() {
+		return keyPcModell;
+	}
+
+
+
+	public void setKeyPcModell(String keyPcModell) {
+		this.keyPcModell = keyPcModell;
+	}
+
+
+
 	public ParsePcModelInMap() {
 		// TODO Auto-generated constructor stub
 		parseText(filePathAuschreiubungPCPath);
-	}
+	} 
+	
+	
 
 	public Map<String, ArrayList<String>> parseText(String filePath) {
 		try {
@@ -126,7 +144,7 @@ public class ParsePcModelInMap {
 		 String keyPCModell = getKeyByExactValueInList(mapList, valueToFind);
 		 if (keyPCModell != null) {
 	            System.out.println("Der Schlüssel für den Wert '" + valueToFind + "' ist: " + keyPCModell);
-	            
+	            setKeyPcModell(keyPcModell);
 	            return keyPCModell;
 	        } else {
 	            System.out.println("Der PC-Modell '" + valueToFind + "' ist nich in der Ausschreibung.");
@@ -145,21 +163,57 @@ public class ParsePcModelInMap {
         }
         return null; // Wenn der Wert nicht gefunden wird
     }
-
-	public void printMAP() {
-        
-		//Print Maps
-        // Ausgabe der Maps
-        for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
-            String key = entry.getKey();
-            ArrayList<String> value = entry.getValue();
-            System.out.println("Pc Modell: '" + key + "':");
-            for (String line : value) {
-                System.out.println(line);
-            }
-            System.out.println(); // Leere Zeile zur Trennung
-        }
-	}
+	
+	 public static String findSupportEndethValue(String searchKey) {
+	        // Suche den Wert für den gegebenen Schlüssel in der Map
+	        ArrayList<String> values = mapList.get(searchKey);
+	        if (values != null && values.size() >= 6) {
+	            // Wenn der Wert gefunden wird und die ArrayList mindestens 4 Elemente hat, gib den vierten Wert zurück
+	            return values.get(5); // Index 4 entspricht dem 5 Eintrag in der ArrayList (0-basiert)
+	        } else {
+	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	            return null;
+	        }
+	 }
+	 public static String findWindows11Support(String searchKey) {
+	        // Suche den Wert für den gegebenen Schlüssel in der Map
+	        ArrayList<String> values = mapList.get(searchKey);
+	        if (values != null && values.size() >= 6) {
+	            // Wenn der Wert gefunden wird und die ArrayList mindestens 4 Elemente hat, gib den vierten Wert zurück
+	            return values.get(6); // Index 5 entspricht dem 6 Eintrag in der ArrayList (0-basiert)
+	        } else {
+	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	            return null;
+	        }
+	 }
+	 public static String findKaufDatum(String searchKey) {
+	        // Suche den Wert für den gegebenen Schlüssel in der Map
+	        ArrayList<String> values = mapList.get(searchKey);
+	        if (values != null && values.size() >= 6) {
+	            // Wenn der Wert gefunden wird und die ArrayList mindestens 4 Elemente hat, gib den vierten Wert zurück
+	            return values.get(4); // Index 3 entspricht dem vierten Eintrag in der ArrayList (0-basiert)
+	        } else {
+	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	            return null;
+	        }
+	 }
+	 
+	 
+	 public void printMAP() {
+	        
+			//Print Maps
+	        // Ausgabe der Maps
+	        for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
+	            String key = entry.getKey();
+	            ArrayList<String> value = entry.getValue();
+	            System.out.println("Pc Modell: '" + key + "':");
+	            for (String line : value) {
+	                System.out.println(line);
+	            }
+	            System.out.println(); // Leere Zeile zur Trennung
+	        }
+		}
+		
 	
 	
     
@@ -169,8 +223,16 @@ public class ParsePcModelInMap {
 		
 		
 		ParsePcModelInMap parse = new ParsePcModelInMap();
-		parse.printMAP();
 		
+		String Key= "HP07";
+		
+		//parse.printMAP();
+		try {
+			System.out.println(parse.findSupportEndethValue(Key));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 
         

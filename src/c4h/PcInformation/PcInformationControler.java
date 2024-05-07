@@ -118,7 +118,6 @@ public class PcInformationControler implements Initializable {
 			LoadPCTyp();
 			systemInformation();
 			netzwerkInformation();
-			supportkInformation();
 			modellImage();
 			LogoImage();
 			
@@ -155,6 +154,22 @@ public class PcInformationControler implements Initializable {
         image.setImage(modellFoto);
         image.setFitHeight(250);
         image.setFitWidth(250);
+        
+        
+        System.out.println(parsePcModell.findKaufDatum(pcModell));
+        
+    	// SystemInfoLabel Labels
+        rechnerTyp.setText(pcIno.getPcModell());
+        supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
+        win11komp.setText(parsePcModell.findWindows11Support(pcModell));
+        kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
+        Seriennummer.setText(pcIno.getSerienNummer());
+        
+        
+        
+        
+        
+        
     }
     
     private boolean checkFilePath(String filePath) {
@@ -188,9 +203,7 @@ public class PcInformationControler implements Initializable {
     @FXML
 	public void supportkInformation() throws Throwable {
 		
-		// SystemInfoLabel Labels
-         rechnerTyp.setText(pcIno.getPcModell());
-         Seriennummer.setText(pcIno.getSerienNummer());
+	
         
 	}
 
