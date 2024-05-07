@@ -17,7 +17,7 @@
             <ImageView fx:id="imageLogo" fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
           </children>
         </StackPane>
-        <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="5.0" spacing="100.0">
+        <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="5.0" spacing="70.0">
           <children>
             <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" spacing="5.0" styleClass="labelText">
               <children>
@@ -113,7 +113,7 @@
             </GridPane>
           </children>
         </VBox>
-        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="436.0" layoutY="310.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
+        <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="405.0" layoutY="310.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
           <children>
             <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
             <HBox id="HBox" alignment="CENTER_LEFT" prefHeight="162.8046875" prefWidth="600.0" spacing="5.0">
@@ -141,7 +141,11 @@
             <Pane prefHeight="83.0" prefWidth="300.0" />
           </children>
         </VBox>
-        <ImageView fx:id="image" fitHeight="200.0876007080078" fitWidth="114.04992500094578" layoutX="814.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true" />
+        <VBox id="VBox" alignment="CENTER" layoutX="724.0" layoutY="30.0" prefHeight="250.0" prefWidth="250.0" spacing="5.0">
+          <children>
+            <ImageView fx:id="image" fitHeight="245.0" fitWidth="139.64999289703405" pickOnBounds="true" preserveRatio="true" />
+          </children>
+        </VBox>
       </children>
     </Pane>
     <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">

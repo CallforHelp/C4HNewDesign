@@ -153,6 +153,8 @@ public class PcInformationControler implements Initializable {
         // Bild aus dem Pfad laden
         Image modellFoto = new Image(srcPath.trim());
         image.setImage(modellFoto);
+        image.setFitHeight(250);
+        image.setFitWidth(250);
     }
     
     private boolean checkFilePath(String filePath) {
