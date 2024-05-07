@@ -144,9 +144,9 @@ public class PcInformationControler implements Initializable {
     	boolean exists = checkFilePath(srcPath+".jpeg");	
     	
     	if(exists)
-    		srcPath = "/images/PcModell/"+pcModell+".png";
+    		srcPath = "/image/PcModell/"+pcModell+".png";
     	else 
-    		srcPath = "/images/PcModell/"+pcModell+".jpeg";
+    		srcPath = "/image/PcModell/"+pcModell+".jpeg";
     	//src Path png oder jpeg
     	
     	if (pcModell=="")
