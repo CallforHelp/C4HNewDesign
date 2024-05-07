@@ -99,6 +99,10 @@ import javafx.stage.Stage;
 		}
 
 		
+		public static void main(String[] args) {
+			
+		}
+		
 	    
 
 }

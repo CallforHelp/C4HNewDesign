@@ -128,7 +128,7 @@ public class PcInformationControler implements Initializable {
     
     private void LogoImage() {
 		// TODO Auto-generated method stub
-        Image modellFoto = new Image("/image/3s_logo_tex2t.png");
+        Image modellFoto = new Image("./image/3s_logo_tex2t.png");
         imageLogo.setImage(modellFoto);
 		
 	}
@@ -137,16 +137,16 @@ public class PcInformationControler implements Initializable {
     private void modellImage() throws Throwable {
     	
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
-    	String srcPath = "/image/PcModell/"+pcModell+".png";
+    	String srcPath = "./image/PcModell/"+pcModell+".png";
     	
     	//Path Prüfen ob png oder jpeg
     	boolean exists = checkFilePath(srcPath+".png");	
     	
     	if(exists)
-    		srcPath = "/image/PcModell/"+pcModell+".png";
+    		srcPath = "./image/PcModell/"+pcModell+".png";
     	
     	if (pcModell=="")
-    		 srcPath = "/image/PcModell/noPic.png";
+    		 srcPath = "./image/PcModell/noPic.png";
 
     	System.out.println(srcPath);
         // Bild aus dem Pfad laden

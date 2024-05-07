@@ -20,8 +20,7 @@ import java.util.regex.Pattern;
  * 
  */
 public class pcInformation {
-
-	private final int RechnerTypLaenge = 4;
+	//private final int RechnerTypLaenge = 4;
 	// private C4H_LOG_FILE pcInfoLog = new C4H_LOG_FILE();
 	public String toolTipFehlerHinweisText;
 	ArrayList<String> list = new ArrayList<>();
@@ -98,19 +97,6 @@ public class pcInformation {
 	 * @throws Throwable Hostname
 	 */
 	public String settSchulNummer() throws Throwable {
-		/*
-		 * if(getOSversion().contains("W")||getOSversion().contains("w")) { Pattern p =
-		 * Pattern.compile("[0-9]{4}"); Matcher m =
-		 * p.matcher(InetAddress.getLocalHost().getHostName());
-		 * 
-		 * // match if (m.find()) schulNummer= m.group();
-		 * 
-		 * 
-		 * if(!pruefeSchulnr()) this.schulNummer="Fehler-Schulnummer"; return
-		 * schulNummer;
-		 * 
-		 * }else { this.schulNummer= "Fehler-SchulNummer"; return schulNummer; }
-		 */
 
 		String s = System.getenv("SNR");
 		if (s == null)
@@ -203,6 +189,7 @@ public class pcInformation {
 		return "";
 	}
 
+
 	/**
 	 * Betriebsystemarchitektur
 	 * 
@@ -273,28 +260,11 @@ public class pcInformation {
 			return "Mac-Rechner";
 
 	}
-
 	/**
 	 * RechnerTyp aus dem Hostname auslesen.
 	 * 
 	 * @return RechnerTyp
 	 * @throws Exception Hostname
-	 */
-	public String getRechnertypen() throws Exception {
-
-		String rechnerTyp = "";
-
-		if (getOSversion().contains("W") || getOSversion().contains("w")) {
-			String hostname = InetAddress.getLocalHost().getHostName();
-			for (int i = RechnerTypLaenge; i < (RechnerTypLaenge * 2); i++) {
-				rechnerTyp = rechnerTyp + (hostname.charAt(i));
-			}
-		} else {
-			return "Mac-Rechner";
-		}
-
-		return rechnerTyp;
-	}
 
 	/*****************************************************************************************/
 	/******************************************
@@ -309,12 +279,12 @@ public class pcInformation {
 	 */
 	public String getLocalAdresse() throws UnknownHostException {
 
-		String result = "";
+		String IPAdresse = "";
 		if (getOSversion().contains("W") || getOSversion().contains("w")) {
-			result = InetAddress.getLocalHost().getHostAddress();
-			if (result == "")
+			IPAdresse = InetAddress.getLocalHost().getHostAddress();
+			if (IPAdresse == "")
 				return "Fehler-Netzwerk";
-			return result;
+			return IPAdresse;
 		} else
 			return "Fehler-Netzwerk";
 	}
@@ -326,48 +296,27 @@ public class pcInformation {
 	 * @throws IOException Commandbefehl
 	 */
 	public String getMacAddress() throws IOException {
-		String networkInterfaceName = "Ethernet";
-		try {
-			// Befehl ausführen und Ausgabe abrufen
-			Process process = Runtime.getRuntime().exec("getmac /fo csv /nh /v");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-			// Ausgabe Zeile für Zeile durchgehen
+		String LanMAcAdresse = "";
+		if (getOSversion().contains("W") || getOSversion().contains("w")) {
+			Process p = Runtime.getRuntime().exec("getmac /fo csv /nh");
+			BufferedReader in = new java.io.BufferedReader(new InputStreamReader(p.getInputStream()));
 			String line;
-			while ((line = reader.readLine()) != null) {
-				// Überprüfen, ob die Zeile die gesuchte Netzwerkkarte enthält
-				if (line.contains(networkInterfaceName)) {
-					// MAC-Adresse aus der Zeile extrahieren
-					String[] parts = line.split(",");
-					String macAddress = parts[2].replaceAll("\"", "").trim();
-					//System.out.println("MAC-Adresse von " + networkInterfaceName + ": " + macAddress);
-					return macAddress; // Schleife beenden, sobald die MAC-Adresse gefunden wurde
-				}
-			}
-
-			// Prozess schließen
-			process.destroy();
-		} catch (IOException e) {
-			e.printStackTrace();
+			line = in.readLine();
+			String[] macAdre = line.split(",");
+			LanMAcAdresse = macAdre[0].replace('"', '\0').trim();
+			// for mac
+		} else {
+			return "Mac Rechner ";
+			/*
+			 * for( NetworkInterface ni : Collections.list(
+			 * NetworkInterface.getNetworkInterfaces() ) ){ byte[] hardwareAddress =
+			 * ni.getHardwareAddress(); if( hardwareAddress != null ){ for ( int i = 0; i <
+			 * hardwareAddress.length; i++ ) result += String.format( (i==0?"":"-")+"%02X",
+			 * hardwareAddress[i] );
+			 */
 		}
 
-		/*
-		 * String result = "";
-		 * if(getOSversion().contains("W")||getOSversion().contains("w")) { Process p =
-		 * Runtime.getRuntime().exec("getmac /fo csv /nh /v"); BufferedReader in = new
-		 * java.io.BufferedReader(new InputStreamReader(p.getInputStream())); String
-		 * line; line = in.readLine(); String[] macAdre = line.split(",");
-		 * result=macAdre[0].replace('"','\0').trim(); //for mac }else { return
-		 * "Mac Rechner "; for( NetworkInterface ni : Collections.list(
-		 * NetworkInterface.getNetworkInterfaces() ) ){ byte[] hardwareAddress =
-		 * ni.getHardwareAddress(); if( hardwareAddress != null ){ for ( int i = 0; i <
-		 * hardwareAddress.length; i++ ) result += String.format( (i==0?"":"-")+"%02X",
-		 * hardwareAddress[i] );
-		 * 
-		 * }
-		 */
-
-		return "";
+		return LanMAcAdresse;
 	}
 
 	/**
@@ -632,6 +581,8 @@ public class pcInformation {
 	 */
 	public String getConnectedWifiInfo() {
 		String SSID = "";
+		if (!hasWifi())
+			return "Kein Wlan Vorhanden";
 		try {
 			Process process = Runtime.getRuntime().exec("netsh wlan show interfaces | findstr /c:\"SSID\"");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -654,7 +605,8 @@ public class pcInformation {
 	 * @return MACAdresse
 	 */
 	public String getWifiMacAdresse() {
-
+		if (!hasWifi())
+			return "Kein Wlan Vorhanden";
 		StringBuilder wlanMAC = new StringBuilder();
 		try {
 			Process process = Runtime.getRuntime().exec("cmd.exe /c netsh wlan show interfaces");
@@ -687,6 +639,26 @@ public class pcInformation {
 		return wlanMAC.toString();
 	}
 
+	/**
+	 * wlan vorhanden
+	 * 
+	 * @return
+	 */
+	public static boolean hasWifi() {
+		try {
+			// Alle verfügbaren Netzwerk-Schnittstellen abrufen
+			for (NetworkInterface networkInterface : Collections.list(NetworkInterface.getNetworkInterfaces())) {
+				// Überprüfen, ob eine WLAN-Schnittstelle vorhanden ist
+				if (networkInterface.getName().toLowerCase().contains("wlan")) {
+					return true; // WLAN-Schnittstelle gefunden
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace(); // Fehlerbehandlung
+		}
+		return false; // Keine WLAN-Schnittstelle gefunden
+	}
+
 	/************************************************************************************************************/
 	/**************************************
 	 * PRINTING * @throws Throwable
@@ -713,7 +685,6 @@ public class pcInformation {
 		System.out.println("OS Version    :" + getOSversion());
 		System.out.println("OS Architektur:" + getOSArchitecture());
 		System.out.println("Muster Images :" + getMusterImages());
-		System.out.println("Rechner Typen :" + getRechnertypen());
 		System.out.println("Pc Modell     :" + getPcModell());
 
 		System.out.println("*********************************");
@@ -748,7 +719,7 @@ public class pcInformation {
 		list.add(getOSversion());
 		list.add(getOSArchitecture());
 		list.add(getMusterImageAusRegistry());
-		list.add(getRechnertypen());
+		//list.add(getRechnertypen());
 		// Netzwerk
 		list.add(getLocalAdresse());
 		list.add(getSubnetMask());
@@ -774,19 +745,9 @@ public class pcInformation {
 		return null;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
+
 		pcInformation test = new pcInformation();
-
-		try {
-			test.printBGinfo();
-			System.out.println(test.getPcModell());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		System.out.println(test.getWifiMacAdresse());
 	}
-
 }
