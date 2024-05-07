@@ -138,16 +138,13 @@ public class PcInformationControler implements Initializable {
     private void modellImage() throws Throwable {
     	
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
-    	String srcPath = "/c4h/images/PcModell/"+pcModell;
+    	String srcPath = "/image/PcModell/"+pcModell+".png";
     	
     	//Path Prüfen ob png oder jpeg
-    	boolean exists = checkFilePath(srcPath+".jpeg");	
+    	boolean exists = checkFilePath(srcPath+".png");	
     	
     	if(exists)
     		srcPath = "/image/PcModell/"+pcModell+".png";
-    	else 
-    		srcPath = "/image/PcModell/"+pcModell+".jpeg";
-    	//src Path png oder jpeg
     	
     	if (pcModell=="")
     		 srcPath = "/image/PcModell/noPic.png";
