@@ -66,56 +66,8 @@ public class C4H extends Application {
 			e.getCause().printStackTrace();
 			}
 		
-	
-	
-		    
-			
-			// Add a TrayIcon that opens/closes theimaryStage when clicked
-			/*
-			 * trayIcon.addActionListener(new ActionListener() {
-			 * 
-			 * @Override public void actionPerformed(ActionEvent e) { // TODO Auto-generated
-			 * method stub Platform.runLater(() -> {
-			 * 
-			 * try { Parent page =
-			 * FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-			 * 
-			 * //Move Stage
-			 * 
-			 * page.setOnMousePressed(new EventHandler<MouseEvent>() {
-			 * 
-			 * @Override public void handle(MouseEvent event) { xOffset = event.getSceneX();
-			 * yOffset = event.getSceneY(); } }); page.setOnMouseDragged(new
-			 * EventHandler<MouseEvent>() {
-			 * 
-			 * @Override public void handle(MouseEvent event) {
-			 * primaryStage.setX(event.getScreenX() - xOffset);
-			 * primaryStage.setY(event.getScreenY() - yOffset); } });
-			 * 
-			 * 
-			 * Scene scene = new Scene(page); primaryStage.setScene(scene);
-			 * primaryStage.show();
-			 * 
-			 * } catch (IOException excep) { excep.printStackTrace(); }
-			 * 
-			 * 
-			 * 
-			 * // Perform actions when the tray icon is clicked
-			 * primaryStage.setIconified(false); // Restore the main window if minimized
-			 * primaryStage.toFront(); // Bring the main window to front });
-			 * 
-			 * } });
-			 */
-			
-    }
-	
-	
-
-   
-
 		
-		
-		
+	}
 		public static void main(String[] args) {
 			launch(args);
 		}

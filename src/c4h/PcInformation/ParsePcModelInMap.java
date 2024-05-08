@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,7 +56,7 @@ public class ParsePcModelInMap {
 	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
 	
 	//final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
-	final String filePathAuschreiubungPCPath = "./ressource/ausschreibungsPC.txt";
+	String filePathAuschreiubungPCPath = "/ausschreibungsPC.txt";
 
 	private String keyPcModell;
 	
@@ -79,17 +81,10 @@ public class ParsePcModelInMap {
 	
 
 	public Map<String, ArrayList<String>> parseText(String filePath) {
-		try {
-            FileReader fileReader = new FileReader(filePath);
-            // Proceed with reading the file
-        } catch (FileNotFoundException e) {
-            System.out.println("The specified file does not exist or cannot be found.");
-            e.getCause();
-            return null;
-        }
 		
         String currentKey = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath.trim()))) {
+        InputStream inputStream = getClass().getResourceAsStream(filePath);
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(inputStream))) {
             String line;
             while ((line = br.readLine()) != null) {
             	line = line.replaceAll("\\|.*?\\|", "");

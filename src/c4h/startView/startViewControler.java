@@ -63,9 +63,9 @@ public class startViewControler implements Initializable {
 	private void exitButton(ActionEvent event) throws IOException {
 		System.out.println("du druckst Exit button");
 		
-		//Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
         Scene scene = exitButton.getScene();
-        parentContainer.translateYProperty().set(scene.getWidth());
+        root.translateYProperty().set(scene.getHeight());
         
         if (scene != null) {
             // Get the stage from the scene
