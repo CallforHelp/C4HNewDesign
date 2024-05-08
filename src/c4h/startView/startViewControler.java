@@ -1,13 +1,9 @@
 package c4h.startView;
 
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import com.sun.management.OperatingSystemMXBean;
-
-import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -19,110 +15,132 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ProgressIndicator;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
-
-@SuppressWarnings("restriction")
+import javafx.scene.image.Image;
 
 public class startViewControler implements Initializable {
 	
+	
+	
+	
 	@FXML
-	private ProgressIndicator indictor = new ProgressIndicator(0);
+	private ImageView image;
 	@FXML
-	private ProgressIndicator indictor2 = new ProgressIndicator(0);
-
+	private Button buttonSupport;
 	@FXML
-	private Button buttonBrowser;
+	private Button buttonKiosk;
+	@FXML
+	private Button exitButton;
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
-	private AnchorPane anchorRoot;
-	@FXML
 	private AnchorPane parentContainer;
+	@FXML
+	private String cssPath="/application.css";
+	
+	
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		try {
-			loadRamUsage();
-			loadCpuUsage();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		setImage();
+	}
+	
+	
+	
+	private void setImage() {
+		// TODO Auto-generated method stub
+		
+		Image logo = new Image("/image/3s_logo_tex2t.png");
+		image.setImage(logo);
+	}
+
+
+
+	@FXML
+	private void exitButton(ActionEvent event) throws IOException {
+		System.out.println("du druckst Exit button");
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
+        Scene scene = exitButton.getScene();
+        root.translateYProperty().set(scene.getHeight());
+        
+        if (scene != null) {
+            // Get the stage from the scene
+            Stage stage = (Stage) scene.getWindow();
+            // Hide the stage
+            stage.hide();;        
+            }
+		
 	}
 
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
-	    Scene scene = buttonPcInfo.getScene();
+		Scene scene = buttonPcInfo.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 	    
-	    root.translateYProperty().set(scene.getWidth());
+	    root.translateYProperty().set(scene.getHeight());
 
 	    parentContainer.getChildren().add(root);
 
+	    
 	    Timeline timeline = new Timeline();
 	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-	    KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 	    timeline.getKeyFrames().add(kf);
+	    
 	    timeline.setOnFinished(t -> {
-	    	parentContainer.getChildren().remove(anchorRoot);
+	    	parentContainer.getChildren().remove(parentContainer);
 	    });
 	    timeline.play();
-	    }
+	   }
+	
 	
 	@FXML
 	private void loadBrowser(ActionEvent event) throws IOException {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/browser/Browser.fxml"));
-	    Scene scene = buttonBrowser.getScene();
+		Scene scene = buttonSupport.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 	    
-	    root.translateYProperty().set(scene.getWidth());
+	    root.translateYProperty().set(scene.getHeight());
 
 	    parentContainer.getChildren().add(root);
 
 	    Timeline timeline = new Timeline();
 	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-	    KeyFrame kf = new KeyFrame(Duration.seconds(2), kv);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 	    timeline.getKeyFrames().add(kf);
+	    
 	    timeline.setOnFinished(t -> {
-	    	parentContainer.getChildren().remove(anchorRoot);
+	    	parentContainer.getChildren().remove(parentContainer);
 	    });
 	    timeline.play();
 	    }
-	    
+	
+	
 	@FXML
-	private void loadCpuUsage() throws IOException{
+	private void loadKioskBrowser(ActionEvent event) throws IOException {
 		
-		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor.setProgress(bean.getSystemCpuLoad())));
-		timeline.setCycleCount(Animation.INDEFINITE);
-		timeline.play();
-	}
-		 
-	@FXML
-	private void loadRamUsage() throws IOException{
-		
-		Thread rammonitor = new Thread() { 
-		int RAM =100000	;
-		@Override 
-				
-		public void run() { 
-			Runtime rt = Runtime.getRuntime(); 
-			
-			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
-			if(usedKB==1024)
-				usedKB=0.0;
-				
-		   	indictor2.setProgress(usedKB/RAM);
-		    try {
-		    	Thread.sleep(500); 
-		    }catch (InterruptedException e) { 
-		    	e.printStackTrace(); 
-		    } 
-		    run(); 
-		    } 
-		}; 
-			rammonitor.start(); 
-		}
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/kiosk/KioskBrowser.fxml"));
+	    Scene scene = buttonKiosk.getScene();
+	    scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+	    root.translateYProperty().set(scene.getHeight());
+
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    timeline.getKeyFrames().add(kf);
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(parentContainer);
+	    });
+	    timeline.play();
+	    }   
+
 	}

@@ -23,24 +23,31 @@ import javafx.util.Duration;
 public class BrowserControler implements Initializable{
 
     @FXML
-    private Button button;
+    private Button StartViewbutton;
     @FXML
-    private AnchorPane Container;
+    private Parent browserContainer;
 	@FXML
     private WebView  browser = new WebView();
 	@FXML
 	private WebEngine webkit;
+	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		loadBrowser();
 	}
+	
+	
+	
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/startView.fxml"));
-        Scene scene = button.getScene();
-        root.translateYProperty().set(scene.getWidth());
+        
+ 	Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
+        
+    	Scene scene = StartViewbutton.getScene();
+        root.translateYProperty().set(scene.getHeight());
 
-        AnchorPane parentContainer = (AnchorPane) button.getScene().getRoot();
+        AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
 
         parentContainer.getChildren().add(root);
 
@@ -50,7 +57,7 @@ public class BrowserControler implements Initializable{
         KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
         timeline.getKeyFrames().add(kf);
         timeline.setOnFinished(t -> {
-            parentContainer.getChildren().remove(Container);
+            parentContainer.getChildren().remove(browserContainer);
         });
         timeline.play();
     }
@@ -61,6 +68,7 @@ public class BrowserControler implements Initializable{
          webkit = browser.getEngine();
          webkit.load("https://fehlermeldung.3s-hamburg.de");
          browser.setFontScale(1);
+         browser.setPageFill(javafx.scene.paint.Color.TRANSPARENT);
          
     }
      

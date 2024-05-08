@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.web.*?>
-<?import java.net.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.web.*?>
 
-<AnchorPane fx:id="Container" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" onDragDetected="#loadRoot" prefHeight="745.0" prefWidth="995.0" styleClass="windows" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="c4h.browser.BrowserControler">
-   <children>
-      <Button fx:id="button" layoutX="8.0" layoutY="3.0" mnemonicParsing="false" onAction="#loadRoot" styleClass="but" text="StartView">
-         <stylesheets>
-            <URL value="@../css_Design/ButtonRounded.css" />
-            <URL value="@../css_Design/application.css" />
-         </stylesheets></Button>
-      <WebView fx:id="browser" layoutX="8.0" layoutY="32.0" onDragDetected="#loadBrowser" prefHeight="705.0" prefWidth="980.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="35.0" />
-   </children>
+<AnchorPane id="Container" fx:id="browserContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.browser.BrowserControler">
+  <children>
+    <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="346.0" spacing="5.0" AnchorPane.leftAnchor="648.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
+      <children>
+        <Button id="button" fx:id="StartViewbutton" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
+      </children>
+    </HBox>
+    <WebView fx:id="browser" onDragDetected="#loadBrowser" prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutY="9.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="128.0" styleClass="labelStart" text="Support" textFill="BLACK" AnchorPane.leftAnchor="5.0" />
+  </children>
 </AnchorPane>
