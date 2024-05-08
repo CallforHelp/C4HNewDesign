@@ -23,7 +23,4 @@
     <WebView fx:id="browser" onDragDetected="#loadBrowser" prefHeight="695.0" prefWidth="1000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
     <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutY="9.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="128.0" styleClass="labelStart" text="Support" textFill="BLACK" AnchorPane.leftAnchor="5.0" />
   </children>
-  <stylesheets>
-    <URL value="@../../../ressource/application.css" />
-  </stylesheets>
 </AnchorPane>

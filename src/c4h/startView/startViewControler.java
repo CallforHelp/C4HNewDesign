@@ -38,6 +38,8 @@ public class startViewControler implements Initializable {
 	private Button buttonPcInfo;
 	@FXML
 	private AnchorPane parentContainer;
+	@FXML
+	private String cssPath="/application.css";
 	
 	
 	
@@ -79,6 +81,7 @@ public class startViewControler implements Initializable {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
 		Scene scene = buttonPcInfo.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 	    
 	    root.translateYProperty().set(scene.getHeight());
 
@@ -102,6 +105,7 @@ public class startViewControler implements Initializable {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/browser/Browser.fxml"));
 		Scene scene = buttonSupport.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 	    
 	    root.translateYProperty().set(scene.getHeight());
 
@@ -124,7 +128,7 @@ public class startViewControler implements Initializable {
 		
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/kiosk/KioskBrowser.fxml"));
 	    Scene scene = buttonKiosk.getScene();
-	    
+	    scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 	    root.translateYProperty().set(scene.getHeight());
 
 	    parentContainer.getChildren().add(root);

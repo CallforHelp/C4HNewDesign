@@ -179,6 +179,7 @@ public class pcInformation {
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
 					return "HP Elite Tower 600 G9";
+//					return Modell;
 				}
 			}
 			// Prozess schließen
@@ -617,6 +618,7 @@ public class pcInformation {
 			while ((line = reader.readLine()) != null) {
 				if (line.contains("Physische")) {
 					BSSID = line.split(":");
+					break;
 				}
 			}
 

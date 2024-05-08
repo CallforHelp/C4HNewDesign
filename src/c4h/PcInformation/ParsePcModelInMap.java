@@ -12,6 +12,12 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import java.io.File;
+import java.io.IOException;
+import java.lang.management.ManagementFactory;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -47,7 +53,8 @@ public class ParsePcModelInMap {
 	
 	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
 	
-	final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
+	//final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
+	final String filePathAuschreiubungPCPath = "./ressource/ausschreibungsPC.txt";
 
 	private String keyPcModell;
 	
@@ -77,11 +84,12 @@ public class ParsePcModelInMap {
             // Proceed with reading the file
         } catch (FileNotFoundException e) {
             System.out.println("The specified file does not exist or cannot be found.");
-            e.printStackTrace();
+            e.getCause();
+            return null;
         }
 		
         String currentKey = null;
-        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath.trim()))) {
             String line;
             while ((line = br.readLine()) != null) {
             	line = line.replaceAll("\\|.*?\\|", "");
@@ -224,7 +232,7 @@ public class ParsePcModelInMap {
 		
 		ParsePcModelInMap parse = new ParsePcModelInMap();
 		
-		String Key= "HP07";
+		String Key= "HP04";
 		
 		//parse.printMAP();
 		try {
