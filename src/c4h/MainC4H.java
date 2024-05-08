@@ -19,7 +19,7 @@ import java.text.*;
 import java.util.*;
 
 // Java 8 code
-public class JavaFXTrayIconSample extends Application {
+public class MainC4H extends Application {
 	private String cssPath="/application.css";
 
     // one icon location is shared between the application tray icon and task bar icon.
