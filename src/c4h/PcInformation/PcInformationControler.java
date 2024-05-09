@@ -52,8 +52,8 @@ public class PcInformationControler implements Initializable {
 	private Parent PcInfoContainer;	
     @FXML
     private Button StartViewbutton;
-
-    
+    @FXML
+    private Button screenShot;
     
     @FXML
 	private ProgressIndicator indictor = new ProgressIndicator(0);
@@ -113,7 +113,6 @@ public class PcInformationControler implements Initializable {
 			loadRamUsage();
 			loadCpuUsage();
 			loadGPUUsage();
-			LoadPCTyp();
 			systemInformation();
 			netzwerkInformation();
 			modellImage();
@@ -124,6 +123,11 @@ public class PcInformationControler implements Initializable {
 		}		
     }
     
+    @FXML
+    private void screenShot() {
+    	System.out.println("ScreenShot");	
+    }
+    @FXML
     private void LogoImage() {
 		// TODO Auto-generated method stub
         Image modellFoto = new Image("/image/3s_logo_tex2t.png");
@@ -137,16 +141,16 @@ public class PcInformationControler implements Initializable {
     	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
     	String srcPath = "/image/PcModell/"+pcModell+".png";
     	
-    	//Path Prüfen ob png oder jpeg
+    	//Path Prüfen ob es vorhanden ist 
     	boolean exists = checkFilePath(srcPath+".png");	
-    	
     	if(exists)
     		srcPath = "/image/PcModell/"+pcModell+".png";
     	
     	if (pcModell=="")
     		 srcPath = "/image/PcModell/noPic.png";
 
-    	System.out.println(srcPath);
+    	System.out.println("der Path ist für den RechnerModell: " +srcPath);
+    	
         // Bild aus dem Pfad laden
         Image modellFoto = new Image(srcPath.trim());
         image.setImage(modellFoto);
@@ -158,6 +162,7 @@ public class PcInformationControler implements Initializable {
         
     	// SystemInfoLabel Labels
         rechnerTyp.setText(pcIno.getPcModell());
+        
         supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
         win11komp.setText(parsePcModell.findWindows11Support(pcModell));
         kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
@@ -279,10 +284,5 @@ public class PcInformationControler implements Initializable {
 	private void loadGPUUsage() throws IOException{
 		indictor.setMinSize(100, 100);		
 		}
-	
-	@FXML
-	private void LoadPCTyp() {
-		
-	}
 
 }

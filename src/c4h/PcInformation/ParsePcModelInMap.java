@@ -134,6 +134,7 @@ public class ParsePcModelInMap {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("File not Found");
         }
        
 		return mapList;
@@ -175,6 +176,7 @@ public class ParsePcModelInMap {
 	            return values.get(5); // Index 4 entspricht dem 5 Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	        	System.out.println("supportEnde keine Information ");
 	            return null;
 	        }
 	 }
@@ -186,6 +188,7 @@ public class ParsePcModelInMap {
 	            return values.get(6); // Index 5 entspricht dem 6 Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	        	System.out.println("Windows 11 Support  keine Information ");
 	            return null;
 	        }
 	 }
@@ -197,6 +200,7 @@ public class ParsePcModelInMap {
 	            return values.get(4); // Index 3 entspricht dem vierten Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	        	System.out.println("Kaufdatum supportEnde keine Information ");
 	            return null;
 	        }
 	 }
@@ -227,11 +231,14 @@ public class ParsePcModelInMap {
 		
 		ParsePcModelInMap parse = new ParsePcModelInMap();
 		
-		String Key= "HP04";
+		String Key= "xxxx";
 		
 		//parse.printMAP();
 		try {
 			System.out.println(parse.findSupportEndethValue(Key));
+			System.out.println(parse.findKaufDatum(Key));
+			System.out.println(parse.findWindows11Support(Key));
+			System.out.println(parse.findePcModell(Key));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.*;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -18,8 +19,8 @@ import java.net.URL;
 import java.text.*;
 import java.util.*;
 
-// Java 8 code
-public class JavaFXTrayIconSample extends Application {
+public class MainC4H extends Application {
+	
 	private String cssPath="/application.css";
 
     // one icon location is shared between the application tray icon and task bar icon.
@@ -96,6 +97,7 @@ public class JavaFXTrayIconSample extends Application {
             scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.getIcons().add(new Image("/image/3sTask.png"));
         } catch (IOException e) {
             e.getCause().printStackTrace();
         }
@@ -153,25 +155,6 @@ public class JavaFXTrayIconSample extends Application {
             popup.addSeparator();
             popup.add(exitItem);
             trayIcon.setPopupMenu(popup);
-
-            // create a timer which periodically displays a notification message.
-            notificationTimer.schedule(
-                    new TimerTask() {
-                        @Override
-                        public void run() {
-                            javax.swing.SwingUtilities.invokeLater(() ->
-                                    trayIcon.displayMessage(
-                                            "hello",
-                                            "The time is now " + timeFormat.format(new Date()),
-                                            java.awt.TrayIcon.MessageType.INFO
-                                    )
-                            );
-                        }
-                    },
-                    5_000,
-                    60_000
-            );
-
             // add the application tray icon to the system tray.
             tray.add(trayIcon);
         } catch (java.awt.AWTException | IOException e) {
@@ -195,5 +178,10 @@ public class JavaFXTrayIconSample extends Application {
         // Due to way the application is coded, the application will remain running
         // until the user selects the Exit menu option from the tray icon.
         launch(args);
+    }
+    
+    public static void closeStage(Scene scene) {
+        Stage stage = (Stage) scene.getWindow();
+        stage.close();
     }
 }
