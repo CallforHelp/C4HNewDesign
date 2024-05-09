@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import c4h.MainC4H;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -46,6 +47,9 @@ public class startViewControler implements Initializable {
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
 		setImage();
+		exitButton.setOnAction(e -> {
+            MainC4H.closeStage(exitButton.getScene());
+        });
 	}
 	
 	

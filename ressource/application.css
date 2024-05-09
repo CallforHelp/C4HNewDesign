@@ -73,7 +73,7 @@
             radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
     -fx-background-color:transparent;
     -fx-font-variant-caps: titling-caps;
-	-fx-font-size:27;
+	-fx-font-size:25;
 	 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 25, 0.0 , 0 , 15 );
 }
 

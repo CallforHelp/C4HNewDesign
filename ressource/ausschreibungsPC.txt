@@ -169,7 +169,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
 |[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
-|style="background:#E1FCD2;" | HP Pro Mini 400 G9 DesktopMini (PD08)
+|style="background:#E1FCD2;" | HP Pro Mini 400 G9 Desktop Mini (PD08)
 |style="background:#E1FCD2;" align="center" | Aufkleber mit Core i3 (Blau) | vorne "Pro Mini" aufschrift sieht aus wie Kylo-Ren
 |style="background:#E1FCD2;" align="center" | Intel Core I3-12100T (4 x 2,20GHz/4,10GHz) Anschlüsse: 2 x DP, HDMI, DVI
 |style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -178,7 +178,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
-|style="background:#E1FCD2;" | HP ProDesk 400 G6 DesktopMini (PD07)
+|style="background:#E1FCD2;" | HP ProDesk 400 G6 Desktop Mini (PD07)
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 10-Gen | vorne "PRODESK" aufschrift sieht aus wie Kylo-Ren
 |style="background:#E1FCD2;" align="center" | Intel Core I3-10100T (4 x 3.00GHz/4,80GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -187,7 +187,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:HPProDesk400G5Desktop-Mini-PC.jpeg|100px|center]]
-|style="background:#E1FCD2;" | HP ProDesk 400 G5 DesktopMini (PD06)
+|style="background:#E1FCD2;" | HP ProDesk 400 G5 Desktop Mini (PD06)
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 9-Gen | vorne "PRODESK" aufschrift
 |style="background:#E1FCD2;" align="center" | Intel Core I3-9100T (4 x 3,10GHz/3,70GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [FOLGT]
@@ -196,7 +196,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
-|style="background:#E1FCD2;" | HP EliteDesk 800 G5 DesktopMini (ED05)
+|style="background:#E1FCD2;" | HP EliteDesk 800 G5 Desktop Mini (ED05)
 |style="background:#E1FCD2;" align="center" | Aufkelber mit i3 9-Gen
 |style="background:#E1FCD2;" align="center" | Intel Core I3-9100 (4 x 3,60GHz) Anschlüsse: 2 x DP, 1 x HDMI 
 |style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -205,7 +205,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
-|style="background:#FDCBC2;" | HP EliteDesk 800 G4 DesktopMini (ED04)
+|style="background:#FDCBC2;" | HP EliteDesk 800 G4 Desktop Mini (ED04)
 |style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
 |style="background:#FDCBC2;" align="center" | Intel Core I3-8100 (4 x 3.1GHz) Anschlüsse: 2 x DP, 1 x HDMI 
 |style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -214,7 +214,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
-|style="background:#FDCBC2;" | HP EliteDesk 800 G3 DesktopMini (ED03)
+|style="background:#FDCBC2;" | HP EliteDesk 800 G3 Desktop Mini (ED03)
 |style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
 |style="background:#FDCBC2;" align="center" | Intel Core I3-7100 (2x 3.9GHz) 3MB Cache
 |style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
