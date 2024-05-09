@@ -57,12 +57,16 @@ public class PcInformationControler implements Initializable {
 	private GridPane gridNetzwerkInformation ;
 	@FXML  
 	private GridPane gridSupportkInformation ;
+	
+	//Container
 	@FXML
 	private Parent PcInfoContainer;	
     @FXML
     private Button StartViewbutton;
     @FXML
     private Button screenShot;
+    @FXML
+    private Button support;
     
     @FXML
 	private ProgressIndicator indictor = new ProgressIndicator(0);
@@ -170,7 +174,7 @@ public class PcInformationControler implements Initializable {
 	@FXML
     private void modellImage() throws Throwable {
     	
-    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell());
+    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell().trim());
     	String srcPath = "/image/PcModell/"+pcModell+".png";
     	
     	//Path Prüfen ob es vorhanden ist 
@@ -246,6 +250,29 @@ public class PcInformationControler implements Initializable {
     private void loadRoot(ActionEvent event) throws IOException {
     	        
     	Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
+        
+    	Scene scene = StartViewbutton.getScene();
+        root.translateYProperty().set(scene.getHeight());
+
+        AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
+
+        parentContainer.getChildren().add(root);
+
+        Timeline timeline = new Timeline();
+        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+        
+        timeline.getKeyFrames().add(kf);
+        timeline.setOnFinished(t -> {
+            parentContainer.getChildren().remove(PcInfoContainer);
+        });
+        timeline.play();
+    }
+	
+	@FXML
+    private void loadBrowser(ActionEvent event) throws IOException {
+    	        
+    	Parent root = FXMLLoader.load(getClass().getResource("/c4h/browser/Browser.fxml"));
         
     	Scene scene = StartViewbutton.getScene();
         root.translateYProperty().set(scene.getHeight());
