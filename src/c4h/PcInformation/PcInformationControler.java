@@ -1,11 +1,18 @@
 package c4h.PcInformation;
 
 
+import java.awt.AWTException;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.imageio.ImageIO;
 
 import com.sun.management.OperatingSystemMXBean;
 
@@ -14,6 +21,7 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +33,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressIndicator;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
@@ -127,7 +136,30 @@ public class PcInformationControler implements Initializable {
     @FXML
     private void screenShot() {
     	System.out.println("ScreenShot");	
+    	try {
+            // Erfasse den Bereich des Java-Fensters
+    		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
+            
+        	Scene scene = StartViewbutton.getScene();
+            root.translateYProperty().set(scene.getHeight());
+            
+            WritableImage writableImage = new WritableImage((int) scene.getWidth(), (int) scene.getHeight());
+            scene.snapshot(writableImage);
+
+            // Konvertiere das JavaFX-Image in ein BufferedImage
+            BufferedImage bufferedImage = SwingFXUtils.fromFXImage(writableImage, null);
+
+            // Speichere das Bild auf dem Desktop
+            File desktopDir = new File(System.getProperty("user.home"), "Desktop");
+            File file = new File(desktopDir, "screenshot.png");
+            ImageIO.write(bufferedImage, "png", file);
+
+            System.out.println("Screenshot wurde unter " + file.getAbsolutePath() + " gespeichert.");
+        } catch (IOException ex) {
+            System.err.println("Fehler beim Erstellen des Screenshots: " + ex.getMessage());
+        }
     }
+    
     @FXML
     private void LogoImage() {
 		// TODO Auto-generated method stub
