@@ -52,8 +52,8 @@ public class PcInformationControler implements Initializable {
 	private Parent PcInfoContainer;	
     @FXML
     private Button StartViewbutton;
-
-    
+    @FXML
+    private Button screenShot;
     
     @FXML
 	private ProgressIndicator indictor = new ProgressIndicator(0);
@@ -124,6 +124,11 @@ public class PcInformationControler implements Initializable {
 		}		
     }
     
+    @FXML
+    private void screenShot() {
+    	System.out.println("ScreenShot");	
+    }
+    @FXML
     private void LogoImage() {
 		// TODO Auto-generated method stub
         Image modellFoto = new Image("/image/3s_logo_tex2t.png");

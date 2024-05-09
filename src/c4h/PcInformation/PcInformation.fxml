@@ -151,7 +151,7 @@
     <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
       <children>
         <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
-        <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Screenshot" />
+        <Button id="" fx:id="screenShot" minHeight="-1.0" mnemonicParsing="false" onAction="#screenShot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Screenshot" />
         <Button id="" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Support" />
       </children>
     </HBox>
