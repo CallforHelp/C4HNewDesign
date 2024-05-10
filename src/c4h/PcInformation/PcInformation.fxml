@@ -24,15 +24,15 @@
                 <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="SystemInformation" textFill="BLACK" />
                 <GridPane id="grid" fx:id="gridSystemInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="245.0" prefWidth="300.0" styleClass="labelText" vgap="0.0" visible="true">
                   <children>
-                    <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="Hostname :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="Hostname:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="SchulNummer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="MusterImage :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="MusterImage:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                     <Label prefHeight="54.0" prefWidth="144.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                     <Label fx:id="Schuldomain" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     <Label id="" fx:id="HostNameLabel" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                     <Label id="" fx:id="SchulNummer" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                     <Label fx:id="MusterImage" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Schuldomain" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Schuldomain:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Seriennummer:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                     <Label id="Schuldomain" fx:id="Seriennummer" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>
