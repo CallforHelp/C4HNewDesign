@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.web.*?>
 
-<AnchorPane id="Container" fx:id="browserContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.browser.BrowserControler">
+<AnchorPane id="Container" fx:id="browserContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.browser.BrowserControler">
   <children>
     <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="346.0" spacing="5.0" AnchorPane.leftAnchor="648.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="6.0">
       <children>

@@ -21,6 +21,9 @@ import java.util.*;
 
 public class MainC4H extends Application {
 	
+    private double xOffset = 0;
+    private double yOffset = 0;
+	
 	private String cssPath="/application.css";
 
     // one icon location is shared between the application tray icon and task bar icon.
@@ -92,12 +95,16 @@ public class MainC4H extends Application {
                     primaryStage.setY(event.getScreenY() + dragDelta[1]);
                 }
             });
+            
+  
 
             Scene scene = new Scene(page);
             scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.initStyle(StageStyle.UNDECORATED);
+            primaryStage.setResizable(true);
             primaryStage.getIcons().add(new Image("/image/3sTask.png"));
+            
         } catch (IOException e) {
             e.getCause().printStackTrace();
         }
