@@ -21,7 +21,7 @@
           <children>
             <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" spacing="5.0" styleClass="labelText">
               <children>
-                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="SystemInformation" textFill="BLACK" />
+                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="SystemInformation" textFill="BLACK" />
                 <GridPane id="grid" fx:id="gridSystemInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="245.0" prefWidth="300.0" styleClass="labelText" vgap="0.0" visible="true">
                   <children>
                     <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="Hostname :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -50,7 +50,7 @@
             </VBox>
             <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" spacing="5.0">
               <children>
-                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="Supportinformation" textFill="BLACK" />
+                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="Supportinformation" textFill="BLACK" />
                 <GridPane fx:id="gridSupportkInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="245.0" prefWidth="330.0" styleClass="labelText" vgap="0.0" visible="true">
                   <children>
                     <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="RechnerTyp:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
@@ -82,7 +82,7 @@
         </HBox>
         <VBox id="VBox" alignment="BOTTOM_LEFT" layoutX="35.0" layoutY="290.0" prefHeight="300.0" prefWidth="300.0" spacing="10.0">
           <children>
-            <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="Netzwerkinformation" textFill="BLACK" />
+            <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="Netzwerkinformation" textFill="BLACK" />
             <GridPane fx:id="gridNetzwerkInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" mouseTransparent="false" prefHeight="245.0" prefWidth="368.0" styleClass="labelText" visible="true">
               <children>
                 <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="IP:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
