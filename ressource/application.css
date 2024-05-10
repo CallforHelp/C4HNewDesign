@@ -109,6 +109,6 @@
 .progress-indicator:progress {
     width: 50%; /* Breite des gefüllten Bereichs (z.B. 50% für die Hälfte) */
     height: 100%; /* Volle Höhe des Indikators */
-    background-color: dodgerblue; /* Farbe des gefüllten Bereichs */
+    background-color: white; /* Farbe des gefüllten Bereichs */
     border-radius: 10px; /* Abgerundete Ecken (entsprechend dem Eltern-Indikator) */
 }
