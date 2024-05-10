@@ -59,10 +59,10 @@
                     <Label prefHeight="52.0" prefWidth="166.0" styleClass="labelText" text="Kaufdatum:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                     <Label fx:id="rechnerTyp" prefHeight="37.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
                     <Label id="supportEnde" fx:id="kaufdatum" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Microsoft Windows 11:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Microsoft Windows 11:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                     <Label id="Seriennummer" fx:id="win11komp" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Herstellert:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Supportdauer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Herstellert:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Supportdauer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                     <Label id="kaufdateum" fx:id="supportEnde" prefHeight="43.0001220703125" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                     <Label id="Seriennummer" fx:id="hersteller" prefHeight="52.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   </children>
