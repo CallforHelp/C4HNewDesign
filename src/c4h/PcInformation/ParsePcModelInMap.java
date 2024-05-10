@@ -152,7 +152,7 @@ public class ParsePcModelInMap {
 	            return keyPCModell;
 	        } else {
 	            System.out.println("Der PC-Modell '" + valueToFind + "' ist nich in der Ausschreibung.");
-	            return "";
+	            return null;
 	        }
 	}
 	

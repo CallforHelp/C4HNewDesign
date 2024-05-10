@@ -84,6 +84,8 @@ public class PcInformationControler implements Initializable {
 	private Label MusterImage;
 	@FXML
 	private Label Schuldomain;
+	@FXML
+	private Label Seriennummer;
 	
 	
 	//Label NetzwerkInformation
@@ -106,7 +108,7 @@ public class PcInformationControler implements Initializable {
 	@FXML
 	private Label supportEnde;
 	@FXML
-	private Label Seriennummer;
+	private Label hersteller;
 	@FXML
 	private Label kaufdatum;
 	@FXML
@@ -182,8 +184,10 @@ public class PcInformationControler implements Initializable {
     	if(exists)
     		srcPath = "/image/PcModell/"+pcModell+".png";
     	
-    	if (pcModell=="")
+    	if (pcModell==""|| pcModell==null) {
     		 srcPath = "/image/PcModell/noPic.png";
+    		 pcModell="Keine-Ausschreibung";
+    	}
 
     	System.out.println("der Path ist für den RechnerModell: " +srcPath);
     	
@@ -197,12 +201,13 @@ public class PcInformationControler implements Initializable {
         System.out.println(parsePcModell.findKaufDatum(pcModell));
         
     	// SystemInfoLabel Labels
-        rechnerTyp.setText(pcIno.getPcModell());
+       
+        rechnerTyp.setText(pcModell);
         
         supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
         win11komp.setText(parsePcModell.findWindows11Support(pcModell));
         kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
-        Seriennummer.setText(pcIno.getSerienNummer());
+        hersteller.setText(pcIno.getHersteller());
         
         
         
@@ -224,6 +229,7 @@ public class PcInformationControler implements Initializable {
          SchulNummer.setText(pcIno.getSchulNummer());
          MusterImage.setText(pcIno.getMusterImages());
          Schuldomain.setText(pcIno.getMachindomain());
+         Seriennummer.setText(pcIno.getSerienNummer());
     }
     
     @FXML
