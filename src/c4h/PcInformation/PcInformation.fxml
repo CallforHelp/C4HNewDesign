@@ -10,14 +10,14 @@
 
 <AnchorPane id="Container" fx:id="PcInfoContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1000.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
   <children>
-    <Pane prefHeight="695.0" prefWidth="1000.0" snapToPixel="true" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+    <Pane prefHeight="695.0" prefWidth="1000.0" snapToPixel="true" visible="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="6.0">
       <children>
         <StackPane layoutX="210.0" layoutY="604.0" prefHeight="83.0" prefWidth="568.0">
           <children>
             <ImageView fx:id="imageLogo" fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
           </children>
         </StackPane>
-        <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="5.0" spacing="70.0">
+        <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="5.0" spacing="50.0">
           <children>
             <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="300.0" spacing="5.0" styleClass="labelText">
               <children>
@@ -37,8 +37,8 @@
                     <Label id="Schuldomain" fx:id="Seriennummer" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   </children>
                   <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="99.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="545.0" minWidth="10.0" prefWidth="201.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="134.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="545.0" minWidth="10.0" prefWidth="166.0" />
                   </columnConstraints>
                   <rowConstraints>
                     <RowConstraints maxHeight="38.0" minHeight="7.0" percentHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
@@ -50,21 +50,21 @@
                 </GridPane>
               </children>
             </VBox>
-            <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="319.0" spacing="5.0">
+            <VBox id="VBox" alignment="CENTER_LEFT" prefHeight="300.0" prefWidth="353.0" spacing="5.0">
               <children>
                 <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="Supportinformation" textFill="BLACK" />
                 <GridPane fx:id="gridSupportkInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="245.0" prefWidth="330.0" styleClass="labelText" vgap="0.0" visible="true">
                   <children>
                     <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="RechnerTyp:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                     <Label prefHeight="52.0" prefWidth="166.0" styleClass="labelText" text="Kaufdatum:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <Label fx:id="rechnerTyp" prefHeight="37.0" prefWidth="199.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <Label id="supportEnde" fx:id="kaufdatum" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Win 11 Kompatibilität:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <Label id="Seriennummer" fx:id="win11komp" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label fx:id="rechnerTyp" prefHeight="37.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label id="supportEnde" fx:id="kaufdatum" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Microsoft Windows 11:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <Label id="Seriennummer" fx:id="win11komp" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                     <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Herstellert:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Dauer 3S Support:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <Label id="kaufdateum" fx:id="supportEnde" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <Label id="Seriennummer" fx:id="hersteller" prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Supportdauer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <Label id="kaufdateum" fx:id="supportEnde" prefHeight="43.0001220703125" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label id="Seriennummer" fx:id="hersteller" prefHeight="52.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   </children>
                   <columnConstraints>
                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="128.0" />
@@ -89,7 +89,7 @@
               <children>
                 <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="IP:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
                 <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Ethernet-MAC:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="WLAN-SSID:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Wlan-SSID:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
                 <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Wlan-MAC:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
                 <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Gateway:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                 <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Schulrouter:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
@@ -101,8 +101,8 @@
                 <Label fx:id="TFKIP" prefHeight="44.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
               </children>
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="87.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="545.0" minWidth="10.0" prefWidth="213.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="372.0" minWidth="10.0" prefWidth="103.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="545.0" minWidth="10.0" prefWidth="197.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="38.0" minHeight="7.0" percentHeight="0.0" prefHeight="38.0" vgrow="SOMETIMES" />
