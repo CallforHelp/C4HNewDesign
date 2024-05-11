@@ -10,7 +10,9 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.URL;
+import java.net.UnknownHostException;
 import java.util.ResourceBundle;
+import java.util.concurrent.CompletableFuture;
 
 import javax.imageio.ImageIO;
 
@@ -175,39 +177,37 @@ public class PcInformationControler implements Initializable {
 
 	@FXML
     private void modellImage() throws Throwable {
-    	
-    	String pcModell= parsePcModell.findePcModell(pcIno.getPcModell().trim());
-    	String srcPath = "/image/PcModell/"+pcModell+".png";
-    	
-    	//Path Prüfen ob es vorhanden ist 
-    	boolean exists = checkFilePath(srcPath+".png");	
-    	if(exists)
-    		srcPath = "/image/PcModell/"+pcModell+".png";
-    	
-    	if (pcModell==""|| pcModell==null) {
-    		 srcPath = "/image/PcModell/noPic.png";
-    		 pcModell="Keine-Ausschreibung";
-    	}
-
-    	System.out.println("der Path ist für den RechnerModell: " +srcPath);
-    	
-        // Bild aus dem Pfad laden
-        Image modellFoto = new Image(srcPath.trim());
-        image.setImage(modellFoto);
-        image.setFitHeight(250);
-        image.setFitWidth(250);
-        
-        
-        System.out.println(parsePcModell.findKaufDatum(pcModell));
-        
-    	// SystemInfoLabel Labels
-       
-        rechnerTyp.setText(pcModell);
-        
-        supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
-        win11komp.setText(parsePcModell.findWindows11Support(pcModell));
-        kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
-        hersteller.setText(pcIno.getHersteller());
+		
+		  String pcModell= parsePcModell.findePcModell(pcIno.getPcModell().trim());
+		  String srcPath = "/image/PcModell/"+pcModell+".png";
+		  
+		  //Path Prüfen ob es vorhanden ist 
+		  boolean exists = checkFilePath(srcPath+".png"); 
+		  if(exists) srcPath ="/image/PcModell/"+pcModell+".png";
+		  
+		  if (pcModell==""|| pcModell==null) { 
+			  srcPath = "/image/PcModell/noPic.png";
+			  pcModell="Keine-Ausschreibung"; 
+		  }
+		  
+		  System.out.println("der Path ist für den RechnerModell: " +srcPath);
+		  
+		  // Bild aus dem Pfad laden 
+		  Image modellFoto = new Image(srcPath.trim());
+		  image.setImage(modellFoto); image.setFitHeight(250); image.setFitWidth(250);
+		  
+		  
+		  System.out.println(parsePcModell.findKaufDatum(pcModell));
+		  
+		  // SystemInfoLabel Labels
+		  
+		  rechnerTyp.setText(pcModell);
+		  
+		  supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
+		  win11komp.setText(parsePcModell.findWindows11Support(pcModell));
+		  kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
+		  hersteller.setText(pcIno.getHersteller());
+		 
         
         
         
@@ -218,32 +218,32 @@ public class PcInformationControler implements Initializable {
     
     private boolean checkFilePath(String filePath) {
             File file = new File(filePath.trim());
+            System.out.println("Checked Path:"+ filePath+ " :"+file.exists());
             return file.exists();
 	}
 
-    @FXML
-	public void systemInformation() throws Throwable {
-		
-		// SystemInfoLabel Labels
-         HostNameLabel.setText(pcIno.getLocalHost());
-         SchulNummer.setText(pcIno.getSchulNummer());
-         MusterImage.setText(pcIno.getMusterImages());
-         Schuldomain.setText(pcIno.getMachindomain());
-         Seriennummer.setText(pcIno.getSerienNummer());
-    }
-    
-    @FXML
-	public void netzwerkInformation() throws Throwable {
-		
-		// SystemInfoLabel Labels
-         IP.setText(pcIno.getLocalAdresse());
-         LanMAC.setText(pcIno.getMacAddress());
-         wlanSsID.setText(pcIno.getConnectedWifiInfo());
-         wlanMAC.setText(pcIno.getWifiMacAdresse());
-         Gateway.setText(pcIno.getDefaultgateway());
-         TFKIP.setText(pcIno.getDHCPServer());
-        
-	}
+	
+	  @FXML 
+	  public void systemInformation() throws Throwable {
+	  
+		  HostNameLabel.setText(pcIno.getLocalHost());  
+		  SchulNummer.setText(pcIno.getSchulNummer());
+		  MusterImage.setText(pcIno.getMusterImages());
+		  Schuldomain.setText(pcIno.getMachindomain());
+		  Seriennummer.setText(pcIno.getSerienNummer()); 
+	  }
+	  
+	  @FXML public void netzwerkInformation() throws Throwable {
+	  
+	  
+	  LanMAC.setText(pcIno.getMacAddress());
+	  wlanSsID.setText(pcIno.getConnectedWifiInfo());
+	  wlanMAC.setText(pcIno.getWifiMacAdresse());
+	  Gateway.setText(pcIno.getDefaultgateway());
+	  TFKIP.setText(pcIno.getDHCPServer());
+	  
+	  }
+	 
     
     @FXML
 	public void supportkInformation() throws Throwable {
@@ -314,7 +314,7 @@ public class PcInformationControler implements Initializable {
 		indictor2.setMinSize(100, 100);
 		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
 		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor2.setProgress(bean.getCpuLoad())));
+			     ae ->  indictor2.setProgress(bean.getProcessCpuLoad())));
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
 	}

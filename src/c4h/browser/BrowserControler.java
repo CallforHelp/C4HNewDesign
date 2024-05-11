@@ -32,8 +32,10 @@ public class BrowserControler implements Initializable{
 	private WebEngine webkit;
 	
 	
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		loadBrowser();
 	}
 	
@@ -68,7 +70,7 @@ public class BrowserControler implements Initializable{
          webkit = browser.getEngine();
          webkit.load("https://fehlermeldung.3s-hamburg.de");
          browser.setFontScale(1);
-         browser.setPageFill(javafx.scene.paint.Color.TRANSPARENT);
+        
          
     }
      

@@ -52,8 +52,6 @@ public class startViewControler implements Initializable {
         });
 	}
 	
-	
-	
 	private void setImage() {
 		// TODO Auto-generated method stub
 		
