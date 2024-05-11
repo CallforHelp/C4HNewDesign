@@ -221,9 +221,9 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					return "HP ProDesk 400 G5 Desktop Mini";
+					//return "HP ProDesk 400 G5 Desktop Mini";
 					
-					//return Modell;
+					return Modell;
 				}
 			}
 			// Prozess schließen
