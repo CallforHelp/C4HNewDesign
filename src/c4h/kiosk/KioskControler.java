@@ -52,7 +52,6 @@ public class KioskControler implements Initializable{
     private AnchorPane kioskContainer;	
 	@FXML
     private WebView  Kioskbrowser = new WebView();;
-	
 	@FXML
 	private WebEngine webkit;
 
@@ -64,7 +63,9 @@ public class KioskControler implements Initializable{
 	        loadBrowser();
 	}
 	@FXML
-	private void loadBrowser() { try {
+	private void loadBrowser() { 
+		System.out.println("KioskSeite");
+		try {
         // TrustManager-Array initialisieren, um das Serverzertifikat zu überprüfen
         TrustManager[] trustAllCerts = new TrustManager[]{
                 new X509TrustManager() {
@@ -110,7 +111,7 @@ public class KioskControler implements Initializable{
     }
 		
 
-	        System.out.println("KioskSeite");
+	        
 	   
 	        // JavaScript aktivieren
 	        webkit = Kioskbrowser.getEngine();
@@ -155,27 +156,27 @@ public class KioskControler implements Initializable{
 
         }
 	
-	@FXML
-    private void loadRoot(ActionEvent event) throws IOException {
- 	Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
+		@FXML
+		private void loadRoot(ActionEvent event) throws IOException {
+			Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
         
-    	Scene scene = StartViewbutton.getScene();
-        root.translateYProperty().set(scene.getHeight());
+			Scene scene = StartViewbutton.getScene();
+			root.translateYProperty().set(scene.getHeight());
 
-        AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
+			AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
 
-        parentContainer.getChildren().add(root);
+			parentContainer.getChildren().add(root);
 
 
-        Timeline timeline = new Timeline();
-        KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-        timeline.getKeyFrames().add(kf);
-        timeline.setOnFinished(t -> {
+			Timeline timeline = new Timeline();
+			KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+			KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+			timeline.getKeyFrames().add(kf);
+			timeline.setOnFinished(t -> {
             parentContainer.getChildren().remove(kioskContainer);
-        });
-        timeline.play();
-    }
+			});
+			timeline.play();
+		}
 	
 	}
 
