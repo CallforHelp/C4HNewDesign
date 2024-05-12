@@ -223,7 +223,6 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					//return "HP ProDesk 400 G5 Desktop Mini";
 					return Modell;
 				}
 			}
@@ -664,60 +663,6 @@ public class pcInformation {
         }
         return false; // Keine WLAN-Schnittstelle gefunden
     }
-
-	/************************************************************************************************************/
-	/**************************************
-	 * PRINTING * @throws Throwable
-	 ****************************************/
-	/**
-	 * Print Information in der Console
-	 * 
-	 * @throws Throwable Hostname Localhost
-	 */
-	public void printBGinfo() throws Throwable {
-
-		System.out.println("3S");
-		System.out.println("BG_Info");
-		System.out.println("time to build :" + timetoBuild());
-		System.out.println("*********************************");
-		System.out.println("Schul-Support-Services HiTEC e.V.");
-
-		System.out.println("*********************************");
-		System.out.println("            PC Info              ");
-		System.out.println("*********************************");
-		System.out.println("Host Name     :" + getLocalHost());
-		System.out.println("User Name     :" + getUserName());
-		System.out.println("SchulNummer   :" + getSchulNummer());
-		System.out.println("OS Version    :" + getOSversion());
-		System.out.println("OS Architektur:" + getOSArchitecture());
-		System.out.println("Muster Images :" + getMusterImages());
-		System.out.println("Pc Modell     :" + getPcModell());
-		System.out.println("Hersteller    :" + getHersteller());
-		System.out.println("Seriennummer  :" + getSerienNummer());
-
-		System.out.println("*********************************");
-		System.out.println("            NETZWERK             ");
-		System.out.println("*********************************");
-
-		System.out.println("Adresse local  :" + getLocalAdresse());
-		System.out.println("Subnet Mask    :" + getSubnetMask());
-		System.out.println("MAC Adresse    :" + getMacAddress());
-		System.out.println("Machine Domain :" + getMachindomain());
-		System.out.println("Default Gateway:" + getDefaultgateway());
-		System.out.println("DHCP Server    :" + getDHCPServer());
-		System.out.println("DNS Server     :" + getDNSServer());
-		System.out.println("Wlan SSID      :" + getConnectedWifiInfo());
-		System.out.println("Wlan MAC       :" + getWifiMacAdresse());
-		
-		
-
-		try {
-			System.out.println("Pruenfung der Schulnummer: " + getSchulNummer() + " is " + pruefeSchulnr());
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
-
-	}
 	
 	/**
 	 * 
@@ -794,18 +739,5 @@ public class pcInformation {
 	}
 	public  ArrayList<String> getPCinfoNetzwerkList(){
 		return this.PcNetzwerklist;
-	}
-
-	public static void main(String[] args) throws Throwable {
-
-		pcInformation test = new pcInformation();
-//		System.out.println(test.getWifiMacAdresse());
-
-		test.printBGinfo();
-//		test.setPcInfoSystem();
-//		test.setPcInfoNetzwerk();
-//		
-		//System.out.println("PCINFOSYSTEM Element 8; "+ test.PcInfolist.get(8));
-	//	System.out.println("PCINFOSYSTEM Element 0; "+ test.PcNetzwerklist.get(0));
 	}
 }

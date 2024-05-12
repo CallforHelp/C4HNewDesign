@@ -24,11 +24,6 @@ import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 
 /**
@@ -51,11 +46,21 @@ public class ParsePcModelInMap {
     
 	
 	private static Map<String, ArrayList<String>> mapList = new HashMap<>();
-
 	public String filePathAuschreiubungPCPath = "/ausschreibungsPC.txt";
-
-	
 	private String keyPcModell;
+	
+	
+
+	public static Map<String, ArrayList<String>> getMapList() {
+		return mapList;
+	}
+
+
+
+	public static void setMapList(Map<String, ArrayList<String>> mapList) {
+		ParsePcModelInMap.mapList = mapList;
+	}
+
 	
 	
 	
@@ -75,6 +80,7 @@ public class ParsePcModelInMap {
 		// TODO Auto-generated constructor stub
 		parseText(filePathAuschreiubungPCPath);
 	} 
+	
 	
 	
 
@@ -107,8 +113,6 @@ public class ParsePcModelInMap {
                 // Überprüfe, ob die Zeile eine Klammer enthält
                 if (line.contains("(") && line.contains(")")) {
                     // Überprüfe, ob die Klammer von einem Zollzeichen begrenzt ist
-                    //Pattern pattern = Pattern.compile("\\(.*?\\)");
-                  //  Pattern pattern = Pattern.compile("\\((.{4})\\)");
                 	 Pattern pattern = Pattern.compile("\\((?=.*\\d)(?=.*[a-zA-Z]).{1,4}\\)");
                     Matcher matcher = pattern.matcher(line);
                     while (matcher.find()) {
@@ -145,11 +149,11 @@ public class ParsePcModelInMap {
 		String valueToFind = PCModell;
 		 String keyPCModell = getKeyByExactValueInList(mapList, valueToFind);
 		 if (keyPCModell != null) {
-	            System.out.println("Der Schlüssel für den Wert '" + valueToFind + "' ist: " + keyPCModell);
+	            //return KEY
 	            setKeyPcModell(keyPcModell);
 	            return keyPCModell;
 	        } else {
-	            System.out.println("Der PC-Modell '" + valueToFind + "' ist nich in der Ausschreibung.");
+	            //nicht in der ausschreibung return null
 	            return null;
 	        }
 	}
@@ -202,48 +206,5 @@ public class ParsePcModelInMap {
 	            return null;
 	        }
 	 }
-	 
-	 
-	 public void printMAP() {
-	        
-			//Print Maps
-	        // Ausgabe der Maps
-	        for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
-	            String key = entry.getKey();
-	            ArrayList<String> value = entry.getValue();
-	            System.out.println("Pc Modell: '" + key + "':");
-	            for (String line : value) {
-	                System.out.println(line);
-	            }
-	            System.out.println(); // Leere Zeile zur Trennung
-	        }
-		}
-		
-	
-	
-    
-	public static void main(String[] args) {
-		
-		
-		
-		
-		ParsePcModelInMap parse = new ParsePcModelInMap();
-		
-		String Key= "HP09";
-		
-		//parse.printMAP();
-		try {
-			System.out.println(parse.findSupportEndethValue(Key));
-			System.out.println(parse.findKaufDatum(Key));
-			System.out.println(parse.findWindows11Support(Key));
-			System.out.println(parse.findePcModell(Key));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
-
-        
- 
-    }
 }

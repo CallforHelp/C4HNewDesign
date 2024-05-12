@@ -284,18 +284,6 @@ public class PcInformationControler implements Initializable {
         });
         timeline.play();
     }
-	
-    @FXML
-    private void pcInfo() {
-    	
-    	try {
-			pcIno.printBGinfo();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    }
-    
 	@FXML
 	private void loadCpuUsage() throws IOException{
 		indictor2.setMinSize(100, 100);
