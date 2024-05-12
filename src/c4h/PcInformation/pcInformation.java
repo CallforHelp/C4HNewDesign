@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
  * Netwerk und PC Information
  * 
  * @author Helmi Bani
- * @version 1.0
+ * @version 2.0
  * 
  */
 public class pcInformation {
@@ -181,20 +181,22 @@ public class pcInformation {
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
-		
-		String line;
-		String systemHersteller = "";
-		
-		Process Herstteller = Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
-		InputStreamReader input = new InputStreamReader(Herstteller.getInputStream());
-		BufferedReader resultOutput = new BufferedReader(input);
-		while ((line = resultOutput.readLine()) != null) {
-			if (line.contains("Manufacturer"))
-				systemHersteller = line.split(":")[1].trim();
-		}
-		Herstteller.destroy();	
-		
-		return systemHersteller;
+        String line;
+        StringBuilder manufacturer = new StringBuilder();
+        try {
+            Process process = Runtime.getRuntime().exec("wmic csproduct get vendor");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            while ((line = reader.readLine()) != null) {
+                if (!line.trim().isEmpty() && !line.contains("Vendor")) {
+                    manufacturer.append(line.trim());
+                }
+            }
+            reader.close();
+            process.waitFor();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return manufacturer.toString().trim();
 	} 
 	
 	/**
@@ -222,7 +224,6 @@ public class pcInformation {
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
 					//return "HP ProDesk 400 G5 Desktop Mini";
-					
 					return Modell;
 				}
 			}
@@ -303,20 +304,22 @@ public class pcInformation {
             return "Mac-Rechner";
 		}
 		
-		String line;
-		String serienNummer = "";
-		Process SerienNummer = Runtime.getRuntime().exec("powershell.exe Get-WmiObject -Class Win32_BIOS");
-		InputStreamReader input = new InputStreamReader(SerienNummer.getInputStream());
-		BufferedReader resultOutput = new BufferedReader(input);
-
-		while ((line = resultOutput.readLine()) != null) {
-			if (line.contains("SerialNumber"))
-				serienNummer = line.split(":")[1].trim();
-		}
-		
-		
-		return serienNummer;
-	} 
+		try {
+            Process process = Runtime.getRuntime().exec("wmic bios get serialnumber");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            StringBuilder serialNumber = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                serialNumber.append(line.trim());
+            }
+            reader.close();
+            process.waitFor();
+            return serialNumber.toString().replace("SerialNumber", "").trim();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+        }
+        return "keine Seirennummer";
+    } 
 	
 	/**
 	 * RechnerTyp aus dem Hostname auslesen.
@@ -341,7 +344,7 @@ public class pcInformation {
 		
 		String IPAdresse = "";
 		IPAdresse = InetAddress.getLocalHost().getHostAddress();
-		
+	
 		if (IPAdresse == "")
 			IPAdresse= "Fehler-Netzwerk";
 		
@@ -361,22 +364,20 @@ public class pcInformation {
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
+		String line;
+		String macAdresse = "";
+		Process inputStream = Runtime.getRuntime().exec("ipconfig /all");
+		InputStreamReader input = new InputStreamReader(inputStream.getInputStream());
+		BufferedReader resultOutput = new BufferedReader(input);
+
+		while ((line = resultOutput.readLine()) != null) {
+			if (line.contains("Physische Adresse"))
+				return macAdresse = line.split(":")[1].trim();
+		}
 		
-		String LanMacAdresse = null;
-		try {
-			Process process = Runtime.getRuntime().exec("powershell.exe Get-NetAdapter | Where-Object { $_.Name -like 'Ethernet*' } | Select-Object -ExpandProperty MacAddress");
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-	        LanMacAdresse = reader.readLine();
-	        if (LanMacAdresse == null && LanMacAdresse.isEmpty()) {
-	        	LanMacAdresse= "Fehler-MacAdresse ";
-	        }
-	        
-	    }catch (IOException e) {
-	    	e.printStackTrace(); // Behandlung der Ausnahme entsprechend
-	    }
 		
-	    
-	    return LanMacAdresse;
+		return macAdresse;
+    
 	}
 
 	/**
@@ -412,22 +413,7 @@ public class pcInformation {
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
-		String domain=null;
-		try {
-			Process process = Runtime.getRuntime().exec("powershell.exe Get-WmiObject Win32_ComputerSystem | Select-Object -ExpandProperty Domain");
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-	        domain = reader.readLine();
-	        reader.close();
-	        process.destroy();
-	        if (domain == null && domain.isEmpty()) {
-	        	domain= "Fehler-Domain";
-	        }
-	        
-		}catch (IOException e) {
-			e.printStackTrace(); // Behandlung der Ausnahme entsprechend
-	    }
-		
-	return domain.trim();
+	return System.getenv("USERDOMAIN");
 	}
 
 	/**
@@ -442,25 +428,26 @@ public class pcInformation {
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
-		String subnetMask=null;
-		try {
-            Process process = Runtime.getRuntime().exec("powershell.exe Get-NetIPAddress | Where-Object { $_.AddressFamily -eq 'IPv4' } | Select-Object -ExpandProperty PrefixLength");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            subnetMask = reader.readLine();
-            reader.close();
-            process.destroy();
-            if (subnetMask == null && subnetMask.isEmpty()) {
-                subnetMask="Fehler- Netzwerk";
-            }
-            else 
-            	subnetMask=convertPrefixLengthToMask(Integer.parseInt(subnetMask.trim()));
-        } catch (IOException e) {
-            e.printStackTrace(); // Behandlung der Ausnahme entsprechend
-        }
-	
+		 String line;
+	        String subnetMask = "";
+	        try {
+	            Process process = Runtime.getRuntime().exec("wmic nicconfig get IPSubnet");
+	            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+	            Pattern pattern = Pattern.compile("(\\d+\\.\\d+\\.\\d+\\.\\d+)");
+	            while ((line = reader.readLine()) != null) {
+	                Matcher matcher = pattern.matcher(line);
+	                if (matcher.find()) {
+	                    subnetMask = matcher.group(1);
+	                    break;
+	                }
+	            }
+	            reader.close();
+	            process.waitFor();
+	        } catch (IOException | InterruptedException e) {
+	            e.printStackTrace();
+	        }
+	        
         return subnetMask;
-		
-
 	}
 	
 	/**
@@ -494,23 +481,9 @@ public class pcInformation {
             return "Mac-Rechner";
 		}
 
-		String gateway = "";
-		
-        try {
-            Process process = Runtime.getRuntime().exec("powershell.exe Get-NetRoute -DestinationPrefix 0.0.0.0/0 | Select-Object -ExpandProperty NextHop");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-            gateway = reader.readLine();
-            reader.close();
-            process.destroy();
-            if (gateway == null && gateway.isEmpty()) {
-                gateway="Fehler-Gateway" ;
-            }
-        } catch (IOException e) {
-            e.printStackTrace(); // Behandlung der Ausnahme entsprechend
-        }
-        
-       
-		return gateway.trim();
+        String hostname= getLocalHost();
+       return   InetAddress.getLocalHost().getCanonicalHostName().substring(hostname.length() + 1);
+		//return gateway.trim();
 	}
 
 	/**
@@ -665,7 +638,7 @@ public class pcInformation {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		return wlanMAC.toString();
+		return wlanMAC.toString().trim();
 	}
 
 	/**
@@ -719,6 +692,8 @@ public class pcInformation {
 		System.out.println("OS Architektur:" + getOSArchitecture());
 		System.out.println("Muster Images :" + getMusterImages());
 		System.out.println("Pc Modell     :" + getPcModell());
+		System.out.println("Hersteller    :" + getHersteller());
+		System.out.println("Seriennummer  :" + getSerienNummer());
 
 		System.out.println("*********************************");
 		System.out.println("            NETZWERK             ");
@@ -732,7 +707,7 @@ public class pcInformation {
 		System.out.println("DHCP Server    :" + getDHCPServer());
 		System.out.println("DNS Server     :" + getDNSServer());
 		System.out.println("Wlan SSID      :" + getConnectedWifiInfo());
-		System.out.println("Wlan MAC      :" + getWifiMacAdresse());
+		System.out.println("Wlan MAC       :" + getWifiMacAdresse());
 		
 		
 
@@ -825,11 +800,12 @@ public class pcInformation {
 
 		pcInformation test = new pcInformation();
 //		System.out.println(test.getWifiMacAdresse());
-//		//test.printBGinfo();
+
+		test.printBGinfo();
 //		test.setPcInfoSystem();
 //		test.setPcInfoNetzwerk();
 //		
-		System.out.println("PCINFOSYSTEM Element 8; "+ test.PcInfolist.get(8));
-		System.out.println("PCINFOSYSTEM Element 0; "+ test.PcNetzwerklist.get(0));
+		//System.out.println("PCINFOSYSTEM Element 8; "+ test.PcInfolist.get(8));
+	//	System.out.println("PCINFOSYSTEM Element 0; "+ test.PcNetzwerklist.get(0));
 	}
 }

@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import c4h.MainC4H;
+import c4h.PcInformation.PcInformationControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -23,9 +24,7 @@ import javafx.util.Duration;
 import javafx.scene.image.Image;
 
 public class startViewControler implements Initializable {
-	
-	
-	
+		
 	
 	@FXML
 	private ImageView image;
@@ -42,7 +41,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private String cssPath="/application.css";
 	
-	
+	// Instanzvariable zur Speicherung der geladenen Ansicht
+	private Parent pcInformationView;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -58,8 +58,6 @@ public class startViewControler implements Initializable {
 		Image logo = new Image("/image/3s_logo_tex2t.png");
 		image.setImage(logo);
 	}
-
-
 
 	@FXML
 	private void exitButton(ActionEvent event) throws IOException {
@@ -77,30 +75,48 @@ public class startViewControler implements Initializable {
             }
 		
 	}
-
+	
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
-		
-		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
-		Scene scene = buttonPcInfo.getScene();
-		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
-	    
-	    root.translateYProperty().set(scene.getHeight());
-
-	    parentContainer.getChildren().add(root);
-
-	    
-	    Timeline timeline = new Timeline();
-	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-	    timeline.getKeyFrames().add(kf);
-	    
-	    timeline.setOnFinished(t -> {
-	    	parentContainer.getChildren().remove(parentContainer);
-	    });
-	    timeline.play();
-	   }
-	
+	    // Überprüfen, ob die Ansicht bereits geladen wurde
+	    if (pcInformationView == null) {
+	        // Laden der FXML-Ansicht
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
+	        pcInformationView = loader.load();
+	        
+	        // Zugriff auf den geladenen Controller
+	        PcInformationControler controller = loader.getController();
+	        
+	        // Zugriff auf die Szene des Buttons
+	        Scene scene = buttonPcInfo.getScene();
+	        scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+	        
+	        pcInformationView.translateYProperty().set(scene.getHeight());
+	        parentContainer.getChildren().add(pcInformationView);
+	        
+	        // Hinzufügen eines ChangeListeners zur sceneProperty der Stage
+	        Stage stage = (Stage) scene.getWindow();
+	        stage.sceneProperty().addListener((observable, oldScene, newScene) -> {
+	            if (oldScene == null && newScene != null) {
+	                // Szene wurde vollständig geladen
+	           //     controller.processData(); // Ausführen der Controllerfunktionen
+	            }
+	        });
+	        
+	        Timeline timeline = new Timeline();
+	        KeyValue kv = new KeyValue(pcInformationView.translateYProperty(), 0, Interpolator.EASE_IN);
+	        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	        timeline.getKeyFrames().add(kf);
+	        
+	        timeline.setOnFinished(t -> {
+	            parentContainer.getChildren().remove(parentContainer);
+	        });
+	        timeline.play();
+	    } else {
+	        // Die Ansicht wurde bereits geladen, also füge sie einfach zum Container hinzu
+	        parentContainer.getChildren().add(pcInformationView);
+	    }
+	}
 	
 	@FXML
 	private void loadBrowser(ActionEvent event) throws IOException {

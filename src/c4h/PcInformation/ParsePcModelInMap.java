@@ -42,6 +42,9 @@ import javafx.stage.StageStyle;
  * Value[5]=  Dauer 3S Support
  * Value[6]=  Win11 Kompatibilität 
  * 
+ *  * @author Helmi Bani
+ * @version 1.0
+ * 
  */
 
 public class ParsePcModelInMap {
@@ -49,16 +52,11 @@ public class ParsePcModelInMap {
 	
 	private static Map<String, ArrayList<String>> mapList = new HashMap<>();
 
-	final static  String filePathDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\Desktops.txt";
-	final static String filePathminiDesktops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\miniDesktops.txt";
-	final static String filePathLaptops = "C:\\Users\\PC-SWV\\eclipse-workspace\\TestProjekt\\src\\design\\LapTops.txt";
-	
-	final static String filePathAuschreiubungPC = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\src\\c4h\\PcInformation\\ausschreibungsPC.txt";
-	
-	//final String filePathAuschreiubungPCPath = "C:\\Users\\PC-SWV\\Documents\\GitHub\\C4HNewDesign\\ressource\\ausschreibungsPC.txt";
-	String filePathAuschreiubungPCPath = "/ausschreibungsPC.txt";
+	public String filePathAuschreiubungPCPath = "/ausschreibungsPC.txt";
 
+	
 	private String keyPcModell;
+	
 	
 	
 	public String getKeyPcModell() {
@@ -231,7 +229,7 @@ public class ParsePcModelInMap {
 		
 		ParsePcModelInMap parse = new ParsePcModelInMap();
 		
-		String Key= "xxxx";
+		String Key= "HP09";
 		
 		//parse.printMAP();
 		try {

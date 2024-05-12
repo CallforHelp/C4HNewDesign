@@ -126,13 +126,13 @@ public class PcInformationControler implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 		try {
-			System.out.println("PCInformation");
+		System.out.println("PCInformation");
 			loadRamUsage();
 			loadCpuUsage();
 			loadGPUUsage();
 			systemInformation();
 			netzwerkInformation();
-			modellImage();
+			supportInformation();
 			LogoImage();
 			
 		} catch (Throwable e) {
@@ -176,7 +176,7 @@ public class PcInformationControler implements Initializable {
 	}
 
 	@FXML
-    private void modellImage() throws Throwable {
+    private void supportInformation() throws Throwable {
 		
 		  String pcModell= parsePcModell.findePcModell(pcIno.getPcModell().trim());
 		  String srcPath = "/image/PcModell/"+pcModell+".png";
@@ -199,7 +199,7 @@ public class PcInformationControler implements Initializable {
 		  
 		  System.out.println(parsePcModell.findKaufDatum(pcModell));
 		  
-		  // SystemInfoLabel Labels
+		  // Support Labels
 		  
 		  rechnerTyp.setText(pcModell);
 		  
@@ -207,13 +207,7 @@ public class PcInformationControler implements Initializable {
 		  win11komp.setText(parsePcModell.findWindows11Support(pcModell));
 		  kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
 		  hersteller.setText(pcIno.getHersteller());
-		 
-        
-        
-        
-        
-        
-        
+    
     }
     
     private boolean checkFilePath(String filePath) {
@@ -233,9 +227,10 @@ public class PcInformationControler implements Initializable {
 		  Seriennummer.setText(pcIno.getSerienNummer()); 
 	  }
 	  
-	  @FXML public void netzwerkInformation() throws Throwable {
+	  @FXML 
+	  public void netzwerkInformation() throws Throwable {
 	  
-	  
+	  IP.setText(pcIno.getLocalAdresse());
 	  LanMAC.setText(pcIno.getMacAddress());
 	  wlanSsID.setText(pcIno.getConnectedWifiInfo());
 	  wlanMAC.setText(pcIno.getWifiMacAdresse());
@@ -243,14 +238,6 @@ public class PcInformationControler implements Initializable {
 	  TFKIP.setText(pcIno.getDHCPServer());
 	  
 	  }
-	 
-    
-    @FXML
-	public void supportkInformation() throws Throwable {
-		
-	
-        
-	}
 
 	@FXML
     private void loadRoot(ActionEvent event) throws IOException {

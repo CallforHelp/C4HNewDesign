@@ -1,6 +1,5 @@
 package c4h;
 
-
 import javafx.application.*;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -19,6 +18,10 @@ import java.net.URL;
 import java.text.*;
 import java.util.*;
 
+/**
+ * Die MainC4H-Klasse ist die Hauptklasse der C4H-Anwendung. Sie erbt von Application und implementiert die
+ * start()-Methode, um die JavaFX-Anwendung zu initialisieren.
+ */
 public class MainC4H extends Application {
 	
     private double xOffset = 0;
@@ -26,36 +29,37 @@ public class MainC4H extends Application {
 	
 	private String cssPath="/application.css";
 
-    // one icon location is shared between the application tray icon and task bar icon.
-    // you could also use multiple icons to allow for clean display of tray icons on hi-dpi devices.
+    // Die Pfadangabe für das Anwendungssymbol wird sowohl für das Anwendungstray-Symbol als auch für das Taskleistensymbol gemeinsam genutzt.
+    // Es können auch mehrere Symbole verwendet werden, um eine saubere Anzeige von Symbolen im Tray auf Hi-DPI-Geräten zu ermöglichen.
     private static final String iconImageLoc = "/image/bulb.png";
 
-    // application stage is stored so that it can be shown and hidden based on system tray icon operations.
+    // Die Anwendungsstufe wird gespeichert, damit sie basierend auf den Operationen des Systemtray-Symbols angezeigt und ausgeblendet werden kann.
     private Stage primaryStage;
 
-    // a timer allowing the tray icon to provide a periodic notification event.
+    // Ein Timer, der es dem Tray-Symbol ermöglicht, ein periodisches Benachrichtigungsereignis bereitzustellen.
     private Timer notificationTimer = new Timer();
 
-    // format used to display the current time in a tray icon notification.
+    // Das Format, das verwendet wird, um die aktuelle Uhrzeit in einer Benachrichtigung des Tray-Symbols anzuzeigen.
     private DateFormat timeFormat = SimpleDateFormat.getTimeInstance();
 
-    // sets up the javafx application.
-    // a tray icon is setup for the icon, but the main stage remains invisible until the user
-    // interacts with the tray icon.
-    @Override public void start(final Stage stage) {
-        // stores a reference to the stage.
+    // Initialisiert die JavaFX-Anwendung.
+    // Ein Systemtray-Symbol wird für das Symbol eingerichtet, aber die Hauptbühne bleibt unsichtbar, bis der Benutzer
+    // mit dem Systemtray-Symbol interagiert.
+    @Override
+    public void start(final Stage stage) {
+        // Speichert eine Referenz auf die Bühne.
         this.primaryStage = stage;
 
-        // instructs the javafx system not to exit implicitly when the last application window is shut.
+        // Instruiert das JavaFX-System, nicht implizit zu beenden, wenn das letzte Anwendungsfenster geschlossen wird.
         Platform.setImplicitExit(false);
 
-        // sets up the tray icon (using awt code run on the swing thread).
+        // Richtet das Tray-Symbol ein (unter Verwendung von awt-Code, der auf dem Swing-Thread ausgeführt wird).
         javax.swing.SwingUtilities.invokeLater(this::addAppToTray);
 
-        // out stage will be translucent, so give it a transparent style.
+        // Unsere Bühne wird transparent sein, daher geben Sie ihr einen transparenten Stil.
        // stage.initStyle(StageStyle.TRANSPARENT);
 
-        // create the layout for the javafx stage.
+        // Erstellt das Layout für die JavaFX-Bühne.
         Pane layout = null;
         try {
             layout = (Pane) createContent();
@@ -66,10 +70,10 @@ public class MainC4H extends Application {
     }
 
     /**
-     * For this dummy app, the (JavaFX scenegraph) content, just says "hello, world".
-     * A real app, might load an FXML or something like that.
+     * Für diese Dummy-Anwendung sagt der (JavaFX-Szenengraph-) Inhalt der C4H.
+     * Eine echte Anwendung könnte z. B. ein FXML laden oder ähnliches.
      *
-     * @return the main window application content.
+     * @return Der Inhalt der Hauptfensteranwendung.
      * @throws Throwable
      */
     private Node createContent() throws Throwable {
@@ -78,7 +82,7 @@ public class MainC4H extends Application {
         try {
             page = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
 
-            // Move Stage
+            // Bühne verschieben
             double[] dragDelta = {0.0, 0.0};
             page.setOnMousePressed(new EventHandler<MouseEvent>() {
                 @Override
@@ -113,65 +117,65 @@ public class MainC4H extends Application {
     }
 
     /**
-     * Sets up a system tray icon for the application.
+     * Richtet ein Systemtray-Symbol für die Anwendung ein.
      */
     private void addAppToTray() {
         try {
-            // ensure awt toolkit is initialized.
+            // Stellen Sie sicher, dass das AWT-Toolkit initialisiert ist.
             java.awt.Toolkit.getDefaultToolkit();
 
-            // app requires system tray support, just exit if there is no support.
+            // Die Anwendung benötigt Unterstützung für das Systemtray, beenden Sie einfach, wenn keine Unterstützung vorhanden ist.
             if (!java.awt.SystemTray.isSupported()) {
-                System.out.println("No system tray support, application exiting.");
+                System.out.println("Keine Unterstützung für Systemtray, Anwendung wird beendet.");
                 Platform.exit();
             }
 
-            // set up a system tray icon.
+            // Ein Systemtray-Symbol wird eingerichtet.
             java.awt.SystemTray tray = java.awt.SystemTray.getSystemTray();
             URL imageLoc = getClass().getResource(iconImageLoc);
             java.awt.Image image = ImageIO.read(imageLoc);
             java.awt.TrayIcon trayIcon = new java.awt.TrayIcon(image);
 
-            // if the user double-clicks on the tray icon, show the main app stage.
+            // Wenn der Benutzer auf das Tray-Symbol doppelklickt, wird das Hauptfenster der Anwendung angezeigt.
             trayIcon.addActionListener(event -> Platform.runLater(this::showStage));
 
-            // if the user selects the default menu item (which includes the app name),
-            // show the main app stage.
+            // Wenn der Benutzer das Standardmenüelement auswählt (das den Anwendungsnamen enthält),
+            // wird das Hauptfenster der Anwendung angezeigt.
             java.awt.MenuItem openItem = new java.awt.MenuItem("C4H");
             openItem.addActionListener(event -> Platform.runLater(this::showStage));
 
-            // the convention for tray icons seems to be to set the default icon for opening
-            // the application stage in a bold font.
+            // Die Konvention für Tray-Symbole scheint zu sein, das Standard-Symbol für das Öffnen
+            // des Anwendungsfensters in fett gedruckter Schrift festzulegen.
             java.awt.Font defaultFont = java.awt.Font.decode(null);
             java.awt.Font boldFont = defaultFont.deriveFont(java.awt.Font.BOLD);
             openItem.setFont(boldFont);
 
-            // to really exit the application, the user must go to the system tray icon
-            // and select the exit option, this will shutdown JavaFX and remove the
-            // tray icon (removing the tray icon will also shut down AWT).
-            java.awt.MenuItem exitItem = new java.awt.MenuItem("Exit");
+            // Um die Anwendung wirklich zu beenden, muss der Benutzer zum Systemtray-Symbol gehen
+            // und die Option "Beenden" auswählen. Dadurch wird JavaFX heruntergefahren und das
+            // Tray-Symbol entfernt (das Entfernen des Tray-Symbols führt auch zum Herunterfahren von AWT).
+            java.awt.MenuItem exitItem = new java.awt.MenuItem("Beenden");
             exitItem.addActionListener(event -> {
                 notificationTimer.cancel();
                 Platform.exit();
                 tray.remove(trayIcon);
             });
 
-            // setup the popup menu for the application.
+            // Einrichten des Popup-Menüs für die Anwendung.
             final java.awt.PopupMenu popup = new java.awt.PopupMenu();
             popup.add(openItem);
             popup.addSeparator();
             popup.add(exitItem);
             trayIcon.setPopupMenu(popup);
-            // add the application tray icon to the system tray.
+            // Fügen Sie das Anwendungstray-Symbol zum Systemtray hinzu.
             tray.add(trayIcon);
         } catch (java.awt.AWTException | IOException e) {
-            System.out.println("Unable to init system tray");
+            System.out.println("Systemtray kann nicht initialisiert werden");
             e.printStackTrace();
         }
     }
 
     /**
-     * Shows the application stage and ensures that it is brought ot the front of all stages.
+     * Zeigt die Anwendungsstufe an und stellt sicher, dass sie im Vordergrund aller Stufen liegt.
      */
     private void showStage() {
         if (primaryStage != null) {
@@ -180,13 +184,23 @@ public class MainC4H extends Application {
         }
     }
 
+    /**
+     * Die main()-Methode dient zum Starten der JavaFX-Anwendung.
+     * Aufgrund der Codierung der Anwendung bleibt die Anwendung aktiv,
+     * bis der Benutzer die Menüoption "Beenden" des Tray-Symbols auswählt.
+     */
     public static void main(String[] args) throws IOException, java.awt.AWTException {
-        // Just launches the JavaFX application.
-        // Due to way the application is coded, the application will remain running
-        // until the user selects the Exit menu option from the tray icon.
+        // Startet einfach die JavaFX-Anwendung.
+        // Aufgrund der Codierung der Anwendung bleibt die Anwendung aktiv,
+        // bis der Benutzer die Menüoption "Beenden" des Tray-Symbols auswählt.
         launch(args);
     }
     
+    /**
+     * Schließt das angegebene Fenster.
+     * 
+     * @param scene Die Szene, zu der das Fenster gehört.
+     */
     public static void closeStage(Scene scene) {
         Stage stage = (Stage) scene.getWindow();
         stage.close();
