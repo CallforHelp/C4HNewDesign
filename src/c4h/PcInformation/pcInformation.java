@@ -409,10 +409,27 @@ public class pcInformation {
 	 * @throws IOException commandbefehl
 	 */
 	public String getMachindomain() throws IOException {
+		
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
-	return System.getenv("USERDOMAIN");
+		
+		String domain="";
+		String line;
+		Process ipfconfig = null;
+		Reader input = null;
+		ipfconfig= Runtime.getRuntime().exec("ipconfig /all");
+		input = new InputStreamReader(ipfconfig.getInputStream());
+		BufferedReader resultOutput = new BufferedReader(input);
+		while((line=resultOutput.readLine()) != null){
+			if(line.contains("DNS-Suffixsuchliste")){
+				domain=line.split(":\\s")[1];
+			}
+		}
+		if(domain=="")
+			return "keine-Domain";
+		
+		return domain;
 	}
 
 	/**
@@ -479,10 +496,23 @@ public class pcInformation {
 		if (isWindows()) {
             return "Mac-Rechner";
 		}
-
-        String hostname= getLocalHost();
-       return   InetAddress.getLocalHost().getCanonicalHostName().substring(hostname.length() + 1);
-		//return gateway.trim();
+		
+		String defaultgateway="";
+		String line;
+		Process ipfconfig=null;
+		Reader input = null;
+		
+		ipfconfig= Runtime.getRuntime().exec("netsh interface ip show config");
+		input = new InputStreamReader(ipfconfig.getInputStream());
+		BufferedReader resultOutput = new BufferedReader(input);
+		while( (line=resultOutput.readLine()) != null ) {
+			if(line.contains("Standardgateway")) {
+				defaultgateway=line.split(":\\s")[1].trim();
+			}
+		}
+		if(defaultgateway=="")
+			return "Fehler-Netzwerk";
+		return defaultgateway;
 	}
 
 	/**
