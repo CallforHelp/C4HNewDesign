@@ -388,6 +388,15 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Dauer 3S Support
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
+|[[Datei:Lenovo_thinkbook_MT21HD.jpg|100px|center]]
+|style="background:#E1FCD2;" |Lenovo Thinkbook 4 MT (15") (LE99)
+|style="background:#E1FCD2;" align="center" | 3S-Mitarbeiter-Notebook 
+|style="background:#E1FCD2;" align="center" |Intel(R) Core(TM) i7-1355U, 1700 MHz
+|style="background:#E1FCD2;" align="center" |-
+|style="background:#E1FCD2;" align="center" |verkauft ab 12.2023
+|style="background:#E1FCD2;" align="center" | im Support bis MA kündigt
+|style="background:#E1FCD2;" align="center" | ja
+|-
 |[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
 |style="background:#E1FCD2;" |Lenovo Thinkbook 4 ABA (15") (LE04)
 |style="background:#E1FCD2;" align="center" | ----

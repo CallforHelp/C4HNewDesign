@@ -1,5 +1,6 @@
 package c4h.kiosk;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.KeyManagementException;
@@ -9,6 +10,7 @@ import java.security.cert.X509Certificate;
 import java.util.ResourceBundle;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.concurrent.Worker;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
@@ -53,7 +55,7 @@ public class KioskControler implements Initializable{
 	@FXML
     private WebView  Kioskbrowser = new WebView();;
 	@FXML
-	private WebEngine webkit;
+	public WebEngine webkit;
 
 	
 	
@@ -63,7 +65,7 @@ public class KioskControler implements Initializable{
 	        loadBrowser();
 	}
 	@FXML
-	private void loadBrowser() { 
+	public void loadBrowser() { 
 		System.out.println("KioskSeite");
 		try {
         // TrustManager-Array initialisieren, um das Serverzertifikat zu überprüfen
@@ -124,9 +126,10 @@ public class KioskControler implements Initializable{
 	        webkit.setOnError(event -> {
 	            System.out.println("Fehler beim Laden der Seite: " + event.getMessage());
 	        });
-	        
-	        // Cache aktivieren
-	       // webkit.setCache(true);
+
+	        String userDataDirectory=System.getProperty("user.home") + File.separator + "AppData" + File.separator + "Roaming"+"\\c4h.MainC4H\\webview";
+	        System.out.println(userDataDirectory);
+	        System.setProperty("user.home", userDataDirectory);
 	        
 	        // Ereignis zum Überwachen des Ladezustands der WebEngine
 	        webkit.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
