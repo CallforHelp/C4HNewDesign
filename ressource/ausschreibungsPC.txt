@@ -388,17 +388,8 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Dauer 3S Support
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
-|[[Datei:Lenovo_thinkbook_MT21HD.jpg|100px|center]]
-|style="background:#E1FCD2;" |Lenovo Thinkbook 4 MT (15") (LE99)
-|style="background:#E1FCD2;" align="center" | 3S-Mitarbeiter-Notebook 
-|style="background:#E1FCD2;" align="center" |Intel(R) Core(TM) i7-1355U, 1700 MHz
-|style="background:#E1FCD2;" align="center" |-
-|style="background:#E1FCD2;" align="center" |verkauft ab 12.2023
-|style="background:#E1FCD2;" align="center" | im Support bis MA kündigt
-|style="background:#E1FCD2;" align="center" | ja
-|-
 |[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
-|style="background:#E1FCD2;" |Lenovo Thinkbook 4 ABA (15") (LE04)
+|style="background:#E1FCD2;" |Lenovo Thinkbook 4 21DL (15") (LE04)
 |style="background:#E1FCD2;" align="center" | ----
 |style="background:#E1FCD2;" align="center" |AMD Ryzen 3 5425U, 8Gb Ram, 256GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -416,7 +407,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:dell5310.jpg|100px|center]]
-|style="background:#E1FCD2;" |Dell 3330 (D333)
+|style="background:#E1FCD2;" |Dell Latitude 3330 (D333)
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 11th Gen Core i3-1125G4
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -452,7 +443,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:dell3510.jpg|100px|center]]
-|style="background:#E1FCD2;" |Dell 3510 (D351)
+|style="background:#E1FCD2;" |Dell Latitude 3510 (D351)
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 10th Gen Core i5-10210U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -461,7 +452,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:dell5310.jpg|100px|center]]
-|style="background:#E1FCD2;" |Dell 5310 (D531)
+|style="background:#E1FCD2;" |Dell Latitude 5310 (D531)
 |style="background:#E1FCD2;" align="center" |
 |style="background:#E1FCD2;" align="center" |Intel 10th Gen Core i5-10210U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -486,7 +477,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2025
 |-
 |[[Datei:Dell3500.png|100px|center]]
-|style="background:#E1FCD2;" |Dell 3500 Latitude (DE35)
+|style="background:#E1FCD2;" |Dell Latitude 3500 (DE35)
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 8th Gen Core i5-8265U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -495,7 +486,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:Dell5300.jpg|100px|center]]
-|style="background:#E1FCD2;" |Dell 5300 Latitude (DE53)
+|style="background:#E1FCD2;" |Dell Latitude 5300 (DE53)
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 8th Gen Core i5-8265U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]

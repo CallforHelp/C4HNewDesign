@@ -52,9 +52,10 @@ public class TestC4H {
 		
 		//Teste mit einen PC info 
 		//String pcModell=pcinfo.getPcModell();
-		String pcModell= test_LE04;
+		//String pcModell= test_LE04;
 		//String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
+		String pcModell= "21DL";
 		
 	try {
 			System.out.println("PC Modell: " +parse.findePcModell(pcModell));
