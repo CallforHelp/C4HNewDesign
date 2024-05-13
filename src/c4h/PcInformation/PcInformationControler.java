@@ -179,10 +179,13 @@ public class PcInformationControler implements Initializable {
     private void supportInformation() throws Throwable {
 		
 		  String pcModell= parsePcModell.findePcModell(pcIno.getPcModell().trim());
+		  
+		  System.out.println("Pc Model: "+pcModell);
+		  
 		  String srcPath = "/image/PcModell/"+pcModell+".png";
 		  
 		  //Path Prüfen ob es vorhanden ist 
-		  boolean exists = checkFilePath(srcPath+".png"); 
+		  boolean exists = checkFilePath(srcPath); 
 		  if(exists) srcPath ="/image/PcModell/"+pcModell+".png";
 		  
 		  if (pcModell==""|| pcModell==null) { 
@@ -197,12 +200,9 @@ public class PcInformationControler implements Initializable {
 		  image.setImage(modellFoto); image.setFitHeight(250); image.setFitWidth(250);
 		  
 		  
-		  System.out.println(parsePcModell.findKaufDatum(pcModell));
-		  
 		  // Support Labels
 		  
 		  rechnerTyp.setText(pcModell);
-		  
 		  supportEnde.setText(parsePcModell.findSupportEndethValue(pcModell));
 		  win11komp.setText(parsePcModell.findWindows11Support(pcModell));
 		  kaufdatum.setText(parsePcModell.findKaufDatum(pcModell));
@@ -212,7 +212,6 @@ public class PcInformationControler implements Initializable {
     
     private boolean checkFilePath(String filePath) {
             File file = new File(filePath.trim());
-            System.out.println("Checked Path:"+ filePath+ " :"+file.exists());
             return file.exists();
 	}
 

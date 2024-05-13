@@ -6,6 +6,13 @@
     -fx-border-color:#168FC1; 
     -fx-background-color:#005d99;
 }
+.paneWebKiosk {
+    -fx-border-color: #666666; /* Rahmenfarbe */
+    -fx-border-width: 3px; /* Rahmenbreite */
+    -fx-border-radius: 10px; /* Rahmenradius */
+    -fx-padding: 10px; /* Innenabstand */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Schatten */
+}
 /************************************HOMEBUTON******************************************************/
 
 .HomeButton{
@@ -74,7 +81,7 @@
     -fx-background-color:transparent;
     -fx-font-variant-caps: titling-caps;
 	-fx-font-size:25;
-	 -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 25, 0.0 , 0 , 15 );
+	  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 25, 0.0, 0, 15);
 }
 
 .labelText{
@@ -97,19 +104,12 @@
     -fx-font-size:15;
     -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
 }
-
-
-.progress-indicator {
-    width: 300px; /* Breite des Indikators */
-    height: 50px; /* Höhe des Indikators */
-    background-color: yellow; /* Hintergrundfarbe des Indikators */
-    border-radius: 10px; /* Abgerundete Ecken */
-}
-/* Stil für den gefüllten Bereich des Indikators */
-.progress-indicator:progress {
-    width: 50%; /* Breite des gefüllten Bereichs (z.B. 50% für die Hälfte) */
-    height: 100%; /* Volle Höhe des Indikators */
-    background-color: white; /* Farbe des gefüllten Bereichs */
-    border-radius: 10px; /* Abgerundete Ecken (entsprechend dem Eltern-Indikator) */
+.web{
+	-fx-background-color: #333333;
+    -fx-border-color: #666666;
+	-fx-border-width: 2px;
+	-fx-border-radius: 10px;
+	-fx-padding: 10px;
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 

@@ -46,6 +46,7 @@ public class startViewControler implements Initializable {
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
+		System.out.println("Startview");
 		setImage();
 		exitButton.setOnAction(e -> {
             MainC4H.closeStage(exitButton.getScene());

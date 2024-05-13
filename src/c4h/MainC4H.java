@@ -155,7 +155,6 @@ public class MainC4H extends Application {
             // Tray-Symbol entfernt (das Entfernen des Tray-Symbols führt auch zum Herunterfahren von AWT).
             java.awt.MenuItem exitItem = new java.awt.MenuItem("Beenden");
             exitItem.addActionListener(event -> {
-                notificationTimer.cancel();
                 Platform.exit();
                 tray.remove(trayIcon);
             });
@@ -202,6 +201,7 @@ public class MainC4H extends Application {
      * @param scene Die Szene, zu der das Fenster gehört.
      */
     public static void closeStage(Scene scene) {
+    	System.out.println("ExitButton");
         Stage stage = (Stage) scene.getWindow();
         stage.close();
     }

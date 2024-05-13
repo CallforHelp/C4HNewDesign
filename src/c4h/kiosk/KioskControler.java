@@ -153,7 +153,7 @@ public class KioskControler implements Initializable{
 
 	        // Laden der URL in den WebView
 	        webkit.load("https://141.91.183.36/bwebserver/kiosk/login");
-	     //   Kioskbrowser.dispose();
+	 
 	        System.out.println(Thread.currentThread().getName());
 	    
 

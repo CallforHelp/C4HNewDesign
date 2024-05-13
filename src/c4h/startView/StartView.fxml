@@ -18,12 +18,12 @@
         </Button>
       </children>
     </HBox>
-    <Pane prefHeight="695.0" prefWidth="1000.0" visible="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+    <Pane prefHeight="695.0" prefWidth="1000.0" styleClass="labelStart" visible="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
       <children>
         <HBox alignment="CENTER" layoutX="168.0" layoutY="129.0" prefHeight="352.0" prefWidth="655.0" spacing="20.0">
           <children>
             <Button fx:id="buttonPcInfo" alignment="CENTER" mnemonicParsing="false" onAction="#pcInformation" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="PC INFORMATION" />
-            <Button id="" fx:id="buttonSupport" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="glass, HomeButton" text="SUPPORT" />
+            <Button id="" fx:id="buttonSupport" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="SUPPORT" />
             <Button id="" fx:id="buttonKiosk" alignment="CENTER" mnemonicParsing="false" onAction="#loadKioskBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="SOFTWARE KIOSK" />
           </children>
         </HBox>
