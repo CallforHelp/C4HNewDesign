@@ -36,12 +36,6 @@ public class MainC4H extends Application {
     // Die Anwendungsstufe wird gespeichert, damit sie basierend auf den Operationen des Systemtray-Symbols angezeigt und ausgeblendet werden kann.
     private Stage primaryStage;
 
-    // Ein Timer, der es dem Tray-Symbol ermöglicht, ein periodisches Benachrichtigungsereignis bereitzustellen.
-    private Timer notificationTimer = new Timer();
-
-    // Das Format, das verwendet wird, um die aktuelle Uhrzeit in einer Benachrichtigung des Tray-Symbols anzuzeigen.
-    private DateFormat timeFormat = SimpleDateFormat.getTimeInstance();
-
     // Initialisiert die JavaFX-Anwendung.
     // Ein Systemtray-Symbol wird für das Symbol eingerichtet, aber die Hauptbühne bleibt unsichtbar, bis der Benutzer
     // mit dem Systemtray-Symbol interagiert.
@@ -156,7 +150,10 @@ public class MainC4H extends Application {
             java.awt.MenuItem exitItem = new java.awt.MenuItem("Beenden");
             exitItem.addActionListener(event -> {
                 Platform.exit();
+               
                 tray.remove(trayIcon);
+                System.exit(0);
+                
             });
 
             // Einrichten des Popup-Menüs für die Anwendung.

@@ -38,7 +38,7 @@
             linear-gradient(#168FC1,#168FC1),
             radial-gradient(center 50% -40%, radius 200%, #067bc7 30%, #0364a3 50%);
 
-    fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0.0, 0, 1);
+   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0.0, 0, 1);
    -fx-text-fill: white;
    -fx-font-size:20;
 
@@ -79,9 +79,9 @@
             linear-gradient(#d6d6d6 50%, white 100%),
             radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
     -fx-background-color:transparent;
-    -fx-font-variant-caps: titling-caps;
+   
 	-fx-font-size:25;
-	  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 25, 0.0, 0, 15);
+	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 25, 0.0, 0, 15);
 }
 
 .labelText{
@@ -113,3 +113,13 @@
 	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
 }
 
+.progress-indicator{
+
+	 
+}
+.progress-indicator > .percentage {
+    
+  
+   
+    
+}

@@ -51,12 +51,12 @@ public class TestC4H {
 		 ParsePcModelInMap parse = new ParsePcModelInMap();
 		 pcInformation pcinfo= new pcInformation();
 		//Teste mit einen PC info 
-		String pcModell=pcinfo.getPcModell().trim();
+		//String pcModell=pcinfo.getPcModell().trim();
 		System.out.println(pcinfo.getPcModell());
 		//String pcModell= test_LE04;
 		//String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
-		//String pcModell= "21DL";
+		String pcModell= "Latitude 3330";
 		
 	try {
 			System.out.println("PC Modell: " +parse.findePcModell(pcModell));

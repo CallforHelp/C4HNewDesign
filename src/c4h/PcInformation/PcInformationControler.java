@@ -141,13 +141,13 @@ public class PcInformationControler implements Initializable {
     }
     
     @FXML
-    private void screenShot() {
+    private void screenShot(ActionEvent event) throws IOException {
     	System.out.println("ScreenShot");	
     	try {
             // Erfasse den Bereich des Java-Fensters
-    		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
+    		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
             
-        	Scene scene = StartViewbutton.getScene();
+        	Scene scene = screenShot.getScene();
             root.translateYProperty().set(scene.getHeight());
             
             WritableImage writableImage = new WritableImage((int) scene.getWidth(), (int) scene.getHeight());
@@ -157,7 +157,8 @@ public class PcInformationControler implements Initializable {
             BufferedImage bufferedImage = SwingFXUtils.fromFXImage(writableImage, null);
 
             // Speichere das Bild auf dem Desktop
-            File desktopDir = new File(System.getProperty("user.home"), "Desktop");
+            File desktopDir = new File("c:\\Users\\"+pcIno.getUserName()+"\\Desktop");
+            System.out.println(desktopDir);
             File file = new File(desktopDir, "screenshot.png");
             ImageIO.write(bufferedImage, "png", file);
 
@@ -286,38 +287,58 @@ public class PcInformationControler implements Initializable {
 	@FXML
 	private void loadCpuUsage() throws IOException{
 		indictor2.setMinSize(100, 100);
-		OperatingSystemMXBean bean = (com.sun.management.OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-		Timeline timeline = new Timeline(new KeyFrame( Duration.millis(2000),
-			     ae ->  indictor2.setProgress(bean.getProcessCpuLoad())));
-		timeline.setCycleCount(Animation.INDEFINITE);
-		timeline.play();
+	    indictor2.setProgress(0); // Setze den Anfangsfortschritt auf 0
+
+	    Timeline timeline = new Timeline(
+	        new KeyFrame(Duration.ZERO, e -> {
+	            OperatingSystemMXBean bean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+	            double processCpuLoad = bean.getProcessCpuLoad();
+	            indictor2.setProgress(processCpuLoad);
+	        }),
+	        new KeyFrame(Duration.seconds(2))
+	    );
+	    timeline.setCycleCount(Animation.INDEFINITE);
+	    timeline.play();
 	}
 		 
 	@FXML
 	private void loadRamUsage() throws IOException{
-		indictor.setMinSize(100, 100);
-		Thread rammonitor = new Thread() { 
-		int RAM =100000	;
-		@Override 
-				
-		public void run() { 
-			Runtime rt = Runtime.getRuntime(); 
-			
-			Double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
-			if(usedKB==1024)
-				usedKB=0.0;
-				
-		   	indictor.setProgress(usedKB/RAM);
-		    try {
-		    	Thread.sleep(500); 
-		    }catch (InterruptedException e) { 
-		    	e.printStackTrace(); 
-		    } 
-		    run(); 
-		    } 
-		}; 
-			rammonitor.start(); 
-		}
+		// Setze die Mindestgröße des Indikators
+        indictor.setMinSize(100, 100);
+
+
+        // Erstelle einen Thread für das RAM-Monitoring
+        Thread rammonitor = new Thread(() -> {
+            int RAM = 100000;
+
+            while (!Thread.currentThread().isInterrupted()) {
+                // Hier wird der RAM-Verbrauch gemessen
+                Runtime rt = Runtime.getRuntime();
+
+                // Berechne den genutzten Speicher in Kilobyte
+                double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
+                if (usedKB == 1024)
+                    usedKB = 0.0;
+
+                // Setze den Fortschritt des Indikators basierend auf dem genutzten RAM
+                double progress = usedKB / RAM;
+                if (progress > 1.0) // Begrenze den Fortschritt auf 1.0
+                    progress = 1.0;
+                indictor.setProgress(progress);
+
+                try {
+                    // Warte für eine kurze Zeit (500 Millisekunden)
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    Thread.currentThread().interrupt(); // Setze den Interrupt-Status erneut
+                }
+            }
+        });
+
+        // Starte den RAM-Monitor-Thread
+        rammonitor.start();
+	}
 	
 	@FXML
 	private void loadGPUUsage() throws IOException{
