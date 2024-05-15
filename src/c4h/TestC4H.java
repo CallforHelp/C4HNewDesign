@@ -52,11 +52,11 @@ public class TestC4H {
 		 pcInformation pcinfo= new pcInformation();
 		//Teste mit einen PC info 
 		//String pcModell=pcinfo.getPcModell().trim();
-		System.out.println(pcinfo.getPcModell());
+		//System.out.println(pcinfo.getPcModell());
 		//String pcModell= test_LE04;
 		//String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
-		String pcModell= "Latitude 3330";
+		String pcModell= "HP EliteDesk 800 G4 DM 65W";
 		
 	try {
 			System.out.println("PC Modell: " +parse.findePcModell(pcModell));

@@ -13,5 +13,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/PC-SWV/Downloads/jna-jpms-5.14.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/PC-SWV/Downloads/jna-platform-jpms-5.14.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

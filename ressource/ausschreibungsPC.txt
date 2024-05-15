@@ -205,7 +205,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
-|style="background:#FDCBC2;" | HP EliteDesk 800 G4 Desktop Mini (ED04)
+|style="background:#FDCBC2;" | HP EliteDesk 800 G4 DM 65W (ED04)
 |style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
 |style="background:#FDCBC2;" align="center" | Intel Core I3-8100 (4 x 3.1GHz) Anschlüsse: 2 x DP, 1 x HDMI 
 |style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]

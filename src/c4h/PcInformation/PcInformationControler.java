@@ -11,6 +11,8 @@ import java.io.IOException;
 import java.lang.management.ManagementFactory;
 import java.net.URL;
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import java.util.concurrent.CompletableFuture;
 
@@ -39,6 +41,23 @@ import javafx.scene.image.WritableImage;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
+
+
+import com.sun.jna.Native;
+import com.sun.jna.Structure;
+import com.sun.jna.platform.win32.Psapi;
+import com.sun.jna.win32.StdCallLibrary;
+
+
+import javafx.application.Platform;
+import javafx.concurrent.Task;
+import javafx.scene.control.ProgressIndicator;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 public class PcInformationControler implements Initializable {
@@ -76,6 +95,7 @@ public class PcInformationControler implements Initializable {
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor3 = new ProgressIndicator(0);
+	
 	
 	//Lable SystemInformation
 	@FXML
@@ -128,12 +148,16 @@ public class PcInformationControler implements Initializable {
 		try {
 		System.out.println("PCInformation");
 			loadRamUsage();
-			loadCpuUsage();
-			loadGPUUsage();
+	
 			systemInformation();
 			netzwerkInformation();
 			supportInformation();
 			LogoImage();
+			
+			CPU_Usage GPUController = new CPU_Usage();
+			GPUController.monitorCPUUsage(indictor2);
+			GPU_Usage GPUcontroller = new GPU_Usage();
+	        GPUcontroller.monitorGPUUsage(indictor3);
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -143,6 +167,8 @@ public class PcInformationControler implements Initializable {
     @FXML
     private void screenShot(ActionEvent event) throws IOException {
     	System.out.println("ScreenShot");	
+    	SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd hh mm ss a");
+		Calendar now = Calendar.getInstance();
     	try {
             // Erfasse den Bereich des Java-Fensters
     		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
@@ -159,7 +185,7 @@ public class PcInformationControler implements Initializable {
             // Speichere das Bild auf dem Desktop
             File desktopDir = new File("c:\\Users\\"+pcIno.getUserName()+"\\Desktop");
             System.out.println(desktopDir);
-            File file = new File(desktopDir, "screenshot.png");
+            File file = new File(desktopDir, "screenshot"+formatter.format(now.getTime())+".png");
             ImageIO.write(bufferedImage, "png", file);
 
             System.out.println("Screenshot wurde unter " + file.getAbsolutePath() + " gespeichert.");
@@ -316,8 +342,8 @@ public class PcInformationControler implements Initializable {
                 Runtime rt = Runtime.getRuntime();
 
                 // Berechne den genutzten Speicher in Kilobyte
-                double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
-                if (usedKB == 1024)
+                double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 8192);
+                if (usedKB == 8192)
                     usedKB = 0.0;
 
                 // Setze den Fortschritt des Indikators basierend auf dem genutzten RAM
@@ -342,7 +368,9 @@ public class PcInformationControler implements Initializable {
 	
 	@FXML
 	private void loadGPUUsage() throws IOException{
-		indictor.setMinSize(100, 100);		
-		}
-
+		indictor3.setMinSize(100, 100);
+		indictor3.setStyle("-fx-foreground-color: #FF00000");
+		indictor3.setAccessibleText("Hallo");
+		
+	}
 }

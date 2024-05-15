@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="supporterContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.Supporter.SupporterControler">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="365.0" spacing="20.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" styleClass="labelStart">
+          <children>
+            <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
+          </children>
+        </HBox>
+      </children>
+    </HBox>
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="250.0" styleClass="labelStart" text="3S-SUPPORTER" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <Pane prefHeight="258.0" prefWidth="540.0" styleClass="labelText" AnchorPane.bottomAnchor="246.0" AnchorPane.leftAnchor="255.0" AnchorPane.rightAnchor="255.0">
+      <children>
+        <Label alignment="CENTER_LEFT" layoutX="111.0" layoutY="107.0" minHeight="14.9609375" prefHeight="40.0" prefWidth="131.0" styleClass="labelStart" text="PASSWORD:" />
+        <PasswordField layoutX="260.0" layoutY="107.0" prefHeight="40.0" prefWidth="131.0" styleClass="labelText" />
+      </children>
+      <stylesheets>
+        <URL value="@../../../ressource/application.css" />
+      </stylesheets>
+    </Pane>
+  </children>
+</AnchorPane>

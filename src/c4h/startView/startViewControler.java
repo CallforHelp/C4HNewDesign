@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import c4h.MainC4H;
 import c4h.PcInformation.PcInformationControler;
+import c4h.Supporter.SupporterControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -37,12 +38,15 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
+	private Button buttonSupporter;
+	@FXML
 	private AnchorPane parentContainer;
 	@FXML
 	private String cssPath="/application.css";
 	
 	// Instanzvariable zur Speicherung der geladenen Ansicht
 	private Parent pcInformationView;
+	private Parent supporterView;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -75,6 +79,47 @@ public class startViewControler implements Initializable {
             stage.hide();;        
             }
 		
+	}
+	@FXML
+	private void supporter(ActionEvent event) throws IOException {
+	    // Überprüfen, ob die Ansicht bereits geladen wurde
+	    if (supporterView == null) {
+	        // Laden der FXML-Ansicht
+	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/c4h/Supporter/SupporterDesign.fxml"));
+	        supporterView = loader.load();
+	        
+	        // Zugriff auf den geladenen Controller
+	        SupporterControler controller = loader.getController();
+	        
+	        // Zugriff auf die Szene des Buttons
+	        Scene scene = buttonSupporter.getScene();
+	        scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+	        
+	        supporterView.translateYProperty().set(scene.getHeight());
+	        parentContainer.getChildren().add(supporterView);
+	        
+	        // Hinzufügen eines ChangeListeners zur sceneProperty der Stage
+	        Stage stage = (Stage) scene.getWindow();
+	        stage.sceneProperty().addListener((observable, oldScene, newScene) -> {
+	            if (oldScene == null && newScene != null) {
+	                // Szene wurde vollständig geladen
+	           //     controller.processData(); // Ausführen der Controllerfunktionen
+	            }
+	        });
+	        
+	        Timeline timeline = new Timeline();
+	        KeyValue kv = new KeyValue(supporterView.translateYProperty(), 0, Interpolator.EASE_IN);
+	        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	        timeline.getKeyFrames().add(kf);
+	        
+	        timeline.setOnFinished(t -> {
+	            parentContainer.getChildren().remove(parentContainer);
+	        });
+	        timeline.play();
+	    } else {
+	        // Die Ansicht wurde bereits geladen, also füge sie einfach zum Container hinzu
+	        parentContainer.getChildren().add(supporterView);
+	    }
 	}
 	
 	@FXML
