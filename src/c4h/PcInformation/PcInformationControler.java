@@ -23,6 +23,8 @@ import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.concurrent.Task;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -129,7 +131,7 @@ public class PcInformationControler implements Initializable {
 		System.out.println("PCInformation");
 			loadRamUsage();
 			loadCpuUsage();
-			loadGPUUsage();
+			loaddDriveDataRate();
 			systemInformation();
 			netzwerkInformation();
 			supportInformation();
@@ -191,7 +193,7 @@ public class PcInformationControler implements Initializable {
 		  
 		  if (pcModell==""|| pcModell==null) { 
 			  srcPath = "/image/PcModell/noPic.png";
-			  pcModell="Keine-Ausschreibung"; 
+			  pcModell="Kein-Ausschreibungsgerät"; 
 		  }
 		  
 		  System.out.println("der Path ist für den RechnerModell: " +srcPath);
@@ -341,8 +343,62 @@ public class PcInformationControler implements Initializable {
 	}
 	
 	@FXML
-	private void loadGPUUsage() throws IOException{
-		indictor.setMinSize(100, 100);		
-		}
+	private void loaddDriveDataRate(){
+		// Setze die Mindestgröße des Indikators
+	    indictor3.setMinSize(100, 100);
 
+	    // Erstelle einen Task, um die Festplattenaktivität zu überwachen
+	    Task<Void> driveTask = new Task<Void>() {
+	        @Override
+	        protected Void call() throws Exception {
+	            while (true) {
+	                // Rufe die Festplattenaktivität ab
+	                double driveActivity = getHardDriveDataRate();
+
+	                // Aktualisiere den Fortschrittsindikator basierend auf der Festplattenaktivität
+	                Platform.runLater(() -> indictor3.setProgress(driveActivity / 100.0));
+
+	                // Warte für einen bestimmten Zeitraum, bevor du die Festplattenaktivität erneut abrufst
+	                Thread.sleep(100); // Überprüfe alle 1 Sekunde
+	            }
+	        }
+	    };
+
+	    // Führe den Task in einem separaten Thread aus
+	    Thread driveThread = new Thread(driveTask);
+	    driveThread.setDaemon(true); // Setze den Thread als Daemon, damit er beendet wird, wenn die Anwendung geschlossen wird
+	    driveThread.start();
+	}
+
+	// Methode zur Überwachung der Festplattenaktivität
+	private double getHardDriveDataRate() {
+	    // Pfad zur Festplatte, die Sie überwachen möchten
+		 String userHome = System.getProperty("user.home");
+	    String drivePath = userHome; // Überwacht den HomeUserActivity
+
+	    try {
+	        // Erstellen Sie ein Objekt für die Festplatte
+	        File drive = new File(drivePath);
+
+	        // Überprüfen Sie, ob die Festplatte existiert und lesbar ist
+	        if (drive.exists() && drive.canRead()) {
+	            // Erhalten Sie die Gesamtkapazität der Festplatte (in Bytes)
+	            long totalSpace = drive.getTotalSpace();
+	            // Erhalten Sie die freie Kapazität der Festplatte (in Bytes)
+	            long freeSpace = drive.getFreeSpace();
+
+	            // Berechnen Sie die Auslastung der Festplatte
+	            double usagePercent = 1.0 - ((double) freeSpace / totalSpace);
+
+	            // Rückgabe der Festplattenaktivität (in Prozent)
+	            return usagePercent * 100.0;
+	        } else {
+	            // Wenn die Festplatte nicht gefunden oder nicht lesbar ist, geben Sie -1 zurück, um einen Fehler anzuzeigen
+	            return -1;
+	        }
+	    } catch (Exception e) {
+	        // Bei einer Ausnahme (z. B. wenn auf die Festplatte nicht zugegriffen werden kann) geben Sie ebenfalls -1 zurück
+	        return -1;
+	    }
+	}
 }

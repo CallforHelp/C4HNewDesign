@@ -134,7 +134,7 @@
                 </VBox>
                 <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
                   <children>
-                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" styleClass="labelText" text="GPU" textAlignment="CENTER" />
+                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" styleClass="labelText" text="HDD/SSD" textAlignment="CENTER" />
                     <ProgressIndicator id="indictor" fx:id="indictor3" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
                   </children>
                 </VBox>

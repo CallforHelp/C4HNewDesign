@@ -25,16 +25,16 @@ public class TestC4H {
 		
 		
 			TestC4H testParse= new TestC4H();
-			testParse.TestParsePcModell();
-			System.out.println("");
-			testParse.printMAP();
+		testParse.TestParsePcModell();
+		//testParse.printMAP();
+			//System.out.println("");
 			
-			
+		
 			
 			
 			
 			TestC4H testPcInfo= new TestC4H();
-			testPcInfo.printBGinfo();
+		//	testPcInfo.printBGinfo();
 //			testPcInfo.setPcInfoSystem();
 //			testPcInfo.setPcInfoNetzwerk();
 //			
@@ -52,14 +52,15 @@ public class TestC4H {
 		 pcInformation pcinfo= new pcInformation();
 		//Teste mit einen PC info 
 		//String pcModell=pcinfo.getPcModell().trim();
-		System.out.println(pcinfo.getPcModell());
+		//System.out.println(pcinfo.getPcModell());
 		//String pcModell= test_LE04;
-		//String pcModell= test_PD06;
+		String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
-		String pcModell= "Latitude 3330";
+		
 		
 	try {
 			System.out.println("PC Modell: " +parse.findePcModell(pcModell));
+			System.out.println("PC Modell aus Wiki: "+ parse.findPcModellExtrahiert(pcModell));
 			System.out.println("Support Ende: "+parse.findSupportEndethValue(parse.findePcModell(pcModell)));
 			System.out.println("Kaufdatum: "+parse.findKaufDatum(parse.findePcModell(pcModell)));
 			System.out.println("windows 11: "+parse.findWindows11Support(parse.findePcModell(pcModell)));
@@ -81,7 +82,7 @@ public class TestC4H {
 	        for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
 	            String key = entry.getKey();
 	            ArrayList<String> value = entry.getValue();
-	            System.out.println("Pc Modell: '" + key + "':");
+	           // System.out.println("Pc Modell: '" + key + "':");
 	            for (String line : value) {
 	                System.out.println(line);
 	            }
@@ -101,6 +102,8 @@ public class TestC4H {
 		public static void printBGinfo() throws Throwable {
 			
 			pcInformation pcinfo= new pcInformation();
+			
+			System.out.println("GlobalVAriabble: "+pcinfo.pcModell);
 			
 
 			System.out.println("3S");

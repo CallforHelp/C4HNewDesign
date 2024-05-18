@@ -178,8 +178,8 @@ public class ParsePcModelInMap {
 	            return values.get(5); // Index 4 entspricht dem 5 Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
-	        	System.out.println("supportEnde keine Information ");
-	            return null;
+	        	//System.out.println("supportEnde keine Information ");
+	            return "Info fehlt im Wiki";
 	        }
 	 }
 	 public static String findWindows11Support(String searchKey) {
@@ -190,8 +190,8 @@ public class ParsePcModelInMap {
 	            return values.get(6); // Index 5 entspricht dem 6 Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
-	        	System.out.println("Windows 11 Support  keine Information ");
-	            return null;
+	        	//System.out.println("Windows 11 Support  keine Information ");
+	            return "Info fehlt im Wiki";
 	        }
 	 }
 	 public static String findKaufDatum(String searchKey) {
@@ -202,8 +202,20 @@ public class ParsePcModelInMap {
 	            return values.get(4); // Index 3 entspricht dem vierten Eintrag in der ArrayList (0-basiert)
 	        } else {
 	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
-	        	System.out.println("Kaufdatum supportEnde keine Information ");
-	            return null;
+	        	//System.out.println("Kaufdatum supportEnde keine Information ");
+	            return "Info fehlt im Wiki";
+	        }
+	 }
+	 public static String findPcModellExtrahiert(String searchKey) {
+	        // Suche den Wert für den gegebenen Schlüssel in der Map
+	        ArrayList<String> values = mapList.get(searchKey);
+	        if (values != null && values.size() >= 6) {
+	            // Wenn der Wert gefunden wird und die ArrayList mindestens 4 Elemente hat, gib den vierten Wert zurück
+	            return values.get(3); // Index 3 entspricht dem vierten Eintrag in der ArrayList (0-basiert)
+	        } else {
+	            // Wenn der Schlüssel nicht gefunden wird oder die ArrayList weniger als 4 Elemente hat, gib null zurück
+	        //	System.out.println("Pc Modell nicht im Wiki Eingetragen");
+	            return "Info fehlt im Wiki";
 	        }
 	 }
 
