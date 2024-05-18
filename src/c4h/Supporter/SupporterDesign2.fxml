@@ -19,15 +19,6 @@
       </children>
     </HBox>
     <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="250.0" styleClass="labelStart" text="3S-SUPPORTER" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
-    <Pane layoutX="279.0" layoutY="284.0" prefHeight="183.0" prefWidth="493.0" styleClass="paneWebKiosk">
-      <children>
-        <Label layoutX="92.0" layoutY="14.0" prefWidth="357.0" styleClass="labelStart" text="Bitte geben Sie Ihr Password ein:" />
-        <Label layoutX="92.0" layoutY="85.0" styleClass="labelText" text="Password:" />
-        <PasswordField fx:id="password" layoutX="188.0" layoutY="82.0" onAction="#supporter" prefWidth="200.0" />
-      </children>
-    </Pane>
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="278.0" prefHeight="194.0" prefWidth="1017.0" styleClass="labelStart" text="Hier Kommt Die hilfe für den Supporter Vor ORT" textFill="RED" />
   </children>
-  <stylesheets>
-    <URL value="@../../../ressource/application.css" />
-  </stylesheets>
 </AnchorPane>

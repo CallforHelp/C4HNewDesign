@@ -30,7 +30,7 @@
             </VBox>
             <VBox id="VBox" alignment="CENTER" spacing="20.0">
               <children>
-                <Button fx:id="buttonSupporter" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#supporter" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="3S-SUPPORTER" />
+                <Button fx:id="buttonSupporter" alignment="CENTER" focusTraversable="true" mnemonicParsing="false" onAction="#supporterPassword" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="3S-SUPPORTER" />
                 <Button fx:id="buttonKiosk" alignment="CENTER" mnemonicParsing="false" onAction="#loadKioskBrowser" prefHeight="207.0" prefWidth="231.0" styleClass="HomeButton" text="SOFTWARE KIOSK" />
               </children>
             </VBox>

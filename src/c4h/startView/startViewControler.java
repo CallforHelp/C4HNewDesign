@@ -2,6 +2,7 @@ package c4h.startView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import c4h.MainC4H;
@@ -17,7 +18,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextInputDialog;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -47,6 +51,7 @@ public class startViewControler implements Initializable {
 	// Instanzvariable zur Speicherung der geladenen Ansicht
 	private Parent pcInformationView;
 	private Parent supporterView;
+	private Parent supporterViewPass;
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -81,46 +86,29 @@ public class startViewControler implements Initializable {
 		
 	}
 	@FXML
-	private void supporter(ActionEvent event) throws IOException {
-	    // Überprüfen, ob die Ansicht bereits geladen wurde
-	    if (supporterView == null) {
-	        // Laden der FXML-Ansicht
-	        FXMLLoader loader = new FXMLLoader(getClass().getResource("/c4h/Supporter/SupporterDesign.fxml"));
-	        supporterView = loader.load();
-	        
-	        // Zugriff auf den geladenen Controller
-	        SupporterControler controller = loader.getController();
-	        
-	        // Zugriff auf die Szene des Buttons
-	        Scene scene = buttonSupporter.getScene();
-	        scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
-	        
-	        supporterView.translateYProperty().set(scene.getHeight());
-	        parentContainer.getChildren().add(supporterView);
-	        
-	        // Hinzufügen eines ChangeListeners zur sceneProperty der Stage
-	        Stage stage = (Stage) scene.getWindow();
-	        stage.sceneProperty().addListener((observable, oldScene, newScene) -> {
-	            if (oldScene == null && newScene != null) {
-	                // Szene wurde vollständig geladen
-	           //     controller.processData(); // Ausführen der Controllerfunktionen
-	            }
-	        });
-	        
-	        Timeline timeline = new Timeline();
-	        KeyValue kv = new KeyValue(supporterView.translateYProperty(), 0, Interpolator.EASE_IN);
-	        KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-	        timeline.getKeyFrames().add(kf);
-	        
-	        timeline.setOnFinished(t -> {
-	            parentContainer.getChildren().remove(parentContainer);
-	        });
-	        timeline.play();
-	    } else {
-	        // Die Ansicht wurde bereits geladen, also füge sie einfach zum Container hinzu
-	        parentContainer.getChildren().add(supporterView);
-	    }
+	private void supporterPassword(ActionEvent event) throws IOException {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/Supporter/SupporterDesign.fxml"));
+		Scene scene = buttonSupporter.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+	    
+	    root.translateYProperty().set(scene.getHeight());
+
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    timeline.getKeyFrames().add(kf);
+	    
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(parentContainer);
+	    });
+	    timeline.play();
+		
 	}
+
+	
 	
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
