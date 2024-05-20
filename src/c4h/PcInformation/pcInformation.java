@@ -223,7 +223,8 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					return Modell;
+					//return Modell;
+					return "ED05";
 				}
 			}
 			// Prozess schließen

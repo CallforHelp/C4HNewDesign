@@ -27,7 +27,4 @@
       </children>
     </Pane>
   </children>
-  <stylesheets>
-    <URL value="@../../../ressource/application.css" />
-  </stylesheets>
 </AnchorPane>
