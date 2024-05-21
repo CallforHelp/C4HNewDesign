@@ -45,10 +45,10 @@ public class TestC4H {
 		String pcModell= "LE99";
 
 		try {
-			System.out.println("PC Modell: " +parse.findePcModell(pcModell));
-			System.out.println("Kaufdatum: "+parse.findKaufDatum(parse.findePcModell(pcModell)));
-			System.out.println("Support Ende: "+parse.findSupportEndethValue(parse.findePcModell(pcModell)));
-			System.out.println("windows 11: "+parse.findWindows11Support(parse.findePcModell(pcModell)));
+			System.out.println("PC Modell:" +parse.findePcModell(pcModell));
+			System.out.println("Kaufdatum:"+parse.findKaufDatum(parse.findePcModell(pcModell)));
+			System.out.println("Support Ende:"+parse.findSupportEndethValue(parse.findePcModell(pcModell)));
+			System.out.println("windows 11:"+parse.findWindows11Support(parse.findePcModell(pcModell)));
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
