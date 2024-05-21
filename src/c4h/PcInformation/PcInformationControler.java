@@ -154,8 +154,8 @@ public class PcInformationControler implements Initializable {
 			supportInformation();
 			LogoImage();
 			
-			CPU_Usage GPUController = new CPU_Usage();
-			GPUController.monitorCPUUsage(indictor2);
+			CPU_Usage CPUController = new CPU_Usage();
+			CPUController.monitorCPUUsage(indictor2);
 			GPU_Usage GPUcontroller = new GPU_Usage();
 	        GPUcontroller.monitorGPUUsage(indictor3);
 			
@@ -310,22 +310,6 @@ public class PcInformationControler implements Initializable {
         });
         timeline.play();
     }
-	@FXML
-	private void loadCpuUsage() throws IOException{
-		indictor2.setMinSize(100, 100);
-	    indictor2.setProgress(0); // Setze den Anfangsfortschritt auf 0
-
-	    Timeline timeline = new Timeline(
-	        new KeyFrame(Duration.ZERO, e -> {
-	            OperatingSystemMXBean bean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-	            double processCpuLoad = bean.getProcessCpuLoad();
-	            indictor2.setProgress(processCpuLoad);
-	        }),
-	        new KeyFrame(Duration.seconds(2))
-	    );
-	    timeline.setCycleCount(Animation.INDEFINITE);
-	    timeline.play();
-	}
 		 
 	@FXML
 	private void loadRamUsage() throws IOException{
@@ -366,11 +350,4 @@ public class PcInformationControler implements Initializable {
         rammonitor.start();
 	}
 	
-	@FXML
-	private void loadGPUUsage() throws IOException{
-		indictor3.setMinSize(100, 100);
-		indictor3.setStyle("-fx-foreground-color: #FF00000");
-		indictor3.setAccessibleText("Hallo");
-		
-	}
 }

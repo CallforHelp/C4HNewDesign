@@ -42,7 +42,7 @@ public class SupporterControler implements Initializable {
 	@FXML
 	private PasswordField password;
 	@FXML
-	private String path ="/config.properties";
+	private String path ="/config";
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -55,7 +55,7 @@ public class SupporterControler implements Initializable {
 	private void supporter(ActionEvent event) throws IOException { 	
 		 // Passwort aus der Konfigurationsdatei laden
         Properties properties = new Properties();
-        try (FileInputStream input = new FileInputStream(getClass().getResource(path).getPath())) {
+        try (FileInputStream input = new FileInputStream(path) ){
             properties.load(input);
         } catch (IOException e) {
             e.printStackTrace();

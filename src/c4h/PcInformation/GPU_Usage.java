@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class GPU_Usage {
 
     private static int REFRESH_INTERVAL_SECONDS = 1;
-    private static int UPDATE_INTERVAL_MILLISECONDS = REFRESH_INTERVAL_SECONDS * 1000;
+    private static int UPDATE_INTERVAL_MILLISECONDS = REFRESH_INTERVAL_SECONDS * 500;
 
     private Psapi.PerformanceInformation performanceInformation = new Psapi.PerformanceInformation();
     private ScheduledExecutorService executorService;
