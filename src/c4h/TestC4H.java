@@ -22,8 +22,8 @@ public class TestC4H {
 		//testParse.printMAP();
 		
 		
-			TestC4H testParse= new TestC4H();
-		testParse.TestParsePcModell();
+		//TestC4H testParse= new TestC4H();
+		//testParse.TestParsePcModell();
 		//testParse.printMAP();
 			//System.out.println("");
 			
@@ -58,7 +58,7 @@ public class TestC4H {
 		//String pcModell=pcinfo.getPcModell().trim();
 		//System.out.println(pcinfo.getPcModell());
 		//String pcModell= test_LE04;
-		String pcModell= test_PD06;
+		//String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
 
 		//String pcModell= "HP EliteDesk 800 G4 DM 65W";

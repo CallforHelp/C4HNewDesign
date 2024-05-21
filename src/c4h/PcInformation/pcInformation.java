@@ -225,13 +225,6 @@ public class pcInformation {
 		
 		return "Fehler-Pc modell";
 	}
-
-
-	private String setPcModell(String modell) {
-		// TODO Auto-generated method stub
-		return this.pcModell =modell;
-	}
-
 	/**
 	 * Betriebsystemarchitektur
 	 * 
@@ -241,10 +234,9 @@ public class pcInformation {
 		
 		if (isWindows()) {
             return "Mac-Rechner";
-		
 		}
-		String OsArch = new Properties(System.getProperties()).getProperty("os.arch");
 		
+		String OsArch = new Properties(System.getProperties()).getProperty("os.arch");
 	
 		return OsArch;
 		
