@@ -222,7 +222,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:H800G3.png|100px|center]]
 |style="background:#FDCBC2;" |HP EliteDesk 800 G4 Desktop Mini (ED04)
-|style="background:#FDCBC2;" |
+|style="background:#FDCBC2;" |HP EliteDesk 800 G4 DM 65W
 |style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
 |style="background:#FDCBC2;" align="center" | Intel Core I3-8100 (4 x 3.1GHz) Anschlüsse: 2 x DP, 1 x HDMI 
 |style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -423,8 +423,18 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
 |[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
+|style="background:#E1FCD2;" |Lenovo Thinkbook 4  (15") (LE99)
+|style="background:#E1FCD2;" |21HDS0G900
+|style="background:#E1FCD2;" align="center" |Miarbeiter PC
+|style="background:#E1FCD2;" align="center" |AMD Ryzen 3 5425U, 8Gb Ram, 256GB SSD
+|style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
+|style="background:#E1FCD2;" align="center" |verkauft ab 05.2023
+|style="background:#E1FCD2;" align="center" | im Support bis MA Kündigt
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
 |style="background:#E1FCD2;" |Lenovo Thinkbook 4 21DL (15") (LE04)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" |21DL
 |style="background:#E1FCD2;" align="center" | ----
 |style="background:#E1FCD2;" align="center" |AMD Ryzen 3 5425U, 8Gb Ram, 256GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -464,7 +474,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:dell3510.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Vostro 3510 (15") (DV35)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" |Latitude 3510
 |style="background:#E1FCD2;" align="center" | ----
 |style="background:#E1FCD2;" align="center" |Intel 11th Gen i5-1135G7, 8Gb Ram, 256GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]

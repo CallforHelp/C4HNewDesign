@@ -5,7 +5,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import c4h.MainC4H;
-import c4h.PcInformation.PcInformationControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -17,11 +16,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.scene.image.Image;
 
 public class startViewControler implements Initializable {
 		
@@ -37,6 +36,8 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonPcInfo;
 	@FXML
+	private Button buttonSupporter;
+	@FXML
 	private AnchorPane parentContainer;
 	@FXML
 	private String cssPath="/application.css";
@@ -44,9 +45,10 @@ public class startViewControler implements Initializable {
 	// Instanzvariable zur Speicherung der geladenen Ansicht
 	private Parent pcInformationView;
 	
+	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
-		System.out.println("Startview");
+		System.out.println("StartviewControler");
 		setImage();
 		exitButton.setOnAction(e -> {
             MainC4H.closeStage(exitButton.getScene());
@@ -76,6 +78,30 @@ public class startViewControler implements Initializable {
             }
 		
 	}
+	@FXML
+	private void supporterPassword(ActionEvent event) throws IOException {
+		
+		Parent root = FXMLLoader.load(getClass().getResource("/c4h/Supporter/SupporterDesign.fxml"));
+		Scene scene = buttonSupporter.getScene();
+		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
+	    
+	    root.translateYProperty().set(scene.getHeight());
+
+	    parentContainer.getChildren().add(root);
+
+	    Timeline timeline = new Timeline();
+	    KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+	    KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+	    timeline.getKeyFrames().add(kf);
+	    
+	    timeline.setOnFinished(t -> {
+	    	parentContainer.getChildren().remove(parentContainer);
+	    });
+	    timeline.play();
+		
+	}
+
+	
 	
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
@@ -86,7 +112,7 @@ public class startViewControler implements Initializable {
 	        pcInformationView = loader.load();
 	        
 	        // Zugriff auf den geladenen Controller
-	        PcInformationControler controller = loader.getController();
+	      //  PcInformationControler controller = loader.getController();
 	        
 	        // Zugriff auf die Szene des Buttons
 	        Scene scene = buttonPcInfo.getScene();

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="supporterContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.Supporter.SupporterControler">
+  <!-- TODO Add Nodes -->
+  <children>
+    <HBox alignment="CENTER_RIGHT" prefHeight="40.0" prefWidth="365.0" spacing="20.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <children>
+        <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" styleClass="labelStart">
+          <children>
+            <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
+          </children>
+        </HBox>
+      </children>
+    </HBox>
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="250.0" styleClass="labelStart" text="3S-Supporter" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="278.0" prefHeight="194.0" prefWidth="1017.0" styleClass="labelStart" text="Hier Kommt Die hilfe für den Supporter Vor ORT" textFill="RED" />
+  </children>
+</AnchorPane>

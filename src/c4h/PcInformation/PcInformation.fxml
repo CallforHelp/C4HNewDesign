@@ -115,9 +115,9 @@
             </GridPane>
           </children>
         </VBox>
-        <VBox id="VBox" alignment="CENTER_LEFT" layoutX="487.0" layoutY="362.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
+        <VBox id="VBox" alignment="CENTER" layoutX="487.0" layoutY="362.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
           <children>
-            <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
+            <Label alignment="CENTER" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
             <HBox id="HBox" alignment="CENTER" prefHeight="162.8046875" prefWidth="600.0" spacing="5.0">
               <children>
                 <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
@@ -129,20 +129,20 @@
                 <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
                   <children>
                     <Label alignment="CENTER" prefHeight="45.0" prefWidth="120.0" styleClass="labelText" text="CPU" textAlignment="CENTER" />
-                    <ProgressIndicator id="indictor" fx:id="indictor2" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
+                    <ProgressIndicator fx:id="indictor2" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
                   </children>
                 </VBox>
                 <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
                   <children>
-                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" styleClass="labelText" text="HDD/SSD" textAlignment="CENTER" />
-                    <ProgressIndicator id="indictor" fx:id="indictor4" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
+                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" styleClass="labelText" text="GPU" textAlignment="CENTER" />
+                    <ProgressIndicator id="indictor2" fx:id="indictor3" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
                   </children>
                 </VBox>
               </children>
             </HBox>
           </children>
         </VBox>
-        <VBox id="VBox" alignment="CENTER" layoutX="785.0" layoutY="30.0" prefHeight="250.0" prefWidth="189.0" spacing="5.0">
+        <VBox id="VBox" alignment="CENTER" layoutX="785.0" layoutY="30.0" prefHeight="250.0" prefWidth="241.0" spacing="5.0">
           <children>
             <ImageView fx:id="image" fitHeight="245.0" fitWidth="139.64999289703405" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
           </children>

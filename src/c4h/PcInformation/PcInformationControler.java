@@ -1,24 +1,16 @@
 package c4h.PcInformation;
 
 
-import java.awt.AWTException;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
 import java.net.URL;
-import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
-import java.util.concurrent.CompletableFuture;
 
 import javax.imageio.ImageIO;
 
-import com.sun.management.OperatingSystemMXBean;
-
-import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -49,8 +41,7 @@ public class PcInformationControler implements Initializable {
 	
 	private ParsePcModelInMap parsePcModell= new ParsePcModelInMap();
 
-	private double xOffset = 0;
-	private double yOffset = 0;
+	
 	
 	
 	// SystemInfoLabel Labels
@@ -80,6 +71,7 @@ public class PcInformationControler implements Initializable {
 	private ProgressIndicator indictor3 = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor4 = new ProgressIndicator(0);
+	
 	
 	//Lable SystemInformation
 	@FXML
@@ -125,19 +117,36 @@ public class PcInformationControler implements Initializable {
 	private ImageView image;
 	@FXML
 	private ImageView imageLogo;
+	
+	@FXML
+	private RAM_Usage RAMcontroller = new RAM_Usage();
+	@FXML
+	private CPU_Usage CPUController = new CPU_Usage();
+	@FXML
+	private GPU_Usage GPUcontroller = new GPU_Usage();
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 		try {
-		System.out.println("PCInformation");
-			loadRamUsage();
-			loadCpuUsage();
+
+		System.out.println("PCInformationControler");
+			
+			
 			loaddDriveDataRate();
 			systemInformation();
 			netzwerkInformation();
 			supportInformation();
 			LogoImage();
+			
+			
+			//CPU_USAGE
+			RAMcontroller.monitorRAMUsage(indictor);
+			CPUController.monitorCPUUsage(indictor2);
+	        GPUcontroller.monitorGPUUsage(indictor3);
+	        
+	        
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -147,6 +156,8 @@ public class PcInformationControler implements Initializable {
     @FXML
     private void screenShot(ActionEvent event) throws IOException {
     	System.out.println("ScreenShot");	
+    	SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd hh mm ss a");
+		Calendar now = Calendar.getInstance();
     	try {
             // Erfasse den Bereich des Java-Fensters
     		Parent root = FXMLLoader.load(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
@@ -163,7 +174,7 @@ public class PcInformationControler implements Initializable {
             // Speichere das Bild auf dem Desktop
             File desktopDir = new File("c:\\Users\\"+pcIno.getUserName()+"\\Desktop");
             System.out.println(desktopDir);
-            File file = new File(desktopDir, "screenshot.png");
+            File file = new File(desktopDir, "screenshot"+formatter.format(now.getTime())+".png");
             ImageIO.write(bufferedImage, "png", file);
 
             System.out.println("Screenshot wurde unter " + file.getAbsolutePath() + " gespeichert.");
@@ -288,61 +299,6 @@ public class PcInformationControler implements Initializable {
         });
         timeline.play();
     }
-	@FXML
-	private void loadCpuUsage() throws IOException{
-		indictor2.setMinSize(100, 100);
-	    indictor2.setProgress(0); // Setze den Anfangsfortschritt auf 0
-
-	    Timeline timeline = new Timeline(
-	        new KeyFrame(Duration.ZERO, e -> {
-	            OperatingSystemMXBean bean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-	            double processCpuLoad = bean.getProcessCpuLoad();
-	            indictor2.setProgress(processCpuLoad);
-	        }),
-	        new KeyFrame(Duration.seconds(2))
-	    );
-	    timeline.setCycleCount(Animation.INDEFINITE);
-	    timeline.play();
-	}
-		 
-	@FXML
-	private void loadRamUsage() throws IOException{
-		// Setze die Mindestgröße des Indikators
-        indictor.setMinSize(100, 100);
-
-
-        // Erstelle einen Thread für das RAM-Monitoring
-        Thread rammonitor = new Thread(() -> {
-            int RAM = 100000;
-
-            while (!Thread.currentThread().isInterrupted()) {
-                // Hier wird der RAM-Verbrauch gemessen
-                Runtime rt = Runtime.getRuntime();
-
-                // Berechne den genutzten Speicher in Kilobyte
-                double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 1024);
-                if (usedKB == 1024)
-                    usedKB = 0.0;
-
-                // Setze den Fortschritt des Indikators basierend auf dem genutzten RAM
-                double progress = usedKB / RAM;
-                if (progress > 1.0) // Begrenze den Fortschritt auf 1.0
-                    progress = 1.0;
-                indictor.setProgress(progress);
-
-                try {
-                    // Warte für eine kurze Zeit (500 Millisekunden)
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    Thread.currentThread().interrupt(); // Setze den Interrupt-Status erneut
-                }
-            }
-        });
-
-        // Starte den RAM-Monitor-Thread
-        rammonitor.start();
-	}
 	
 	@FXML
 	private void loaddDriveDataRate(){
