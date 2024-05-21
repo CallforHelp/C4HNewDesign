@@ -44,12 +44,13 @@ public class KioskControler implements Initializable{
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		System.out.println("KioskControler");
 		//Kiosk Laden
 		loadBrowser();
 	}
 	@FXML
 	public void loadBrowser() { 
-		System.out.println("KioskSeite");
+		
 		try {
 			// TrustManager-Array initialisieren, um das Serverzertifikat zu überprüfen
 			TrustManager[] trustAllCerts = new TrustManager[]{

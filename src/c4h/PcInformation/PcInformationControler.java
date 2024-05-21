@@ -113,23 +113,34 @@ public class PcInformationControler implements Initializable {
 	private ImageView image;
 	@FXML
 	private ImageView imageLogo;
+	
+	@FXML
+	private RAM_Usage RAMcontroller = new RAM_Usage();
+	@FXML
+	private CPU_Usage CPUController = new CPU_Usage();
+	@FXML
+	private GPU_Usage GPUcontroller = new GPU_Usage();
+
 
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 		try {
-		System.out.println("PCInformation");
-			loadRamUsage();
-	
+		System.out.println("PCInformationControler");
+			
+			//PC_INFORMATION
 			systemInformation();
 			netzwerkInformation();
 			supportInformation();
 			LogoImage();
 			
-			CPU_Usage CPUController = new CPU_Usage();
+			
+			//CPU_USAGE
+			RAMcontroller.monitorRAMUsage(indictor);
 			CPUController.monitorCPUUsage(indictor2);
-			GPU_Usage GPUcontroller = new GPU_Usage();
 	        GPUcontroller.monitorGPUUsage(indictor3);
+	        
+	        
 			
 		} catch (Throwable e) {
 			e.printStackTrace();
@@ -282,44 +293,5 @@ public class PcInformationControler implements Initializable {
         });
         timeline.play();
     }
-		 
-	@FXML
-	private void loadRamUsage() throws IOException{
-		// Setze die Mindestgröße des Indikators
-        indictor.setMinSize(100, 100);
-
-
-        // Erstelle einen Thread für das RAM-Monitoring
-        Thread rammonitor = new Thread(() -> {
-            int RAM = 100000;
-
-            while (!Thread.currentThread().isInterrupted()) {
-                // Hier wird der RAM-Verbrauch gemessen
-                Runtime rt = Runtime.getRuntime();
-
-                // Berechne den genutzten Speicher in Kilobyte
-                double usedKB = (double) ((rt.totalMemory() - rt.freeMemory()) / 8192);
-                if (usedKB == 8192)
-                    usedKB = 0.0;
-
-                // Setze den Fortschritt des Indikators basierend auf dem genutzten RAM
-                double progress = usedKB / RAM;
-                if (progress > 1.0) // Begrenze den Fortschritt auf 1.0
-                    progress = 1.0;
-                indictor.setProgress(progress);
-
-                try {
-                    // Warte für eine kurze Zeit (500 Millisekunden)
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                    Thread.currentThread().interrupt(); // Setze den Interrupt-Status erneut
-                }
-            }
-        });
-
-        // Starte den RAM-Monitor-Thread
-        rammonitor.start();
-	}
 	
 }
