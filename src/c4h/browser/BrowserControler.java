@@ -6,12 +6,10 @@ import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ResourceBundle;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-
 import c4h.PcInformation.pcInformation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
@@ -43,28 +41,20 @@ public class BrowserControler implements Initializable{
 	@FXML
 	private WebEngine webkit;
 
-
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		System.out.println("BrowserController");
 		loadBrowser();
 	}
 
-
-
 	@FXML
 	private void loadRoot(ActionEvent event) throws IOException {
-
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-
 		Scene scene = StartViewbutton.getScene();
 		root.translateYProperty().set(scene.getHeight());
 
 		AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
-
 		parentContainer.getChildren().add(root);
-
 
 		Timeline timeline = new Timeline();
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
@@ -75,6 +65,7 @@ public class BrowserControler implements Initializable{
 		});
 		timeline.play();
 	}
+
 	@FXML
 	private void loadBrowser() {
 		System.out.println("browserstart");
@@ -155,7 +146,6 @@ public class BrowserControler implements Initializable{
 		});
 
 		// Laden der URL in den WebView
-
 		try {
 			webkit.load(URL+"?schulnummer="+bg.getSchulNummer()+"&pcname="+bg.getLocalHost()
 			+"&ipadress="+bg.getLocalAdresse()+"&MusterImage="+bg.getMusterImages().replaceAll(" ", ""));
@@ -166,7 +156,4 @@ public class BrowserControler implements Initializable{
 			e.printStackTrace();
 		}
 	}
-
-
-
 }
