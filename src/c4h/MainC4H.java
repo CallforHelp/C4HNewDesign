@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 /**
- * Die MainC4H-Klasse ist die Hauptklasse der C4H-Anwendung. Sie erbt von Application und implementiert die
- * start()-Methode, um die JavaFX-Anwendung zu initialisieren.
- */
+* Die MainC4H-Klasse ist die Hauptklasse der C4H-Anwendung. Sie erbt von Application und implementiert die
+* start()-Methode, um die JavaFX-Anwendung zu initialisieren.
+*/
 public class MainC4H extends Application {
 	
 		private String cssPath="/application.css";
