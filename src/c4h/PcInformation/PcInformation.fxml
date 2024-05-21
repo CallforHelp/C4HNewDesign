@@ -261,8 +261,8 @@
 						</GridPane>
 					</children>
 				</VBox>
-				<VBox id="VBox" alignment="CENTER" layoutX="487.0"
-					layoutY="362.0" prefHeight="210.8046875" prefWidth="465.0"
+				<VBox id="VBox" alignment="CENTER" layoutX="459.0"
+					layoutY="362.0" prefHeight="210.8046875" prefWidth="553.0"
 					spacing="20.0">
 					<children>
 						<Label alignment="CENTER" contentDisplay="CENTER"
@@ -305,6 +305,18 @@
 											fx:id="indictor3" disable="false" minHeight="100.0"
 											minWidth="100.0" prefHeight="100.0" prefWidth="100.0"
 											progress="0.0" visible="true" />
+									</children>
+								</VBox>
+								<VBox id="VBox" alignment="CENTER" prefWidth="150.0"
+									spacing="5.0">
+									<children>
+										<Label alignment="CENTER" contentDisplay="CENTER"
+											prefHeight="45.0" prefWidth="120.0" styleClass="labelText"
+											text="SDD" textAlignment="CENTER" />
+										<ProgressIndicator id="indictor2"
+											fx:id="indictor4" minHeight="100.0" minWidth="100.0"
+											pickOnBounds="false" prefHeight="100.0" prefWidth="100.0"
+											progress="0.0" />
 									</children>
 								</VBox>
 							</children>
