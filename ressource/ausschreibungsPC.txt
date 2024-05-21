@@ -423,6 +423,16 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
 |[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
+|style="background:#E1FCD2;" |Lenovo Thinkbook 4  (15") (LE99)
+|style="background:#E1FCD2;" |21HDS0G900
+|style="background:#E1FCD2;" align="center" |Miarbeiter PC
+|style="background:#E1FCD2;" align="center" |AMD Ryzen 3 5425U, 8Gb Ram, 256GB SSD
+|style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
+|style="background:#E1FCD2;" align="center" |verkauft ab 05.2023
+|style="background:#E1FCD2;" align="center" | im Support bis MA Kündigt
+|style="background:#E1FCD2;" align="center" | ja
+|-
+|[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
 |style="background:#E1FCD2;" |Lenovo Thinkbook 4 21DL (15") (LE04)
 |style="background:#E1FCD2;" |21DL
 |style="background:#E1FCD2;" align="center" | ----
