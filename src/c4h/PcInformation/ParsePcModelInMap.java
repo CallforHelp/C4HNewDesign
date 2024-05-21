@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * Value[6]=  Dauer 3S Support
  * Value[7]=  Win11 Kompatibilität 
  * 
- *  * @author Helmi Bani
+ * @author Helmi Bani
  * @version 1.0
  * 
  */
@@ -127,8 +127,6 @@ public class ParsePcModelInMap {
        
 		return mapList;
 
-
-		
 	}
 	
 	public String findePcModell(String PCModell) {
@@ -155,7 +153,7 @@ public class ParsePcModelInMap {
         }
         return null; // Wenn der Wert nicht gefunden wird
     }
-  	 public static String findPcModellExtrahiert(String searchKey) {
+  	 public String findPcModellExtrahiert(String searchKey) {
 	        // Suche den Wert für den gegebenen Schlüssel in der Map
 	        ArrayList<String> values = mapList.get(searchKey);
 	        if (values != null && values.size() >= 6) {
