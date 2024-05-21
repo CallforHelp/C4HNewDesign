@@ -1,7 +1,8 @@
 package c4h.PcInformation;
 
 import java.lang.management.ManagementFactory;
-import java.lang.management.OperatingSystemMXBean;
+
+import com.sun.management.OperatingSystemMXBean;
 
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
@@ -13,22 +14,26 @@ import javafx.util.Duration;
 public class CPU_Usage {
 		
 	public void monitorCPUUsage(ProgressIndicator indicator) {
-		// TODO Auto-generated method stub
-
-		indicator.setMinSize(100, 100);
-	    indicator.setProgress(0); // Setze den Anfangsfortschritt auf 0
+	    // Setze die Mindestgröße für den Indicator
+	    indicator.setMinSize(100, 100);
+	    
+	    // Erhalte das erweiterte OperatingSystemMXBean
+	    OperatingSystemMXBean osBean = ManagementFactory.getPlatformMXBean(OperatingSystemMXBean.class);
 
 	    Timeline timeline = new Timeline(
 	        new KeyFrame(Duration.ZERO, e -> {
-	            OperatingSystemMXBean bean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-	            double processCpuLoad = bean.getSystemLoadAverage();
-	            indicator.setProgress(processCpuLoad);
+	            // Hole die CPU-Auslastung (0.0 bis 1.0)
+	            double processCpuLoad = osBean.getProcessCpuLoad();
+	            
+	            // Update den Progress Indicator, falls ein gültiger Wert zurückkommt
+	            if (processCpuLoad >= 0) {
+	                indicator.setProgress(processCpuLoad);
+	            }
 	        }),
 	        new KeyFrame(Duration.seconds(2))
 	    );
 	    timeline.setCycleCount(Animation.INDEFINITE);
 	    timeline.play();
-		
 	}
 
 }
