@@ -78,6 +78,8 @@ public class PcInformationControler implements Initializable {
 	private ProgressIndicator indictor2 = new ProgressIndicator(0);
 	@FXML
 	private ProgressIndicator indictor3 = new ProgressIndicator(0);
+	@FXML
+	private ProgressIndicator indictor4 = new ProgressIndicator(0);
 	
 	//Lable SystemInformation
 	@FXML
@@ -345,7 +347,7 @@ public class PcInformationControler implements Initializable {
 	@FXML
 	private void loaddDriveDataRate(){
 		// Setze die Mindestgröße des Indikators
-	    indictor3.setMinSize(100, 100);
+	    indictor4.setMinSize(100, 100);
 
 	    // Erstelle einen Task, um die Festplattenaktivität zu überwachen
 	    Task<Void> driveTask = new Task<Void>() {
@@ -356,7 +358,7 @@ public class PcInformationControler implements Initializable {
 	                double driveActivity = getHardDriveDataRate();
 
 	                // Aktualisiere den Fortschrittsindikator basierend auf der Festplattenaktivität
-	                Platform.runLater(() -> indictor3.setProgress(driveActivity / 100.0));
+	                Platform.runLater(() -> indictor4.setProgress(driveActivity / 100.0));
 
 	                // Warte für einen bestimmten Zeitraum, bevor du die Festplattenaktivität erneut abrufst
 	                Thread.sleep(100); // Überprüfe alle 1 Sekunde
