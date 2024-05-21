@@ -1,29 +1,14 @@
 package c4h.PcInformation;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import java.io.File;
-import java.io.IOException;
-import java.lang.management.ManagementFactory;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-
-import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 
 
 /**
@@ -51,7 +36,7 @@ public class ParsePcModelInMap {
 	
 	
 
-	public static Map<String, ArrayList<String>> getMapList() {
+	public Map<String, ArrayList<String>> getMapList() {
 		return mapList;
 	}
 
@@ -170,7 +155,7 @@ public class ParsePcModelInMap {
         return null; // Wenn der Wert nicht gefunden wird
     }
 	
-	 public static String findSupportEndethValue(String searchKey) {
+	 public String findSupportEndethValue(String searchKey) {
 	        // Suche den Wert für den gegebenen Schlüssel in der Map
 	        ArrayList<String> values = mapList.get(searchKey);
 	        if (values != null && values.size() >= 6) {
@@ -182,7 +167,7 @@ public class ParsePcModelInMap {
 	            return null;
 	        }
 	 }
-	 public static String findWindows11Support(String searchKey) {
+	 public String findWindows11Support(String searchKey) {
 	        // Suche den Wert für den gegebenen Schlüssel in der Map
 	        ArrayList<String> values = mapList.get(searchKey);
 	        if (values != null && values.size() >= 6) {
@@ -194,7 +179,7 @@ public class ParsePcModelInMap {
 	            return null;
 	        }
 	 }
-	 public static String findKaufDatum(String searchKey) {
+	 public  String findKaufDatum(String searchKey) {
 	        // Suche den Wert für den gegebenen Schlüssel in der Map
 	        ArrayList<String> values = mapList.get(searchKey);
 	        if (values != null && values.size() >= 6) {

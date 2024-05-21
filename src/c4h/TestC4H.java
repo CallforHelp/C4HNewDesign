@@ -1,10 +1,7 @@
 package c4h;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import c4h.PcInformation.ParsePcModelInMap;
 import c4h.PcInformation.pcInformation;
@@ -47,6 +44,7 @@ public class TestC4H {
 	        
 	 
 	    }
+	@SuppressWarnings("unused")
 	public void TestParsePcModell() throws Throwable{
 		 ParsePcModelInMap parse = new ParsePcModelInMap();
 		 pcInformation pcinfo= new pcInformation();
@@ -98,7 +96,7 @@ public class TestC4H {
 		 * 
 		 * @throws Throwable Hostname Localhost
 		 */
-		public static void printBGinfo() throws Throwable {
+		public void printBGinfo() throws Throwable {
 			
 			pcInformation pcinfo= new pcInformation();
 			

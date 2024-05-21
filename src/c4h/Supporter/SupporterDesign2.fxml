@@ -18,7 +18,7 @@
         </HBox>
       </children>
     </HBox>
-    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="250.0" styleClass="labelStart" text="3S-SUPPORTER" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="250.0" styleClass="labelStart" text="3S-Supporter" textFill="BLACK" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
     <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="278.0" prefHeight="194.0" prefWidth="1017.0" styleClass="labelStart" text="Hier Kommt Die hilfe für den Supporter Vor ORT" textFill="RED" />
   </children>
 </AnchorPane>

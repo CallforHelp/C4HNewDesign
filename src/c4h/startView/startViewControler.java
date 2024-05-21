@@ -2,12 +2,9 @@ package c4h.startView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 
 import c4h.MainC4H;
-import c4h.PcInformation.PcInformationControler;
-import c4h.Supporter.SupporterControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -18,15 +15,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextInputDialog;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.scene.image.Image;
 
 public class startViewControler implements Initializable {
 		
@@ -50,8 +44,7 @@ public class startViewControler implements Initializable {
 	
 	// Instanzvariable zur Speicherung der geladenen Ansicht
 	private Parent pcInformationView;
-	private Parent supporterView;
-	private Parent supporterViewPass;
+	
 	
 	@Override
 	public void initialize(URL url, ResourceBundle rb) {
@@ -119,7 +112,7 @@ public class startViewControler implements Initializable {
 	        pcInformationView = loader.load();
 	        
 	        // Zugriff auf den geladenen Controller
-	        PcInformationControler controller = loader.getController();
+	      //  PcInformationControler controller = loader.getController();
 	        
 	        // Zugriff auf die Szene des Buttons
 	        Scene scene = buttonPcInfo.getScene();

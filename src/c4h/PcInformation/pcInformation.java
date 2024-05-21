@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.lang.reflect.InvocationTargetException;
 import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -44,17 +43,6 @@ public class pcInformation {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-
-	public pcInformation(String s) {
-
-		try {
-			settSchulNummer();
-		} catch (Throwable e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 
 	/**
@@ -215,7 +203,7 @@ public class pcInformation {
 			// Befehl ausführen und Ausgabe abrufen
 			Process process = Runtime.getRuntime().exec("wmic computersystem get model");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-			String Modell;
+			String Modell=null;
 			int lineCount = 0;
 			while ((Modell = reader.readLine()) != null) {
 				// Erhöhe den Zähler für jede Zeile
@@ -224,7 +212,8 @@ public class pcInformation {
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
 					//return Modell;
-					return "ED05";
+					Modell="ED05";
+					return Modell;
 				}
 			}
 			// Prozess schließen
@@ -467,24 +456,6 @@ public class pcInformation {
         return subnetMask;
 	}
 	
-	/**
-     * Methode zur Konvertierung eines Präfixlängenwerts in eine Subnetzmaske.
-     * @param prefixLength Die Länge des Präfixes.
-     * @return Die Subnetzmaske entsprechend der gegebenen Präfixlänge.
-     */
-    private String convertPrefixLengthToMask(int prefixLength) {
-        int[] mask = new int[4];
-        for (int i = 0; i < 4; i++) {
-            if (prefixLength >= 8) {
-                mask[i] = 255;
-                prefixLength -= 8;
-            } else {
-                mask[i] = (0xFF << (8 - prefixLength)) & 0xFF;
-                prefixLength = 0;
-            }
-        }
-        return mask[0] + "." + mask[1] + "." + mask[2] + "." + mask[3];
-    }
 
 	/**
 	 * Gateway auslesen.

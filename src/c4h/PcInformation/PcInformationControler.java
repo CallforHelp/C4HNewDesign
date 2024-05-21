@@ -1,26 +1,16 @@
 package c4h.PcInformation;
 
 
-import java.awt.AWTException;
-import java.awt.Rectangle;
-import java.awt.Robot;
-import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.lang.management.ManagementFactory;
 import java.net.URL;
-import java.net.UnknownHostException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.ResourceBundle;
-import java.util.concurrent.CompletableFuture;
 
 import javax.imageio.ImageIO;
 
-import com.sun.management.OperatingSystemMXBean;
-
-import javafx.animation.Animation;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -43,31 +33,13 @@ import javafx.scene.layout.GridPane;
 import javafx.util.Duration;
 
 
-import com.sun.jna.Native;
-import com.sun.jna.Structure;
-import com.sun.jna.platform.win32.Psapi;
-import com.sun.jna.win32.StdCallLibrary;
-
-
-import javafx.application.Platform;
-import javafx.concurrent.Task;
-import javafx.scene.control.ProgressIndicator;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-
-
 public class PcInformationControler implements Initializable {
 
 	private pcInformation pcIno = new pcInformation();
 	
 	private ParsePcModelInMap parsePcModell= new ParsePcModelInMap();
 
-	private double xOffset = 0;
-	private double yOffset = 0;
+	
 	
 	
 	// SystemInfoLabel Labels

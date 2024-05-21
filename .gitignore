@@ -8,6 +8,5 @@
 /dist/
 /doc/
 /wrapper/
-*.[class]
-/.Main.class
+/*.[class]
 /bin/c4h/Main.class

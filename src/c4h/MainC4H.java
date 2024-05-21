@@ -1,22 +1,21 @@
 package c4h;
 
-import javafx.application.*;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.*;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.stage.*;
-
-import javax.imageio.ImageIO;
 import java.io.IOException;
 import java.net.URL;
-import java.text.*;
-import java.util.*;
+
+import javax.imageio.ImageIO;
+
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * Die MainC4H-Klasse ist die Hauptklasse der C4H-Anwendung. Sie erbt von Application und implementiert die
@@ -24,10 +23,7 @@ import java.util.*;
  */
 public class MainC4H extends Application {
 	
-    private double xOffset = 0;
-    private double yOffset = 0;
-	
-	private String cssPath="/application.css";
+    private String cssPath="/application.css";
 
     // Die Pfadangabe für das Anwendungssymbol wird sowohl für das Anwendungstray-Symbol als auch für das Taskleistensymbol gemeinsam genutzt.
     // Es können auch mehrere Symbole verwendet werden, um eine saubere Anzeige von Symbolen im Tray auf Hi-DPI-Geräten zu ermöglichen.
@@ -54,7 +50,8 @@ public class MainC4H extends Application {
        // stage.initStyle(StageStyle.TRANSPARENT);
 
         // Erstellt das Layout für die JavaFX-Bühne.
-        Pane layout = null;
+        @SuppressWarnings("unused")
+		Pane layout = null;
         try {
             layout = (Pane) createContent();
         } catch (Throwable e) {
