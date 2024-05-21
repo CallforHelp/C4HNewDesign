@@ -1,5 +1,6 @@
 package c4h.Supporter;
 
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
@@ -9,9 +10,9 @@ import java.util.ResourceBundle;
 
 import java.io.File;
 import java.io.IOException;
+
 import java.lang.management.ManagementFactory;
 import java.net.URL;
-import java.util.ResourceBundle;
 
 
 import javax.crypto.Cipher;
@@ -54,8 +55,10 @@ public class SupporterControler implements Initializable {
 	@FXML 
 	private void supporter(ActionEvent event) throws IOException { 	
 		 // Passwort aus der Konfigurationsdatei laden
-        Properties properties = new Properties();
-        try (FileInputStream input = new FileInputStream(path) ){
+        System.out.println(getClass().getResource(path).getFile());
+		Properties properties = new Properties();
+        try (FileInputStream input = new FileInputStream(getClass().getResource(path).getFile()) ){
+        	
             properties.load(input);
         } catch (IOException e) {
             e.printStackTrace();
