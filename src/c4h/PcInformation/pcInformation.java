@@ -29,6 +29,8 @@ public class pcInformation {
 	
 	String schulNummer = "";
 
+	public String pcModell ="";
+
 	/**
 	 * Die Schulnummer muss erstellt werden damit f&uuml;r die Fehleranmeldung
 	 * sofort mitgenommen wird. SchulNummer erstellen
@@ -39,12 +41,12 @@ public class pcInformation {
 		try {
 //			setPcInfoNetzwerk();
 //			setPcInfoSystem();
+			getPcModell();
 		} catch (Throwable e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 	/**
 	 * Ueberschrift Name Des Tool.
 	 * 
@@ -224,6 +226,11 @@ public class pcInformation {
 		return "Fehler-Pc modell";
 	}
 
+
+	private String setPcModell(String modell) {
+		// TODO Auto-generated method stub
+		return this.pcModell =modell;
+	}
 
 	/**
 	 * Betriebsystemarchitektur

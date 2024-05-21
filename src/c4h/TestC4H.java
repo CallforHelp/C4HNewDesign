@@ -15,10 +15,30 @@ public class TestC4H {
 	public static void main(String[] args) throws Throwable {
 		// TODO Auto-generated method stub
 
+
 		TestC4H testParse= new TestC4H();
 		testParse.TestParsePcModell();
 		System.out.println("");
 		//testParse.printMAP();
+		
+		
+			TestC4H testParse= new TestC4H();
+		testParse.TestParsePcModell();
+		//testParse.printMAP();
+			//System.out.println("");
+			
+		
+			
+			
+			
+			TestC4H testPcInfo= new TestC4H();
+		//	testPcInfo.printBGinfo();
+//			testPcInfo.setPcInfoSystem();
+//			testPcInfo.setPcInfoNetzwerk();
+//			
+			//System.out.println("PCINFOSYSTEM Element 8; "+ test.PcInfolist.get(8));
+		//	System.out.println("PCINFOSYSTEM Element 0; "+ test.PcNetzwerklist.get(0));
+			
 
 
 		//TestC4H testPcInfo= new TestC4H();
@@ -38,17 +58,19 @@ public class TestC4H {
 		//String pcModell=pcinfo.getPcModell().trim();
 		//System.out.println(pcinfo.getPcModell());
 		//String pcModell= test_LE04;
-		//String pcModell= test_PD06;
+		String pcModell= test_PD06;
 		//String pcModell= testKeyHP09;
+
 		//String pcModell= "HP EliteDesk 800 G4 DM 65W";
 		//String pcModell= "HP09";
 		String pcModell= "LE99";
-
-		try {
-			System.out.println("PC Modell:" +parse.findePcModell(pcModell));
-			System.out.println("Kaufdatum:"+parse.findKaufDatum(parse.findePcModell(pcModell)));
-			System.out.println("Support Ende:"+parse.findSupportEndethValue(parse.findePcModell(pcModell)));
-			System.out.println("windows 11:"+parse.findWindows11Support(parse.findePcModell(pcModell)));
+		
+	try {
+			System.out.println("PC Modell: " +parse.findePcModell(pcModell));
+			System.out.println("PC Modell aus Wiki: "+ parse.findPcModellExtrahiert(pcModell));
+			System.out.println("Support Ende: "+parse.findSupportEndethValue(parse.findePcModell(pcModell)));
+			System.out.println("Kaufdatum: "+parse.findKaufDatum(parse.findePcModell(pcModell)));
+			System.out.println("windows 11: "+parse.findWindows11Support(parse.findePcModell(pcModell)));
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -56,25 +78,25 @@ public class TestC4H {
 		}
 
 	}
-	public void printMAP() {
-		ParsePcModelInMap TestParse = new ParsePcModelInMap();
 
-		Map<String, ArrayList<String>> mapList;
-
-		mapList= TestParse.getMapList();
-		//Print Maps
-		// Ausgabe der Maps
-		for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
-			String key = entry.getKey();
-			ArrayList<String> value = entry.getValue();
-			System.out.println("Pc Modell: '" + key + "':");
-			for (String line : value) {
-				System.out.println(line);
-			}
-			System.out.println(); // Leere Zeile zur Trennung
-		}
-	}
-
+	 public void printMAP() {
+		 ParsePcModelInMap TestParse = new ParsePcModelInMap();
+		 
+		 Map<String, ArrayList<String>> mapList;
+			
+			mapList= TestParse.getMapList();
+			//Print Maps
+	        // Ausgabe der Maps
+	        for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
+	            String key = entry.getKey();
+	            ArrayList<String> value = entry.getValue();
+	           // System.out.println("Pc Modell: '" + key + "':");
+	            for (String line : value) {
+	                System.out.println(line);
+	            }
+	            System.out.println(); // Leere Zeile zur Trennung
+	        }
+	  }
 	/************************************************************************************************************/
 	/**************************************
 	 * PRINTING * @throws Throwable
