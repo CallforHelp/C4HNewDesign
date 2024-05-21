@@ -6,12 +6,10 @@ import java.net.URL;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 import java.util.ResourceBundle;
-
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
-
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -40,8 +38,6 @@ public class KioskControler implements Initializable{
 	@FXML
 	public WebEngine webkit;
 
-
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		System.out.println("KioskControler");
@@ -60,7 +56,6 @@ public class KioskControler implements Initializable{
 						}
 
 						public void checkClientTrusted(X509Certificate[] certs, String authType) {}
-
 						public void checkServerTrusted(X509Certificate[] certs, String authType) throws CertificateException {
 							for (@SuppressWarnings("unused") X509Certificate cert : certs) {
 								// Hier können Sie die Zertifikatsprüfung anpassen, z. B. Überprüfung des Ausstellers, Gültigkeitszeitraums usw.
@@ -133,14 +128,11 @@ public class KioskControler implements Initializable{
 	@FXML
 	private void loadRoot(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-
 		Scene scene = StartViewbutton.getScene();
 		root.translateYProperty().set(scene.getHeight());
 
 		AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
-
 		parentContainer.getChildren().add(root);
-
 
 		Timeline timeline = new Timeline();
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
@@ -151,6 +143,4 @@ public class KioskControler implements Initializable{
 		});
 		timeline.play();
 	}
-
 }
-
