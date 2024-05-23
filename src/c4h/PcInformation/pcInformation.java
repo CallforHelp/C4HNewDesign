@@ -213,7 +213,7 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					//Modell="ED05";
+					Modell="ED04";
 					return Modell;
 				}
 			}
