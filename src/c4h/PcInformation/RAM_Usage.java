@@ -14,7 +14,7 @@ public class RAM_Usage {
 	 * 
 	 * @param indicator Der Fortschrittsindikator, der aktualisiert werden soll
 	 */
-	public void monitorRAMUsage(ProgressIndicator indicator) {
+	public static void monitorRAMUsage(ProgressIndicator indicator) {
 		// Setze die Mindestgröße des Indikators
 		indicator.setMinSize(100, 100);
 
@@ -49,5 +49,10 @@ public class RAM_Usage {
 
 		// Starte den RAM-Monitor-Thread
 		rammonitor.start();
+	}
+
+	public static void close() {
+		// TODO Auto-generated method stub
+		
 	}
 }

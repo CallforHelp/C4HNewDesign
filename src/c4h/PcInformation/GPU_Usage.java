@@ -1,16 +1,18 @@
 package c4h.PcInformation;
 
-import javafx.application.Platform;
-import javafx.concurrent.Task;
-import javafx.scene.control.ProgressIndicator;
-import com.sun.jna.Native;
-import com.sun.jna.Structure;
-import com.sun.jna.win32.StdCallLibrary;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+import com.sun.jna.Native;
+import com.sun.jna.Structure;
+import com.sun.jna.win32.StdCallLibrary;
+
+import javafx.application.Platform;
+import javafx.concurrent.Task;
+import javafx.scene.control.ProgressIndicator;
 
 /**
  * Die Klasse GPU_Usage überwacht die GPU-Auslastung und aktualisiert
@@ -21,15 +23,16 @@ public class GPU_Usage {
 	private static final int REFRESH_INTERVAL_SECONDS = 1;
 	private static final int UPDATE_INTERVAL_MILLISECONDS = REFRESH_INTERVAL_SECONDS * 500;
 
-	private Psapi.PerformanceInformation performanceInformation = new Psapi.PerformanceInformation();
-	private ScheduledExecutorService executorService;
+	private static Psapi.PerformanceInformation performanceInformation = new Psapi.PerformanceInformation();
+	private static ScheduledExecutorService executorService;
+	public static Task<Void> task;
 
 	/**
 	 * Überwacht die GPU-Auslastung und aktualisiert den ProgressIndicator.
 	 *
 	 * @param indicator der ProgressIndicator, der die GPU-Auslastung anzeigt
 	 */
-	public void monitorGPUUsage(ProgressIndicator indicator) {
+	public static void monitorGPUUsage(ProgressIndicator indicator) {
 		Task<Void> task = new Task<Void>() {
 			@Override
 			protected Void call() throws Exception {
@@ -53,7 +56,7 @@ public class GPU_Usage {
 	 *
 	 * @return die GPU-Auslastung als Wert zwischen 0.0 und 1.0
 	 */
-	private double getGPUUsage() {
+	private static double getGPUUsage() {
 		if (Psapi.INSTANCE.GetPerformanceInfo(performanceInformation, performanceInformation.size())) {
 			int physicalTotal = performanceInformation.PhysicalTotal;
 			int physicalAvailable = performanceInformation.PhysicalAvailable;
@@ -61,8 +64,18 @@ public class GPU_Usage {
 			return (double) (physicalTotal - physicalAvailable) / physicalTotal;
 		} else {
 			System.err.println("Fehler beim Abrufen der Leistungsdaten.");
-			return 0.0;
+			stopMonitoring();
+			return 0.1;
 		}
+	}
+	
+	/**
+	 * Stoppt die Überwachung der GPU-Auslastung.
+	 */
+	public static void stopMonitoring() {
+
+		task.cancel();
+		executorService.shutdown();
 	}
 
 	/**
@@ -106,5 +119,10 @@ public class GPU_Usage {
 						"PageSize", "HandleCount", "ProcessCount", "ThreadCount");
 			}
 		}
+	}
+
+	public static void close() {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -24,6 +24,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Duration;
 
@@ -37,81 +39,91 @@ public class SupporterControler implements Initializable {
 	private PasswordField password;
 	@FXML
 	private String path ="/config";
+	@FXML
+	private ImageView imageLogo;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		// TODO Auto-generated method stub
 		System.out.println("SupportControler");
+		LogoImage();
 
 	}
-
+	/**
+	 * Setzt das Bild für das ImageView.
+	 */
+	@FXML
+	private void LogoImage() {
+		Image modellFoto = new Image("/image/3s_logo_tex2t.png");
+		imageLogo.setImage(modellFoto);
+	}
 
 	@FXML 
 	private void supporter(ActionEvent event) throws IOException { 	
-		 // Passwort aus der Konfigurationsdatei laden
-        System.out.println(getClass().getResource(path).getFile());
+		// Passwort aus der Konfigurationsdatei laden
+		System.out.println(getClass().getResource(path).getFile());
 		Properties properties = new Properties();
-        try (InputStream input = (getClass().getResourceAsStream(path)) ){
-        	
-            properties.load(input);
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception (e.g., show an alert to the user)
-            return;
-        }
+		try (InputStream input = (getClass().getResourceAsStream(path)) ){
 
-        String encryptedPassword = properties.getProperty("password");
-        String ID = "schulsupportserv"; 
+			properties.load(input);
+		} catch (IOException e) {
+			e.printStackTrace();
+			// Handle the exception (e.g., show an alert to the user)
+			return;
+		}
 
-        String correctPassword = null;
-        try {
-            correctPassword = decrypt(encryptedPassword, ID);
-        } catch (Exception e) {
-            e.printStackTrace();
-            // Handle the exception
-            return;
-        }
+		String encryptedPassword = properties.getProperty("password");
+		String ID = "schulsupportserv"; 
 
-        // Hier das Password überprüfen
-        String enteredPassword = password.getText();
+		String correctPassword = null;
+		try {
+			correctPassword = decrypt(encryptedPassword, ID);
+		} catch (Exception e) {
+			e.printStackTrace();
+			// Handle the exception
+			return;
+		}
 
-        if (enteredPassword.equals(correctPassword)) {
-            // Passwort ist korrekt
-            Parent root = FXMLLoader.load(getClass().getResource("/c4h/Supporter/SupporterDesign2.fxml"));
+		// Hier das Password überprüfen
+		String enteredPassword = password.getText();
 
-            Scene scene = password.getScene();
-            root.translateYProperty().set(scene.getHeight());
+		if (enteredPassword.equals(correctPassword)) {
+			// Passwort ist korrekt
+			Parent root = FXMLLoader.load(getClass().getResource("/c4h/Supporter/SupporterDesign2.fxml"));
 
-            AnchorPane parentContainer = (AnchorPane) password.getScene().getRoot();
-            parentContainer.getChildren().add(root);
+			Scene scene = password.getScene();
+			root.translateYProperty().set(scene.getHeight());
 
-            Timeline timeline = new Timeline();
-            KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-            KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-            timeline.getKeyFrames().add(kf);
-            timeline.setOnFinished(t -> {
-                parentContainer.getChildren().remove(supporterContainer);
-            });
-            timeline.play();
-        } else {
-            // Passwort ist falsch
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Falsches Passwort");
-            alert.setHeaderText(null);
-            alert.setContentText("Das eingegebene Passwort ist falsch. Bitte versuchen Sie es erneut.");
-            alert.showAndWait();
+			AnchorPane parentContainer = (AnchorPane) password.getScene().getRoot();
+			parentContainer.getChildren().add(root);
 
-            // Hier kannst du weitere Aktionen ausführen, z.B. das Passwortfeld leeren oder den Benutzer erneut auffordern, das Passwort einzugeben
-            password.clear(); // Passwortfeld leeren
-        }
-    }
+			Timeline timeline = new Timeline();
+			KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+			KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
+			timeline.getKeyFrames().add(kf);
+			timeline.setOnFinished(t -> {
+				parentContainer.getChildren().remove(supporterContainer);
+			});
+			timeline.play();
+		} else {
+			// Passwort ist falsch
+			Alert alert = new Alert(Alert.AlertType.ERROR);
+			alert.setTitle("Falsches Passwort");
+			alert.setHeaderText(null);
+			alert.setContentText("Das eingegebene Passwort ist falsch. Bitte versuchen Sie es erneut.");
+			alert.showAndWait();
 
-    public static String decrypt(String strToDecrypt, String secret) throws Exception {
-        SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes("UTF-8"), "AES");
-        Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
-        cipher.init(Cipher.DECRYPT_MODE, secretKey);
-        return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
-    }
+			// Hier kannst du weitere Aktionen ausführen, z.B. das Passwortfeld leeren oder den Benutzer erneut auffordern, das Passwort einzugeben
+			password.clear(); // Passwortfeld leeren
+		}
+	}
+
+	public static String decrypt(String strToDecrypt, String secret) throws Exception {
+		SecretKeySpec secretKey = new SecretKeySpec(secret.getBytes("UTF-8"), "AES");
+		Cipher cipher = Cipher.getInstance("AES/ECB/PKCS5Padding");
+		cipher.init(Cipher.DECRYPT_MODE, secretKey);
+		return new String(cipher.doFinal(Base64.getDecoder().decode(strToDecrypt)));
+	}
 
 
 	@FXML

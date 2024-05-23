@@ -3,6 +3,7 @@
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
@@ -23,8 +24,13 @@
       <children>
         <Label layoutX="92.0" layoutY="14.0" prefWidth="357.0" styleClass="labelStart" text="Bitte geben Sie Ihr Password ein:" />
         <Label layoutX="92.0" layoutY="85.0" styleClass="labelText" text="Password:" />
-        <PasswordField fx:id="password" layoutX="171.0" layoutY="70.0" onAction="#supporter" prefHeight="48.0" prefWidth="200.0" />
+        <PasswordField fx:id="password" layoutX="171.0" layoutY="78.0" onAction="#supporter" prefHeight="40.0" prefWidth="200.0" />
       </children>
     </Pane>
+    <StackPane minHeight="-1.0" minWidth="-1.0" prefHeight="83.0" prefWidth="568.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="265.5" AnchorPane.rightAnchor="216.5">
+      <children>
+        <ImageView id="image" fx:id="imageLogo" fitHeight="78.81152733661175" fitWidth="483.2391052246094" pickOnBounds="true" preserveRatio="true" smooth="true" styleClass="logo" />
+      </children>
+    </StackPane>
   </children>
 </AnchorPane>

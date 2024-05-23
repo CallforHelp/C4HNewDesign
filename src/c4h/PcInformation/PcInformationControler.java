@@ -115,13 +115,13 @@ public class PcInformationControler implements Initializable {
 	private ImageView imageLogo;
 
 	@FXML
-	private RAM_Usage RAMcontroller = new RAM_Usage();
+	private static RAM_Usage RAMcontroller = new RAM_Usage();
 	@FXML
-	private CPU_Usage CPUController = new CPU_Usage();
+	private static CPU_Usage CPUController = new CPU_Usage();
 	@FXML
-	private GPU_Usage GPUcontroller = new GPU_Usage();
+	private static GPU_Usage GPUcontroller = new GPU_Usage();
 	@FXML
-	private SDD_Usage SDDcontroller = new SDD_Usage();
+	private static SDD_Usage SDDcontroller = new SDD_Usage();
 
 	/**
 	 * Initialisiert die Controller-Klasse.
@@ -142,14 +142,20 @@ public class PcInformationControler implements Initializable {
 			LogoImage();
 
 			// CPU_USAGE
-			RAMcontroller.monitorRAMUsage(indictor);
-			CPUController.monitorCPUUsage(indictor2);
-			GPUcontroller.monitorGPUUsage(indictor3);
-			SDDcontroller.monitorSDDUsage(indictor4);
+			RAM_Usage.monitorRAMUsage(indictor);
+			CPU_Usage.monitorCPUUsage(indictor2);
+			GPU_Usage.monitorGPUUsage(indictor3);
+			SDD_Usage.monitorSDDUsage(indictor4);
 
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
+	}
+	public static void closeUsage() {
+		SDD_Usage.close();
+		RAM_Usage.close();
+		CPU_Usage.close();
+		GPU_Usage.close();
 	}
 
 	/**

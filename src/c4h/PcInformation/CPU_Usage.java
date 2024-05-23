@@ -19,7 +19,7 @@ public class CPU_Usage {
 	 *
 	 * @param indicator der ProgressIndicator, der die CPU-Auslastung anzeigt
 	 */
-	public void monitorCPUUsage(ProgressIndicator indicator) {
+	public static void monitorCPUUsage(ProgressIndicator indicator) {
 		// Setzt die Mindestgröße für den Indicator
 		indicator.setMinSize(100, 100);
 
@@ -42,5 +42,10 @@ public class CPU_Usage {
 		// Setzt die Timeline auf unendliche Wiederholung und startet sie
 		timeline.setCycleCount(Animation.INDEFINITE);
 		timeline.play();
+	}
+
+	public static void close() {
+		// TODO Auto-generated method stub
+		
 	}
 }

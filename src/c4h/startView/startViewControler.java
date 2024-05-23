@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import c4h.MainC4H;
+import c4h.PcInformation.PcInformationControler;
 import javafx.animation.Interpolator;
 import javafx.animation.KeyFrame;
 import javafx.animation.KeyValue;
@@ -60,7 +61,14 @@ public class startViewControler implements Initializable {
 	public void initialize(URL url, ResourceBundle rb) {
 		System.out.println("StartviewControler");
 		setImage();
+		closeUSage();
 		exitButton.setOnAction(e -> MainC4H.closeStage(exitButton.getScene()));
+	}
+
+	private void closeUSage() {
+		// TODO Auto-generated method stub
+	PcInformationControler.closeUsage();
+	
 	}
 
 	/**
@@ -111,7 +119,7 @@ public class startViewControler implements Initializable {
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
 
-		timeline.setOnFinished(t -> parentContainer.getChildren().remove(parentContainer));
+		timeline.setOnFinished(t -> parentContainer.getChildren());
 		timeline.play();
 	}
 
@@ -145,7 +153,7 @@ public class startViewControler implements Initializable {
 			KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 			timeline.getKeyFrames().add(kf);
 
-			timeline.setOnFinished(t -> parentContainer.getChildren().remove(parentContainer));
+			timeline.setOnFinished(t -> parentContainer.getChildren());
 			timeline.play();
 		} else {
 			parentContainer.getChildren().add(pcInformationView);
@@ -172,7 +180,7 @@ public class startViewControler implements Initializable {
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
 
-		timeline.setOnFinished(t -> parentContainer.getChildren().remove(parentContainer));
+		timeline.setOnFinished(t -> parentContainer.getChildren());
 		timeline.play();
 	}
 
@@ -195,7 +203,7 @@ public class startViewControler implements Initializable {
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
-		timeline.setOnFinished(t -> parentContainer.getChildren().remove(parentContainer));
+		timeline.setOnFinished(t -> parentContainer.getChildren());
 		timeline.play();
 	}
 }

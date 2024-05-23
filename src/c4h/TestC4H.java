@@ -31,7 +31,7 @@ public class TestC4H {
 
 
 
-		TestC4H testPcInfo= new TestC4H();
+		//TestC4H testPcInfo= new TestC4H();
 		//	testPcInfo.printBGinfo();
 		//			testPcInfo.setPcInfoSystem();
 		//			testPcInfo.setPcInfoNetzwerk();
@@ -88,7 +88,6 @@ public class TestC4H {
 		//Print Maps
 		// Ausgabe der Maps
 		for (Map.Entry<String, ArrayList<String>> entry : mapList.entrySet()) {
-			String key = entry.getKey();
 			ArrayList<String> value = entry.getValue();
 			// System.out.println("Pc Modell: '" + key + "':");
 			for (String line : value) {

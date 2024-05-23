@@ -63,7 +63,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HP09.png|100px|center]]
 |style="background:#E1FCD2;" | HP Elite Tower 600 G9 (HP09)
-|style="background:#E1FCD2;" | XXXX
+|style="background:#E1FCD2;" | HP Elite Tower 600 G9 Desktop PC
 |style="background:#E1FCD2;" align="center" | Aufkleber Unten "Elite Tower 600 G9", i3 13-Gen 
 |style="background:#E1FCD2;" align="center" | Intel Core I3-13100 (4x 3.4GHz), Grafikkarte: on board Intel UHD 730  -> 
 |style="background:#E1FCD2;" align="center" | FOLGT
@@ -73,7 +73,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HP07.jpg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 600 G6 MT (HP07)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | HP ProDesk 600 G6 Microtower PC
 |style="background:#E1FCD2;" align="center" | Aufkleber auf der Oberseite"ProDesk 600 G6 MT"
 |style="background:#E1FCD2;" align="center" | Intel Core I3-10100 (4x 3.6GHz)6MB Cache, Grafikkarte: on board Intel UHD 630, VGA, 2xDP, Adapter DP -> HDMI, DVI
 |style="background:#E1FCD2;" align="center" | FOLGT
@@ -192,7 +192,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 400 G6 Desktop Mini (PD07)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | HP ProDesk 400 G6 Desktop Mini PC
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 10-Gen | vorne "PRODESK" aufschrift sieht aus wie Kylo-Ren
 |style="background:#E1FCD2;" align="center" | Intel Core I3-10100T (4 x 3.00GHz/4,80GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -202,7 +202,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HPProDesk400G5Desktop-Mini-PC.jpeg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 400 G5 Desktop Mini (PD06)
-|style="background:#E1FCD2;" |XXXX
+|style="background:#E1FCD2;" |
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 9-Gen | vorne "PRODESK" aufschrift
 |style="background:#E1FCD2;" align="center" | Intel Core I3-9100T (4 x 3,10GHz/3,70GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [FOLGT]

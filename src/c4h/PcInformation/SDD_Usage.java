@@ -18,7 +18,7 @@ public class SDD_Usage {
 	 * Lädt die Festplatten-Datenrate und aktualisiert den Fortschrittsindikator.
 	 */
 
-	public void monitorSDDUsage(ProgressIndicator indicator) {
+	public static void monitorSDDUsage(ProgressIndicator indicator) {
 		indicator.setMinSize(100, 100);
 
 		Task<Void> driveTask = new Task<Void>() {
@@ -43,7 +43,7 @@ public class SDD_Usage {
 	 * 
 	 * @return Die Festplattenaktivität in Prozent
 	 */
-	private double getHardDriveDataRate() {
+	private static double getHardDriveDataRate() {
 		String userHome = System.getProperty("user.home");
 		String drivePath = userHome;
 
@@ -63,5 +63,9 @@ public class SDD_Usage {
 		} catch (Exception e) {
 			return -1;
 		}
+	}
+	public static void close() {
+		// TODO Auto-generated method stub
+		
 	}
 }
