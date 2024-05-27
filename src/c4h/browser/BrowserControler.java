@@ -30,7 +30,7 @@ import javafx.util.Duration;
 
 public class BrowserControler implements Initializable{
 
-	public String URL = "http://fehlermeldung.3s-hamburg.de";
+	public String URL = "https://fehlermeldung.3s-hamburg.de";
 	public pcInformation bg = new pcInformation();
 	@FXML
 	private Button StartViewbutton;
@@ -98,7 +98,7 @@ public class BrowserControler implements Initializable{
 			HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
 
 			// Verbindung zur URL herstellen
-			URL url = new URL("https://141.91.183.36/bwebserver/kiosk/login");
+			URL url = new URL(URL);
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
 
