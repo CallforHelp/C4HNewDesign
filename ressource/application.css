@@ -7,11 +7,11 @@
 	-fx-background-color:#005d99;
 }
 .paneWebKiosk {
-	fx-border-color: #666666; /* Rahmenfarbe */
-	fx-border-width: 3.0px; /* Rahmenbreite */
-	fx-border-radius: 10.0px; /* Rahmenradius */
+	-fx-border-color: #666666; /* Rahmenfarbe */
+	-fx-border-width: 3.0px; /* Rahmenbreite */
+	-fx-border-radius: 10.0px; /* Rahmenradius */
 	-fx-padding: 10.0px; /* Innenabstand */
-	fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0); /* Schatten */
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0); /* Schatten */
 }
 /************************************HOMEBUTON******************************************************/
 
