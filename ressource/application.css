@@ -1,125 +1,109 @@
 /************************************PANE*********************************************************/
 .Anchorpane{
-    -fx-text-fill: white;
-    -fx-font-family: "Arial Narrow";
-    -fx-font-weight: bold;
-    -fx-border-color:#168FC1; 
-    -fx-background-color:#005d99;
+	-fx-text-fill: white;
+	-fx-font-family: "Arial Narrow";
+	-fx-font-weight: bold;
+	-fx-border-color:#168FC1; 
+	fx-background-color:#005d99;
 }
 .paneWebKiosk {
-    -fx-border-color: #666666; /* Rahmenfarbe */
-    -fx-border-width: 3px; /* Rahmenbreite */
-    -fx-border-radius: 10px; /* Rahmenradius */
-    -fx-padding: 10px; /* Innenabstand */
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0); /* Schatten */
+	fx-border-color: #666666; /* Rahmenfarbe */
+	fx-border-width: 3.0px; /* Rahmenbreite */
+	fx-border-radius: 10.0px; /* Rahmenradius */
+	-fx-padding: 10.0px; /* Innenabstand */
+	fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0); /* Schatten */
 }
 /************************************HOMEBUTON******************************************************/
 
 .HomeButton{
-    -fx-background-color:
-            #c3c4c4,
-            linear-gradient(#d6d6d6 50%, white 100%),
-            radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
-    -fx-background-radius: 30;
-    -fx-background-insets: 0,1,1;
-    -fx-text-fill: black;
-    -fx-font-size:15;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+	-fx-background-color:
+		#c3c4c4,
+		linear-gradient(#d6d6d6 50.0%, white 100.0%),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
+	-fx-background-radius: 30.0;
+	-fx-background-insets: 0.0,1.0,1.0;
+	-fx-text-fill: black;
+	-fx-font-size:15.0;
+	-fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 3.0, 0.0 , 0.0 , 1.0 );
 }
-.HomeButton:pressed
-{
-     -fx-padding: 10 15 13 15;
-     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 
+.HomeButton:pressed{
+	-fx-padding: 10.0 15.0 13.0 15.0;
+	-fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0,2.0 0.0 4.0 0.0,2.0 0.0 5.0 0.0;
 }
+
 .HomeButton:hover{
-	
-    -fx-background-color:
-            linear-gradient(#168FC1,#168FC1),
-            radial-gradient(center 50% -40%, radius 200%, #067bc7 30%, #0364a3 50%);
-
-   -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0.0, 0, 1);
-   -fx-text-fill: white;
-   -fx-font-size:20;
-
+	-fx-background-color:
+		linear-gradient(#168FC1,#168FC1),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #067bc7 30.0%, #0364a3 50.0%);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.4), 5.0, 0.0, 0.0, 1.0);
+	-fx-text-fill: white;
+	-fx-font-size:20.0;
 }
+
 /************************************GUIDEBUTON******************************************************/
 .GuideButton{
-    -fx-background-color:
-            #c3c4c4,
-            linear-gradient(#d6d6d6 50%, white 100%),
-            radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
-    -fx-background-radius: 30;
-    -fx-background-insets: 0,1,1;
-    -fx-text-fill: black;
-    -fx-font-size:12;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+	-fx-background-color:
+		#c3c4c4,
+		linear-gradient(#d6d6d6 50.0%, white 100.0%),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
+	-fx-background-radius: 30.0;
+	-fx-background-insets: 0.0,1.0,1.0;
+	-fx-text-fill: black;
+	-fx-font-size:12.0;
+	-fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 3.0, 0.0 , 0.0 , 1.0 );
 }
-.GuideButton:pressed
-{
-     -fx-padding: 10 15 13 15;
-     -fx-background-insets: 2 0 0 0,2 0 3 0,2 0 4 0,2 0 5 0;
 
+.GuideButton:pressed{
+	-fx-padding: 10.0 15.0 13.0 15.0;
+	-fx-background-insets: 2.0 0.0 0.0 0.0,2.0 0.0 3.0 0.0,2.0 0.0 4.0 0.0,2.0 0.0 5.0 0.0;
 }
+
 .GuideButton:hover{
-	
-    -fx-background-color:
-            linear-gradient(#168FC1,#168FC1),
-            radial-gradient(center 50% -40%, radius 200%, #067bc7 30%, #0364a3 60%);
-
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0.0, 0, 1);
-   -fx-text-fill: white;
-   -fx-font-size:15;
-
+	-fx-background-color:
+		linear-gradient(#168FC1,#168FC1),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #067bc7 30.0%, #0364a3 60.0%);
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.4), 5.0, 0.0, 0.0, 1.0);
+	-fx-text-fill: white;
+	-fx-font-size:15.0;
 }
 
 /*************************************LABEL********************************************** */
 .labelStart {
 	-fx-text-fill: #e4ebeb,
-            linear-gradient(#d6d6d6 50%, white 100%),
-            radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
-    -fx-background-color:transparent;
-   
-	-fx-font-size:25;
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 25, 0.0, 0, 15);
+		linear-gradient(#d6d6d6 50.0%, white 100.0%),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
+	-fx-background-color:transparent;
+	-fx-font-size:25.0;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 25.0, 0.0, 0.0, 15.0);
 }
 
 .labelText{
-	-fx-font-size:15;
+	-fx-font-size:15.0;
 	-fx-text-fill:White;
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 25, 0.0, 0, 15);
-	
-	
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.6), 25.0, 0.0, 0.0, 15.0);	
 }
 
 /*************************************LOGO********************************************** */
 .logo{
-    -fx-background-color:
-            #c3c4c4,
-            linear-gradient(#d6d6d6 50%, white 100%),
-            radial-gradient(center 50% -40%, radius 200%, #e6e6e6 45%, rgba(230,230,230,0) 50%);
-    -fx-background-radius: 30;
-    -fx-background-insets: 0,1,1;
-    -fx-text-fill: black;
-    -fx-font-size:15;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 3, 0.0 , 0 , 1 );
+	-fx-background-color:
+		#c3c4c4,
+		linear-gradient(#d6d6d6 50.0%, white 100.0%),
+		radial-gradient(center 50.0% -40.0%, radius 200.0%, #e6e6e6 45.0%, rgba(230.0,230.0,230.0,0.0) 50.0%);
+	-fx-background-radius: 30.0;
+	-fx-background-insets: 0.0,1.0,1.0;
+	-fx-text-fill: black;
+	-fx-font-size:15.0;
+	-fx-effect: dropshadow( three-pass-box , rgba(0.0,0.0,0.0,0.6) , 3.0, 0.0 , 0.0 , 1.0 );
 }
 .web{
 	-fx-background-color: #333333;
-    -fx-border-color: #666666;
-	-fx-border-width: 2px;
-	-fx-border-radius: 10px;
-	-fx-padding: 10px;
-	-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+	-fx-border-color: #666666;
+	-fx-border-width: 2.0px;
+	-fx-border-radius: 10.0px;
+	-fx-padding: 10.0px;
+	-fx-effect: dropshadow(three-pass-box, rgba(0.0,0.0,0.0,0.8), 10.0, 0.0, 0.0, 0.0);
 }
 
-.progress-indicator{
-
-	 
-}
-.progress-indicator > .percentage {
-    
-  
-   
-    
-}
+.progress-indicator{}
+.progress-indicator > .percentage {}
