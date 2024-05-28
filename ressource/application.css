@@ -4,7 +4,7 @@
 	-fx-font-family: "Arial Narrow";
 	-fx-font-weight: bold;
 	-fx-border-color:#168FC1; 
-	fx-background-color:#005d99;
+	-fx-background-color:#005d99;
 }
 .paneWebKiosk {
 	fx-border-color: #666666; /* Rahmenfarbe */
