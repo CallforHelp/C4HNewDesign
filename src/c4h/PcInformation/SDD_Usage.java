@@ -58,10 +58,10 @@ public class SDD_Usage {
 
 				return usagePercent * 100.0;
 			} else {
-				return -1;
+				return 0;
 			}
 		} catch (Exception e) {
-			return -1;
+			return 0;
 		}
 	}
 	public static void close() {
