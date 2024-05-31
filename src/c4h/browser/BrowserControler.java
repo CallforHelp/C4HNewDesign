@@ -35,7 +35,7 @@ public class BrowserControler implements Initializable{
 	@FXML
 	private Button StartViewbutton;
 	@FXML
-	private Parent browserContainer;
+	private AnchorPane browserContainer;
 	@FXML
 	private WebView  browser = new WebView();
 	@FXML
@@ -50,20 +50,38 @@ public class BrowserControler implements Initializable{
 	@FXML
 	private void loadRoot(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-		Scene scene = StartViewbutton.getScene();
-		root.translateYProperty().set(scene.getHeight());
+		Scene currentScene = StartViewbutton.getScene();
+		//browserContainer = (AnchorPane) currentScene.getRoot();
 
-		AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
-		parentContainer.getChildren().add(root);
+		// Initial position of the new root (below the current scene)
+		root.translateYProperty().set(-currentScene.getHeight());
+		browserContainer.getChildren().add(root);
 
-		Timeline timeline = new Timeline();
-		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-		timeline.getKeyFrames().add(kf);
-		timeline.setOnFinished(t -> {
-			parentContainer.getChildren().remove(browserContainer);
+		// Animation to move current scene up
+		Timeline currentSceneTimeline = new Timeline();
+		KeyValue currentSceneKv = new KeyValue(browserContainer.translateYProperty(), currentScene.getHeight(), Interpolator.EASE_IN);
+		KeyFrame currentSceneKf = new KeyFrame(Duration.seconds(1), currentSceneKv);
+		currentSceneTimeline.getKeyFrames().add(currentSceneKf);
+
+		// Animation to move new root up
+		Timeline newRootTimeline = new Timeline();
+		KeyValue newRootKv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+		KeyFrame newRootKf = new KeyFrame(Duration.seconds(1), newRootKv);
+		newRootTimeline.getKeyFrames().add(newRootKf);
+
+		// Start the current scene animation and set up a listener to start the new root animation
+		currentSceneTimeline.setOnFinished(t -> {
+			//newRootTimeline.play();
 		});
-		timeline.play();
+
+		// Remove the old scene after the new scene animation is finished
+		newRootTimeline.setOnFinished(t -> {
+			//browserContainer.getChildren().remove(StartViewbutton); // Remove button if necessary
+			browserContainer.getChildren().remove(browserContainer.lookup("#oldSceneRoot")); // Assume old scene root has this ID
+			browserContainer.setTranslateY(0); // Reset translateY of the parent container
+		});
+
+		currentSceneTimeline.play();
 	}
 
 	@FXML

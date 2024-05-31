@@ -128,19 +128,37 @@ public class KioskControler implements Initializable{
 	@FXML
 	private void loadRoot(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
-		Scene scene = StartViewbutton.getScene();
-		root.translateYProperty().set(scene.getHeight());
+		Scene currentScene = StartViewbutton.getScene();
+		//browserContainer = (AnchorPane) currentScene.getRoot();
 
-		AnchorPane parentContainer = (AnchorPane) StartViewbutton.getScene().getRoot();
-		parentContainer.getChildren().add(root);
+		// Initial position of the new root (below the current scene)
+		root.translateYProperty().set(-currentScene.getHeight());
+		kioskContainer.getChildren().add(root);
 
-		Timeline timeline = new Timeline();
-		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
-		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
-		timeline.getKeyFrames().add(kf);
-		timeline.setOnFinished(t -> {
-			parentContainer.getChildren().remove(kioskContainer);
+		// Animation to move current scene up
+		Timeline currentSceneTimeline = new Timeline();
+		KeyValue currentSceneKv = new KeyValue(kioskContainer.translateYProperty(), currentScene.getHeight(), Interpolator.EASE_IN);
+		KeyFrame currentSceneKf = new KeyFrame(Duration.seconds(1), currentSceneKv);
+		currentSceneTimeline.getKeyFrames().add(currentSceneKf);
+
+		// Animation to move new root up
+		Timeline newRootTimeline = new Timeline();
+		KeyValue newRootKv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
+		KeyFrame newRootKf = new KeyFrame(Duration.seconds(1), newRootKv);
+		newRootTimeline.getKeyFrames().add(newRootKf);
+
+		// Start the current scene animation and set up a listener to start the new root animation
+		currentSceneTimeline.setOnFinished(t -> {
+			//newRootTimeline.play();
 		});
-		timeline.play();
+
+		// Remove the old scene after the new scene animation is finished
+		newRootTimeline.setOnFinished(t -> {
+			//browserContainer.getChildren().remove(StartViewbutton); // Remove button if necessary
+			kioskContainer.getChildren().remove(kioskContainer.lookup("#oldSceneRoot")); // Assume old scene root has this ID
+			kioskContainer.setTranslateY(0); // Reset translateY of the parent container
+		});
+
+		currentSceneTimeline.play();
 	}
 }
