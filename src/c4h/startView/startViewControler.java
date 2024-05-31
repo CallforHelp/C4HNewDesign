@@ -44,7 +44,7 @@ public class startViewControler implements Initializable {
 	@FXML
 	private Button buttonSupporter;
 	@FXML
-	private AnchorPane parentContainer;
+	private AnchorPane startviewContainer;
 	@FXML
 	private String cssPath = "/application.css";
 
@@ -112,14 +112,14 @@ public class startViewControler implements Initializable {
 		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 		root.translateYProperty().set(scene.getHeight());
-		parentContainer.getChildren().add(root);
+		startviewContainer.getChildren().add(root);
 
 		Timeline timeline = new Timeline();
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
 
-		timeline.setOnFinished(t -> parentContainer.getChildren());
+		timeline.setOnFinished(t -> startviewContainer.getChildren());
 		timeline.play();
 	}
 
@@ -131,7 +131,7 @@ public class startViewControler implements Initializable {
 	 */
 	@FXML
 	private void pcInformation(ActionEvent event) throws IOException {
-		if (pcInformationView == null) {
+		//if (pcInformationView == null) {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/c4h/PcInformation/PcInformation.fxml"));
 			pcInformationView = loader.load();
 
@@ -139,7 +139,7 @@ public class startViewControler implements Initializable {
 			scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 			pcInformationView.translateYProperty().set(scene.getHeight());
-			parentContainer.getChildren().add(pcInformationView);
+			startviewContainer.getChildren().add(pcInformationView);
 
 			Stage stage = (Stage) scene.getWindow();
 			stage.sceneProperty().addListener((observable, oldScene, newScene) -> {
@@ -153,11 +153,11 @@ public class startViewControler implements Initializable {
 			KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 			timeline.getKeyFrames().add(kf);
 
-			timeline.setOnFinished(t -> parentContainer.getChildren());
+			timeline.setOnFinished(t -> startviewContainer.getChildren());
 			timeline.play();
-		} else {
-			parentContainer.getChildren().add(pcInformationView);
-		}
+		//} else {
+			//startviewContainer.getChildren().add(pcInformationView);
+		//}
 	}
 
 	/**
@@ -173,14 +173,14 @@ public class startViewControler implements Initializable {
 		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 
 		root.translateYProperty().set(scene.getHeight());
-		parentContainer.getChildren().add(root);
+		startviewContainer.getChildren().add(root);
 
 		Timeline timeline = new Timeline();
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
 
-		timeline.setOnFinished(t -> parentContainer.getChildren());
+		timeline.setOnFinished(t -> startviewContainer.getChildren());
 		timeline.play();
 	}
 
@@ -197,13 +197,13 @@ public class startViewControler implements Initializable {
 		scene.getStylesheets().add(getClass().getResource(cssPath).toExternalForm());
 		root.translateYProperty().set(scene.getHeight());
 
-		parentContainer.getChildren().add(root);
+		startviewContainer.getChildren().add(root);
 
 		Timeline timeline = new Timeline();
 		KeyValue kv = new KeyValue(root.translateYProperty(), 0, Interpolator.EASE_IN);
 		KeyFrame kf = new KeyFrame(Duration.seconds(1), kv);
 		timeline.getKeyFrames().add(kf);
-		timeline.setOnFinished(t -> parentContainer.getChildren());
+		timeline.setOnFinished(t -> startviewContainer.getChildren());
 		timeline.play();
 	}
 }
