@@ -213,7 +213,8 @@ public class pcInformation {
 				// Überprüfe, ob die dritte Zeile erreicht ist
 				if (lineCount == 3) {
 					// Gib die dritte Zeile aus
-					//Modell="ED04";
+					//Modell="PD08";
+					System.out.println("ausgelesenes Modell: "+Modell);
 					return Modell;
 				}
 			}

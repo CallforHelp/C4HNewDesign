@@ -30,7 +30,7 @@ import javafx.util.Duration;
 
 public class BrowserControler implements Initializable{
 
-	public String URL = "https://fehlermeldung.3s-hamburg.de";
+	public String URL = "https://fehlermeldung.3s-hamburg.de/betrieb/";
 	public pcInformation bg = new pcInformation();
 	@FXML
 	private Button StartViewbutton;
