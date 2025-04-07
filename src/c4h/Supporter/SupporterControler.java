@@ -41,8 +41,7 @@ import javafx.util.Duration;
 
 public class SupporterControler implements Initializable {
 
-	//public String URL = "https://fehlermeldung.3s-hamburg.de/mitarbeiter/";
-	public String URL = "https://www.google.de";
+	public String URL ="https://fehlermeldung.3s-hamburg.de/mitarbeiter/";
 	@FXML
 	private AnchorPane supporterContainer;
 	@FXML
@@ -65,6 +64,7 @@ public class SupporterControler implements Initializable {
 		// TODO Auto-generated method stub
 		System.out.println("SupportControler");
 		//LogoImage();
+		loadBrowser();
 	}
 	/**
 	 * Setzt das Bild für das ImageView.
@@ -122,7 +122,6 @@ public class SupporterControler implements Initializable {
 				parentContainer.getChildren().remove(supporterContainer);
 			});
 			timeline.play();
-			loadBrowser();
 		} else {
 			// Passwort ist falsch
 			Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -148,7 +147,6 @@ public class SupporterControler implements Initializable {
 	private void loadRoot(ActionEvent event) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("/c4h/startView/StartView.fxml"));
 		Scene currentScene = StartViewbutton.getScene();
-		//browserContainer = (AnchorPane) currentScene.getRoot();
 
 		// Initial position of the new root (below the current scene)
 		root.translateYProperty().set(-currentScene.getHeight());
@@ -185,33 +183,33 @@ public class SupporterControler implements Initializable {
 		System.out.println("browserstart");
 
 		try {
-			// TrustManager-Array initialisieren, um das Serverzertifikat zu überprüfen
+			// TrustManager-Array initialisieren, um das Serverzertifikat zuüberprüfen
 			TrustManager[] trustAllCerts = new TrustManager[]{
 					new X509TrustManager() {
-						public X509Certificate[] getAcceptedIssuers() {
+						public X509Certificate[] getAcceptedIssuers(){
 							return null;
 						}
 
 						public void checkClientTrusted(X509Certificate[] certs, String authType) {}
 
 						public void checkServerTrusted(X509Certificate[] certs, String authType) throws CertificateException {
-							for (@SuppressWarnings("unused") X509Certificate cert : certs) {
-								// Hier können Sie die Zertifikatsprüfung anpassen, z. B. Überprüfung des Ausstellers, Gültigkeitszeitraums usw.
-								// Beispiel: cert.getIssuerDN().getName() für den Aussteller
-								// Beispiel: cert.getNotAfter() für das Ablaufdatum
+							for (@SuppressWarnings("unused") X509Certificate cert : certs) { 
+								// Hier können Sie die Zertifikatsprüfung anpassen, z. B.Überprüfung des Ausstellers, Gültigkeitszeitraums usw. 
+								// Beispiel: cert.getIssuerDN().getName() für den Aussteller 
+								// Beispiel:cert.getNotAfter() für das Ablaufdatum 
 							}
 						}
 					}
 			};
 
-			// SSL-Kontext initialisieren
-			SSLContext sslContext = SSLContext.getInstance("TLS");
-			sslContext.init(null, trustAllCerts, new java.security.SecureRandom());
+			// SSL-Kontext initialisieren 
+			SSLContext sslContext = SSLContext.getInstance("TLS"); sslContext.init(null, trustAllCerts, new
+					java.security.SecureRandom());
 
 			// SSL-Socket-Fabrik initialisieren
 			HttpsURLConnection.setDefaultSSLSocketFactory(sslContext.getSocketFactory());
 
-			// Verbindung zur URL herstellen
+			// Verbindung zur URL herstellen 
 			URL url = new URL(URL);
 			HttpsURLConnection connection = (HttpsURLConnection) url.openConnection();
 			connection.setRequestMethod("GET");
@@ -219,7 +217,7 @@ public class SupporterControler implements Initializable {
 			// Antwortcode abrufen
 			int responseCode = connection.getResponseCode();
 			System.out.println("Response Code: " + responseCode);
-			connection.disconnect();
+			connection.disconnect(); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -232,32 +230,32 @@ public class SupporterControler implements Initializable {
 
 		// Fehlerbehandlung für WebView hinzufügen
 		webkit.setOnError(event -> {
-			System.out.println("Fehler beim Laden der Seite: " + event.getMessage());
+			System.out.println("Fehler beim Laden der Seite: "+ event.getMessage());
 		});
 
 		String userDataDirectory=System.getProperty("user.home") + File.separator + "AppData" + File.separator + "Roaming"+"\\c4h.MainC4H\\webview";
 		System.out.println(userDataDirectory);
-		System.setProperty("user.home", userDataDirectory);
+		System.setProperty("user.home",userDataDirectory);
 
 		// Ereignis zum Überwachen des Ladezustands der WebEngine
-		webkit.getLoadWorker().stateProperty().addListener((observable, oldValue, newValue) -> {
+		webkit.getLoadWorker().stateProperty().addListener((observable, oldValue,newValue) -> {
 			if (newValue == Worker.State.SUCCEEDED) {
-				// Wenn die Seite geladen ist, Lazy-Loading von Bildern implementieren
+				// Wenn die Seite geladen ist, Lazy-Loading von Bildern implementieren 
 				webkit.executeScript(
-						"var lazyImages = document.querySelectorAll('img[data-src]');" +
-								"lazyImages.forEach(function(img) {" +
-								"  img.setAttribute('src', img.getAttribute('data-src'));" +
-								"  img.onload = function() {" +
-								"    img.removeAttribute('data-src');" +
-								"  };" +
-								"});"
-						);
+						"var lazyImages = document.querySelectorAll('img[data-src]');"+ "" +
+						"lazyImages.forEach(function(img) {"+
+						"img.setAttribute('src', img.getAttribute('data-src'));"+
+						"img.onload = function() {" +
+						"img.removeAttribute('data-src');" +
+						"};"+
+						"});"
+				);
 
 				System.out.println("Webseite erfolgreich geladen.");
-			} else if (newValue == Worker.State.FAILED) {
-				System.out.println("Fehler beim Laden der Webseite.");
-			}
-		});
+				} else if (newValue == Worker.State.FAILED){
+					System.out.println("Fehler beim Laden der Webseite.");
+				}
+			});
 
 		// Laden der URL in den WebView
 		try {
