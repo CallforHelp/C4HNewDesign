@@ -38,6 +38,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | -
 |style="background:#E1FCD2;" align="center" | verkauft von xx/20xx
 |style="background:#E1FCD2;" align="center" | Anleitung Zertifikatinstallation WLAN-SG [[https://wiki.3s-desk.de/mediawiki/index.php?title=Linux-Projekt/RootCA#Anleitung:_WLAN-SG_Zertifikatinstallation_Smartboard_MX075-V2]]
+|style="background:#E1FCD2;" align="center" | -
 |-
 |[[Datei:CTouch.jpeg|100px|center]]
 |style="background:#E1FCD2;" | CTouch Riva
@@ -45,6 +46,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | -
 |style="background:#E1FCD2;" align="center" | verkauft von xx/20xx
 |style="background:#E1FCD2;" align="center" | Anleitung Zertifikatinstallation WLAN-SG [[https://wiki.3s-desk.de/mediawiki/index.php?title=Linux-Projekt/RootCA#Anleitung:_WLAN-SG_Zertifikatinstallation_CTouch_Riva]]
+|style="background:#E1FCD2;" align="center" | -
 |}
 
 = Desktop PC's=
@@ -63,20 +65,20 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HP09.png|100px|center]]
 |style="background:#E1FCD2;" | HP Elite Tower 600 G9 (HP09)
-|style="background:#E1FCD2;" | XXXX
+|style="background:#E1FCD2;" | HP Elite Tower 600 G9 Desktop PC
 |style="background:#E1FCD2;" align="center" | Aufkleber Unten "Elite Tower 600 G9", i3 13-Gen 
 |style="background:#E1FCD2;" align="center" | Intel Core I3-13100 (4x 3.4GHz), Grafikkarte: on board Intel UHD 730  -> 
-|style="background:#E1FCD2;" align="center" | FOLGT
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
 |style="background:#E1FCD2;" align="center" | verkauft ab 02/2024
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2030
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:HP07.jpg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 600 G6 MT (HP07)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | HP ProDesk 600 G6 Microtower PC
 |style="background:#E1FCD2;" align="center" | Aufkleber auf der Oberseite"ProDesk 600 G6 MT"
 |style="background:#E1FCD2;" align="center" | Intel Core I3-10100 (4x 3.6GHz)6MB Cache, Grafikkarte: on board Intel UHD 630, VGA, 2xDP, Adapter DP -> HDMI, DVI
-|style="background:#E1FCD2;" align="center" | FOLGT
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
 |style="background:#E1FCD2;" align="center" | verkauft ab 03/2023
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2028
 |style="background:#E1FCD2;" align="center" | ja
@@ -86,30 +88,30 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" |
 |style="background:#E1FCD2;" align="center" | Aufkleber auf der Oberseite"ProDesk 600 G5 MT", i3 9-Gen auf der Vorderseite und W-LAN Adapter hinten links
 |style="background:#E1FCD2;" align="center" | Intel Core I3-9100 (4x 3.6GHz), Grafikkarte: on board Intel UHD 630, VGA, DP, Adapter DP -> HDMI, DVI
-|style="background:#E1FCD2;" align="center" | FOLGT
+|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
 |style="background:#E1FCD2;" align="center" | verkauft bis 07/2021
 |style="background:#E1FCD2;" align="center" | im Support bis 12/26
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:HP04.jpg|100px|center]]
-|style="background:#E1FCD2;" | HP ProDesk 600 G5 MT (HP06)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" | Aufkleber auf der Oberseite"ProDesk 600 G5 MT" und i3 9-Gen auf der Vorderseite 
-|style="background:#E1FCD2;" align="center" | Intel Core I3-9100 (4x 3.6GHz), Grafikkarte: on board Intel UHD 630, VGA, DP, Adapter DP -> HDMI, DVI
-|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" | verkauft bis 11/2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#E1FCD2;" align="center" | ja
+|style="background:#FFF8DC;" | HP ProDesk 600 G5 MT (HP06)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" | Aufkleber auf der Oberseite"ProDesk 600 G5 MT" und i3 9-Gen auf der Vorderseite 
+|style="background:#FFF8DC;" align="center" | Intel Core I3-9100 (4x 3.6GHz), Grafikkarte: on board Intel UHD 630, VGA, DP, Adapter DP -> HDMI, DVI
+|style="background:#FFF8DC;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" | verkauft bis 11/2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | ja
 |-
 |[[Datei:HP04.jpg|100px|center]]
-|style="background:#E1FCD2;" | HP ProDesk 600 G4 MT (HP05)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" | Silberner Rand auf der Vorderseite
-|style="background:#E1FCD2;" align="center" | Intel Core I3-8100 (4x 3.9GHz), Grafikkarte: on board Intel UHD 630, VGA, DP, Adapter DP -> HDMI, DVI
-|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" | verkauft bis 02/2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#E1FCD2;" align="center" | ja
+|style="background:#FFF8DC;" | HP ProDesk 600 G4 MT (HP05)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" | Silberner Rand auf der Vorderseite
+|style="background:#FFF8DC;" align="center" | Intel Core I3-8100 (4x 3.9GHz), Grafikkarte: on board Intel UHD 630, VGA, DP, Adapter DP -> HDMI, DVI
+|style="background:#FFF8DC;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" | verkauft bis 02/2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | ja
 |-
 |[[Datei:HP04.jpg|100px|center]]
 |style="background:#FDCBC2;" | HP ProDesk 600 G3 MT (HP04)
@@ -192,7 +194,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HPProDesk400G6Desktop-Mini-PC.jpeg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 400 G6 Desktop Mini (PD07)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | HP ProDesk 400 G6 Desktop Mini PC
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 10-Gen | vorne "PRODESK" aufschrift sieht aus wie Kylo-Ren
 |style="background:#E1FCD2;" align="center" | Intel Core I3-10100T (4 x 3.00GHz/4,80GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -202,7 +204,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:HPProDesk400G5Desktop-Mini-PC.jpeg|100px|center]]
 |style="background:#E1FCD2;" | HP ProDesk 400 G5 Desktop Mini (PD06)
-|style="background:#E1FCD2;" |XXXX
+|style="background:#E1FCD2;" |
 |style="background:#E1FCD2;" align="center" | Aufkleber mit i3 9-Gen | vorne "PRODESK" aufschrift
 |style="background:#E1FCD2;" align="center" | Intel Core I3-9100T (4 x 3,10GHz/3,70GHz) Anschlüsse: 2 x DP 
 |style="background:#E1FCD2;" align="center" | [FOLGT]
@@ -211,18 +213,18 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
-|style="background:#E1FCD2;" | HP EliteDesk 800 G5 Desktop Mini (ED05)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" | Aufkelber mit i3 9-Gen
-|style="background:#E1FCD2;" align="center" | Intel Core I3-9100 (4 x 3,60GHz) Anschlüsse: 2 x DP, 1 x HDMI 
-|style="background:#E1FCD2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" | verkauft bis 11/2019
-|style="background:#E1FCD2;" align="center" | im Support bis ca. 12/2024
-|style="background:#E1FCD2;" align="center" | ja
+|style="background:#FFF8DC;" | HP EliteDesk 800 G5 Desktop Mini (ED05)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" | Aufkelber mit i3 9-Gen
+|style="background:#FFF8DC;" align="center" | Intel Core I3-9100 (4 x 3,60GHz) Anschlüsse: 2 x DP, 1 x HDMI 
+|style="background:#FFF8DC;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" | verkauft bis 11/2019
+|style="background:#FFF8DC;" align="center" | im Support bis ca. 12/2024
+|style="background:#FFF8DC;" align="center" | ja
 |-
 |[[Datei:H800G3.png|100px|center]]
 |style="background:#FDCBC2;" |HP EliteDesk 800 G4 Desktop Mini (ED04)
-|style="background:#FDCBC2;" |
+|style="background:#FDCBC2;" |HP EliteDesk 800 G4 DM 65W
 |style="background:#FDCBC2;" align="center" | Silberner Rand auf der Vorderseite
 |style="background:#FDCBC2;" align="center" | Intel Core I3-8100 (4 x 3.1GHz) Anschlüsse: 2 x DP, 1 x HDMI 
 |style="background:#FDCBC2;" align="center" | [https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Desktop-PC%C2%B4s&fileid=1939 Windows 10 Treiber]
@@ -285,6 +287,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |-
 |style="background:#E1FCD2;" align="center" | verkauft bis 05/2023
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2028
+|style="background:#E1FCD2;" align="center" |
 
 |-
 |[[Datei:IPad32.jpg|100px|center]]
@@ -296,6 +299,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |-
 |style="background:#E1FCD2;" align="center" | verkauft bis 10/2021
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2026
+|style="background:#E1FCD2;" align="center" |
 
 |-
 |[[Datei:IPad32.jpg|100px|center]]
@@ -307,6 +311,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |-
 |style="background:#E1FCD2;" align="center" | verkauft bis 07/2020
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2025
+|style="background:#E1FCD2;" align="center" |
 
 
 
@@ -343,19 +348,19 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |-
 |style="background:#E1FCD2;" align="center" | verkauft bis 01/2020
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2025
-|style="background:#FDCBC2;" align="center" | nein
+|style="background:#E1FCD2;" align="center" | nein
 |-
 
 |-
 |[[Datei:HP-x2-210-G2.jpg|100px|center]]
-|style="background:#E1FCD2;" |HP-X2-210-G2 (HPX2)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" |Lautsprecher an den Seiten des Displays
-|style="background:#E1FCD2;" align="center" |Intel Atom x5 Z8350 / 1.44 - 1,92 GHz 
-|style="background:#E1FCD2;" align="center" |-
-|style="background:#E1FCD2;" align="center" | verkauft bis 2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#FDCBC2;" align="center" | nein
+|style="background:#FFF8DC;" |HP-X2-210-G2 (HPX2)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" |Lautsprecher an den Seiten des Displays
+|style="background:#FFF8DC;" align="center" |Intel Atom x5 Z8350 / 1.44 - 1,92 GHz 
+|style="background:#FFF8DC;" align="center" |-
+|style="background:#FFF8DC;" align="center" | verkauft bis 2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | nein
 |-
 
 |[[Datei:80XF.png|100px|center]]
@@ -386,6 +391,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#FDCBC2;" align="center" |-
 |style="background:#FDCBC2;" align="center" |verkauft bis 01/2016
 |style="background:#FDCBC2;" align="center" | im Support bis 12/2021
+|style="background:#FDCBC2;" align="center" |
 |-
 |[[Datei:1070.jpg|100px|center]]
 |style="background:#FDCBC2;" |Lenovo TAB 2 A10-70 (LenA70)
@@ -395,6 +401,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#FDCBC2;" align="center" |-
 |style="background:#FDCBC2;" align="center" |verkauft bis 01/2016
 |style="background:#FDCBC2;" align="center" | im Support bis 12/2021
+|style="background:#FDCBC2;" align="center" |
 |-
 |[[Datei:Q555.jpg|100px|center]]
 |style="background:#FDCBC2;" |STYLISTIC Q555 - Fujitsu (Q555)
@@ -403,6 +410,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#FDCBC2;" align="center" |
 |style="background:#FDCBC2;" align="center" |-
 |style="background:#FDCBC2;" align="center" |nur Mustergerät!
+|style="background:#FDCBC2;" align="center" |
 |style="background:#FDCBC2;" align="center" |
 |-
 
@@ -423,8 +431,8 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 ! width="350" style="background:#FFDEAD" | Win11 Kompatibilität
 |-
 |[[Datei:Lenovo_thinkbook_4aba.jpg|100px|center]]
-|style="background:#E1FCD2;" |Lenovo Thinkbook 4 21DL (15") (LE04)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" |Lenovo ThinkBook 15 G4 ABA (21DL) (15") (LE04)
+|style="background:#E1FCD2;" |21DL
 |style="background:#E1FCD2;" align="center" | ----
 |style="background:#E1FCD2;" align="center" |AMD Ryzen 3 5425U, 8Gb Ram, 256GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -454,7 +462,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:delllatitude_5320.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Latitude 5320 (13") (D532)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" |Latitude 5320
 |style="background:#E1FCD2;" align="center" | Gehäusefarbe: silber, Tastatur dunkelgrau. Aufschrift Latitude 5320 auf Unterseite.
 |style="background:#E1FCD2;" align="center" |Intel 11th Gen i3-1125G4 4C/8T @ 2Ghz baseclock (bis zu 3,7Ghz Turboboost), 8Gb Ram, 240GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -464,7 +472,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:dell3510.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Vostro 3510 (15") (DV35)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | Vostro 15 3510
 |style="background:#E1FCD2;" align="center" | ----
 |style="background:#E1FCD2;" align="center" |Intel 11th Gen i5-1135G7, 8Gb Ram, 256GB SSD
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -484,7 +492,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:dell3510.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Latitude 3510 (D351)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | Latitude 3510
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 10th Gen Core i5-10210U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -494,7 +502,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:dell5310.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Latitude 5310 (D531)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | Latitude 5310
 |style="background:#E1FCD2;" align="center" |
 |style="background:#E1FCD2;" align="center" |Intel 10th Gen Core i5-10210U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -510,6 +518,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |
 |style="background:#E1FCD2;" align="center" |verkauft bis 10.2022
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2027
+|style="background:#E1FCD2;" align="center" |
 |-
 |[[Datei:MacBookAir2019.jpg|100px|center]]
 |style="background:#E1FCD2;" |MacBook Air 2019 (MB19)
@@ -519,10 +528,11 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" |
 |style="background:#E1FCD2;" align="center" |verkauft bis 01.2020
 |style="background:#E1FCD2;" align="center" | im Support bis 12/2025
+|style="background:#E1FCD2;" align="center" |
 |-
 |[[Datei:Dell3500.png|100px|center]]
 |style="background:#E1FCD2;" |Dell Latitude 3500 (DE35)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | Latitude 3500
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 8th Gen Core i5-8265U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -532,7 +542,7 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |-
 |[[Datei:Dell5300.jpg|100px|center]]
 |style="background:#E1FCD2;" |Dell Latitude 5300 (DE53)
-|style="background:#E1FCD2;" |
+|style="background:#E1FCD2;" | Latitude 5300
 |style="background:#E1FCD2;" align="center" | 
 |style="background:#E1FCD2;" align="center" |Intel 8th Gen Core i5-8265U
 |style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
@@ -541,34 +551,34 @@ Link zum alten Server: https://apt-3s.informatik.uni-hamburg.de/downloads/
 |style="background:#E1FCD2;" align="center" | ja
 |-
 |[[Datei:HP840G5.png|100px|center]]
-|style="background:#E1FCD2;" |HP Elitebook 840 G5 (84G5)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" |
-|style="background:#E1FCD2;" align="center" |Intel Core i5-8250U (6 MB, 1,6 GHz, bis zu 3,4 GHz)
-|style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" |verkauft bis 02.2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#E1FCD2;" align="center" | ja
+|style="background:#FFF8DC;" |HP Elitebook 840 G5 (84G5)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" |
+|style="background:#FFF8DC;" align="center" |Intel Core i5-8250U (6 MB, 1,6 GHz, bis zu 3,4 GHz)
+|style="background:#FFF8DC;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" |verkauft bis 02.2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | ja
 |-
 |[[Datei:Fujitsu_Lifebook_A357.png|100px|center]]
-|style="background:#E1FCD2;" |Fujitsu Lifebook A 357 (A357)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" |
-|style="background:#E1FCD2;" align="center" |Intel® Core™ i5-7200U-Prozessor (3 MB, 2.5 GHz, bis zu 3,1 GHz)
-|style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" |verkauft bis 03.2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#FDCBC2;" align="center" | nein
+|style="background:#FFF8DC;" |Fujitsu Lifebook A 357 (A357)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" |
+|style="background:#FFF8DC;" align="center" |Intel® Core™ i5-7200U-Prozessor (3 MB, 2.5 GHz, bis zu 3,1 GHz)
+|style="background:#FFF8DC;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" |verkauft bis 03.2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | nein
 |-
 |[[Datei:HP470G5.jpg|100px|center]]
-|style="background:#E1FCD2;" |HP ProBook 470 G5 (47G5)
-|style="background:#E1FCD2;" |
-|style="background:#E1FCD2;" align="center" |
-|style="background:#E1FCD2;" align="center" |Intel® Core™ i7-8550U-Prozessor (3 MB, 2.5 GHz, bis zu 3,1 GHz)
-|style="background:#E1FCD2;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
-|style="background:#E1FCD2;" align="center" |verkauft bis 12.2019
-|style="background:#E1FCD2;" align="center" | im Support bis 12/2024
-|style="background:#E1FCD2;" align="center" | ja
+|style="background:#FFF8DC;" |HP ProBook 470 G5 (47G5)
+|style="background:#FFF8DC;" |
+|style="background:#FFF8DC;" align="center" |
+|style="background:#FFF8DC;" align="center" |Intel® Core™ i7-8550U-Prozessor (3 MB, 2.5 GHz, bis zu 3,1 GHz)
+|style="background:#FFF8DC;" align="center" |[https://cloud.3s-data.de/index.php/apps/files/?dir=/Windows-Projekt/Treiber/Ausschreibungshardware/DISM-Treiber/Windows%2010/Notebooks&fileid=1940 Windows 10 Treiber]
+|style="background:#FFF8DC;" align="center" |verkauft bis 12.2019
+|style="background:#FFF8DC;" align="center" | im Support bis 12/2024
+|style="background:#FFF8DC;" align="center" | ja
 |-
 |[[Datei:Fujitsu_Lifebook_E557.jpg|100px|center]]
 |style="background:#FDCBC2;" |Fujitsu Lifebook E 557 (E557)

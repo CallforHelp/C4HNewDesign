@@ -8,154 +8,350 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="Container" fx:id="PcInfoContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1050.0" snapToPixel="true" styleClass="Anchorpane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="c4h.PcInformation.PcInformationControler">
-  <children>
-    <Pane prefHeight="695.0" prefWidth="1000.0" snapToPixel="true" styleClass="labelText" visible="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
-      <children>
-        <StackPane layoutX="210.0" layoutY="604.0" prefHeight="83.0" prefWidth="568.0">
-          <children>
-            <ImageView fx:id="imageLogo" fitHeight="78.60942811440681" fitWidth="481.99993896484375" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
-          </children>
-        </StackPane>
-        <HBox id="HBox" alignment="CENTER" layoutX="35.0" layoutY="25.0" spacing="10.0">
-          <children>
-            <VBox id="VBox" alignment="TOP_LEFT" prefHeight="270.0" prefWidth="400.0" spacing="5.0">
-              <children>
-                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="SystemInformation" textFill="BLACK" />
-                <GridPane id="grid" fx:id="gridSystemInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="228.0" prefWidth="383.0" styleClass="labelText" vgap="0.0" visible="true">
-                  <children>
-                    <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="Hostname:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="SchulNummer:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="MusterImage:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <Label prefHeight="54.0" prefWidth="144.0" text="" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <Label fx:id="Schuldomain" prefHeight="40.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <Label id="" fx:id="HostNameLabel" prefHeight="38.0" prefWidth="280.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <Label id="" fx:id="SchulNummer" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                    <Label fx:id="MusterImage" maxWidth="-Infinity" prefHeight="40.0" prefWidth="210.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Schuldomain:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Seriennummer:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <Label id="Schuldomain" fx:id="Seriennummer" prefHeight="40.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  </children>
-                  <columnConstraints>
-                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="120.0" />
-                    <ColumnConstraints hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="270.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                  </rowConstraints>
-                </GridPane>
-              </children>
-            </VBox>
-            <VBox id="VBox" alignment="TOP_LEFT" prefHeight="270.0" prefWidth="350.0" spacing="5.0">
-              <children>
-                <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="Supportinformation" textFill="BLACK" />
-                <GridPane fx:id="gridSupportkInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" hgap="0.0" mouseTransparent="false" prefHeight="230.0" prefWidth="353.0" styleClass="labelText" vgap="0.0" visible="true">
-                  <children>
-                    <Label prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="RechnerTyp:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                    <Label prefHeight="52.0" prefWidth="166.0" styleClass="labelText" text="Kaufdatum:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                    <Label fx:id="rechnerTyp" prefHeight="37.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                    <Label id="supportEnde" fx:id="kaufdatum" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Windows 11:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <Label id="Seriennummer" fx:id="win11komp" prefHeight="52.0" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Herstellert:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                    <Label prefHeight="52.0" prefWidth="164.0" styleClass="labelText" text="Supportdauer:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <Label id="kaufdateum" fx:id="supportEnde" prefHeight="43.0001220703125" prefWidth="208.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                    <Label id="Seriennummer" fx:id="hersteller" prefHeight="52.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  </children>
-                  <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="120.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="210.0" />
-                  </columnConstraints>
-                  <rowConstraints>
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                    <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                  </rowConstraints>
-                </GridPane>
-              </children>
-            </VBox>
-          </children>
-        </HBox>
-        <VBox id="VBox" alignment="TOP_LEFT" layoutX="35.0" layoutY="320.0" prefHeight="270.0" prefWidth="350.0" spacing="5.0">
-          <children>
-            <Label alignment="TOP_LEFT" contentDisplay="LEFT" maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0" styleClass="labelStart" text="Netzwerkinformation" textFill="BLACK" />
-            <GridPane fx:id="gridNetzwerkInformation" alignment="CENTER_LEFT" cache="false" disable="false" focusTraversable="false" gridLinesVisible="false" mouseTransparent="false" prefHeight="230.0" prefWidth="350.0" styleClass="labelText" visible="true">
-              <children>
-                <Label alignment="CENTER_LEFT" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="IP:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Ethernet-MAC:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Wlan-SSID:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Wlan-MAC:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Gateway:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                <Label prefHeight="54.0" prefWidth="144.0" styleClass="labelText" text="Schulrouter:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                <Label fx:id="IP" prefHeight="38.0" prefWidth="256.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                <Label fx:id="LanMAC" prefHeight="43.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                <Label fx:id="wlanSsID" prefHeight="43.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                <Label fx:id="wlanMAC" prefHeight="43.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <Label fx:id="Gateway" prefHeight="44.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                <Label fx:id="TFKIP" prefHeight="44.0" prefWidth="213.0" styleClass="labelText" text="" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-              </children>
-              <columnConstraints>
-                <ColumnConstraints fillWidth="true" halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="120.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0" prefWidth="210.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
-                <RowConstraints maxHeight="-Infinity" minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-          </children>
-        </VBox>
-        <VBox id="VBox" alignment="CENTER_LEFT" layoutX="487.0" layoutY="362.0" prefHeight="210.8046875" prefWidth="465.0" spacing="20.0">
-          <children>
-            <Label alignment="CENTER_LEFT" contentDisplay="CENTER" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
-            <HBox id="HBox" alignment="CENTER" prefHeight="162.8046875" prefWidth="600.0" spacing="5.0">
-              <children>
-                <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
-                  <children>
-                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="45.0" prefWidth="120.0" styleClass="labelText" text="RAM" textAlignment="CENTER" />
-                    <ProgressIndicator id="indictor2" fx:id="indictor" minHeight="100.0" minWidth="100.0" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" progress="0.0" />
-                  </children>
-                </VBox>
-                <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
-                  <children>
-                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="120.0" styleClass="labelText" text="CPU" textAlignment="CENTER" />
-                    <ProgressIndicator id="indictor" fx:id="indictor2" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
-                  </children>
-                </VBox>
-                <VBox id="VBox" alignment="CENTER" prefWidth="150.0" spacing="5.0">
-                  <children>
-                    <Label alignment="CENTER" prefHeight="45.0" prefWidth="100.0" styleClass="labelText" text="HDD/SSD" textAlignment="CENTER" />
-                    <ProgressIndicator id="indictor" fx:id="indictor3" disable="false" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" progress="0.0" visible="true" />
-                  </children>
-                </VBox>
-              </children>
-            </HBox>
-          </children>
-        </VBox>
-        <VBox id="VBox" alignment="CENTER" layoutX="785.0" layoutY="30.0" prefHeight="250.0" prefWidth="189.0" spacing="5.0">
-          <children>
-            <ImageView fx:id="image" fitHeight="245.0" fitWidth="139.64999289703405" pickOnBounds="true" preserveRatio="true" styleClass="logo" />
-          </children>
-        </VBox>
-      </children>
-    </Pane>
-    <HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0" spacing="5.0" styleClass="labelStart" AnchorPane.leftAnchor="571.0" AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
-      <children>
-        <Button id="" fx:id="StartViewbutton" focusTraversable="false" minHeight="-1.0" mnemonicParsing="false" onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Startseite" />
-        <Button id="" fx:id="screenShot" minHeight="-1.0" mnemonicParsing="false" onAction="#screenShot" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Screenshot" />
-        <Button id="" fx:id="support" minHeight="-1.0" mnemonicParsing="false" onAction="#loadBrowser" prefHeight="40.0" prefWidth="100.0" styleClass="GuideButton" text="Support" />
-      </children>
-    </HBox>
-    <Label alignment="CENTER_LEFT" contentDisplay="CENTER" layoutY="8.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0" styleClass="labelStart" text="PC-Information" textFill="BLACK" AnchorPane.leftAnchor="5.0" />
-  </children>
+<AnchorPane id="Container" fx:id="PcInfoContainer"
+	maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0"
+	prefWidth="1050.0" snapToPixel="true" styleClass="Anchorpane"
+	xmlns:fx="http://javafx.com/fxml/1"
+	xmlns="http://javafx.com/javafx/2.2"
+	fx:controller="c4h.PcInformation.PcInformationControler">
+	<children>
+		<Pane prefHeight="695.0" prefWidth="1000.0" snapToPixel="true"
+			styleClass="labelText" visible="true" AnchorPane.bottomAnchor="5.0"
+			AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+			<children>
+				<StackPane layoutX="210.0" layoutY="604.0"
+					prefHeight="83.0" prefWidth="568.0">
+					<children>
+						<ImageView fx:id="imageLogo"
+							fitHeight="78.60942811440681" fitWidth="481.99993896484375"
+							pickOnBounds="true" preserveRatio="true" styleClass="logo" />
+					</children>
+				</StackPane>
+				<HBox id="HBox" alignment="CENTER" layoutX="35.0"
+					layoutY="25.0" spacing="10.0">
+					<children>
+						<VBox id="VBox" alignment="TOP_LEFT" prefHeight="270.0"
+							prefWidth="400.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER_LEFT" contentDisplay="CENTER"
+									maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0"
+									styleClass="labelStart" text="SystemInformation"
+									textFill="BLACK" />
+								<GridPane id="grid" fx:id="gridSystemInformation"
+									alignment="CENTER_LEFT" cache="false" disable="false"
+									focusTraversable="false" gridLinesVisible="false" hgap="0.0"
+									mouseTransparent="false" prefHeight="228.0" prefWidth="383.0"
+									styleClass="labelText" vgap="0.0" visible="true">
+									<children>
+										<Label prefHeight="38.0" prefWidth="256.0"
+											styleClass="labelText" text="Hostname:"
+											GridPane.columnIndex="0" GridPane.rowIndex="0" />
+										<Label prefHeight="54.0" prefWidth="144.0"
+											styleClass="labelText" text="SchulNummer:"
+											GridPane.columnIndex="0" GridPane.rowIndex="1" />
+										<Label prefHeight="54.0" prefWidth="144.0"
+											styleClass="labelText" text="MusterImage:"
+											GridPane.columnIndex="0" GridPane.rowIndex="2" />
+										<Label prefHeight="54.0" prefWidth="144.0" text=""
+											GridPane.columnIndex="0" GridPane.rowIndex="3" />
+										<Label fx:id="Schuldomain" prefHeight="40.0"
+											prefWidth="208.0" styleClass="labelText" text=""
+											GridPane.columnIndex="1" GridPane.rowIndex="3" />
+										<Label id="" fx:id="HostNameLabel" prefHeight="38.0"
+											prefWidth="280.0" styleClass="labelText" text=""
+											GridPane.columnIndex="1" GridPane.rowIndex="0" />
+										<Label id="" fx:id="SchulNummer" prefHeight="38.0"
+											prefWidth="256.0" styleClass="labelText" text=""
+											GridPane.columnIndex="1" GridPane.rowIndex="1" />
+										<Label fx:id="MusterImage" maxWidth="-Infinity"
+											prefHeight="40.0" prefWidth="210.0" styleClass="labelText"
+											text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+										<Label prefHeight="54.0" prefWidth="144.0"
+											styleClass="labelText" text="Schuldomain:"
+											GridPane.columnIndex="0" GridPane.rowIndex="3" />
+										<Label prefHeight="54.0" prefWidth="144.0"
+											styleClass="labelText" text="Seriennummer:"
+											GridPane.columnIndex="0" GridPane.rowIndex="4" />
+										<Label id="Schuldomain" fx:id="Seriennummer"
+											prefHeight="40.0" prefWidth="208.0" styleClass="labelText"
+											text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+									</children>
+									<columnConstraints>
+										<ColumnConstraints hgrow="NEVER"
+											maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0"
+											prefWidth="120.0" />
+										<ColumnConstraints hgrow="NEVER"
+											maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0"
+											prefWidth="270.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</VBox>
+						<VBox id="VBox" alignment="TOP_LEFT" prefHeight="270.0"
+							prefWidth="350.0" spacing="5.0">
+							<children>
+								<Label alignment="CENTER_LEFT" contentDisplay="CENTER"
+									maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0"
+									styleClass="labelStart" text="Supportinformation"
+									textFill="BLACK" />
+								<GridPane fx:id="gridSupportkInformation"
+									alignment="CENTER_LEFT" cache="false" disable="false"
+									focusTraversable="false" gridLinesVisible="false" hgap="0.0"
+									mouseTransparent="false" prefHeight="230.0" prefWidth="353.0"
+									styleClass="labelText" vgap="0.0" visible="true">
+									<children>
+										<Label prefHeight="38.0" prefWidth="256.0"
+											styleClass="labelText" text="RechnerTyp:"
+											GridPane.columnIndex="0" GridPane.rowIndex="0" />
+										<Label prefHeight="52.0" prefWidth="166.0"
+											styleClass="labelText" text="Kaufdatum:"
+											GridPane.columnIndex="0" GridPane.rowIndex="2" />
+										<Label fx:id="rechnerTyp" prefHeight="37.0"
+											prefWidth="208.0" styleClass="labelText" text=""
+											GridPane.columnIndex="1" GridPane.rowIndex="0" />
+										<Label id="supportEnde" fx:id="kaufdatum"
+											prefHeight="52.0" prefWidth="208.0" styleClass="labelText"
+											text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+										<Label prefHeight="52.0" prefWidth="164.0"
+											styleClass="labelText" text="Windows 11:"
+											GridPane.columnIndex="0" GridPane.rowIndex="4" />
+										<Label id="Seriennummer" fx:id="win11komp"
+											prefHeight="52.0" prefWidth="208.0" styleClass="labelText"
+											text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+										<Label prefHeight="52.0" prefWidth="164.0"
+											styleClass="labelText" text="Herstellert:"
+											GridPane.columnIndex="0" GridPane.rowIndex="1" />
+										<Label prefHeight="52.0" prefWidth="164.0"
+											styleClass="labelText" text="Supportdauer:"
+											GridPane.columnIndex="0" GridPane.rowIndex="3" />
+										<Label id="kaufdateum" fx:id="supportEnde"
+											prefHeight="43.0001220703125" prefWidth="208.0"
+											styleClass="labelText" text="" GridPane.columnIndex="1"
+											GridPane.rowIndex="3" />
+										<Label id="Seriennummer" fx:id="hersteller"
+											prefHeight="52.0" prefWidth="213.0" styleClass="labelText"
+											text="" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+									</children>
+									<columnConstraints>
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0"
+											prefWidth="120.0" />
+										<ColumnConstraints hgrow="SOMETIMES"
+											maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0"
+											prefWidth="210.0" />
+									</columnConstraints>
+									<rowConstraints>
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+										<RowConstraints maxHeight="-Infinity"
+											minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+											vgrow="NEVER" />
+									</rowConstraints>
+								</GridPane>
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+				<VBox id="VBox" alignment="TOP_LEFT" layoutX="35.0"
+					layoutY="320.0" prefHeight="270.0" prefWidth="350.0" spacing="5.0">
+					<children>
+						<Label alignment="TOP_LEFT" contentDisplay="LEFT"
+							maxWidth="-1.0" prefHeight="40.0" prefWidth="287.0"
+							styleClass="labelStart" text="Netzwerkinformation"
+							textFill="BLACK" />
+						<GridPane fx:id="gridNetzwerkInformation"
+							alignment="CENTER_LEFT" cache="false" disable="false"
+							focusTraversable="false" gridLinesVisible="false"
+							mouseTransparent="false" prefHeight="230.0" prefWidth="350.0"
+							styleClass="labelText" visible="true">
+							<children>
+								<Label alignment="CENTER_LEFT" prefHeight="38.0"
+									prefWidth="256.0" styleClass="labelText" text="IP:"
+									GridPane.columnIndex="0" GridPane.rowIndex="0" />
+								<Label prefHeight="54.0" prefWidth="144.0"
+									styleClass="labelText" text="Ethernet-MAC:"
+									GridPane.columnIndex="0" GridPane.rowIndex="1" />
+								<Label prefHeight="54.0" prefWidth="144.0"
+									styleClass="labelText" text="Wlan-SSID:"
+									GridPane.columnIndex="0" GridPane.rowIndex="2" />
+								<Label prefHeight="54.0" prefWidth="144.0"
+									styleClass="labelText" text="Wlan-MAC:"
+									GridPane.columnIndex="0" GridPane.rowIndex="3" />
+								<Label prefHeight="54.0" prefWidth="144.0"
+									styleClass="labelText" text="Gateway:" GridPane.columnIndex="0"
+									GridPane.rowIndex="4" />
+								<Label prefHeight="54.0" prefWidth="144.0"
+									styleClass="labelText" text="Schulrouter:"
+									GridPane.columnIndex="0" GridPane.rowIndex="5" />
+								<Label fx:id="IP" prefHeight="38.0" prefWidth="256.0"
+									styleClass="labelText" text="" GridPane.columnIndex="1"
+									GridPane.rowIndex="0" />
+								<Label fx:id="LanMAC" prefHeight="43.0" prefWidth="213.0"
+									styleClass="labelText" text="" GridPane.columnIndex="1"
+									GridPane.rowIndex="1" />
+								<Label fx:id="wlanSsID" prefHeight="43.0"
+									prefWidth="213.0" styleClass="labelText" text=""
+									GridPane.columnIndex="1" GridPane.rowIndex="2" />
+								<Label fx:id="wlanMAC" prefHeight="43.0" prefWidth="213.0"
+									styleClass="labelText" text="" GridPane.columnIndex="1"
+									GridPane.rowIndex="3" />
+								<Label fx:id="Gateway" prefHeight="44.0" prefWidth="213.0"
+									styleClass="labelText" text="" GridPane.columnIndex="1"
+									GridPane.rowIndex="4" />
+								<Label fx:id="TFKIP" prefHeight="44.0" prefWidth="213.0"
+									styleClass="labelText" text="" GridPane.columnIndex="1"
+									GridPane.rowIndex="5" />
+							</children>
+							<columnConstraints>
+								<ColumnConstraints fillWidth="true"
+									halignment="LEFT" hgrow="NEVER" maxWidth="-Infinity"
+									minWidth="-Infinity" percentWidth="0.0" prefWidth="120.0" />
+								<ColumnConstraints hgrow="SOMETIMES"
+									maxWidth="-Infinity" minWidth="-Infinity" percentWidth="0.0"
+									prefWidth="210.0" />
+							</columnConstraints>
+							<rowConstraints>
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="NEVER" />
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="NEVER" />
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="NEVER" />
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="NEVER" />
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="NEVER" />
+								<RowConstraints maxHeight="-Infinity"
+									minHeight="-Infinity" percentHeight="0.0" prefHeight="40.0"
+									vgrow="SOMETIMES" />
+							</rowConstraints>
+						</GridPane>
+					</children>
+				</VBox>
+				<VBox id="VBox" alignment="CENTER" layoutX="459.0"
+					layoutY="362.0" prefHeight="210.8046875" prefWidth="553.0"
+					spacing="20.0">
+					<children>
+						<Label alignment="CENTER" contentDisplay="CENTER"
+							maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0"
+							styleClass="labelStart" text="CPU-Auslastung" textFill="BLACK" />
+						<HBox id="HBox" alignment="CENTER" prefHeight="162.8046875"
+							prefWidth="600.0" spacing="5.0">
+							<children>
+								<VBox id="VBox" alignment="CENTER" prefWidth="150.0"
+									spacing="5.0">
+									<children>
+										<Label alignment="CENTER" contentDisplay="CENTER"
+											prefHeight="45.0" prefWidth="120.0" styleClass="labelText"
+											text="RAM" textAlignment="CENTER" />
+										<ProgressIndicator id="indictor2"
+											fx:id="indictor" minHeight="100.0" minWidth="100.0"
+											pickOnBounds="false" prefHeight="100.0" prefWidth="100.0"
+											progress="0.0" />
+									</children>
+								</VBox>
+								<VBox id="VBox" alignment="CENTER" prefWidth="150.0"
+									spacing="5.0">
+									<children>
+										<Label alignment="CENTER" prefHeight="45.0"
+											prefWidth="120.0" styleClass="labelText" text="CPU"
+											textAlignment="CENTER" />
+										<ProgressIndicator fx:id="indictor2"
+											disable="false" minHeight="100.0" minWidth="100.0"
+											prefHeight="100.0" prefWidth="100.0" progress="0.0"
+											visible="true" />
+									</children>
+								</VBox>
+								<VBox id="VBox" alignment="CENTER" prefWidth="150.0"
+									spacing="5.0">
+									<children>
+										<Label alignment="CENTER" prefHeight="45.0"
+											prefWidth="100.0" styleClass="labelText" text="GPU"
+											textAlignment="CENTER" />
+										<ProgressIndicator id="indictor2"
+											fx:id="indictor3" disable="false" minHeight="100.0"
+											minWidth="100.0" prefHeight="100.0" prefWidth="100.0"
+											progress="0.0" visible="true" />
+									</children>
+								</VBox>
+								<VBox id="VBox" alignment="CENTER" prefWidth="150.0"
+									spacing="5.0">
+									<children>
+										<Label alignment="CENTER" contentDisplay="CENTER"
+											prefHeight="45.0" prefWidth="120.0" styleClass="labelText"
+											text="SDD" textAlignment="CENTER" />
+										<ProgressIndicator id="indictor2"
+											fx:id="indictor4" minHeight="100.0" minWidth="100.0"
+											pickOnBounds="false" prefHeight="100.0" prefWidth="100.0"
+											progress="0.0" />
+									</children>
+								</VBox>
+							</children>
+						</HBox>
+					</children>
+				</VBox>
+				<VBox id="VBox" alignment="CENTER" layoutX="785.0"
+					layoutY="30.0" prefHeight="250.0" prefWidth="241.0" spacing="5.0">
+					<children>
+						<ImageView fx:id="image" fitHeight="245.0"
+							fitWidth="139.64999289703405" pickOnBounds="true"
+							preserveRatio="true" styleClass="logo" />
+					</children>
+				</VBox>
+			</children>
+		</Pane>
+		<HBox id="HBox" alignment="CENTER_RIGHT" prefWidth="422.0"
+			spacing="5.0" styleClass="labelStart" AnchorPane.leftAnchor="571.0"
+			AnchorPane.rightAnchor="7.0" AnchorPane.topAnchor="7.0">
+			<children>
+				<Button id="" fx:id="StartViewbutton"
+					focusTraversable="false" minHeight="-1.0" mnemonicParsing="false"
+					onAction="#loadRoot" prefHeight="40.0" prefWidth="100.0"
+					styleClass="GuideButton" text="Startseite" />
+				<Button id="" fx:id="screenShot" minHeight="-1.0"
+					mnemonicParsing="false" onAction="#screenShot" prefHeight="40.0"
+					prefWidth="100.0" styleClass="GuideButton" text="Screenshot" />
+				<Button id="" fx:id="support" minHeight="-1.0"
+					mnemonicParsing="false" onAction="#loadBrowser" prefHeight="40.0"
+					prefWidth="100.0" styleClass="GuideButton" text="Support" />
+			</children>
+		</HBox>
+		<Label alignment="CENTER_LEFT" contentDisplay="CENTER"
+			layoutY="8.0" maxWidth="-1.0" prefHeight="40.0" prefWidth="233.0"
+			styleClass="labelStart" text="PC-Information" textFill="BLACK"
+			AnchorPane.leftAnchor="5.0" />
+	</children>
 </AnchorPane>
